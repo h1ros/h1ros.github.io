@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'h1r03'
-SITENAME = "Let's try"
+SITENAME = "Citizen Data Science Blog"
 SITEURL = 'http://h1r03.github.io'
 
 PATH = 'content'
@@ -38,6 +38,9 @@ MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['plugins', ]
 PLUGINS = ['ipynb.markup']
+
+NOTEBOOK_DIR = 'notebooks'
+CODE_DIR = 'notebooks'
 
 # Theme
 THEME = "themes/blue-penguin"

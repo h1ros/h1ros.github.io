@@ -1,45 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Citizen Data Science Blog | articles in the "posts" category</title>
-    <link rel="shortcut icon" type="image/png" href="http://h1r03.github.io/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://h1r03.github.io/favicon.ico">
-    <link href="http://h1r03.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Citizen Data Science Blog Full Atom Feed" />
-    <link href="http://h1r03.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Citizen Data Science Blog Categories Atom Feed" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/print.css" type="text/css" media="print" />
-    <meta name="generator" content="Pelican" />
-    <meta name="description" content="" />
-    <meta name="author" content="h1r03" />
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-
-                <li class="ephemeral selected"><a href="http://h1r03.github.io/category/posts.html">posts</a></li>
-                <li><a href="http://h1r03.github.io/">Home</a></li>
-            </ul>
-        </nav>
-        <div class="header_box">
-            <h1><a href="http://h1r03.github.io/">Citizen Data Science Blog</a></h1>
-        </div>
-    </header>
-    <div id="wrapper">
-        <div id="content">            <h4 class="date">Mar 22, 2018</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="http://h1r03.github.io/first-post.html" rel="bookmark" title="Permanent Link to &quot;First Post&quot;">First Post</a>
-                </h2>
-
-                
-                
-
-                <style type="text/css">/*!
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Citizen Data Science Blog - posts</title><link href="http://h1r03.github.io/" rel="alternate"></link><link href="http://h1r03.github.io/feeds/posts.atom.xml" rel="self"></link><id>http://h1r03.github.io/</id><updated>2018-03-22T06:00:00-07:00</updated><entry><title>First Post</title><link href="http://h1r03.github.io/first-post.html" rel="alternate"></link><published>2018-03-22T06:00:00-07:00</published><updated>2018-03-22T06:00:00-07:00</updated><author><name>h1r03</name></author><id>tag:h1r03.github.io,2018-03-22:/first-post.html</id><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -266,7 +226,7 @@ div.unrecognized_cell .inner_cell a:hover {
   text-decoration: none;
 }
 @media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
+  div.unrecognized_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -319,19 +279,19 @@ div.input_prompt {
   color: #303F9F;
   border-top: 1px solid transparent;
 }
-div.input_area > div.highlight {
+div.input_area &gt; div.highlight {
   margin: 0.4em;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-div.input_area > div.highlight > pre {
+div.input_area &gt; div.highlight &gt; pre {
   margin: 0px;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-/* The following gets added to the <head> if it is detected that the user has a
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
  * monospace font with inconsistent normal/bold/italic height.  See
  * notebookmain.js.  Such fonts will have keywords vertically offset with
  * respect to the rest of the text.  The user should select a better font.
@@ -377,7 +337,7 @@ div.input_area > div.highlight > pre {
 }
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
 Adapted from GitHub theme
 
 */
@@ -839,7 +799,7 @@ div.text_cell {
   align-items: stretch;
 }
 @media (max-width: 540px) {
-  div.text_cell > div.prompt {
+  div.text_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -904,8 +864,8 @@ h6:hover .anchor-link {
   font-size: 100%;
   font-style: italic;
 }
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
@@ -973,8 +933,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -1010,39 +970,39 @@ h6:hover .anchor-link {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="First-Post-by-Pelican">First Post by Pelican<a class="anchor-link" href="#First-Post-by-Pelican">¶</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Hi all, this is the first post using Pelican and jupyter notebook plugin, and hosted in Github Pages</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Reference</strong></p>
-<ul>
-<li><p><a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/</a></p>
-</li>
-<li><p><a href="https://fedoramagazine.org/make-github-pages-blog-with-pelican/">https://fedoramagazine.org/make-github-pages-blog-with-pelican/</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="First-Post-by-Pelican"&gt;First Post by Pelican&lt;a class="anchor-link" href="#First-Post-by-Pelican"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Hi all, this is the first post using Pelican and jupyter notebook plugin, and hosted in Github Pages&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/"&gt;https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://fedoramagazine.org/make-github-pages-blog-with-pelican/"&gt;https://fedoramagazine.org/make-github-pages-blog-with-pelican/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
@@ -1069,30 +1029,5 @@ h6:hover .anchor-link {
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>
-
-                <div class="clear"></div>
-
-                <div class="info">
-                    <a href="http://h1r03.github.io/first-post.html">posted at 06:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://h1r03.github.io/category/posts.html" rel="tag">posts</a>
-                    &nbsp;&middot;
-                    &nbsp;<a href="http://h1r03.github.io/tag/python.html" class="tags">python</a>
-                </div>
-		<a href="http://h1r03.github.io/first-post.html#disqus_thread">Click to read and post comments</a>
-            </article>
-
-            <div class="clear"></div>
-            <footer>
-                <p>
-                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
-                &middot;
-                Powered by <a href="http://getpelican.com">Pelican</a>
-                &middot;
-                <a href="http://h1r03.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
-            </footer>
-        </div>
-        <div class="clear"></div>
-    </div>
-</body>
-</html>
+&lt;/script&gt;
+</content><category term="python"></category></entry></feed>
