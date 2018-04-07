@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+        <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Data Science Blog | articles in the "posts" category</title>
+    <title>Data Science Blog | No.0001 What is Pipenv?</title>
     <link rel="shortcut icon" type="image/png" href="http://h1r03.github.io/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="http://h1r03.github.io/favicon.ico">
     <link href="http://h1r03.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Blog Full Atom Feed" />
-    <link href="http://h1r03.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Blog Categories Atom Feed" />
+    <link href="http://h1r03.github.io/feeds/python-module.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Blog Categories Atom Feed" />
     <link rel="stylesheet" href="http://h1r03.github.io/theme/css/screen.css" type="text/css" />
     <link rel="stylesheet" href="http://h1r03.github.io/theme/css/pygments.css" type="text/css" />
     <link rel="stylesheet" href="http://h1r03.github.io/theme/css/print.css" type="text/css" media="print" />
     <meta name="generator" content="Pelican" />
     <meta name="description" content="" />
     <meta name="author" content="h1r03" />
+
+    <meta name="keywords" content="python" />
 </head>
 <body>
     <header>
         <nav>
             <ul>
-
-                <li class="ephemeral selected"><a href="http://h1r03.github.io/category/posts.html">posts</a></li>
                 <li><a href="http://h1r03.github.io/">Home</a></li>
             </ul>
         </nav>
@@ -29,11 +29,11 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">Mar 22, 2018</h4>
+        <div id="content">            <h4 class="date">Mar 25, 2018</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://h1r03.github.io/first-post.html" rel="bookmark" title="Permanent Link to &quot;First Post&quot;">First Post</a>
+                    <a href="http://h1r03.github.io/no0001-what-is-pipenv.html" rel="bookmark" title="Permanent Link to &quot;No.0001 What is Pipenv?&quot;">No.0001 What is Pipenv?</a>
                 </h2>
 
                 
@@ -1015,7 +1015,13 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="First-Post-by-Pelican">First Post by Pelican<a class="anchor-link" href="#First-Post-by-Pelican">¶</a></h1>
+<h1 id="What-is-Pipenv?">What is <code>Pipenv</code>?<a class="anchor-link" href="#What-is-Pipenv?">¶</a></h1><p><code>Pipenv</code> is a package management tool for Python that has 2 important benefits:</p>
+<ol>
+<li><p>automatically creates and manages a virtualenv so that you do not have to manage virtualenv by yourself</p>
+</li>
+<li><p>automatically add/delete packages from your <code>Pipfile</code> when you install/uninstall packages.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1023,7 +1029,10 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hi all, this is the first post using Pelican and jupyter notebook plugin, and hosted in Github Pages</p>
+<h2 id="What-is-the-practical-benefits?">What is the practical benefits?<a class="anchor-link" href="#What-is-the-practical-benefits?">¶</a></h2><ol>
+<li>No need to use <code>pip</code> and <code>virtualenv</code> seperately (what about <code>conda</code> ? see <a href="https://docs.pipenv.org/advanced/#pipenv-and-conda">Advanced Usage of Pipenv - pipenv and conda</a>)</li>
+<li>No need to manage <code>requirements.txt</code> for different development stages i.e., dev/production. <code>Pipenv</code> can manage the list of dependencies as <code>Pipfile</code> and finalized one as <code>Pipfile.lock</code>.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1031,12 +1040,18 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Reference</strong></p>
-<ul>
-<li><p><a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/</a></p>
-</li>
-<li><p><a href="https://fedoramagazine.org/make-github-pages-blog-with-pelican/">https://fedoramagazine.org/make-github-pages-blog-with-pelican/</a></p>
-</li>
+<h1 id="How-to-install?">How to install?<a class="anchor-link" href="#How-to-install?">¶</a></h1><p>For MacOS, it was very straightforward, and it worked smoothly.</p>
+<p><code>brew install pipenv</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Reference">Reference<a class="anchor-link" href="#Reference">¶</a></h1><ul>
+<li><a href="https://github.com/pypa/pipenv/">Pipenv github</a></li>
+<li><a href="https://docs.pipenv.org/">Pipenv documentation</a></li>
 </ul>
 </div>
 </div>
@@ -1074,14 +1089,12 @@ h6:hover .anchor-link {
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://h1r03.github.io/first-post.html">posted at 06:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://h1r03.github.io/category/posts.html" rel="tag">posts</a>
+                    <a href="http://h1r03.github.io/no0001-what-is-pipenv.html">posted at 06:00</a>
+                    &nbsp;&middot;&nbsp;<a href="http://h1r03.github.io/category/python-module.html" rel="tag">python module</a>
                     &nbsp;&middot;
                     &nbsp;<a href="http://h1r03.github.io/tag/python.html" class="tags">python</a>
                 </div>
-		<a href="http://h1r03.github.io/first-post.html#disqus_thread">Click to read and post comments</a>
             </article>
-
             <div class="clear"></div>
             <footer>
                 <p>

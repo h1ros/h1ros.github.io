@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'h1r03'
-SITENAME = "Citizen Data Science Blog"
+SITENAME = "Data Science Blog"
 SITEURL = 'http://h1r03.github.io'
 
 PATH = 'content'
@@ -23,7 +23,7 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         )
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
@@ -41,6 +41,13 @@ PLUGINS = ['ipynb.markup']
 
 NOTEBOOK_DIR = 'notebooks'
 CODE_DIR = 'notebooks'
+STATIC_PATHS = ['md']
 
 # Theme
 THEME = "themes/blue-penguin"
+
+
+IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
+
+
+TYPOGRIFY = False
