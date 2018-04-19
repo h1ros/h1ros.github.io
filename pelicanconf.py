@@ -44,7 +44,7 @@ CODE_DIR = 'notebooks'
 STATIC_PATHS = ['md']
 
 # Theme
-THEME = "themes/blue-penguin"
+THEME = "themes/pelican-clean-blog"
 
 
 IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
