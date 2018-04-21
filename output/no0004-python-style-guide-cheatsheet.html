@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Data Science Blog</title>
+        <meta charset="utf-8" />
+
+
+    <meta name="tags" content="python" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://h1r03.github.io/">Data Science Blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://h1r03.github.io/no0004-python-style-guide-cheatsheet.html" rel="bookmark"
+         title="Permalink to No.0004 Python Style Guide Cheatsheet">No.0004 Python Style Guide Cheatsheet</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2018-04-21T12:00:00-07:00">
+      Sat 21 April 2018
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="https://h1r03.github.io/author/h1r03.html">h1r03</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <blockquote>
+<p>Readability counts</p>
+<p>code is read much more often than it is written</p>
+</blockquote>
+<h2>Code Layout</h2>
+<ul>
+<li>
+<p><strong>Space</strong> is preferred, rather than tab</p>
+</li>
+<li>
+<p>Maximum Line Length: <strong>79 characters</strong> </p>
+</li>
+<li>
+<p>Binary operator: <strong>before a line break</strong></p>
+</li>
+<li>
+<p>import: <strong>seperate lines</strong></p>
+</li>
+<li>
+<p>order of imports: </p>
+</li>
+<li>
+<p>standard library imports</p>
+</li>
+<li>third party imports</li>
+<li>
+<p>local application/library specifc imports</p>
+</li>
+<li>
+<p>Comments: complete sentences starting with <strong>Capital letter</strong></p>
+</li>
+</ul>
+<p>​</p>
+<h2>Namining Convention</h2>
+<ul>
+<li>_ prefix: weak internal use. </li>
+<li>_ suffix: used to avoid conflicts with Python keyword</li>
+<li>__ prefix: strong internal use (harder to access because of name mangling)</li>
+<li><strong> prefix &amp; </strong> suffix: magic objects or attributes. <strong>Never use these names</strong></li>
+</ul>
+<p>Never use: </p>
+<ul>
+<li>l (lowercase letter el) &lt;-&gt; 1</li>
+<li>O (uppercase letter oh) &lt;-&gt; 0</li>
+</ul>
+<h4>Use Lowercase &amp; seperated by '_':</h4>
+<ul>
+<li>Package and Module Names</li>
+<li>Function and Variable Names</li>
+<li>Method and Instance Variables Names</li>
+</ul>
+<h4>Use CapWords convention:</h4>
+<ul>
+<li>
+<p>Class Names</p>
+</li>
+<li>
+<p>Type Variable Names </p>
+</li>
+<li>Exception Names </li>
+</ul>
+<h4>Use ALL CAPITAL:</h4>
+<ul>
+<li>Constants</li>
+</ul>
+<h2>Programming Recommendations</h2>
+<ul>
+<li>Try/Except clauses: </li>
+<li>limit the <code>try</code> clause to the absolute minimum amount of code necessary</li>
+<li>Return statement:</li>
+<li>be consistent what to return i.e., all returns the same expression or none</li>
+<li>Use <code>''.startswith()</code></li>
+<li>rather than checking for prefixes or suffixes</li>
+<li>Use <code>isinstance(obj, int)</code></li>
+<li>rather than comparing types by <code>type(obj)</code></li>
+<li>Use the fact that <strong>empty sequences (strings, lists, tuples ) are </strong><code>false</code></li>
+<li><code>if not seq:</code> or <code>if seq:</code> </li>
+<li>rather than <code>if len(seq):</code> or <code>if not len(seq)</code></li>
+</ul>
+<p>Note that the following sections are ommited since IDE can automatically correct.</p>
+<p>Whitespace in Expressions and Statement</p>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>

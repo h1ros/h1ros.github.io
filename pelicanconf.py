@@ -26,9 +26,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('twitter', 'https://twitter.com/__h1r0__'),
+          ('github', 'https://github.com/h1r03'),)
+			
 
+          
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -44,7 +46,7 @@ CODE_DIR = 'notebooks'
 STATIC_PATHS = ['md']
 
 # Theme
-THEME = "themes/pelican-alchemy/alchemy"
+THEME = "simple"
 
 
 IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
