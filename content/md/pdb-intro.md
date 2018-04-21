@@ -1,7 +1,7 @@
-Title: No.0002 PDB Tutorial (Python Debugger)
+Title: PDB - Python Debugger
 Slug: 
 Date: 2018-04-07 12:00
-Category: python module
+Category: python
 Tags: python
 Author: h1r03
 Summary: Tutorial for PDB
