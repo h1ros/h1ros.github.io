@@ -1,11 +1,9 @@
 language: python
-branches:
-  only:
-  - source
+
 install:
 - pip install -r requirements.txt
 before_script:
-- pelican-themes -i ./theme/pelican-clean-blog
+- pelican-themes -i ./themes/pelican-clean-blog
 script:
 - make publish github
 env:
