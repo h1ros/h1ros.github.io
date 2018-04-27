@@ -1,0 +1,15 @@
+language: python
+branches:
+  only:
+  - source
+install:
+- pip install -r requirements.txt
+before_script:
+- pelican-themes -i ./theme/pelican-clean-blog
+script:
+- make publish github
+env:
+  global:
+  - secure:
+    - Encrypted Travis Key Here
+  - secure: CWIBQh1NC34FmVEAnGAnznWH/HyHsTtGrAtLSyJsY/3/bdTC7jLu8tHo6OK199BJz9KJc3cQN5elhjfNx63q6HwPocAVJpjgcEk9X5quELnrbhvWRVf4u1x9UWUokiuz7lem+7F2dewMsWELkyd21yKcWgx9Irfofu7N9HfPb4syvPyQoIN6yeqv8jKe79JKeT/MBw9mpVJfPtVrDrOl2qaKkfDD52IHuvN0SolAa+K/AoK4nRmCwaB2GZWFlNGor1u+hHcqM7Cigy1+G7CSiDHaPhAZfDLbiBNJR8SxEW2kj+0CTMCAeQAbfRjs9qBUcEv38GS357lewSlrEpmWOx0X4KBgpl1TKrCIC04GCLa577SDXmwpgtmnmYI3LsUlav0eGMI/7gOhW0bwmBohyjIg1Txo/2OeNJd9OLCT7tJ9evwnRBmRUxWlmoJwx/ZJLnGvQ++WZ8/DMlvAZftY7NVIg2hs4QIlOzIQ7eHcdDYEIZsiIWETurytCTCsZ0HUtA6ykUt6uO7PKFteEikVPO4lGGkMg7nyg4k5/fj/KUknAcaGTUYjD3q0a+OsPnTdjkIV9/KhS7C06J/8QbOuNvNveRVxMwRkAW+5ZrNnHB+ez99sCBlamz9776hXnXKb1kmv1KwpQRraBgN2mjKhiclanShd5znSWlrNmdxE6ek=
