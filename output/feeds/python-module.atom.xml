@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Data Science Blog | articles in the "python module" category</title>
-    <link rel="shortcut icon" type="image/png" href="http://h1r03.github.io/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://h1r03.github.io/favicon.ico">
-    <link href="http://h1r03.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Blog Full Atom Feed" />
-    <link href="http://h1r03.github.io/feeds/python-module.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Blog Categories Atom Feed" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://h1r03.github.io/theme/css/print.css" type="text/css" media="print" />
-    <meta name="generator" content="Pelican" />
-    <meta name="description" content="" />
-    <meta name="author" content="h1r03" />
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-
-                <li class="ephemeral selected"><a href="http://h1r03.github.io/category/python-module.html">python module</a></li>
-                <li><a href="http://h1r03.github.io/">Home</a></li>
-            </ul>
-        </nav>
-        <div class="header_box">
-            <h1><a href="http://h1r03.github.io/">Data Science Blog</a></h1>
-        </div>
-    </header>
-    <div id="wrapper">
-        <div id="content">            <h4 class="date">Apr 17, 2018</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="http://h1r03.github.io/keras.html" rel="bookmark" title="Permanent Link to &quot;Keras&quot;">Keras</a>
-                </h2>
-
-                
-                
-
-                <style type="text/css">/*!
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Blog - python module</title><link href="http://h1r03.github.io/" rel="alternate"></link><link href="http://h1r03.github.io/feeds/python-module.atom.xml" rel="self"></link><id>http://h1r03.github.io/</id><updated>2018-04-17T06:00:00-07:00</updated><entry><title>Keras</title><link href="http://h1r03.github.io/keras.html" rel="alternate"></link><published>2018-04-17T06:00:00-07:00</published><updated>2018-04-17T06:00:00-07:00</updated><author><name>h1r03</name></author><id>tag:h1r03.github.io,2018-04-17:/keras.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="How-to-use-Keras"&gt;How to use Keras&lt;a class="anchor-link" href="#How-to-use-Keras"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Keras is human-readable wrapper for deep learning. This tutorial is meant for those who never touched deep learning modules e.g., tensolflow, torch, or caffe.&lt;/p&gt;
+&lt;h2 id="Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it."&gt;Getting startedBefore going to the detail, let's just run it and see it.&lt;a class="anchor-link" href="#Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it."&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Pre-requisite"&gt;Pre-requisite&lt;a class="anchor-link" href="#Pre-requisite"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;python 2 or 3 with anaconda and tensolflow are required to follow this tutorial. Please refer to this to set up your environment.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -266,7 +232,7 @@ div.unrecognized_cell .inner_cell a:hover {
   text-decoration: none;
 }
 @media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
+  div.unrecognized_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -319,19 +285,19 @@ div.input_prompt {
   color: #303F9F;
   border-top: 1px solid transparent;
 }
-div.input_area > div.highlight {
+div.input_area &gt; div.highlight {
   margin: 0.4em;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-div.input_area > div.highlight > pre {
+div.input_area &gt; div.highlight &gt; pre {
   margin: 0px;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-/* The following gets added to the <head> if it is detected that the user has a
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
  * monospace font with inconsistent normal/bold/italic height.  See
  * notebookmain.js.  Such fonts will have keywords vertically offset with
  * respect to the rest of the text.  The user should select a better font.
@@ -377,7 +343,7 @@ div.input_area > div.highlight > pre {
 }
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
 Adapted from GitHub theme
 
 */
@@ -839,7 +805,7 @@ div.text_cell {
   align-items: stretch;
 }
 @media (max-width: 540px) {
-  div.text_cell > div.prompt {
+  div.text_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -904,8 +870,8 @@ h6:hover .anchor-link {
   font-size: 100%;
   font-style: italic;
 }
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
@@ -973,8 +939,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -1010,52 +976,52 @@ h6:hover .anchor-link {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-use-Keras">How to use Keras<a class="anchor-link" href="#How-to-use-Keras">¶</a></h1><p>Keras is human-readable wrapper for deep learning. This tutorial is meant for those who never touched deep learning modules e.g., tensolflow, torch, or caffe.</p>
-<h2 id="Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it.">Getting startedBefore going to the detail, let's just run it and see it.<a class="anchor-link" href="#Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it.">¶</a></h2><h3 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">¶</a></h3><p>python 2 or 3 with anaconda and tensolflow are required to follow this tutorial. Please refer to this to set up your environment.</p>
-<p><a href="http://localhost:8888/?token=a1c6abc4a5cdafd2f1155c80b79db5704e0ca78e9e9d14db">How to setup a python Environment for Deep Learning</a></p>
-<h2 id="Data-Preparation">Data Preparation<a class="anchor-link" href="#Data-Preparation">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [19]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1"># import cufflinks</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path_data</span> <span class="o">=</span> <span class="s2">"data/international-airline-passengers.csv"</span>
-<span class="n">df_airplane</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_data</span><span class="p">)</span>
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="How-to-use-Keras"&gt;How to use Keras&lt;a class="anchor-link" href="#How-to-use-Keras"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Keras is human-readable wrapper for deep learning. This tutorial is meant for those who never touched deep learning modules e.g., tensolflow, torch, or caffe.&lt;/p&gt;
+&lt;h2 id="Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it."&gt;Getting startedBefore going to the detail, let's just run it and see it.&lt;a class="anchor-link" href="#Getting-startedBefore-going-to-the-detail,-let's-just-run-it-and-see-it."&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Pre-requisite"&gt;Pre-requisite&lt;a class="anchor-link" href="#Pre-requisite"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;python 2 or 3 with anaconda and tensolflow are required to follow this tutorial. Please refer to this to set up your environment.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://localhost:8888/?token=a1c6abc4a5cdafd2f1155c80b79db5704e0ca78e9e9d14db"&gt;How to setup a python Environment for Deep Learning&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="Data-Preparation"&gt;Data Preparation&lt;a class="anchor-link" href="#Data-Preparation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="c1"&gt;# import cufflinks&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;path_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"data/international-airline-passengers.csv"&lt;/span&gt;
+&lt;span class="n"&gt;df_airplane&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path_data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-<span class="n">df_airplane</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
+&lt;span class="n"&gt;df_airplane&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
     .dataframe thead tr:only-child th {
         text-align: right;
     }
@@ -1067,89 +1033,89 @@ h6:hover .anchor-link {
     .dataframe tbody tr th {
         vertical-align: top;
     }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Month</th>
-<th>International airline passengers: monthly totals in thousands. Jan 49 ? Dec 60</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>1949-01</td>
-<td>112.0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>1949-02</td>
-<td>118.0</td>
-</tr>
-<tr>
-<th>2</th>
-<td>1949-03</td>
-<td>132.0</td>
-</tr>
-<tr>
-<th>3</th>
-<td>1949-04</td>
-<td>129.0</td>
-</tr>
-<tr>
-<th>4</th>
-<td>1949-05</td>
-<td>121.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_airplane</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>Month                                                                              object
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Month&lt;/th&gt;
+&lt;th&gt;International airline passengers: monthly totals in thousands. Jan 49 ? Dec 60&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;1949-01&lt;/td&gt;
+&lt;td&gt;112.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;1949-02&lt;/td&gt;
+&lt;td&gt;118.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;1949-03&lt;/td&gt;
+&lt;td&gt;132.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;1949-04&lt;/td&gt;
+&lt;td&gt;129.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;1949-05&lt;/td&gt;
+&lt;td&gt;121.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df_airplane&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dtypes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;Month                                                                              object
 International airline passengers: monthly totals in thousands. Jan 49 ? Dec 60    float64
-dtype: object</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot raw data</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">df_airplane</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Month'</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6gAAAGtCAYAAAAbE1myAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+dtype: object&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Plot raw data&lt;/span&gt;
+&lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df_airplane&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Month'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6gAAAGtCAYAAAAbE1myAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDIuMS4wLCBo
 dHRwOi8vbWF0cGxvdGxpYi5vcmcvpW3flQAAIABJREFUeJzs3Xl4W+WZN/7vkWRLtiXvkuMtsYOd
 zXs2wguEhB1CWUrDlFJKWMs60/KDsrwXS0t/vzJTfgNlKby0M2xDyzZQKDB0BggtlEAS4iRkI05i
@@ -1904,14 +1870,14 @@ mL8AuBx8I/ICBc65b6qoZz+QFpEWioiI1AH6L6yIiMhRcs7lAY8EWDQZeN7MVgAHgSurqWe3mX1s
 ZivxDb70TrjbKiIiEsvMOVd9KREREREREZEIUxdfERERERERiQlKUEVERERERCQmKEEVERERERGR
 mKAEVURERERERGKCElQRERERERGJCUpQRUREREREJCYoQRUREREREZGYoARVREREREREYsL/A4p8
 8BPoK0KtAAAAAElFTkSuQmCC
-" />
-</div>
-</div>
-</div>
-</div>
-</div>
+" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
@@ -1938,28 +1904,28 @@ mKAEVURERERERGKCElQRERERERGJCUpQRUREREREJCYoQRUREREREZGYoARVREREREREYsL/A4p8
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>
-
-                <div class="clear"></div>
-
-                <div class="info">
-                    <a href="http://h1r03.github.io/keras.html">posted at 06:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://h1r03.github.io/category/python-module.html" rel="tag">python module</a>
-                    &nbsp;&middot;
-                    &nbsp;<a href="http://h1r03.github.io/tag/python-keras.html" class="tags">python Keras</a>
-                </div>
-		<a href="http://h1r03.github.io/keras.html#disqus_thread">Click to read and post comments</a>
-            </article>            <h4 class="date">Mar 25, 2018</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="http://h1r03.github.io/pipenv.html" rel="bookmark" title="Permanent Link to &quot;Pipenv&quot;">Pipenv</a>
-                </h2>
-
-                
-                
-
-                <style type="text/css">/*!
+&lt;/script&gt;
+</content><category term="python Keras"></category></entry><entry><title>Pipenv</title><link href="http://h1r03.github.io/pipenv.html" rel="alternate"></link><published>2018-03-25T06:00:00-07:00</published><updated>2018-03-25T06:00:00-07:00</updated><author><name>h1r03</name></author><id>tag:h1r03.github.io,2018-03-25:/pipenv.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="What-is-Pipenv?"&gt;What is &lt;code&gt;Pipenv&lt;/code&gt;?&lt;a class="anchor-link" href="#What-is-Pipenv?"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Pipenv&lt;/code&gt; is a package management tool for Python that has 2 important benefits:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;automatically creates and manages a virtualenv so that you do not have to manage virtualenv by yourself&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;automatically add/delete packages from your &lt;code&gt;Pipfile&lt;/code&gt; when you install/uninstall packages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="What-is-the-practical-benefits?"&gt;What is the practical benefits?&lt;a class="anchor-link" href="#What-is-the-practical-benefits?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;No need to use &lt;code&gt;pip&lt;/code&gt; and &lt;code&gt;virtualenv&lt;/code&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2186,7 +2152,7 @@ div.unrecognized_cell .inner_cell a:hover {
   text-decoration: none;
 }
 @media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
+  div.unrecognized_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -2239,19 +2205,19 @@ div.input_prompt {
   color: #303F9F;
   border-top: 1px solid transparent;
 }
-div.input_area > div.highlight {
+div.input_area &gt; div.highlight {
   margin: 0.4em;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-div.input_area > div.highlight > pre {
+div.input_area &gt; div.highlight &gt; pre {
   margin: 0px;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-/* The following gets added to the <head> if it is detected that the user has a
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
  * monospace font with inconsistent normal/bold/italic height.  See
  * notebookmain.js.  Such fonts will have keywords vertically offset with
  * respect to the rest of the text.  The user should select a better font.
@@ -2297,7 +2263,7 @@ div.input_area > div.highlight > pre {
 }
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
 Adapted from GitHub theme
 
 */
@@ -2759,7 +2725,7 @@ div.text_cell {
   align-items: stretch;
 }
 @media (max-width: 540px) {
-  div.text_cell > div.prompt {
+  div.text_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -2824,8 +2790,8 @@ h6:hover .anchor-link {
   font-size: 100%;
   font-style: italic;
 }
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
@@ -2893,8 +2859,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -2930,54 +2896,54 @@ h6:hover .anchor-link {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-Pipenv?">What is <code>Pipenv</code>?<a class="anchor-link" href="#What-is-Pipenv?">¶</a></h1><p><code>Pipenv</code> is a package management tool for Python that has 2 important benefits:</p>
-<ol>
-<li><p>automatically creates and manages a virtualenv so that you do not have to manage virtualenv by yourself</p>
-</li>
-<li><p>automatically add/delete packages from your <code>Pipfile</code> when you install/uninstall packages.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-the-practical-benefits?">What is the practical benefits?<a class="anchor-link" href="#What-is-the-practical-benefits?">¶</a></h2><ol>
-<li>No need to use <code>pip</code> and <code>virtualenv</code> seperately (what about <code>conda</code> ? see <a href="https://docs.pipenv.org/advanced/#pipenv-and-conda">Advanced Usage of Pipenv - pipenv and conda</a>)</li>
-<li>No need to manage <code>requirements.txt</code> for different development stages i.e., dev/production. <code>Pipenv</code> can manage the list of dependencies as <code>Pipfile</code> and finalized one as <code>Pipfile.lock</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-install?">How to install?<a class="anchor-link" href="#How-to-install?">¶</a></h1><p>For MacOS, it was very straightforward, and it worked smoothly.</p>
-<p><code>brew install pipenv</code></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Reference">Reference<a class="anchor-link" href="#Reference">¶</a></h1><ul>
-<li><a href="https://github.com/pypa/pipenv/">Pipenv github</a></li>
-<li><a href="https://docs.pipenv.org/">Pipenv documentation</a></li>
-</ul>
-</div>
-</div>
-</div>
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="What-is-Pipenv?"&gt;What is &lt;code&gt;Pipenv&lt;/code&gt;?&lt;a class="anchor-link" href="#What-is-Pipenv?"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Pipenv&lt;/code&gt; is a package management tool for Python that has 2 important benefits:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;automatically creates and manages a virtualenv so that you do not have to manage virtualenv by yourself&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;automatically add/delete packages from your &lt;code&gt;Pipfile&lt;/code&gt; when you install/uninstall packages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="What-is-the-practical-benefits?"&gt;What is the practical benefits?&lt;a class="anchor-link" href="#What-is-the-practical-benefits?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;No need to use &lt;code&gt;pip&lt;/code&gt; and &lt;code&gt;virtualenv&lt;/code&gt; seperately (what about &lt;code&gt;conda&lt;/code&gt; ? see &lt;a href="https://docs.pipenv.org/advanced/#pipenv-and-conda"&gt;Advanced Usage of Pipenv - pipenv and conda&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;No need to manage &lt;code&gt;requirements.txt&lt;/code&gt; for different development stages i.e., dev/production. &lt;code&gt;Pipenv&lt;/code&gt; can manage the list of dependencies as &lt;code&gt;Pipfile&lt;/code&gt; and finalized one as &lt;code&gt;Pipfile.lock&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="How-to-install?"&gt;How to install?&lt;a class="anchor-link" href="#How-to-install?"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;For MacOS, it was very straightforward, and it worked smoothly.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;brew install pipenv&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Reference"&gt;Reference&lt;a class="anchor-link" href="#Reference"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/pypa/pipenv/"&gt;Pipenv github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.pipenv.org/"&gt;Pipenv documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
@@ -3004,30 +2970,5 @@ h6:hover .anchor-link {
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>
-
-                <div class="clear"></div>
-
-                <div class="info">
-                    <a href="http://h1r03.github.io/pipenv.html">posted at 06:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://h1r03.github.io/category/python-module.html" rel="tag">python module</a>
-                    &nbsp;&middot;
-                    &nbsp;<a href="http://h1r03.github.io/tag/python.html" class="tags">python</a>
-                </div>
-		<a href="http://h1r03.github.io/pipenv.html#disqus_thread">Click to read and post comments</a>
-            </article>
-
-            <div class="clear"></div>
-            <footer>
-                <p>
-                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
-                &middot;
-                Powered by <a href="http://getpelican.com">Pelican</a>
-                &middot;
-                <a href="http://h1r03.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
-            </footer>
-        </div>
-        <div class="clear"></div>
-    </div>
-</body>
-</html>
+&lt;/script&gt;
+</content><category term="python"></category></entry></feed>

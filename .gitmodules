@@ -7,3 +7,7 @@
 [submodule "themes/pelican-alchemy"]
 	path = themes/pelican-alchemy
 	url = https://github.com/nairobilug/pelican-alchemy
+
+[submodule "hemes/pelican-clean-blog"]
+	path = hemes/pelican-clean-blog
+	url = https://github.com/gilsondev/pelican-clean-blog.git
