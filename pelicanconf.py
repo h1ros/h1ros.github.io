@@ -20,9 +20,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 #
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
+LINKS = (('Pelican', 'https://getpelican.com/'),
+         ('Python.org', 'https://python.org/'),
+         ('Jinja2', 'https://jinja.pocoo.org/'),
          )
 
 # Social widget
