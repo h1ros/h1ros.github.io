@@ -39,7 +39,7 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pelican-ipynb.markup', 'render_math']
+PLUGINS = ['pelican-ipynb.markup', 'render_math', 'ace_editor']
 
 
 NOTEBOOK_DIR = 'notebooks'
@@ -54,3 +54,13 @@ IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
 
 
 TYPOGRIFY = False
+
+
+# Ace Editor plugin
+MD_EXTENSIONS = {
+    'markdown.extensions.codehilite': {
+        'css_class': 'highlight',
+        'linenums': False,
+        'use_pygments': False
+    }
+}

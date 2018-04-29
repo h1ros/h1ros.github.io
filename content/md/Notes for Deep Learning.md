@@ -42,7 +42,7 @@ Activation: activation layer [Activations](https://keras.io/activations/)
   $$
   \begin{equation}f(x) =  \alpha  (e^{x} - 1)   \quad for \quad x < 0 \end{equation}
   $$
-
+$$x^2$$
 * selu: Scaled Exponential Linear Unit
 
 
