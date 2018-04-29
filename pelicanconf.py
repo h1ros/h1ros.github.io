@@ -39,7 +39,7 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pelican-ipynb.markup', 'render_math', 'ace_editor']
+PLUGINS = ['pelican-ipynb.markup', 'render_math']
 
 
 NOTEBOOK_DIR = 'notebooks'
@@ -54,6 +54,9 @@ IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
 
 
 TYPOGRIFY = False
+
+# Pelican Clean Blog 
+HEADER_COVER = 'asset/book-store-page-bookstore.jpg'
 
 
 # Ace Editor plugin
