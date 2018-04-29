@@ -46,6 +46,7 @@ NOTEBOOK_DIR = 'notebooks'
 CODE_DIR = 'notebooks'
 STATIC_PATHS = ['md']
 
+
 # Theme
 THEME = "themes/pelican-clean-blog"
 
@@ -60,7 +61,7 @@ HEADER_COVER = 'asset/book-store-page-bookstore.jpg'
 
 
 # Ace Editor plugin
-MD_EXTENSIONS = {
+MARKDOWN = {
     'markdown.extensions.codehilite': {
         'css_class': 'highlight',
         'linenums': False,

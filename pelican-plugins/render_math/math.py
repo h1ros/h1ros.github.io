@@ -264,8 +264,6 @@ def mathjax_for_markdown(pelicanobj, mathjax_script, mathjax_settings):
         if isinstance(pelicanobj.settings.get('MD_EXTENSIONS'), list): # pelican 3.6.3 and earlier
             pelicanobj.settings['MD_EXTENSIONS'].append(PelicanMathJaxExtension(config))
         else:
-            print type(pelicanobj.settings)
-            print pelicanobj.settings
             pelicanobj.settings['MARKDOWN'].setdefault('extensions', []).append(PelicanMathJaxExtension(config))
     except:
         sys.excepthook(*sys.exc_info())
