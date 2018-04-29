@@ -40,7 +40,7 @@ try:
 	MARKUP = ('md', 'ipynb')
 
 	PLUGIN_PATHS = ['pelican-plugins']
-	PLUGINS = ['pelican-ipynb.markup', 'render_math']
+	PLUGINS = ['pelican-ipynb.markup']
 
 
 	NOTEBOOK_DIR = 'notebooks'
