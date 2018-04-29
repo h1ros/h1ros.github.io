@@ -45,7 +45,7 @@ try:
 
 	NOTEBOOK_DIR = 'notebooks'
 	CODE_DIR = 'notebooks'
-	STATIC_PATHS = ['md']
+	STATIC_PATHS = ['md','images']
 
 
 	# Theme
