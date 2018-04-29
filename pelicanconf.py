@@ -58,7 +58,7 @@ try:
 	TYPOGRIFY = False
 
 	# Pelican Clean Blog 
-	HEADER_COVER = 'asset/book-store-page-bookstore.jpg'
+	HEADER_COVER = 'images/book-store-page-bookstore.jpg'
 
 
 	# Ace Editor plugin
