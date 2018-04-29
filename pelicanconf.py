@@ -39,11 +39,8 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['pelican-plugins']
-<<<<<<< HEAD
-PLUGINS = ['ipynb.markup']
-=======
 PLUGINS = ['ipynb.markup', 'render_math']
->>>>>>> 4373acc063c0e1b022f876a80b20494bbf6b47aa
+
 
 NOTEBOOK_DIR = 'notebooks'
 CODE_DIR = 'notebooks'
