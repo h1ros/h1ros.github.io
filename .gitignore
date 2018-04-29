@@ -104,4 +104,7 @@ venv.bak/
 .mypy_cache/
 
 # Pelican plugin
-pelican-plugins/
+pelican-plugins/*
+!pelican-plugins/pelican-ipynb/
+!pelican-plugins/render_math/
+
