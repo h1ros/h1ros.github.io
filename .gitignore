@@ -108,3 +108,6 @@ pelican-plugins/*
 !pelican-plugins/pelican-ipynb/
 !pelican-plugins/render_math/
 
+# Notes
+content/notes
+
