@@ -28,7 +28,8 @@ try:
 
 	# Social widget
 	SOCIAL = (('twitter', 'https://twitter.com/__h1r0__'),
-	          ('github', 'https://github.com/h1r03'),)
+	          ('github', 'https://github.com/h1r03'),
+	          ('Data Science Blog', 'https://www.fullstackpython.com/'),)
 				
 
 	          
@@ -52,7 +53,7 @@ try:
 	THEME = "themes/pelican-clean-blog"
 
 
-	IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
+	IGNORE_FILES = ['.#*', '.ipynb_checkpoints', 'notes']
 
 
 	TYPOGRIFY = True

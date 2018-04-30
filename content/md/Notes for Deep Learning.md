@@ -2,7 +2,7 @@ Title: Notes for Deep Learning
 Slug: 
 Date: 2018-04-28 09:00
 Category: python
-Tags: python deep-learning Keras
+Tags: python, deep-learning, Keras
 Author: h1r03
 Summary: Notes for Deep Learning
 
