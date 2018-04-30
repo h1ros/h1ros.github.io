@@ -55,7 +55,7 @@ try:
 	IGNORE_FILES = ['.#*', '.ipynb_checkpoints']
 
 
-	TYPOGRIFY = False
+	TYPOGRIFY = True
 
 	# Pelican Clean Blog 
 	HEADER_COVER = 'images/book-store-page-bookstore.jpg'
