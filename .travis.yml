@@ -3,9 +3,9 @@ install:
 - "pip install --upgrade pip"
 - "pip install pipenv"
 - "pipenv install --dev"
-- "pipenv shell"
+
 before_script:
-- pelican-themes -i ./themes/pelican-clean-blog
+- pipenv run pelican-themes -i ./themes/pelican-clean-blog
 script:
 - make setup
 - make publish github
