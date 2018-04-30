@@ -2,7 +2,7 @@ Title: Python Style Guide Cheatsheet
 Slug: 
 Date: 2018-04-21 12:00
 Category: python 
-Tags: python pep8 cheatsheet
+Tags: python, pep8, cheatsheet
 Author: h1r03
 Summary: Python Style Guide Cheatsheet 
 
