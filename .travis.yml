@@ -1,6 +1,7 @@
 language: python
 install:
 - "pip install --upgrade pip"
+- "pip install pipenv"
 - "pipenv install --dev"
 before_script:
 - pelican-themes -i ./themes/pelican-clean-blog
