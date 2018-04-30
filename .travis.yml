@@ -1,10 +1,9 @@
 language: python
 install:
-- conda create --name jupyter-blog --file requirements.txt
+- pip install -r requirements.txt
 before_script:
 - pelican-themes -i ./themes/pelican-clean-blog
 script:
-- source activate jupyter-blog
 - make publish github
 env:
   global:
