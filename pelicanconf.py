@@ -19,7 +19,7 @@ try:
 	TRANSLATION_FEED_ATOM = None
 	AUTHOR_FEED_ATOM = None
 	AUTHOR_FEED_RSS = None
-	#
+	
 	# Blogroll
 	LINKS = (('Pelican', 'https://getpelican.com/'),
 	         ('Python.org', 'https://python.org/'),
@@ -31,8 +31,11 @@ try:
 	          ('github', 'https://github.com/h1r03'),
 	          ('Data Science Blog', 'https://h1r03.github.io/'),)
 				
-
+	# Code Hight lights
+	COLOR_SCHEME_CSS = 'github.css'
 	          
+    # Google Analytics
+    GOOGLE_ANALYTICS = 'UA-118394131-1'
 	DEFAULT_PAGINATION = 10
 
 	# Uncomment following line if you want document-relative URLs when developing
