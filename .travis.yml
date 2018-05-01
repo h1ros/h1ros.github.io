@@ -1,12 +1,7 @@
 language: python
-init:
-- "pip install pipenv"
-- "pipenv install --dev"
-
-before_script:
-- pipenv run pelican-themes -i ./themes/pelican-clean-blog
 script:
 - make setup
+- pipenv run pelican-themes -i ./themes/pelican-clean-blog
 - make publish github
 env:
   global:
