@@ -1,8 +1,6 @@
 language: python
-install:
-- "pip install --upgrade pip"
+init:
 - "pip install pipenv"
-- "pipenv --three"
 - "pipenv install --dev"
 
 before_script:
