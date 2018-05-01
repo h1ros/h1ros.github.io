@@ -34,8 +34,8 @@ try:
 	# Code Hight lights
 	COLOR_SCHEME_CSS = 'github.css'
 	          
-    # Google Analytics
-    GOOGLE_ANALYTICS = 'UA-118394131-1'
+	# Google Analytics
+	GOOGLE_ANALYTICS = 'UA-118394131-1'
 	DEFAULT_PAGINATION = 10
 
 	# Uncomment following line if you want document-relative URLs when developing
