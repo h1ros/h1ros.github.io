@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 import logging
 try:
-	AUTHOR = 'h1r03'
+	AUTHOR = 'h1ros'
 	SITENAME = "Data Science Blog"
-	SITEURL = 'https://h1r03.github.io'
+	SITEURL = 'https://h1ros.github.io'
 
 	PATH = 'content'
 
@@ -28,8 +28,8 @@ try:
 
 	# Social widget
 	SOCIAL = (('twitter', 'https://twitter.com/__h1r0__'),
-	          ('github', 'https://github.com/h1r03'),
-	          ('Data Science Blog', 'https://h1r03.github.io/'),)
+	          ('github', 'https://github.com/h1ros'),
+	          ('Data Science Blog', 'https://h1ros.github.io/'),)
 				
 	# Code Hight lights
 	COLOR_SCHEME_CSS = 'github.css'
