@@ -75,8 +75,27 @@ Deep Learning Libraries:
 
 
 
+## Deep Learning Architecture
 
-## Visualization 
+* Residual Networks
+
+Residual Networks (ResNet) is the architecture that uses the shortcut path to add input $x$ to a processing block as $F(x) + x$ as below. 
+
+
+
+```mermaid
+graph LR
+
+input[input: x]--> p1["Process: F(x)"] 
+
+p1--> p2((+))
+
+input -->|input: x| p2
+p2 --> output["Output: F(x) + x"]
+
+```
+
+## Visualization
 
 * plot_model()
 
@@ -100,5 +119,62 @@ Deep Learning Libraries:
    3. Fully Connected Layer 
    4. LSTM later 
       1. tips: start with small layers​
+
+
+
+
+
+# Word Embedding
+
+
+
+https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
+
+
+
+small example of word embedding
+
+https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/
+
+
+
+Pre-training
+
+GloVe: Global Vectors for Word Representation - [link](https://nlp.stanford.edu/projects/glove/)
+
+adam: A method for Stochastic Optimization - [link](http://arxiv.org/abs/1412.6980)
+
+
+
+How to check tensorflow using gpu or cpu
+
+https://stackoverflow.com/questions/38009682/how-to-tell-if-tensorflow-is-using-gpu-acceleration-from-inside-python-shell
+
+
+
+
+
+## Learning Rate
+
+
+
+Author: Leslie Smith
+
+Technique: Pesky learning rate
+
+Paper:  [arxiv](https://arxiv.org/abs/1803.09820)
+
+
+
+stop the learnig rate before the minmum loss since the optimal point is acutally too much and can be oscilated. 
+
+Other technique:  [adam (adaptive moment estimation)](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+
+
+
+
+
+
+
 
 
