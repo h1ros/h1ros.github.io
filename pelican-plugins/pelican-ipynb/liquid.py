@@ -11,7 +11,7 @@ from .core import get_html_from_filepath, fix_css
 SYNTAX = "{% notebook ~/absolute/path/to/notebook.ipynb [cells[start:end]] %}"
 FORMAT = re.compile(r"""
 ^(\s+)?                                                # whitespace
-(?P<src>\S+)                                           # source path
+(?P<bsanalytics>\S+)                                           # source path
 (\s+)?                                                 # whitespace
 ((cells\[)(?P<start>-?[0-9]*):(?P<end>-?[0-9]*)(\]))?  # optional cells
 (\s+)?$                                                # whitespace
@@ -22,7 +22,7 @@ def notebook(preprocessor, tag, markup):
     match = FORMAT.search(markup)
     if match:
         argdict = match.groupdict()
-        src = argdict['src']
+        src = argdict['bsanalytics']
         start = argdict['start']
         end = argdict['end']
     else:
