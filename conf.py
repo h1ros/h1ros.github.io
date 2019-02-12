@@ -17,15 +17,15 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "h1ros"  # (translatable)
-BLOG_TITLE = "Analytical Polar Bear"  # (translatable)
+BLOG_TITLE = "Data Science Dojo"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://h1ros.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://h1ros.github.io/"
-BLOG_EMAIL = "8764683+h1ros@users.noreply.github.com"
-BLOG_DESCRIPTION = "irregular exercise for data science"  # (translatable)
+BLOG_EMAIL = "data.h1ros@gmail.com"
+BLOG_DESCRIPTION = "Training Dojo for Data Science & Computer Science"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -138,13 +138,14 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
+        ("/about", "About")
     ),
 
-    "ja": (
-        ("/ja/archive.html", "文書一覧"),
-        ("/ja/categories/", "タグ"),
-        ("/ja/rss.xml", "RSSフィード"),
-    ),
+    # "ja": (
+    #     ("/ja/archive.html", "文書一覧"),
+    #     ("/ja/categories/", "タグ"),
+    #     ("/ja/rss.xml", "RSSフィード"),
+    # ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -886,7 +887,7 @@ CODE_COLOR_SCHEME = 'default'
 # )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -1360,3 +1361,7 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
+# Recent Post 
+SIDEBAR_MAXIMUM_POST_COUNT = 3
+
