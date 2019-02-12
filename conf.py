@@ -354,7 +354,7 @@ COMPILERS = {
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
 # (translatable)
-# TAG_PATH = "categories"
+TAG_PATH = "categories"
 
 # By default, the list of tags is stored in
 #     output / TRANSLATION[lang] / TAG_PATH / index.html
@@ -416,8 +416,8 @@ HIDDEN_TAGS = ['mathjax']
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
 # (translatable)
-# CATEGORY_PATH = "categories"
-# CATEGORY_PREFIX = "cat_"
+CATEGORY_PATH = "categories"
+CATEGORY_PREFIX = ""
 
 # By default, the list of categories is stored in
 #     output / TRANSLATION[lang] / CATEGORY_PATH / index.html
@@ -507,7 +507,7 @@ HIDDEN_CATEGORIES = []
 
 # If ENABLE_AUTHOR_PAGES is set to True and there is more than one
 # author, author pages are generated.
-# ENABLE_AUTHOR_PAGES = True
+ENABLE_AUTHOR_PAGES = True
 
 # Path to author pages. Final locations are:
 # output / TRANSLATION[lang] / AUTHOR_PATH / index.html (list of authors)
@@ -1096,8 +1096,7 @@ SOCIAL_BUTTONS_CODE = """
 <!-- Social buttons -->
 <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more">Share</a>
-<li><a class="addthis_button_twitter"></a>
-</ul>
+<a class="addthis_button_twitter"></a>
 </div>
 <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
 <!-- End of social buttons -->
