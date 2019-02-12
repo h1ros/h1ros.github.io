@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "h1ros"  # (translatable)
-BLOG_TITLE = "Data Science Dojo"  # (translatable)
+BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://h1ros.github.io/"
@@ -25,7 +25,7 @@ SITE_URL = "https://h1ros.github.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://h1ros.github.io/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
-BLOG_DESCRIPTION = "Training Dojo for Data Science & Computer Science"  # (translatable)
+BLOG_DESCRIPTION = "Understand Data Science & Computer Science Step-by-step"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -138,7 +138,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
-        ("/about", "About")
+        ("/pages/about/index.html.", "About")
     ),
 
     # "ja": (
