@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io/</link><description>Understand Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Feb 2019 08:10:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io/</link><description>Understand Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Feb 2019 08:12:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -119,6 +119,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]&lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
 &lt;li&gt;Iterate over the array to find &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Flip a &lt;code&gt;K&lt;/code&gt; subarray unless Kth element is not beyond the array &lt;code&gt;A&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Back to 1 and continue.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;/div&gt;
