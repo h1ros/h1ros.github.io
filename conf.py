@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "h1ros"  # (translatable)
-BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
+BLOG_TITLE = "Step-by-step Data Science & Computer Science"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://h1ros.github.io/"
@@ -137,8 +137,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
-        ("/pages/about/index.html.", "About")
+        ("/rss.xml", "RSS feed")
     ),
 
     # "ja": (
@@ -181,7 +180,7 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': 'Tags'
+        'sidebar': ''
     }
 }
 
