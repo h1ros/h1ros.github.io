@@ -25,7 +25,7 @@ SITE_URL = "https://h1ros.github.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://h1ros.github.io/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
-BLOG_DESCRIPTION = "Understand Data Science & Computer Science Step-by-step"  # (translatable)
+BLOG_DESCRIPTION = "Data Science & Computer Science Step-by-step"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -135,6 +135,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/", "About"),
+        ("/posts/", "Posts"),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed")
@@ -159,30 +161,30 @@ THEME = "maupassant"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#656869'
+THEME_COLOR = '#f9ad20'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
 #                     featured_large_image_on_mobile featured_strip_html sidebar
 # bootstrap4 supports: navbar_light (defaults to False)
-THEME_CONFIG = {
-    DEFAULT_LANG: {
-        # Show the latest featured post in a large box, with the previewimage as its background.
-        'featured_large': False,
-        # Show the first (remaining) two featured posts in small boxes.
-        'featured_small': False,
-        # Show featured posts on mobile.
-        'featured_on_mobile': True,
-        # Show image in `featured_large` on mobile.
-        # `featured_small` displays them only on desktop.
-        'featured_large_image_on_mobile': True,
-        # Strip HTML from featured post text.
-        'featured_strip_html': False,
-        # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
-    }
-}
+# THEME_CONFIG = {
+#     DEFAULT_LANG: {
+#         # Show the latest featured post in a large box, with the previewimage as its background.
+#         'featured_large': False,
+#         # Show the first (remaining) two featured posts in small boxes.
+#         'featured_small': False,
+#         # Show featured posts on mobile.
+#         'featured_on_mobile': True,
+#         # Show image in `featured_large` on mobile.
+#         # `featured_small` displays them only on desktop.
+#         'featured_large_image_on_mobile': True,
+#         # Strip HTML from featured post text.
+#         'featured_strip_html': False,
+#         # Contents of the sidebar, If empty, the sidebar is not displayed.
+#         'sidebar': ''
+#     }
+# }
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
@@ -880,10 +882,10 @@ CODE_COLOR_SCHEME = 'borland'
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# )
+FAVICONS = (
+    ("icon", "favicon_package_v0.16/favicon-16x16.png", "16x16"),
+    ("icon", "favicon_package_v0.16/mstile-150x150.png", "150x150"),
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 INDEX_TEASERS = True
@@ -1349,7 +1351,10 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+    'default_header_image': 'https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg',
+    'blog_header_image': 'https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg'
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
