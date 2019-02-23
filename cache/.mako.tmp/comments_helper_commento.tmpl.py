@@ -5,9 +5,13 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
+<<<<<<< HEAD
 _modified_time = 1550201057.630344
+=======
+_modified_time = 1550909607.499661
+>>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
 _enable_loop = True
-_template_filename = '/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl'
+_template_filename = '/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl'
 _template_uri = 'comments_helper_commento.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['comment_form', 'comment_link', 'comment_link_script']
@@ -63,6 +67,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl", "uri": "comments_helper_commento.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 4, "22": 7, "23": 19, "29": 2, "33": 2, "39": 6, "43": 6, "49": 10, "54": 10, "55": 11, "56": 11, "57": 15, "58": 15, "64": 58}}
+{"filename": "/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl", "uri": "comments_helper_commento.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 4, "22": 7, "23": 19, "29": 2, "33": 2, "39": 6, "43": 6, "49": 10, "54": 10, "55": 11, "56": 11, "57": 15, "58": 15, "64": 58}}
 __M_END_METADATA
 """
