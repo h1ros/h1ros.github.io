@@ -5,13 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
-_modified_time = 1550201057.82775
-=======
-_modified_time = 1550909607.1864278
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
+_modified_time = 1550943386.565152
 _enable_loop = True
-_template_filename = '/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/listing.tmpl'
+_template_filename = '/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/listing.tmpl'
 _template_uri = 'listing.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['content']
@@ -34,29 +30,16 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-<<<<<<< HEAD
-        code = context.get('code', UNDEFINED)
-        def content():
-            return render_content(context._locals(__M_locals))
         title = context.get('title', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        files = context.get('files', UNDEFINED)
-        ui = _mako_get_namespace(context, 'ui')
         crumbs = context.get('crumbs', UNDEFINED)
         folders = context.get('folders', UNDEFINED)
         source_link = context.get('source_link', UNDEFINED)
-=======
-        ui = _mako_get_namespace(context, 'ui')
-        title = context.get('title', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
-        code = context.get('code', UNDEFINED)
-        folders = context.get('folders', UNDEFINED)
-        source_link = context.get('source_link', UNDEFINED)
-        crumbs = context.get('crumbs', UNDEFINED)
+        files = context.get('files', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
-        files = context.get('files', UNDEFINED)
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
+        code = context.get('code', UNDEFINED)
+        ui = _mako_get_namespace(context, 'ui')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -73,29 +56,16 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-<<<<<<< HEAD
-        code = context.get('code', UNDEFINED)
-        def content():
-            return render_content(context)
         title = context.get('title', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        files = context.get('files', UNDEFINED)
-        ui = _mako_get_namespace(context, 'ui')
         crumbs = context.get('crumbs', UNDEFINED)
         folders = context.get('folders', UNDEFINED)
         source_link = context.get('source_link', UNDEFINED)
-=======
-        ui = _mako_get_namespace(context, 'ui')
-        title = context.get('title', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
-        code = context.get('code', UNDEFINED)
-        folders = context.get('folders', UNDEFINED)
-        source_link = context.get('source_link', UNDEFINED)
-        crumbs = context.get('crumbs', UNDEFINED)
+        files = context.get('files', UNDEFINED)
         def content():
             return render_content(context)
-        files = context.get('files', UNDEFINED)
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
+        code = context.get('code', UNDEFINED)
+        ui = _mako_get_namespace(context, 'ui')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer(str(ui.breadcrumbs(crumbs)))
@@ -135,6 +105,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "29": 0, "44": 2, "45": 3, "50": 24, "56": 4, "70": 4, "71": 5, "72": 5, "73": 6, "74": 7, "75": 8, "76": 9, "77": 9, "78": 9, "79": 9, "80": 9, "81": 11, "82": 12, "83": 12, "84": 12, "85": 12, "86": 12, "87": 14, "88": 16, "89": 17, "90": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 21, "99": 22, "100": 22, "106": 100}}
+{"filename": "/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "29": 0, "44": 2, "45": 3, "50": 24, "56": 4, "70": 4, "71": 5, "72": 5, "73": 6, "74": 7, "75": 8, "76": 9, "77": 9, "78": 9, "79": 9, "80": 9, "81": 11, "82": 12, "83": 12, "84": 12, "85": 12, "86": 12, "87": 14, "88": 16, "89": 17, "90": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 21, "99": 22, "100": 22, "106": 100}}
 __M_END_METADATA
 """

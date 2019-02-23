@@ -1,7 +1,6 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Problem-setting">Problem setting<a class="anchor-link" href="#Problem-setting">&#182;</a></h1><p>This problem "Minimum Number of K Consecutive Bit Flips" is one of the <code>hard</code> problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.</p>
 
@@ -17,8 +16,7 @@ Note:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Example 1:</p>
 
@@ -30,8 +28,7 @@ Explanation: Flip A[0], then flip A[2].</code></pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Example 2:</p>
 
@@ -43,8 +40,7 @@ Explanation: No matter how we flip subarrays of size 2, we can't make the array 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Example 3:</p>
 
@@ -59,8 +55,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="#Solution-from-Huoran-Li">&#182;</a></h1><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
 
@@ -112,8 +107,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="#Step-by-step-understanding">&#182;</a></h1><p>Overall solution:</p>
 <ol>
@@ -126,8 +120,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Deque">Deque<a class="anchor-link" href="#Deque">&#182;</a></h2><p>One of the key data type used in this solution is called <code>deque</code> from <code>collection</code> module. Let's see the example how to use <code>deque</code>.</p>
 <p>Deque is a list-like object but suitable for fast appends and pops.</p>
@@ -156,7 +149,7 @@ reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;remove(c): </span><span class="si">{d}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -166,7 +159,7 @@ reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -200,7 +193,7 @@ remove(c): deque([&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;remove(c): </span><span class="si">{l}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -210,7 +203,7 @@ remove(c): deque([&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -229,8 +222,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="deque.popleft">deque.popleft<a class="anchor-link" href="#deque.popleft">&#182;</a></h3><p><code>deque.popleft</code> removes and returns the leftmost element. The same function of <code>pop</code> but affect from left side, not right.</p>
 
@@ -238,8 +230,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="#First-for-Loop">&#182;</a></h2><p><code>n</code> is the length of an given array <code>A</code>, and <code>k</code> is the maximum number of the length of a sub array that we can flip.</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -270,8 +261,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example 3,</p>
 
@@ -288,14 +278,13 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 <span class="n">K</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>i</code> will be ranged around:</p>
 
@@ -310,7 +299,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">&#39;{[i for i in range(n - K + 1)]}&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -320,7 +309,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -376,7 +365,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
             <span class="n">mark</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -386,7 +375,7 @@ remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#3
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -435,8 +424,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Second-for-loop">Second <code>for</code> loop<a class="anchor-link" href="#Second-for-loop">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
@@ -461,7 +449,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">&#39;{[i for i in range(n - K + 1, n)]}&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -471,7 +459,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -512,7 +500,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 <span class="c1"># return ans</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -522,7 +510,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">

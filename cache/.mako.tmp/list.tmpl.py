@@ -5,11 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
-_modified_time = 1550201057.464566
-=======
-_modified_time = 1550909607.325204
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
+_modified_time = 1550943386.7854788
 _enable_loop = True
 _template_filename = 'themes/maupassant/templates/list.tmpl'
 _template_uri = 'list.tmpl'
@@ -36,21 +32,12 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-<<<<<<< HEAD
-        def content():
-            return render_content(context._locals(__M_locals))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
-=======
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        items = _import_ns.get('items', context.get('items', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context._locals(__M_locals))
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n\n')
@@ -69,21 +56,12 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-<<<<<<< HEAD
-        def content():
-            return render_content(context)
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
-=======
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        items = _import_ns.get('items', context.get('items', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context)
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
         __M_writer = context.writer()
         __M_writer('\n<div class="post-archive">\n    <header>\n        <h2>')
         __M_writer(filters.html_escape(str(title)))

@@ -5,13 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
-_modified_time = 1550201057.836823
-=======
-_modified_time = 1550909607.208128
->>>>>>> 6021eb951e19a33d62c5f535c3e0c89f3a658d89
+_modified_time = 1550943386.594953
 _enable_loop = True
-_template_filename = '/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl'
+_template_filename = '/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl'
 _template_uri = 'ui_helper.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['breadcrumbs']
@@ -56,6 +52,6 @@ def render_breadcrumbs(context,crumbs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl", "uri": "ui_helper.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 18, "27": 2, "32": 2, "33": 3, "34": 4, "35": 6, "36": 7, "37": 8, "38": 9, "39": 9, "40": 9, "41": 10, "42": 11, "43": 11, "44": 11, "45": 11, "46": 11, "47": 15, "53": 47}}
+{"filename": "/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl", "uri": "ui_helper.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 18, "27": 2, "32": 2, "33": 3, "34": 4, "35": 6, "36": 7, "37": 8, "38": 9, "39": 9, "40": 9, "41": 10, "42": 11, "43": 11, "44": 11, "45": 11, "46": 11, "47": 15, "53": 47}}
 __M_END_METADATA
 """

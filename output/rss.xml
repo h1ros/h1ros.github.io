@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io/</link><description>Understand Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Feb 2019 08:12:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io/</link><description>Understand Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Feb 2019 17:36:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Problem-setting"&gt;Problem setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Problem-setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This problem "Minimum Number of K Consecutive Bit Flips" is one of the &lt;code&gt;hard&lt;/code&gt; problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.&lt;/p&gt;
 
@@ -17,8 +16,7 @@ Note:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Example 1:&lt;/p&gt;
 
@@ -30,8 +28,7 @@ Explanation: Flip A[0], then flip A[2].&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Example 2:&lt;/p&gt;
 
@@ -43,8 +40,7 @@ Explanation: No matter how we flip subarrays of size 2, we can't make the array 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Example 3:&lt;/p&gt;
 
@@ -59,8 +55,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Solution-from-Huoran-Li"&gt;Solution from &lt;a href="https://leetcode.com/lihuoran/"&gt;Huoran Li&lt;/a&gt;&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Solution-from-Huoran-Li"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt;
 
@@ -112,8 +107,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Step-by-step-understanding"&gt;Step-by-step understanding&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Step-by-step-understanding"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Overall solution:&lt;/p&gt;
 &lt;ol&gt;
@@ -126,8 +120,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Deque"&gt;Deque&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Deque"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;One of the key data type used in this solution is called &lt;code&gt;deque&lt;/code&gt; from &lt;code&gt;collection&lt;/code&gt; module. Let's see the example how to use &lt;code&gt;deque&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Deque is a list-like object but suitable for fast appends and pops.&lt;/p&gt;
@@ -156,7 +149,7 @@ reference: &lt;a href="https://pymotw.com/2/collections/deque.html"&gt;https://p
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'remove(c): &lt;/span&gt;&lt;span class="si"&gt;{d}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -166,7 +159,7 @@ reference: &lt;a href="https://pymotw.com/2/collections/deque.html"&gt;https://p
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -200,7 +193,7 @@ remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'remove(c): &lt;/span&gt;&lt;span class="si"&gt;{l}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -210,7 +203,7 @@ remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -229,8 +222,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="deque.popleft"&gt;deque.popleft&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#deque.popleft"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;deque.popleft&lt;/code&gt; removes and returns the leftmost element. The same function of &lt;code&gt;pop&lt;/code&gt; but affect from left side, not right.&lt;/p&gt;
 
@@ -238,8 +230,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="First-for-Loop"&gt;First &lt;code&gt;for&lt;/code&gt; Loop&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#First-for-Loop"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;n&lt;/code&gt; is the length of an given array &lt;code&gt;A&lt;/code&gt;, and &lt;code&gt;k&lt;/code&gt; is the maximum number of the length of a sub array that we can flip.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -270,8 +261,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;For example 3,&lt;/p&gt;
 
@@ -288,14 +278,13 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;code&gt;i&lt;/code&gt; will be ranged around:&lt;/p&gt;
 
@@ -310,7 +299,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'{[i for i in range(n - K + 1)]}'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -320,7 +309,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[53]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[53]:&lt;/div&gt;
 
 
 
@@ -376,7 +365,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
             &lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -386,7 +375,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -435,8 +424,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Second-for-loop"&gt;Second &lt;code&gt;for&lt;/code&gt; loop&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Second-for-loop"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;cnt&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -461,7 +449,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'{[i for i in range(n - K + 1, n)]}'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -471,7 +459,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[48]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[48]:&lt;/div&gt;
 
 
 
@@ -512,7 +500,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 &lt;span class="c1"&gt;# return ans&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -522,7 +510,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
