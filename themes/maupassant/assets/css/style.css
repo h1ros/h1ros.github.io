@@ -1,14 +1,14 @@
 body {
     background-color: #fff;
     color: #444;
-    font-family: 'TIBch', 'Classic Grotesque W01', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, sans-serif;
+    font-family: 'Robota', 'Classic Grotesque W01', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
     line-height: 1.6em
 }
 @font-face {
-    font-family: 'satisfy';
+    font-family: 'Robota';
     font-style: normal;
     font-weight: 400;
     src: local('satisfy'), local('satisfy'), url(fonts/satisfy.woff) format('woff')
@@ -76,6 +76,7 @@ a:focus {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    height: 50;
 }
 #header .site-name #logo {
     color: #666;
