@@ -1,82 +1,9 @@
-<!DOCTYPE html>
-<html prefix="fb: http://ogp.me/ns/fb# " lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="description" content="Understand Data Science &amp; Computer Science Step-by-step">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Step-by-step Data Science</title>
-<link href="assets/css/theme.css" type="text/css" rel="stylesheet">
-<link href="assets/css/pure.css" type="text/css" rel="stylesheet">
-<link href="assets/css/style.css" type="text/css" rel="stylesheet">
-<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#656869">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://h1ros.github.io/">
-<meta property="fb:app_id" content="?">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-134273341-1');
-</script><link rel="prefetch" href="posts/995-minimum-number-of-k-consecutive-bit-flips/" type="text/html">
-</head>
-<body>
-<div class="body_container">
-    <div id="header">
-        <div class="site-name">
-                <h1>Step-by-step Data Science</h1>
-        </div>
-
-        <div id="nav-menu">
-            <div class="bitcron_nav_container">
-                <div class="bitcron_nav">
-                    <div class="site_nav_wrap">
-                        <ul class="site_nav sm sm-base">
-<li><a href="archive.html" class="nav__item">Archive</a></li>
-            <li><a href="categories/" class="nav__item">Tags</a></li>
-            <li><a href="rss.xml" class="nav__item">RSS feed</a></li>
-            <li><a href="pages/about/index.html." class="nav__item">About</a></li>
-
-                            
-                        </ul>
-<div class="clear clear_nav_inline_end"></div>
-                    </div>
-                </div>
-                <div class="clear clear_nav_end"></div>
-            </div>
-        </div>
-    </div>
-    <div id="layout">
-        <div class="pure-g">
-            <div class=" pure-u-24-24 pure-u-sm-24-24 pure-u-md-18-24 pure_cell">
-                <div class="content_container">
-                    <!--Body content-->
-                    <div class="row">
-                        
-                        
-
-    
-    <div class="post">
-        <h2 class="post-title"><a href="posts/995-minimum-number-of-k-consecutive-bit-flips/">995. Minimum Number of K Consecutive Bit Flips</a></h2>
-        <div class="post-meta">
-            2019-02-22 22:11
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-setting">Problem setting<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Problem-setting">¶</a>
-</h2>
-<p>This problem "Minimum Number of K Consecutive Bit Flips" is one of the <code>hard</code> problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.</p>
+<h1 id="Problem-setting">Problem setting<a class="anchor-link" href="#Problem-setting">&#182;</a></h1><p>This problem "Minimum Number of K Consecutive Bit Flips" is one of the <code>hard</code> problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.</p>
 
 <pre><code>Given an array A of non-negative integers, the array is squareful if for every pair of adjacent elements, their sum is a perfect square.
 
@@ -89,8 +16,7 @@ Note:
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -103,8 +29,7 @@ Explanation: Flip A[0], then flip A[2].</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -117,8 +42,7 @@ Explanation: No matter how we flip subarrays of size 2, we can't make the array 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -134,17 +58,14 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Solution-from-Huoran-Li">¶</a>
-</h2>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+<h1 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="#Solution-from-Huoran-Li">&#182;</a></h1><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
 
 <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">minKBitFlips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="s1">'List[int]'</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'int'</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minKBitFlips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="s1">&#39;List[int]&#39;</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;int&#39;</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">A</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
         <span class="n">k</span> <span class="o">=</span> <span class="n">K</span>
@@ -190,35 +111,26 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Step-by-step-understanding">¶</a>
-</h2>
-<p>Overall solution:</p>
+<h1 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="#Step-by-step-understanding">&#182;</a></h1><p>Overall solution:</p>
 <ol>
-<li>Iterate over the array to find <code>0</code>
-</li>
-<li>Flip a <code>K</code> subarray unless Kth element is not beyond the array <code>A</code>
-</li>
+<li>Iterate over the array to find <code>0</code></li>
+<li>Flip a <code>K</code> subarray unless Kth element is not beyond the array <code>A</code></li>
 </ol>
+
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deque">Deque<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Deque">¶</a>
-</h3>
-<p>One of the key data type used in this solution is called <code>deque</code> from <code>collection</code> module. Let's see the example how to use <code>deque</code>.</p>
+<h2 id="Deque">Deque<a class="anchor-link" href="#Deque">&#182;</a></h2><p>One of the key data type used in this solution is called <code>deque</code> from <code>collection</code> module. Let's see the example how to use <code>deque</code>.</p>
 <p>Deque is a list-like object but suitable for fast appends and pops.</p>
-<h4 id="Deque-vs-List-Comparison">Deque vs List Comparison<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Deque-vs-List-Comparison">¶</a>
-</h4>
-<p>As you can see below, deque and list has quite similar usage. 
+<h3 id="Deque-vs-List-Comparison">Deque vs List Comparison<a class="anchor-link" href="#Deque-vs-List-Comparison">&#182;</a></h3><p>As you can see below, deque and list has quite similar usage. 
 reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.com/2/collections/deque.html</a></p>
 
 </div>
@@ -226,21 +138,21 @@ reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="s1">'abcdefg'</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'=== Deque ==='</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Deque: </span><span class="si">{d}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Length: {len(d)}'</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Left end: </span><span class="si">{d[0]}</span><span class="s1">'</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Right end: </span><span class="si">{d[-1]}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=== Deque ===&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Deque: </span><span class="si">{d}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Length: {len(d)}&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Left end: </span><span class="si">{d[0]}</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Right end: </span><span class="si">{d[-1]}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="n">d</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'c'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'remove(c): </span><span class="si">{d}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;remove(c): </span><span class="si">{d}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -258,11 +170,11 @@ reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>=== Deque ===
-Deque: deque(['a', 'b', 'c', 'd', 'e', 'f', 'g'])
+Deque: deque([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
 Length: 7
 Left end: a
 Right end: g
-remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
+remove(c): deque([&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
 </pre>
 </div>
 </div>
@@ -273,18 +185,18 @@ remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'=== List ==='</span><span class="p">)</span>
-<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">'abcdefg'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=== List ===&#39;</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'List: </span><span class="si">{l}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Length: {len(l)}'</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Left end: </span><span class="si">{l[0]}</span><span class="s1">'</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Right end: </span><span class="si">{l[-1]}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'c'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'remove(c): </span><span class="si">{l}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;List: </span><span class="si">{l}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Length: {len(l)}&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Left end: </span><span class="si">{l[0]}</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Right end: </span><span class="si">{l[-1]}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;remove(c): </span><span class="si">{l}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -302,11 +214,11 @@ remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>=== List ===
-List: ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+List: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
 Length: 7
 Left end: a
 Right end: g
-remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
+remove(c): [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
 </pre>
 </div>
 </div>
@@ -315,26 +227,20 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="deque.popleft">deque.popleft<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#deque.popleft">¶</a>
-</h4>
-<p><code>deque.popleft</code> removes and returns the leftmost element. The same function of <code>pop</code> but affect from left side, not right.</p>
+<h3 id="deque.popleft">deque.popleft<a class="anchor-link" href="#deque.popleft">&#182;</a></h3><p><code>deque.popleft</code> removes and returns the leftmost element. The same function of <code>pop</code> but affect from left side, not right.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#First-for-Loop">¶</a>
-</h3>
-<p><code>n</code> is the length of an given array <code>A</code>, and <code>k</code> is the maximum number of the length of a sub array that we can flip.</p>
+<h2 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="#First-for-Loop">&#182;</a></h2><p><code>n</code> is the length of an given array <code>A</code>, and <code>k</code> is the maximum number of the length of a sub array that we can flip.</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
         <span class="n">cnt</span> <span class="o">-=</span> <span class="mi">1</span>
@@ -362,8 +268,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -374,7 +279,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [52]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -387,8 +292,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -399,10 +303,10 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [53]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">'{[i for i in range(n - K + 1)]}'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">&#39;{[i for i in range(n - K + 1)]}&#39;</span>
 </pre></div>
 
 </div>
@@ -421,7 +325,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>'[0, 1, 2, 3, 4, 5]'</pre>
+<pre>&#39;[0, 1, 2, 3, 4, 5]&#39;</pre>
 </div>
 
 </div>
@@ -432,7 +336,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [54]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
@@ -442,9 +346,9 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 <span class="n">mark</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'i: </span><span class="si">{i}</span><span class="se">\n</span><span class="s1">cnt: </span><span class="si">{cnt}</span><span class="se">\n</span><span class="s1">ans: </span><span class="si">{ans}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'deque: </span><span class="si">{mark}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'A: </span><span class="si">{a}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;i: </span><span class="si">{i}</span><span class="se">\n</span><span class="s1">cnt: </span><span class="si">{cnt}</span><span class="se">\n</span><span class="s1">ans: </span><span class="si">{ans}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;deque: </span><span class="si">{mark}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;A: </span><span class="si">{a}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
     
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
@@ -529,14 +433,11 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Second-for-loop">Second <code>for</code> loop<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Second-for-loop">¶</a>
-</h3>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<h2 id="Second-for-loop">Second <code>for</code> loop<a class="anchor-link" href="#Second-for-loop">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
         <span class="n">cnt</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="n">mark</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
@@ -553,10 +454,10 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [48]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">'{[i for i in range(n - K + 1, n)]}'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="s1">&#39;{[i for i in range(n - K + 1, n)]}&#39;</span>
 </pre></div>
 
 </div>
@@ -575,7 +476,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>'[6, 7]'</pre>
+<pre>&#39;[6, 7]&#39;</pre>
 </div>
 
 </div>
@@ -586,14 +487,14 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [55]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Second For Loop</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'i: </span><span class="si">{i}</span><span class="se">\n</span><span class="s1">cnt: </span><span class="si">{cnt}</span><span class="se">\n</span><span class="s1">ans: </span><span class="si">{ans}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'deque: </span><span class="si">{mark}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'A: </span><span class="si">{a}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;i: </span><span class="si">{i}</span><span class="se">\n</span><span class="s1">cnt: </span><span class="si">{cnt}</span><span class="se">\n</span><span class="s1">ans: </span><span class="si">{ans}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;deque: </span><span class="si">{mark}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;A: </span><span class="si">{a}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
     
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
@@ -602,11 +503,11 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 
     <span class="k">if</span> <span class="n">cnt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="c1">#         return -1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'return: -1'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;return: -1&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">cnt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'return: -1'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;return: -1&#39;</span><span class="p">)</span>
 <span class="c1">#         return -1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'return: </span><span class="si">{ans}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;return: </span><span class="si">{ans}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="c1"># return ans</span>
 </pre></div>
 
@@ -645,237 +546,5 @@ return: 3
 </div>
 
 </div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/995-minimum-number-of-k-consecutive-bit-flips/">
+ 
 
-
-        </span></p>
-</div>
-    </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/990-satisfiability-of-equality-equations/">990 Satisfiability of Equality Equations</a></h2>
-        <div class="post-meta">
-            2019-02-11 22:13
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="990.-Satisfiability-of-Equality-Equations">990. Satisfiability of Equality Equations<a class="anchor-link" href="posts/990-satisfiability-of-equality-equations/#990.-Satisfiability-of-Equality-Equations">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Porblem-statement">Porblem statement<a class="anchor-link" href="posts/990-satisfiability-of-equality-equations/#Porblem-statement">¶</a>
-</h3>
-<p>Given an array equations of strings that represent relationships between variables, each string <code>equations[i]</code> has length <code>4</code> and takes one of two different forms: <code>"a==b"</code> or <code>"a!=b"</code>.  Here, <code>a</code> and <code>b</code> are lowercase letters (not necessarily different) that represent one-letter variable names.</p>
-<p>Return <code>true</code> if and only if it is possible to assign integers to variable names so as to satisfy all the given equations.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/990-satisfiability-of-equality-equations/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/990-satisfiability-of-equality-equations/">
-
-
-        </span></p>
-</div>
-    </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/Coding%20Problem/">998 Smallest String Starting From Leaf</a></h2>
-        <div class="post-meta">
-            2019-02-03 22:43
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="988-Smallest-String-Starting-From-Leaf">988 Smallest String Starting From Leaf<a class="anchor-link" href="posts/Coding%20Problem/#988-Smallest-String-Starting-From-Leaf">¶</a>
-</h2>
-<p>The 2nd problem in Weekly Contest 122 is <code>Smallest String Starting From Leaf</code></p>
-<p>Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.</p>
-<p>Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.</p>
-<p>(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)
-.. TEASER_END</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/Coding%20Problem/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/Coding%20Problem/">
-
-
-        </span></p>
-</div>
-    </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/us-census-in-2014/">US Census in 2014</a></h2>
-        <div class="post-meta">
-            2019-02-03 22:41
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="US-Census-Data-Analysis-(Census-Data-2014)">US Census Data Analysis (Census Data 2014)<a class="anchor-link" href="posts/us-census-in-2014/#US-Census-Data-Analysis-(Census-Data-2014)">¶</a>
-</h2>
-<h2 id="Reference">Reference<a class="anchor-link" href="posts/us-census-in-2014/#Reference">¶</a>
-</h2>
-<ul>
-<li><a href="https://github.com/benhamner/2016-us-election">github - benhamner/2016-us-election</a></li>
-</ul>
-<h3 id="Data-Source">Data Source<a class="anchor-link" href="posts/us-census-in-2014/#Data-Source">¶</a>
-</h3>
-<ul>
-<li>
-<p><a href="http://www.presidency.ucsb.edu/2016_election.php">US Presidency Project</a></p>
-</li>
-<li>
-<p><a href="https://www.census.gov/library/publications/2015/demo/p20-577.html">Who Votes? Congressional Elections and the American Electorate: 1978–2014</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/us-census-in-2014/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/us-census-in-2014/">
-
-
-        </span></p>
-</div>
-    </div>
-
-
-
-        
-<div id="fb-root"></div>
-<script>
-    // thank lxml for this
-    $('.fb-comments-count').each(function(i, obj) {
-        var url = obj.attributes['data-url'].value;
-        // change here if you dislike the default way of displaying
-        // this
-        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
-    });
-
-  window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '?',
-      status     : true,
-      xfbml      : true
-    });
-
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/all.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script>
-</div>
-                <!--End of body content-->
-                <div style="clear:both;height:0;"></div>
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-
-        <div class=" pure-u-6-24 pure_cell">
-            <div id="sidebar">
-                <div class="widget">
-                    <div id="search_bar">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="footer">
-        Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-        
-    </div>
-
-    <!--FIXME: put these somewhere                            -->
-    <!--%if len(translations) > 1:-->
-    <!--<li>
-</li>-->
-    <!--%endif-->
-    <!--% if show_sourcelink:-->
-    <!---->
-    <!--%endif-->
-    <link href="assets/css/duoshuo.css" type="text/css" rel="stylesheet">
-<script src="assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-</div>
-<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
-</div>
-</div>
-</body>
-</html>

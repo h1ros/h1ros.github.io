@@ -2,26 +2,32 @@
 <html prefix="fb: http://ogp.me/ns/fb# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Understand Data Science &amp; Computer Science Step-by-step">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Step-by-step Data Science</title>
-<link href="assets/css/theme.css" type="text/css" rel="stylesheet">
-<link href="assets/css/pure.css" type="text/css" rel="stylesheet">
-<link href="assets/css/style.css" type="text/css" rel="stylesheet">
-<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<title>995. Minimum Number of K Consecutive Bit Flips | Step-by-step Data Science</title>
+<link href="../../assets/css/theme.css" type="text/css" rel="stylesheet">
+<link href="../../assets/css/pure.css" type="text/css" rel="stylesheet">
+<link href="../../assets/css/style.css" type="text/css" rel="stylesheet">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#656869">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://h1ros.github.io/">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/">
 <meta property="fb:app_id" content="?">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="prefetch" href="posts/995-minimum-number-of-k-consecutive-bit-flips/" type="text/html">
+</script><meta name="author" content="h1ros">
+<link rel="prev" href="../990-satisfiability-of-equality-equations/" title="990 Satisfiability of Equality Equations" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science">
+<meta property="og:title" content="995. Minimum Number of K Consecutive Bit Flips">
+<meta property="og:url" content="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/">
+<meta property="og:description" content='Problem setting¶This problem "Minimum Number of K Consecutive Bit Flips" is one of the hard problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me revi'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-02-22T22:11:59-08:00">
 </head>
 <body>
 <div class="body_container">
@@ -35,10 +41,10 @@
                 <div class="bitcron_nav">
                     <div class="site_nav_wrap">
                         <ul class="site_nav sm sm-base">
-<li><a href="archive.html" class="nav__item">Archive</a></li>
-            <li><a href="categories/" class="nav__item">Tags</a></li>
-            <li><a href="rss.xml" class="nav__item">RSS feed</a></li>
-            <li><a href="pages/about/index.html." class="nav__item">About</a></li>
+<li><a href="../../archive.html" class="nav__item">Archive</a></li>
+            <li><a href="../../categories/" class="nav__item">Tags</a></li>
+            <li><a href="../../rss.xml" class="nav__item">RSS feed</a></li>
+            <li><a href="../../pages/about/index.html." class="nav__item">About</a></li>
 
                             
                         </ul>
@@ -57,24 +63,17 @@
                     <div class="row">
                         
                         
-
-    
-    <div class="post">
-        <h2 class="post-title"><a href="posts/995-minimum-number-of-k-consecutive-bit-flips/">995. Minimum Number of K Consecutive Bit Flips</a></h2>
-        <div class="post-meta">
-            2019-02-22 22:11
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
+<div class="post post-page">
+    <h1 class="post-title">995. Minimum Number of K Consecutive Bit Flips</h1>
+    <div class="post-meta">2019-02-22 22:11</div>
+    <div class="post-content">
+        <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-setting">Problem setting<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Problem-setting">¶</a>
+<h2 id="Problem-setting">Problem setting<a class="anchor-link" href="#Problem-setting">¶</a>
 </h2>
 <p>This problem "Minimum Number of K Consecutive Bit Flips" is one of the <code>hard</code> problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.</p>
 
@@ -139,7 +138,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Solution-from-Huoran-Li">¶</a>
+<h2 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="#Solution-from-Huoran-Li">¶</a>
 </h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
 
@@ -195,7 +194,7 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Step-by-step-understanding">¶</a>
+<h2 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="#Step-by-step-understanding">¶</a>
 </h2>
 <p>Overall solution:</p>
 <ol>
@@ -212,11 +211,11 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deque">Deque<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Deque">¶</a>
+<h3 id="Deque">Deque<a class="anchor-link" href="#Deque">¶</a>
 </h3>
 <p>One of the key data type used in this solution is called <code>deque</code> from <code>collection</code> module. Let's see the example how to use <code>deque</code>.</p>
 <p>Deque is a list-like object but suitable for fast appends and pops.</p>
-<h4 id="Deque-vs-List-Comparison">Deque vs List Comparison<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Deque-vs-List-Comparison">¶</a>
+<h4 id="Deque-vs-List-Comparison">Deque vs List Comparison<a class="anchor-link" href="#Deque-vs-List-Comparison">¶</a>
 </h4>
 <p>As you can see below, deque and list has quite similar usage. 
 reference: <a href="https://pymotw.com/2/collections/deque.html">https://pymotw.com/2/collections/deque.html</a></p>
@@ -320,7 +319,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="deque.popleft">deque.popleft<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#deque.popleft">¶</a>
+<h4 id="deque.popleft">deque.popleft<a class="anchor-link" href="#deque.popleft">¶</a>
 </h4>
 <p><code>deque.popleft</code> removes and returns the leftmost element. The same function of <code>pop</code> but affect from left side, not right.</p>
 
@@ -332,7 +331,7 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#First-for-Loop">¶</a>
+<h3 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="#First-for-Loop">¶</a>
 </h3>
 <p><code>n</code> is the length of an given array <code>A</code>, and <code>k</code> is the maximum number of the length of a sub array that we can flip.</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -534,7 +533,7 @@ A: [1, 1, 1, 1, 1, 1, 1, 0]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Second-for-loop">Second <code>for</code> loop<a class="anchor-link" href="posts/995-minimum-number-of-k-consecutive-bit-flips/#Second-for-loop">¶</a>
+<h3 id="Second-for-loop">Second <code>for</code> loop<a class="anchor-link" href="#Second-for-loop">¶</a>
 </h3>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
@@ -646,167 +645,43 @@ return: 3
 
 </div>
 </div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/995-minimum-number-of-k-consecutive-bit-flips/">
-
-
-        </span></p>
-</div>
     </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/990-satisfiability-of-equality-equations/">990 Satisfiability of Equality Equations</a></h2>
-        <div class="post-meta">
-            2019-02-11 22:13
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+    <div class="postpromonav">
+        <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../990-satisfiability-of-equality-equations/" rel="prev" title="990 Satisfiability of Equality Equations">Previous post</a>
+            </li>
+        </ul></nav>
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="990.-Satisfiability-of-Equality-Equations">990. Satisfiability of Equality Equations<a class="anchor-link" href="posts/990-satisfiability-of-equality-equations/#990.-Satisfiability-of-Equality-Equations">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Porblem-statement">Porblem statement<a class="anchor-link" href="posts/990-satisfiability-of-equality-equations/#Porblem-statement">¶</a>
-</h3>
-<p>Given an array equations of strings that represent relationships between variables, each string <code>equations[i]</code> has length <code>4</code> and takes one of two different forms: <code>"a==b"</code> or <code>"a!=b"</code>.  Here, <code>a</code> and <code>b</code> are lowercase letters (not necessarily different) that represent one-letter variable names.</p>
-<p>Return <code>true</code> if and only if it is possible to assign integers to variable names so as to satisfy all the given equations.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/990-satisfiability-of-equality-equations/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
+    <section class="comments hidden-print"><h2>Comments</h2>
         
-<span class="fb-comments-count" data-url="/posts/990-satisfiability-of-equality-equations/">
-
-
-        </span></p>
-</div>
-    </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/Coding%20Problem/">998 Smallest String Starting From Leaf</a></h2>
-        <div class="post-meta">
-            2019-02-03 22:43
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="988-Smallest-String-Starting-From-Leaf">988 Smallest String Starting From Leaf<a class="anchor-link" href="posts/Coding%20Problem/#988-Smallest-String-Starting-From-Leaf">¶</a>
-</h2>
-<p>The 2nd problem in Weekly Contest 122 is <code>Smallest String Starting From Leaf</code></p>
-<p>Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.</p>
-<p>Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.</p>
-<p>(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)
-.. TEASER_END</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/Coding%20Problem/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/Coding%20Problem/">
-
-
-        </span></p>
-</div>
-    </div>
-    <div class="post">
-        <h2 class="post-title"><a href="posts/us-census-in-2014/">US Census in 2014</a></h2>
-        <div class="post-meta">
-            2019-02-03 22:41
-        </div>
-        <div class="post-meta">
-                h1ros
-        </div>
-        <div class="post-content">
-                <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="US-Census-Data-Analysis-(Census-Data-2014)">US Census Data Analysis (Census Data 2014)<a class="anchor-link" href="posts/us-census-in-2014/#US-Census-Data-Analysis-(Census-Data-2014)">¶</a>
-</h2>
-<h2 id="Reference">Reference<a class="anchor-link" href="posts/us-census-in-2014/#Reference">¶</a>
-</h2>
-<ul>
-<li><a href="https://github.com/benhamner/2016-us-election">github - benhamner/2016-us-election</a></li>
-</ul>
-<h3 id="Data-Source">Data Source<a class="anchor-link" href="posts/us-census-in-2014/#Data-Source">¶</a>
-</h3>
-<ul>
-<li>
-<p><a href="http://www.presidency.ucsb.edu/2016_election.php">US Presidency Project</a></p>
-</li>
-<li>
-<p><a href="https://www.census.gov/library/publications/2015/demo/p20-577.html">Who Votes? Congressional Elections and the American Electorate: 1978–2014</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/us-census-in-2014/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/us-census-in-2014/">
-
-
-        </span></p>
-</div>
-    </div>
-
-
-
         
 <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '?',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/" data-width="470"></div>
+
+
+    </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script><div id="fb-root"></div>
 <script>
     // thank lxml for this
     $('.fb-comments-count').each(function(i, obj) {
@@ -834,10 +709,10 @@ return: 3
      js.src = "https://connect.facebook.net/en_US/all.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script>
+</script>
 </div>
+
+                </div>
                 <!--End of body content-->
                 <div style="clear:both;height:0;"></div>
             </div>
@@ -865,10 +740,11 @@ return: 3
 </li>-->
     <!--%endif-->
     <!--% if show_sourcelink:-->
-    <!---->
+    <!--
+-->
     <!--%endif-->
-    <link href="assets/css/duoshuo.css" type="text/css" rel="stylesheet">
-<script src="assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+    <link href="../../assets/css/duoshuo.css" type="text/css" rel="stylesheet">
+<script src="../../assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more">Share</a>
 </div>
 <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
