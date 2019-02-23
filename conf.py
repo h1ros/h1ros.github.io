@@ -1029,8 +1029,8 @@ PRETTY_URLS = True
 # Do you want a add a Mathjax config file?
 MATHJAX_CONFIG = ""
 
-If you want support for the $.$ syntax (which may conflict with running
-text!), just use this config:
+# If you want support for the $.$ syntax (which may conflict with running
+# text!), just use this config:
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
