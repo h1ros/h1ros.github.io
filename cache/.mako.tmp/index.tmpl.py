@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550961686.3487492
+_modified_time = 1550966939.5831392
 _enable_loop = True
 _template_filename = 'themes/maupassant/templates/index.tmpl'
 _template_uri = 'index.tmpl'
@@ -36,31 +36,31 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        helper = _mako_get_namespace(context, 'helper')
-        current_page = context.get('current_page', UNDEFINED)
-        posts = context.get('posts', UNDEFINED)
-        index_file = context.get('index_file', UNDEFINED)
-        _link = context.get('_link', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        pagekind = context.get('pagekind', UNDEFINED)
-        def content():
-            return render_content(context._locals(__M_locals))
-        prev_next_links_reversed = context.get('prev_next_links_reversed', UNDEFINED)
-        prevlink = context.get('prevlink', UNDEFINED)
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        parent = context.get('parent', UNDEFINED)
-        date_format = context.get('date_format', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
-        nextlink = context.get('nextlink', UNDEFINED)
-        front_index_header = context.get('front_index_header', UNDEFINED)
-        page_links = context.get('page_links', UNDEFINED)
         author_pages_generated = context.get('author_pages_generated', UNDEFINED)
-        index_teasers = context.get('index_teasers', UNDEFINED)
-        permalink = context.get('permalink', UNDEFINED)
+        _link = context.get('_link', UNDEFINED)
+        posts = context.get('posts', UNDEFINED)
         def content_header():
             return render_content_header(context._locals(__M_locals))
+        prev_next_links_reversed = context.get('prev_next_links_reversed', UNDEFINED)
+        current_page = context.get('current_page', UNDEFINED)
+        index_teasers = context.get('index_teasers', UNDEFINED)
+        date_format = context.get('date_format', UNDEFINED)
+        nextlink = context.get('nextlink', UNDEFINED)
+        index_file = context.get('index_file', UNDEFINED)
+        pagekind = context.get('pagekind', UNDEFINED)
+        page_links = context.get('page_links', UNDEFINED)
+        comments = _mako_get_namespace(context, 'comments')
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        front_index_header = context.get('front_index_header', UNDEFINED)
+        def content():
+            return render_content(context._locals(__M_locals))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        prevlink = context.get('prevlink', UNDEFINED)
+        permalink = context.get('permalink', UNDEFINED)
+        helper = _mako_get_namespace(context, 'helper')
         pagination = _mako_get_namespace(context, 'pagination')
+        parent = context.get('parent', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -86,10 +86,10 @@ def render_extra_head(context,**pageargs):
     try:
         def extra_head():
             return render_extra_head(context)
-        parent = context.get('parent', UNDEFINED)
-        permalink = context.get('permalink', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
+        permalink = context.get('permalink', UNDEFINED)
         index_file = context.get('index_file', UNDEFINED)
+        parent = context.get('parent', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(parent.extra_head()))
@@ -106,25 +106,25 @@ def render_extra_head(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        helper = _mako_get_namespace(context, 'helper')
-        current_page = context.get('current_page', UNDEFINED)
-        posts = context.get('posts', UNDEFINED)
-        _link = context.get('_link', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        pagekind = context.get('pagekind', UNDEFINED)
-        def content():
-            return render_content(context)
-        prev_next_links_reversed = context.get('prev_next_links_reversed', UNDEFINED)
-        prevlink = context.get('prevlink', UNDEFINED)
-        date_format = context.get('date_format', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
-        nextlink = context.get('nextlink', UNDEFINED)
-        front_index_header = context.get('front_index_header', UNDEFINED)
-        page_links = context.get('page_links', UNDEFINED)
         author_pages_generated = context.get('author_pages_generated', UNDEFINED)
-        index_teasers = context.get('index_teasers', UNDEFINED)
+        _link = context.get('_link', UNDEFINED)
+        posts = context.get('posts', UNDEFINED)
         def content_header():
             return render_content_header(context)
+        prev_next_links_reversed = context.get('prev_next_links_reversed', UNDEFINED)
+        current_page = context.get('current_page', UNDEFINED)
+        index_teasers = context.get('index_teasers', UNDEFINED)
+        date_format = context.get('date_format', UNDEFINED)
+        nextlink = context.get('nextlink', UNDEFINED)
+        pagekind = context.get('pagekind', UNDEFINED)
+        page_links = context.get('page_links', UNDEFINED)
+        comments = _mako_get_namespace(context, 'comments')
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        front_index_header = context.get('front_index_header', UNDEFINED)
+        def content():
+            return render_content(context)
+        prevlink = context.get('prevlink', UNDEFINED)
+        helper = _mako_get_namespace(context, 'helper')
         pagination = _mako_get_namespace(context, 'pagination')
         __M_writer = context.writer()
         __M_writer('\n')
