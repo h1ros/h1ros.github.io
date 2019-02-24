@@ -8,31 +8,15 @@
 .. description: 
 .. type: text
 -->
+ 
+Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], a data scientist and has a passion about data science, machine learning, deep learning, and computer science. 
 
-Title: About
-
-
-Welcome to the homepage of h1ro3 (Hiro). I am a data scientist working in California, US.
-
-
-## My professional interests
-* IoT 
-	* Digital Signal Processing
-	* Time series
-	* Anomaly detection
+Through this blog, I would like to deepen my extertise by explaining to myself (following Learn better and Feynman Technique). 
 
 
-## My personal interests
+### Objectives
+* I compare myself with who I was yesterday to progress
+* I do NOT intend to obtain others' approval or `like`, but I am open to any feedback or critisism. "I still do not understad" or "does not make sense" would be alsowelcomed. I appreciate your time for reading my sentences.
 
-* Machine Learning
-	* Recommendation system
-	* Computer vision
-	* Speech Recognition
-	* Text minining
-* Deep learning 
-	* Deep reinforcement learning
-* Security 
-	* fraud detection
-* Open source
-* Python
 
+ 
