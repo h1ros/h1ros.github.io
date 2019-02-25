@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551072108.9942348
+_modified_time = 1551072322.5998
 _enable_loop = True
-_template_filename = 'themes/mdl/templates/tags.tmpl'
+_template_filename = 'themes/bootstrap3/templates/tags.tmpl'
 _template_uri = 'tags.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['content']
+_exports = ['extra_head', 'content']
 
 
 def _mako_get_namespace(context, name):
@@ -20,7 +20,9 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    pass
+    ns = runtime.TemplateNamespace('feeds_translations', context._clean_inheritance_tokens(), templateuri='feeds_translations_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'feeds_translations')] = ns
+
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
     return runtime._inherit_from(context, 'base.tmpl', _template_uri)
@@ -28,17 +30,29 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        _import_ns = {}
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        items = _import_ns.get('items', context.get('items', UNDEFINED))
+        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        range = _import_ns.get('range', context.get('range', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
-        hidden_tags = context.get('hidden_tags', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        items = context.get('items', UNDEFINED)
-        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
-        range = context.get('range', UNDEFINED)
-        cat_items = context.get('cat_items', UNDEFINED)
-        len = context.get('len', UNDEFINED)
-        title = context.get('title', UNDEFINED)
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
+        cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
+        __M_writer('\n')
+        __M_writer('\n\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
+            context['self'].extra_head(**pageargs)
+        
+
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
@@ -50,60 +64,80 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_extra_head(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        def extra_head():
+            return render_extra_head(context)
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        __M_writer = context.writer()
+        __M_writer('\n    ')
+        __M_writer(str(feeds_translations.head(kind=kind, feeds=False)))
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        items = _import_ns.get('items', context.get('items', UNDEFINED))
+        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        range = _import_ns.get('range', context.get('range', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
         def content():
             return render_content(context)
-        hidden_tags = context.get('hidden_tags', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        items = context.get('items', UNDEFINED)
-        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
-        range = context.get('range', UNDEFINED)
-        cat_items = context.get('cat_items', UNDEFINED)
-        len = context.get('len', UNDEFINED)
-        title = context.get('title', UNDEFINED)
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
+        cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
-        __M_writer('\n<div class="site-page site-card mdl-grid site-page-tags">\n    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--4dp">\n        <article class="tag-index">\n            <div class="mdl-card__media"></div>\n            <div class="mdl-card__title">\n                <h1 class="mdl-card__title-text">')
+        __M_writer('\n<h1>')
         __M_writer(filters.html_escape(str(title)))
-        __M_writer('</h1>\n            </div>\n            <div class="mdl-grid mdl-card__supporting-text">\n')
+        __M_writer('</h1>\n<div class="metadata">\n    ')
+        __M_writer(str(feeds_translations.translation_link(kind)))
+        __M_writer('\n</div>\n')
         if cat_items:
             if items:
-                __M_writer('                    <h2 class="mdl-cell mdl-cell--12-col mdl-typography--headline">')
+                __M_writer('        <h2>')
                 __M_writer(str(messages("Categories")))
                 __M_writer('</h2>\n')
-            __M_writer('                <div class="mdl-cell mdl-cell--12-col">\n')
             for text, full_name, path, link, indent_levels, indent_change_before, indent_change_after in cat_hierarchy:
                 for i in range(indent_change_before):
-                    __M_writer('                        <ul class="mdl-list tag-index-categories">\n')
-                __M_writer('                    <li class="mdl-list__item">\n                        <span class="mdl-list__item-primary-content">\n                            <i class="material-icons mdl-list__item-icon">label</i>\n                            <a class="reference" href="')
+                    __M_writer('            <ul class="list-inline">\n')
+                __M_writer('        <li><a class="reference badge" href="')
                 __M_writer(str(link))
                 __M_writer('">')
-                __M_writer(str(text))
-                __M_writer('</a>\n                        </span>\n')
+                __M_writer(filters.html_escape(str(text)))
+                __M_writer('</a>\n')
                 if indent_change_after <= 0:
-                    __M_writer('                        </li>\n')
+                    __M_writer('            </li>\n')
                 for i in range(-indent_change_after):
-                    __M_writer('                        </ul>\n')
+                    __M_writer('            </ul>\n')
                     if i + 1 < len(indent_levels):
-                        __M_writer('                            </li>\n')
-            __M_writer('                </div>\n')
+                        __M_writer('                </li>\n')
             if items:
-                __M_writer('                    <h2 class="mdl-cell mdl-cell--12-col mdl-typography--headline">')
+                __M_writer('        <h2>')
                 __M_writer(str(messages("Tags")))
                 __M_writer('</h2>\n')
-        __M_writer('            <div class="mdl-cell mdl-cell--12-col">\n')
         if items:
-            __M_writer('                <ul class="mdl-list tag-index-tags">\n')
+            __M_writer('    <ul class="list-inline">\n')
             for text, link in items:
                 if text not in hidden_tags:
-                    __M_writer('                        <li class="mdl-list__item">\n                            <span class="mdl-list__item-primary-content">\n                                <i class="material-icons mdl-list__item-icon">label</i>\n                                <a class="reference post-title" href="')
+                    __M_writer('            <li><a class="reference badge" href="')
                     __M_writer(str(link))
                     __M_writer('">')
                     __M_writer(filters.html_escape(str(text)))
-                    __M_writer('</a>\n                            </span>\n                        </li>\n')
-            __M_writer('                </ul>\n')
-        __M_writer('            </div>\n            </div>\n        </article>\n    </div>\n</div>\n')
+                    __M_writer('</a></li>\n')
+            __M_writer('    </ul>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -111,6 +145,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "themes/mdl/templates/tags.tmpl", "uri": "tags.tmpl", "source_encoding": "utf-8", "line_map": {"27": 0, "42": 2, "47": 62, "53": 4, "67": 4, "68": 10, "69": 10, "70": 13, "71": 14, "72": 15, "73": 15, "74": 15, "75": 17, "76": 18, "77": 19, "78": 20, "79": 22, "80": 25, "81": 25, "82": 25, "83": 25, "84": 27, "85": 28, "86": 30, "87": 31, "88": 32, "89": 33, "90": 37, "91": 38, "92": 39, "93": 39, "94": 39, "95": 42, "96": 43, "97": 44, "98": 45, "99": 46, "100": 47, "101": 50, "102": 50, "103": 50, "104": 50, "105": 55, "106": 57, "112": 106}}
+{"filename": "themes/bootstrap3/templates/tags.tmpl", "uri": "tags.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "29": 0, "50": 2, "51": 3, "56": 7, "61": 46, "67": 5, "77": 5, "78": 6, "79": 6, "85": 9, "103": 9, "104": 10, "105": 10, "106": 12, "107": 12, "108": 14, "109": 15, "110": 16, "111": 16, "112": 16, "113": 18, "114": 19, "115": 20, "116": 22, "117": 22, "118": 22, "119": 22, "120": 22, "121": 23, "122": 24, "123": 26, "124": 27, "125": 28, "126": 29, "127": 33, "128": 34, "129": 34, "130": 34, "131": 37, "132": 38, "133": 39, "134": 40, "135": 41, "136": 41, "137": 41, "138": 41, "139": 41, "140": 44, "146": 140}}
 __M_END_METADATA
 """

@@ -5,20 +5,30 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551072108.7963362
+_modified_time = 1551072322.1749918
 _enable_loop = True
-_template_filename = 'themes/mdl/templates/post_helper.tmpl'
+_template_filename = '/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/post_helper.tmpl'
 _template_uri = 'post_helper.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['meta_translations', 'html_tags', 'html_pager', 'open_graph_metadata', 'twitter_card_information', 'mathjax_script']
 
+
+def _mako_get_namespace(context, name):
+    try:
+        return context.namespaces[(__name__, name)]
+    except KeyError:
+        _mako_generate_namespaces(context)
+        return context.namespaces[(__name__, name)]
+def _mako_generate_namespaces(context):
+    ns = runtime.TemplateNamespace('math', context._clean_inheritance_tokens(), templateuri='math_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'math')] = ns
 
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\n\n')
         __M_writer('\n\n')
         __M_writer('\n\n')
         __M_writer('\n\n')
@@ -33,15 +43,15 @@ def render_body(context,**pageargs):
 def render_meta_translations(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
-        lang = context.get('lang', UNDEFINED)
         translations = context.get('translations', UNDEFINED)
-        len = context.get('len', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
         sorted = context.get('sorted', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if len(translations) > 1:
             for langname in sorted(translations):
-                if langname != lang and post.is_translation_available(langname):
+                if langname != lang and ((not post.skip_untranslated) or post.is_translation_available(langname)):
                     __M_writer('                <link rel="alternate" hreflang="')
                     __M_writer(str(langname))
                     __M_writer('" href="')
@@ -60,15 +70,15 @@ def render_html_tags(context,post):
         __M_writer = context.writer()
         __M_writer('\n')
         if post.tags:
+            __M_writer('        <ul itemprop="keywords" class="tags">\n')
             for tag in post.tags:
                 if tag not in hidden_tags:
-                    __M_writer('              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent site-post__tag" rel="tag" title="')
-                    __M_writer(filters.html_escape(str(tag)))
-                    __M_writer('" href="')
+                    __M_writer('            <li><a class="tag p-category" href="')
                     __M_writer(str(_link('tag', tag)))
-                    __M_writer('">')
+                    __M_writer('" rel="tag">')
                     __M_writer(filters.html_escape(str(tag)))
-                    __M_writer('</a>\n')
+                    __M_writer('</a></li>\n')
+            __M_writer('        </ul>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -81,25 +91,24 @@ def render_html_pager(context,post):
         __M_writer = context.writer()
         __M_writer('\n')
         if post.prev_post or post.next_post:
-            __M_writer('        <nav class="site-navigation hidden-print pager mdl-cell mdl-cell--12-col">\n')
+            __M_writer('        <ul class="pager hidden-print">\n')
             if post.prev_post:
-                __M_writer('                <a href="')
+                __M_writer('            <li class="previous">\n                <a href="')
                 __M_writer(str(post.prev_post.permalink()))
-                __M_writer('" class="site-navigation__button site-navigation__previous" rel="prev" title="')
+                __M_writer('" rel="prev" title="')
                 __M_writer(filters.html_escape(str(post.prev_post.title())))
-                __M_writer('">\n                  <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">\n                    <i class="material-icons" role="presentation">arrow_back</i>\n                  </button>\n                  ')
+                __M_writer('">')
                 __M_writer(str(messages("Previous post")))
-                __M_writer('\n                </a>\n')
-            __M_writer('            <div class="section-spacer"></div>\n')
+                __M_writer('</a>\n            </li>\n')
             if post.next_post:
-                __M_writer('                <a href="')
+                __M_writer('            <li class="next">\n                <a href="')
                 __M_writer(str(post.next_post.permalink()))
-                __M_writer('" class="site-navigation__button site-navigation__next" rel="next" title="')
+                __M_writer('" rel="next" title="')
                 __M_writer(filters.html_escape(str(post.next_post.title())))
-                __M_writer('">\n                  ')
+                __M_writer('">')
                 __M_writer(str(messages("Next post")))
-                __M_writer('\n                  <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">\n                    <i class="material-icons" role="presentation">arrow_forward</i>\n                  </button>\n                </a>\n')
-            __M_writer('        </nav>\n')
+                __M_writer('</a>\n            </li>\n')
+            __M_writer('        </ul>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -109,43 +118,40 @@ def render_open_graph_metadata(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
         blog_title = context.get('blog_title', UNDEFINED)
-        use_open_graph = context.get('use_open_graph', UNDEFINED)
-        lang = context.get('lang', UNDEFINED)
         url_replacer = context.get('url_replacer', UNDEFINED)
-        permalink = context.get('permalink', UNDEFINED)
         abs_link = context.get('abs_link', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
+        permalink = context.get('permalink', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n')
-        if use_open_graph:
-            __M_writer('    <meta property="og:site_name" content="')
-            __M_writer(filters.html_escape(str(blog_title)))
-            __M_writer('">\n    <meta property="og:title" content="')
-            __M_writer(filters.html_escape(str(post.title()[:70])))
-            __M_writer('">\n    <meta property="og:url" content="')
-            __M_writer(str(abs_link(permalink)))
+        __M_writer('\n<meta property="og:site_name" content="')
+        __M_writer(filters.html_escape(str(blog_title)))
+        __M_writer('">\n<meta property="og:title" content="')
+        __M_writer(filters.html_escape(str(post.title()[:70])))
+        __M_writer('">\n<meta property="og:url" content="')
+        __M_writer(str(abs_link(permalink)))
+        __M_writer('">\n')
+        if post.description():
+            __M_writer('    <meta property="og:description" content="')
+            __M_writer(filters.html_escape(str(post.description()[:200])))
             __M_writer('">\n')
-            if post.description():
-                __M_writer('    <meta property="og:description" content="')
-                __M_writer(filters.html_escape(str(post.description()[:200])))
+        else:
+            __M_writer('    <meta property="og:description" content="')
+            __M_writer(filters.html_escape(str(post.text(strip_html=True)[:200])))
+            __M_writer('">\n')
+        if post.previewimage:
+            __M_writer('    <meta property="og:image" content="')
+            __M_writer(str(url_replacer(permalink, post.previewimage, lang, 'absolute')))
+            __M_writer('">\n')
+        __M_writer('<meta property="og:type" content="article">\n')
+        if post.date.isoformat():
+            __M_writer('    <meta property="article:published_time" content="')
+            __M_writer(str(post.formatted_date('webiso')))
+            __M_writer('">\n')
+        if post.tags:
+            for tag in post.tags:
+                __M_writer('       <meta property="article:tag" content="')
+                __M_writer(filters.html_escape(str(tag)))
                 __M_writer('">\n')
-            else:
-                __M_writer('    <meta property="og:description" content="')
-                __M_writer(filters.html_escape(str(post.text(strip_html=True)[:200])))
-                __M_writer('">\n')
-            if post.previewimage:
-                __M_writer('    <meta property="og:image" content="')
-                __M_writer(str(url_replacer(permalink, post.previewimage, lang, 'absolute')))
-                __M_writer('">\n')
-            __M_writer('    <meta property="og:type" content="article">\n')
-            if post.date.isoformat():
-                __M_writer('    <meta property="article:published_time" content="')
-                __M_writer(str(post.formatted_date('webiso')))
-                __M_writer('">\n')
-            if post.tags:
-                for tag in post.tags:
-                    __M_writer('           <meta property="article:tag" content="')
-                    __M_writer(filters.html_escape(str(tag)))
-                    __M_writer('">\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -185,14 +191,11 @@ def render_twitter_card_information(context,post):
 def render_mathjax_script(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
-        use_katex = context.get('use_katex', UNDEFINED)
+        math = _mako_get_namespace(context, 'math')
         __M_writer = context.writer()
+        __M_writer('\n    ')
+        __M_writer(str(math.math_scripts_ifpost(post)))
         __M_writer('\n')
-        if post.has_math:
-            if use_katex:
-                __M_writer('            <script async src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>\n            <script async src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>\n            <script>\n                renderMathInElement(document.body);\n            </script>\n')
-            else:
-                __M_writer('            <script async type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>\n            <script type="text/x-mathjax-config">\n            MathJax.Hub.Config({tex2jax: {inlineMath: [[\'$latex \',\'$\'], [\'\\\\(\',\'\\\\)\']]}});\n            </script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -200,6 +203,6 @@ def render_mathjax_script(context,post):
 
 """
 __M_BEGIN_METADATA
-{"filename": "themes/mdl/templates/post_helper.tmpl", "uri": "post_helper.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 2, "22": 11, "23": 21, "24": 45, "25": 74, "26": 90, "27": 107, "33": 3, "41": 3, "42": 4, "43": 5, "44": 6, "45": 7, "46": 7, "47": 7, "48": 7, "49": 7, "55": 13, "61": 13, "62": 14, "63": 15, "64": 16, "65": 17, "66": 17, "67": 17, "68": 17, "69": 17, "70": 17, "71": 17, "77": 23, "82": 23, "83": 24, "84": 25, "85": 26, "86": 27, "87": 27, "88": 27, "89": 27, "90": 27, "91": 31, "92": 31, "93": 34, "94": 35, "95": 36, "96": 36, "97": 36, "98": 36, "99": 36, "100": 37, "101": 37, "102": 43, "108": 47, "118": 47, "119": 48, "120": 49, "121": 49, "122": 49, "123": 50, "124": 50, "125": 51, "126": 51, "127": 52, "128": 53, "129": 53, "130": 53, "131": 54, "132": 55, "133": 55, "134": 55, "135": 57, "136": 58, "137": 58, "138": 58, "139": 60, "140": 65, "141": 66, "142": 66, "143": 66, "144": 68, "145": 69, "146": 70, "147": 70, "148": 70, "154": 76, "159": 76, "160": 77, "161": 78, "162": 78, "163": 78, "164": 79, "165": 80, "166": 80, "167": 80, "168": 81, "169": 82, "170": 82, "171": 82, "172": 84, "173": 85, "174": 85, "175": 85, "176": 86, "177": 87, "178": 87, "179": 87, "185": 92, "190": 92, "191": 93, "192": 94, "193": 95, "194": 100, "195": 101, "201": 195}}
+{"filename": "/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/post_helper.tmpl", "uri": "post_helper.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 0, "31": 2, "32": 12, "33": 24, "34": 41, "35": 68, "36": 84, "37": 89, "43": 4, "51": 4, "52": 5, "53": 6, "54": 7, "55": 8, "56": 8, "57": 8, "58": 8, "59": 8, "65": 14, "71": 14, "72": 15, "73": 16, "74": 17, "75": 18, "76": 19, "77": 19, "78": 19, "79": 19, "80": 19, "81": 22, "87": 26, "92": 26, "93": 27, "94": 28, "95": 29, "96": 30, "97": 31, "98": 31, "99": 31, "100": 31, "101": 31, "102": 31, "103": 34, "104": 35, "105": 36, "106": 36, "107": 36, "108": 36, "109": 36, "110": 36, "111": 39, "117": 43, "126": 43, "127": 44, "128": 44, "129": 45, "130": 45, "131": 46, "132": 46, "133": 47, "134": 48, "135": 48, "136": 48, "137": 49, "138": 50, "139": 50, "140": 50, "141": 52, "142": 53, "143": 53, "144": 53, "145": 55, "146": 60, "147": 61, "148": 61, "149": 61, "150": 63, "151": 64, "152": 65, "153": 65, "154": 65, "160": 70, "165": 70, "166": 71, "167": 72, "168": 72, "169": 72, "170": 73, "171": 74, "172": 74, "173": 74, "174": 75, "175": 76, "176": 76, "177": 76, "178": 78, "179": 79, "180": 79, "181": 79, "182": 80, "183": 81, "184": 81, "185": 81, "191": 87, "196": 87, "197": 88, "198": 88, "204": 198}}
 __M_END_METADATA
 """
