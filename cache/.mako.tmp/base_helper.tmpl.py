@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551071902.401568
+_modified_time = 1551072003.043905
 _enable_loop = True
 _template_filename = 'themes/mdl/templates/base_helper.tmpl'
 _template_uri = 'base_helper.tmpl'
@@ -48,28 +48,28 @@ def render_html_headstart(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
-        mathjax_config = _import_ns.get('mathjax_config', context.get('mathjax_config', UNDEFINED))
-        twitter_card = _import_ns.get('twitter_card', context.get('twitter_card', UNDEFINED))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
-        extra_head_data = _import_ns.get('extra_head_data', context.get('extra_head_data', UNDEFINED))
-        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        comment_system = _import_ns.get('comment_system', context.get('comment_system', UNDEFINED))
-        description = _import_ns.get('description', context.get('description', UNDEFINED))
-        def html_stylesheets():
-            return render_html_stylesheets(context)
-        nextlink = _import_ns.get('nextlink', context.get('nextlink', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
-        use_base_tag = _import_ns.get('use_base_tag', context.get('use_base_tag', UNDEFINED))
-        favicons = _import_ns.get('favicons', context.get('favicons', UNDEFINED))
-        mdl__late_load_css = _import_ns.get('mdl__late_load_css', context.get('mdl__late_load_css', UNDEFINED))
-        is_rtl = _import_ns.get('is_rtl', context.get('is_rtl', UNDEFINED))
-        use_open_graph = _import_ns.get('use_open_graph', context.get('use_open_graph', UNDEFINED))
-        prevlink = _import_ns.get('prevlink', context.get('prevlink', UNDEFINED))
-        comment_system_id = _import_ns.get('comment_system_id', context.get('comment_system_id', UNDEFINED))
         def html_feedlinks():
             return render_html_feedlinks(context)
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
+        comment_system_id = _import_ns.get('comment_system_id', context.get('comment_system_id', UNDEFINED))
+        favicons = _import_ns.get('favicons', context.get('favicons', UNDEFINED))
+        twitter_card = _import_ns.get('twitter_card', context.get('twitter_card', UNDEFINED))
+        use_open_graph = _import_ns.get('use_open_graph', context.get('use_open_graph', UNDEFINED))
+        is_rtl = _import_ns.get('is_rtl', context.get('is_rtl', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        mathjax_config = _import_ns.get('mathjax_config', context.get('mathjax_config', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        mdl__late_load_css = _import_ns.get('mdl__late_load_css', context.get('mdl__late_load_css', UNDEFINED))
+        def html_stylesheets():
+            return render_html_stylesheets(context)
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        use_base_tag = _import_ns.get('use_base_tag', context.get('use_base_tag', UNDEFINED))
+        abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
+        prevlink = _import_ns.get('prevlink', context.get('prevlink', UNDEFINED))
+        extra_head_data = _import_ns.get('extra_head_data', context.get('extra_head_data', UNDEFINED))
+        comment_system = _import_ns.get('comment_system', context.get('comment_system', UNDEFINED))
+        description = _import_ns.get('description', context.get('description', UNDEFINED))
+        nextlink = _import_ns.get('nextlink', context.get('nextlink', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html ')
         __M_writer("prefix='")
@@ -169,15 +169,15 @@ def render_preload_stylesheets(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
-        mdl__color_scheme = _import_ns.get('mdl__color_scheme', context.get('mdl__color_scheme', UNDEFINED))
-        needs_ipython_css = _import_ns.get('needs_ipython_css', context.get('needs_ipython_css', UNDEFINED))
-        use_cdn = _import_ns.get('use_cdn', context.get('use_cdn', UNDEFINED))
-        mdl__roboto_font = _import_ns.get('mdl__roboto_font', context.get('mdl__roboto_font', UNDEFINED))
-        mdl__custom_css = _import_ns.get('mdl__custom_css', context.get('mdl__custom_css', UNDEFINED))
-        mdl__cachebusting = _import_ns.get('mdl__cachebusting', context.get('mdl__cachebusting', UNDEFINED))
-        use_bundles = _import_ns.get('use_bundles', context.get('use_bundles', UNDEFINED))
         mdl__version = _import_ns.get('mdl__version', context.get('mdl__version', UNDEFINED))
+        use_cdn = _import_ns.get('use_cdn', context.get('use_cdn', UNDEFINED))
+        mdl__cachebusting = _import_ns.get('mdl__cachebusting', context.get('mdl__cachebusting', UNDEFINED))
         image_plugin = _import_ns.get('image_plugin', context.get('image_plugin', UNDEFINED))
+        mdl__custom_css = _import_ns.get('mdl__custom_css', context.get('mdl__custom_css', UNDEFINED))
+        needs_ipython_css = _import_ns.get('needs_ipython_css', context.get('needs_ipython_css', UNDEFINED))
+        mdl__color_scheme = _import_ns.get('mdl__color_scheme', context.get('mdl__color_scheme', UNDEFINED))
+        mdl__roboto_font = _import_ns.get('mdl__roboto_font', context.get('mdl__roboto_font', UNDEFINED))
+        use_bundles = _import_ns.get('use_bundles', context.get('use_bundles', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if mdl__roboto_font:
@@ -235,16 +235,16 @@ def render_html_stylesheets(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
-        mdl__color_scheme = _import_ns.get('mdl__color_scheme', context.get('mdl__color_scheme', UNDEFINED))
-        needs_ipython_css = _import_ns.get('needs_ipython_css', context.get('needs_ipython_css', UNDEFINED))
-        use_cdn = _import_ns.get('use_cdn', context.get('use_cdn', UNDEFINED))
-        helper = _mako_get_namespace(context, 'helper')
-        mdl__roboto_font = _import_ns.get('mdl__roboto_font', context.get('mdl__roboto_font', UNDEFINED))
-        mdl__custom_css = _import_ns.get('mdl__custom_css', context.get('mdl__custom_css', UNDEFINED))
-        mdl__cachebusting = _import_ns.get('mdl__cachebusting', context.get('mdl__cachebusting', UNDEFINED))
-        use_bundles = _import_ns.get('use_bundles', context.get('use_bundles', UNDEFINED))
         mdl__version = _import_ns.get('mdl__version', context.get('mdl__version', UNDEFINED))
+        use_cdn = _import_ns.get('use_cdn', context.get('use_cdn', UNDEFINED))
+        mdl__cachebusting = _import_ns.get('mdl__cachebusting', context.get('mdl__cachebusting', UNDEFINED))
         image_plugin = _import_ns.get('image_plugin', context.get('image_plugin', UNDEFINED))
+        helper = _mako_get_namespace(context, 'helper')
+        mdl__custom_css = _import_ns.get('mdl__custom_css', context.get('mdl__custom_css', UNDEFINED))
+        needs_ipython_css = _import_ns.get('needs_ipython_css', context.get('needs_ipython_css', UNDEFINED))
+        mdl__color_scheme = _import_ns.get('mdl__color_scheme', context.get('mdl__color_scheme', UNDEFINED))
+        mdl__roboto_font = _import_ns.get('mdl__roboto_font', context.get('mdl__roboto_font', UNDEFINED))
+        use_bundles = _import_ns.get('use_bundles', context.get('use_bundles', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if mdl__roboto_font:
@@ -302,13 +302,13 @@ def render_html_feedlinks(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
+        generate_rss = _import_ns.get('generate_rss', context.get('generate_rss', UNDEFINED))
+        sorted = _import_ns.get('sorted', context.get('sorted', UNDEFINED))
         generate_atom = _import_ns.get('generate_atom', context.get('generate_atom', UNDEFINED))
         translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
-        sorted = _import_ns.get('sorted', context.get('sorted', UNDEFINED))
         len = _import_ns.get('len', context.get('len', UNDEFINED))
-        rss_link = _import_ns.get('rss_link', context.get('rss_link', UNDEFINED))
         _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
-        generate_rss = _import_ns.get('generate_rss', context.get('generate_rss', UNDEFINED))
+        rss_link = _import_ns.get('rss_link', context.get('rss_link', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if rss_link:
@@ -350,11 +350,11 @@ def render_html_translations(context):
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
         lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
-        translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
-        abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         sorted = _import_ns.get('sorted', context.get('sorted', UNDEFINED))
+        translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
+        abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <ul class="translations">\n')
         for langname in sorted(translations):
@@ -377,12 +377,12 @@ def render_late_load_js(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'helper')._populate(_import_ns, ['*'])
-        mdl__late_load_css = _import_ns.get('mdl__late_load_css', context.get('mdl__late_load_css', UNDEFINED))
-        social_buttons_code = _import_ns.get('social_buttons_code', context.get('social_buttons_code', UNDEFINED))
-        mdl__custom_js = _import_ns.get('mdl__custom_js', context.get('mdl__custom_js', UNDEFINED))
-        helper = _mako_get_namespace(context, 'helper')
         mdl__version = _import_ns.get('mdl__version', context.get('mdl__version', UNDEFINED))
+        mdl__late_load_css = _import_ns.get('mdl__late_load_css', context.get('mdl__late_load_css', UNDEFINED))
+        helper = _mako_get_namespace(context, 'helper')
+        mdl__custom_js = _import_ns.get('mdl__custom_js', context.get('mdl__custom_js', UNDEFINED))
         image_plugin = _import_ns.get('image_plugin', context.get('image_plugin', UNDEFINED))
+        social_buttons_code = _import_ns.get('social_buttons_code', context.get('social_buttons_code', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if mdl__version:

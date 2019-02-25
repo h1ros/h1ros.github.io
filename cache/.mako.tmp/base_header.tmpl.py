@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551071902.43621
+_modified_time = 1551072003.076371
 _enable_loop = True
 _template_filename = 'themes/mdl/templates/base_header.tmpl'
 _template_uri = 'base_header.tmpl'
@@ -45,29 +45,29 @@ def render_html_header(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        def html_more_button():
-            return render_html_more_button(context)
-        mdl__multiple_header = _import_ns.get('mdl__multiple_header', context.get('mdl__multiple_header', UNDEFINED))
-        mdl__header_waterfall_hide_top = _import_ns.get('mdl__header_waterfall_hide_top', context.get('mdl__header_waterfall_hide_top', UNDEFINED))
-        mdl__navigation_large_screen_only = _import_ns.get('mdl__navigation_large_screen_only', context.get('mdl__navigation_large_screen_only', UNDEFINED))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        def html_navigation_links():
-            return render_html_navigation_links(context)
-        rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        mdl__header_waterfall = _import_ns.get('mdl__header_waterfall', context.get('mdl__header_waterfall', UNDEFINED))
-        navigation_row_middle = _import_ns.get('navigation_row_middle', context.get('navigation_row_middle', UNDEFINED))
-        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
-        top_nav_header = _import_ns.get('top_nav_header', context.get('top_nav_header', UNDEFINED))
         search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        mdl__header_transparent = _import_ns.get('mdl__header_transparent', context.get('mdl__header_transparent', UNDEFINED))
+        navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
         def html_site_title():
             return render_html_site_title(context)
-        mdl__header_transparent = _import_ns.get('mdl__header_transparent', context.get('mdl__header_transparent', UNDEFINED))
-        mdl__header_seamed = _import_ns.get('mdl__header_seamed', context.get('mdl__header_seamed', UNDEFINED))
-        navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
-        mdl__header_scroll = _import_ns.get('mdl__header_scroll', context.get('mdl__header_scroll', UNDEFINED))
+        top_nav_header = _import_ns.get('top_nav_header', context.get('top_nav_header', UNDEFINED))
         title_row_middle = _import_ns.get('title_row_middle', context.get('title_row_middle', UNDEFINED))
+        mdl__header_waterfall = _import_ns.get('mdl__header_waterfall', context.get('mdl__header_waterfall', UNDEFINED))
+        def html_navigation_links():
+            return render_html_navigation_links(context)
+        mdl__header_seamed = _import_ns.get('mdl__header_seamed', context.get('mdl__header_seamed', UNDEFINED))
+        navigation_row_middle = _import_ns.get('navigation_row_middle', context.get('navigation_row_middle', UNDEFINED))
+        mdl__header_waterfall_hide_top = _import_ns.get('mdl__header_waterfall_hide_top', context.get('mdl__header_waterfall_hide_top', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        mdl__navigation_large_screen_only = _import_ns.get('mdl__navigation_large_screen_only', context.get('mdl__navigation_large_screen_only', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        def html_more_button():
+            return render_html_more_button(context)
+        mdl__header_scroll = _import_ns.get('mdl__header_scroll', context.get('mdl__header_scroll', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
+        mdl__multiple_header = _import_ns.get('mdl__multiple_header', context.get('mdl__multiple_header', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <header id="header" class="mdl-layout__header site-header\n')
         if mdl__header_scroll:
@@ -138,12 +138,12 @@ def render_html_site_title(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
         logo_url = _import_ns.get('logo_url', context.get('logo_url', UNDEFINED))
-        _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
         show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
         lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
         abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <h1 id="brand" class="mdl-layout__title site-title">\n        <a href="')
         __M_writer(str(abs_link(_link("root", None, lang))))
@@ -171,17 +171,17 @@ def render_html_navigation_links(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        drawer_note = _import_ns.get('drawer_note', context.get('drawer_note', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
-        drawer_show_title = _import_ns.get('drawer_show_title', context.get('drawer_show_title', UNDEFINED))
         permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        drawer_description = _import_ns.get('drawer_description', context.get('drawer_description', UNDEFINED))
-        mdl__drawer_small_screen_only = _import_ns.get('mdl__drawer_small_screen_only', context.get('mdl__drawer_small_screen_only', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
+        drawer_note = _import_ns.get('drawer_note', context.get('drawer_note', UNDEFINED))
+        drawer_description = _import_ns.get('drawer_description', context.get('drawer_description', UNDEFINED))
         drawer_logo_url = _import_ns.get('drawer_logo_url', context.get('drawer_logo_url', UNDEFINED))
+        drawer_show_title = _import_ns.get('drawer_show_title', context.get('drawer_show_title', UNDEFINED))
+        mdl__drawer_small_screen_only = _import_ns.get('mdl__drawer_small_screen_only', context.get('mdl__drawer_small_screen_only', UNDEFINED))
         template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
         drawer_title = _import_ns.get('drawer_title', context.get('drawer_title', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <div id="drawer" class="mdl-layout__drawer site-drawer\n')
@@ -241,11 +241,11 @@ def render_html_more_button(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        more_button_header = _import_ns.get('more_button_header', context.get('more_button_header', UNDEFINED))
-        translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        len = _import_ns.get('len', context.get('len', UNDEFINED))
         base = _mako_get_namespace(context, 'base')
+        translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
+        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        more_button_header = _import_ns.get('more_button_header', context.get('more_button_header', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if len(translations) > 1 or more_button_header:
