@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html><body>
-<p>## -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
+<%namespace name="helper" file="post_helper.tmpl"/>
+<%namespace name="pheader" file="post_header.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+<%namespace name="math" file="math_helper.tmpl"/>
+<%inherit file="base.tmpl"/>
 
-
-
-
-
-
-
+<%block name="extra_head">
     ${parent.extra_head()}
     % if post.meta('keywords'):
     <meta name="keywords" content="${post.meta('keywords')|h}">
     % endif
     <meta name="author" content="${post.author()|h}">
     %if post.prev_post:
-        <link rel="prev" href="%24%7Bpost.prev_post.permalink()%7D" title="${post.prev_post.title()|h}" type="text/html">
+        <link rel="prev" href="${post.prev_post.permalink()}" title="${post.prev_post.title()|h}" type="text/html">
     %endif
     %if post.next_post:
-        <link rel="next" href="%24%7Bpost.next_post.permalink()%7D" title="${post.next_post.title()|h}" type="text/html">
+        <link rel="next" href="${post.next_post.permalink()}" title="${post.next_post.title()|h}" type="text/html">
     %endif
     % if post.is_draft:
         <meta name="robots" content="noindex">
@@ -27,9 +25,11 @@
     ${helper.meta_translations(post)}
     ${math.math_styles_ifpost(post)}
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../assets/js/bootyper.js"></script>%block&gt;
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/js/bootyper.js"></script>    
+</%block>
 
-
+<%block name="content">
 <article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
     ${pheader.html_post_header()}
 
@@ -82,7 +82,11 @@ $(document).ready(function(){
 $(window).scroll(function() {
         showImages('article img');
 });
-</script><form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
+</script>
+
+
+</script>
+<form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
     </div>
     % endif
     
@@ -90,25 +94,27 @@ $(window).scroll(function() {
     <div class="e-content entry-content" itemprop="articleBody text">
     ${post.text()}
     </div>
-    <aside class="postpromonav"><nav>
+    <aside class="postpromonav">
+    <nav>
     ${helper.html_tags(post)}
     ${helper.html_pager(post)}
-    </nav></aside>
+    </nav>
+    </aside>
     % if not post.meta('nocomments') and site_has_comments:
-        <section class="comments hidden-print"><h2>${messages("Comments")}</h2>
+        <section class="comments hidden-print">
+        <h2>${messages("Comments")}</h2>
         ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
         </section>
     % endif
     ${math.math_scripts_ifpost(post)}
 </article>
 ${comments.comment_link_script()}
-%block&gt;
+</%block>
 
-
+<%block name="sourcelink">
 % if show_sourcelink:
-    </p>
-<li>
-    <a href="%24%7Bpost.source_link()%7D" id="sourcelink">${messages("Source")}</a>
+    <li>
+    <a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a>
     </li>
 % endif
-%block&gt;</body></html>
+</%block>

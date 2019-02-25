@@ -221,7 +221,7 @@ THEME_COLOR = '#FFFFFF'
 #     )
 
 POSTS = (
-	("posts/*.ipynb", "posts", "post.tmpl"), # -- add this line
+	("posts/*.ipynb", "posts", "post_ipynb.tmpl"), # -- add this line
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
