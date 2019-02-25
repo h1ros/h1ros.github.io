@@ -161,7 +161,7 @@ THEME = "mdl"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#f9ad20'
+THEME_COLOR = ''
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
