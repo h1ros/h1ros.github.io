@@ -1,40 +1,110 @@
 <!DOCTYPE html>
-<html><body>
-<p>## -*- coding: utf-8 -*-
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>998 Smallest String Starting From Leaf | Step-by-step Data Science &amp; Computer Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://h1ros.github.io/posts/Coding%20Problem/">
+<link rel="icon" href="images/favicon_package_v0.16/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon_package_v0.16/mstile-150x150.png" sizes="150x150">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><meta name="author" content="h1ros">
+<link rel="prev" href="../us-census-in-2014/" title="US Census in 2014" type="text/html">
+<link rel="next" href="../990-satisfiability-of-equality-equations/" title="990 Satisfiability of Equality Equations" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
+<meta property="og:title" content="998 Smallest String Starting From Leaf">
+<meta property="og:url" content="https://h1ros.github.io/posts/Coding%20Problem/">
+<meta property="og:description" content="988 Smallest String Starting From Leaf¶The 2nd problem in Weekly Contest 122 is Smallest String Starting From Leaf
+Given the root of a binary tree, each node has a value from 0 to 25 representing the ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-02-03T22:43:19-08:00">
+<meta property="article:tag" content="Coding Problem">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../assets/js/bootyper.js"></script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://h1ros.github.io/">
+
+                <span id="blog-title">Step-by-step Data Science &amp; Computer Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../">Posts</a>
+                </li>
+<li>
+<a href="../about">About</a>
+                </li>
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../Coding%20Problem/" class="u-url">998 Smallest String Starting From Leaf</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../Coding%20Problem/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-02-03T22:43:19-08:00" itemprop="datePublished" title="Feb 3, 2019, 10:43:19 PM">Feb 3, 2019, 10:43:19 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../Coding%20Problem/#disqus_thread" data-disqus-identifier="cache/posts/998 Smallest String Starting From Leaf.html">Comments</a>
 
 
+            
 
+        </p>
+</div>
+        
 
-
-
-
-    ${parent.extra_head()}
-    % if post.meta('keywords'):
-    <meta name="keywords" content="${post.meta('keywords')|h}">
-    % endif
-    <meta name="author" content="${post.author()|h}">
-    %if post.prev_post:
-        <link rel="prev" href="%24%7Bpost.prev_post.permalink()%7D" title="${post.prev_post.title()|h}" type="text/html">
-    %endif
-    %if post.next_post:
-        <link rel="next" href="%24%7Bpost.next_post.permalink()%7D" title="${post.next_post.title()|h}" type="text/html">
-    %endif
-    % if post.is_draft:
-        <meta name="robots" content="noindex">
-    % endif
-    ${helper.open_graph_metadata(post)}
-    ${helper.twitter_card_information(post)}
-    ${helper.meta_translations(post)}
-    ${math.math_styles_ifpost(post)}
-    
-    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../assets/js/bootyper.js"></script>%block&gt;
-
-
-<article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    ${pheader.html_post_header()}
-
-    % if needs_ipython_css:
-    <div>
+    </header><div>
 
 
 
@@ -64,11 +134,7 @@
 // code_show = !code_show
 //}
 
-% if code == "False":
-     code_show = false;
-% else:
      code_show = true;
-% endif
 console.log(code_show)
 $( document ).ready(toggle_setup);
 $( document ).ready(code_toggle);
@@ -84,31 +150,446 @@ $(window).scroll(function() {
 });
 </script><form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
     </div>
-    % endif
     
 
     <div class="e-content entry-content" itemprop="articleBody text">
-    ${post.text()}
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="988-Smallest-String-Starting-From-Leaf">988 Smallest String Starting From Leaf<a class="anchor-link" href="../Coding%20Problem/#988-Smallest-String-Starting-From-Leaf">¶</a>
+</h2>
+<p>The 2nd problem in Weekly Contest 122 is <code>Smallest String Starting From Leaf</code></p>
+<p>Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.</p>
+<p>Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.</p>
+<p>(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution-from-Hey-Shao">Solution from Hey Shao<a class="anchor-link" href="../Coding%20Problem/#Solution-from-Hey-Shao">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>reference: Hey Shao's solution: <a href="https://leetcode.com/hanshaohey/">https://leetcode.com/hanshaohey/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Definition for a binary tree node.</span>
+<span class="k">class</span> <span class="nc">TreeNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">smallestFromLeaf</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    :type root: TreeNode</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    """</span>
+    <span class="n">maps</span><span class="o">=</span><span class="p">{}</span>
+    <span class="n">letters</span><span class="o">=</span><span class="s1">'abcdefghijklmnopqrstuvwxyz'</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">letters</span><span class="p">):</span>
+        <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">l</span>
+    <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">maps</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span><span class="o">+</span><span class="n">maps</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span><span class="o">+</span><span class="n">maps</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="o">=</span><span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">r</span><span class="o">=</span><span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="n">ll</span><span class="o">=</span><span class="n">maps</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
+            <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">ll</span><span class="p">,</span><span class="n">r</span><span class="o">+</span><span class="n">ll</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</pre></div>
+
     </div>
-    <aside class="postpromonav"><nav>
-    ${helper.html_tags(post)}
-    ${helper.html_pager(post)}
-    </nav></aside>
-    % if not post.meta('nocomments') and site_has_comments:
-        <section class="comments hidden-print"><h2>${messages("Comments")}</h2>
-        ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
-        </section>
-    % endif
-    ${math.math_scripts_ifpost(post)}
-</article>
-${comments.comment_link_script()}
-%block&gt;
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-by-step-solution">Step-by-step solution<a class="anchor-link" href="../Coding%20Problem/#Step-by-step-solution">¶</a>
+</h3>
+<p>Now I am going to break down the problem and solve it step-by-step. First of all, we are aiming to pass the easiest example as below.</p>
+<p>Example 1)</p>
+<ul>
+<li>Input: [0,1,2,3,4,3,4]</li>
+<li>Output: "dba"</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Create-mapping-from-integer-to-alphabet">Create mapping from integer to alphabet<a class="anchor-link" href="../Coding%20Problem/#Create-mapping-from-integer-to-alphabet">¶</a>
+</h4>
+<p>this is used to convert the integer to alphabet.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># My solution</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">):</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="c1"># Hao's solution</span>
+<span class="n">maps</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">letters</span><span class="o">=</span><span class="s1">'abcdefghijklmnopqrstuvwxyz'</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">letters</span><span class="p">):</span>
+    <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">l</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-% if show_sourcelink:
-    </p>
-<li>
-    <a href="%24%7Bpost.source_link()%7D" id="sourcelink">${messages("Source")}</a>
-    </li>
-% endif
-%block&gt;</body></html>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'b'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">maps</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'z'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Recursive-function">Recursive function<a class="anchor-link" href="../Coding%20Problem/#Recursive-function">¶</a>
+</h4>
+<p>Now we need to create the recursive function which returns the strings associated to the shortest path by given a node or tree. There are 4 cases for each node:</p>
+<ol>
+<li>both node is null</li>
+<li>left node is null</li>
+<li>right note is null</li>
+<li>both node has another tree</li>
+</ol>
+<p>For cases 1~3, it is obvious to determine what is the shortest path for the given node. For case 4, we need to see which is the shortest based on the returned string from both node, which requires calling the recursive function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Learning---min-with-string">Learning - <code>min</code> with <code>string</code><a class="anchor-link" href="../Coding%20Problem/#Learning---min-with-string">¶</a>
+</h3>
+<p>We do not have to store the length and string at the same time. If we pass two strings to <code>min</code> function, the function returns the shorter one. For example,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">,</span> <span class="s1">'xyzxyz'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'abc'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Execusion">Execusion<a class="anchor-link" href="../Coding%20Problem/#Execusion">¶</a>
+</h3>
+<p>Input: [0,1,2,3,4,3,4]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smallestFromLeaf</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'dba'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="../Coding%20Problem/#Conclusion">¶</a>
+</h2>
+<p>This is the problem we need to use</p>
+<ul>
+<li>mapping dictionary from integer to alphabet</li>
+<li>recursive function to return the strings matched with the shorted path</li>
+<li>implement 4 possible cases for each node</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/coding-problem/" rel="tag">Coding Problem</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../us-census-in-2014/" rel="prev" title="US Census in 2014">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../990-satisfiability-of-equality-equations/" rel="next" title="990 Satisfiability of Equality Equations">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="disqus_iVhzHtn558",
+            disqus_url="https://h1ros.github.io/posts/Coding%20Problem/",
+        disqus_title="998 Smallest String Starting From Leaf",
+        disqus_identifier="cache/posts/998 Smallest String Starting From Leaf.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="disqus_iVhzHtn558";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><span class="pull-right">
+  <a class="twitter-follow-button" href="https://twitter.com/__h1r0__" data-show-count="false" data-show-screen-name="false">
+  Follow @h1r0
+  </a>
+  <a class="github-button" href="https://github.com/h1ros" aria-label="Follow @h1ros on GitHub" data-show-count="false">
+  Follow @h1ros
+</a></span>
+
+
+    <!-- fancy dates -->
+    <script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>
