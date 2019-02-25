@@ -33,7 +33,7 @@
 <article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
     ${pheader.html_post_header()}
 
-    % if needs_ipython_css:
+    <!-- % if needs_ipython_css:
     <div>
 
 
@@ -69,7 +69,6 @@
     % else:
          code_show = true;
     % endif
-
     console.log(code_show)
     $( document ).ready(toggle_setup);
     $( document ).ready(code_toggle);
@@ -86,9 +85,10 @@
     </script>
 
 
-
+<!-- </script> -->
+<!-- <form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form> -->
     </div>
-    % endif
+    % endif -->
     
 
     <div class="e-content entry-content" itemprop="articleBody text">
