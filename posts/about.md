@@ -1,9 +1,9 @@
 <!--
 .. title: About
 .. slug: about
-.. tags: about
+.. tags: 
 .. date: 2019-02-03 22:39:39 UTC-08:00
-.. category: about
+.. category: 
 .. link: 
 .. description: 
 .. type: text
