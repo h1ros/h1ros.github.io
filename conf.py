@@ -1382,8 +1382,8 @@ WARN_ABOUT_TAG_METADATA = False
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
     "mdl__version": "1.3.0",
-    "mdl__color_scheme": "indigo-pink",
-    "mdl__roboto_font": False,
+    "mdl__color_scheme": "Alabaster",
+    "mdl__roboto_font": True,
     "mdl__late_load_css": False,
     "mdl__cachebusting": "1",
     "mdl__fixed_header": False,
