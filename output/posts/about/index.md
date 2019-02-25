@@ -20,12 +20,6 @@ Through this blog, I would like to deepen my extertise by explaining to myself a
 
 
 ### Contact
-If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on Twitter and _GitHub.
+If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on (Twitter)[https://twitter.com/__h1r0__] and (GitHub)[https://github.com/h1ros].
 
-
-
-.. _GitHub: https://github.com/h1ros
-.. _Twitter: http://twitter.com/louistiao
-.. _`l..@me.com`: 
-   http://www.google.com/recaptcha/mailhide/d?k=01ZGES3iSWmUwr35sEbB8-VA==&c=PeD7vZlw1_DRu8fsayKDuVdVl_rtu18xfsGBgyvNXwc= 
 
