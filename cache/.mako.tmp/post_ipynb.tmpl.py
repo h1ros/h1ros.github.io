@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551075268.21014
+_modified_time = 1551075513.558672
 _enable_loop = True
 _template_filename = 'themes/bootstrap3-gradients/templates/post_ipynb.tmpl'
 _template_uri = 'post_ipynb.tmpl'
@@ -39,23 +39,21 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        parent = context.get('parent', UNDEFINED)
         math = _mako_get_namespace(context, 'math')
-        def content():
-            return render_content(context._locals(__M_locals))
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
-        helper = _mako_get_namespace(context, 'helper')
-        code = context.get('code', UNDEFINED)
-        post = context.get('post', UNDEFINED)
-        needs_ipython_css = context.get('needs_ipython_css', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
         show_sourcelink = context.get('show_sourcelink', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        pheader = _mako_get_namespace(context, 'pheader')
-        messages = context.get('messages', UNDEFINED)
-        parent = context.get('parent', UNDEFINED)
         def sourcelink():
             return render_sourcelink(context._locals(__M_locals))
+        messages = context.get('messages', UNDEFINED)
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        post = context.get('post', UNDEFINED)
+        pheader = _mako_get_namespace(context, 'pheader')
+        comments = _mako_get_namespace(context, 'comments')
+        def content():
+            return render_content(context._locals(__M_locals))
+        helper = _mako_get_namespace(context, 'helper')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -84,12 +82,12 @@ def render_body(context,**pageargs):
 def render_extra_head(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        parent = context.get('parent', UNDEFINED)
         math = _mako_get_namespace(context, 'math')
         def extra_head():
             return render_extra_head(context)
-        helper = _mako_get_namespace(context, 'helper')
-        parent = context.get('parent', UNDEFINED)
         post = context.get('post', UNDEFINED)
+        helper = _mako_get_namespace(context, 'helper')
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(parent.extra_head()))
@@ -98,7 +96,7 @@ def render_extra_head(context,**pageargs):
             __M_writer('    <meta name="keywords" content="')
             __M_writer(filters.html_escape(str(post.meta('keywords'))))
             __M_writer('">\n')
-        __M_writer('    <meta name="author" content="')
+        __M_writer('\n    <meta name="author" content="')
         __M_writer(filters.html_escape(str(post.author())))
         __M_writer('">\n')
         if post.prev_post:
@@ -107,15 +105,17 @@ def render_extra_head(context,**pageargs):
             __M_writer('" title="')
             __M_writer(filters.html_escape(str(post.prev_post.title())))
             __M_writer('" type="text/html">\n')
+        __M_writer('\n')
         if post.next_post:
             __M_writer('        <link rel="next" href="')
             __M_writer(str(post.next_post.permalink()))
             __M_writer('" title="')
             __M_writer(filters.html_escape(str(post.next_post.title())))
             __M_writer('" type="text/html">\n')
+        __M_writer('\n')
         if post.is_draft:
             __M_writer('        <meta name="robots" content="noindex">\n')
-        __M_writer('    ')
+        __M_writer('    \n    ')
         __M_writer(str(helper.open_graph_metadata(post)))
         __M_writer('\n    ')
         __M_writer(str(helper.twitter_card_information(post)))
@@ -132,31 +132,21 @@ def render_extra_head(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        math = _mako_get_namespace(context, 'math')
+        messages = context.get('messages', UNDEFINED)
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        post = context.get('post', UNDEFINED)
+        pheader = _mako_get_namespace(context, 'pheader')
+        comments = _mako_get_namespace(context, 'comments')
         def content():
             return render_content(context)
-        math = _mako_get_namespace(context, 'math')
         helper = _mako_get_namespace(context, 'helper')
-        code = context.get('code', UNDEFINED)
-        post = context.get('post', UNDEFINED)
-        needs_ipython_css = context.get('needs_ipython_css', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        pheader = _mako_get_namespace(context, 'pheader')
-        messages = context.get('messages', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<article class="post-')
         __M_writer(str(post.meta('type')))
         __M_writer(' h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">\n    ')
         __M_writer(str(pheader.html_post_header()))
-        __M_writer('\n\n')
-        if needs_ipython_css:
-            __M_writer("    <div>\n\n\n\n<!-- <script>\n\n//console.log(code_show);\n//\n//if (typeof code_show == 'undefined') {\n//    code_show = true\n//  } else {\n//    code_show = false\n//    }\n//\n//console.log(code_show);\n\n\n//function code_toggle() {\n//    console.log('code_toggle');\n//    console.log(code_show);\t\n//\n// if (!code_show){\n// $('div.input').hide();\n// $('div.prompt.output_prompt').hide();\n// } else {\n// $('div.input').show();\n// }\n// code_show = !code_show\n//}\n\n")
-            if code == "False":
-                __M_writer('     code_show = false;\n')
-            else:
-                __M_writer('     code_show = true;\n')
-            __M_writer('console.log(code_show)\n$( document ).ready(toggle_setup);\n$( document ).ready(code_toggle);\n\n// if the image in the window of browser when the page is loaded, show that image (fade in)\n$(document).ready(function(){\n        showImages(\'article img\');\n});\n\n// if the image in the window of browser when scrolling the page, show that image\n$(window).scroll(function() {\n        showImages(\'article img\');\n});\n</script>\n\n\n</script>\n<form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>\n    </div>\n')
-        __M_writer('    \n\n    <div class="e-content entry-content" itemprop="articleBody text">\n    ')
+        __M_writer('\n\n\n    <div class="e-content entry-content" itemprop="articleBody text">\n    ')
         __M_writer(str(post.text()))
         __M_writer('\n    </div>\n    <aside class="postpromonav">\n    <nav>\n    ')
         __M_writer(str(helper.html_tags(post)))
@@ -184,9 +174,9 @@ def render_sourcelink(context,**pageargs):
     try:
         def sourcelink():
             return render_sourcelink(context)
+        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         post = context.get('post', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if show_sourcelink:
@@ -202,6 +192,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "themes/bootstrap3-gradients/templates/post_ipynb.tmpl", "uri": "post_ipynb.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 3, "29": 4, "32": 5, "38": 0, "60": 2, "61": 3, "62": 4, "63": 5, "64": 6, "69": 30, "74": 112, "84": 8, "94": 8, "95": 9, "96": 9, "97": 10, "98": 11, "99": 11, "100": 11, "101": 13, "102": 13, "103": 13, "104": 14, "105": 15, "106": 15, "107": 15, "108": 15, "109": 15, "110": 17, "111": 18, "112": 18, "113": 18, "114": 18, "115": 18, "116": 20, "117": 21, "118": 23, "119": 23, "120": 23, "121": 24, "122": 24, "123": 25, "124": 25, "125": 26, "126": 26, "132": 32, "147": 32, "148": 33, "149": 33, "150": 34, "151": 34, "152": 36, "153": 37, "154": 67, "155": 68, "156": 69, "157": 70, "158": 72, "159": 92, "160": 95, "161": 95, "162": 99, "163": 99, "164": 100, "165": 100, "166": 103, "167": 104, "168": 105, "169": 105, "170": 106, "171": 106, "172": 109, "173": 109, "174": 109, "175": 111, "176": 111, "182": 114, "191": 114, "192": 115, "193": 116, "194": 117, "195": 117, "196": 117, "197": 117, "203": 197}}
+{"filename": "themes/bootstrap3-gradients/templates/post_ipynb.tmpl", "uri": "post_ipynb.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 3, "29": 4, "32": 5, "38": 0, "58": 2, "59": 3, "60": 4, "61": 5, "62": 6, "67": 34, "72": 59, "82": 8, "92": 8, "93": 9, "94": 9, "95": 10, "96": 11, "97": 11, "98": 11, "99": 13, "100": 14, "101": 14, "102": 15, "103": 16, "104": 16, "105": 16, "106": 16, "107": 16, "108": 18, "109": 19, "110": 20, "111": 20, "112": 20, "113": 20, "114": 20, "115": 22, "116": 23, "117": 24, "118": 26, "119": 27, "120": 27, "121": 28, "122": 28, "123": 29, "124": 29, "125": 30, "126": 30, "132": 36, "145": 36, "146": 37, "147": 37, "148": 38, "149": 38, "150": 42, "151": 42, "152": 46, "153": 46, "154": 47, "155": 47, "156": 50, "157": 51, "158": 52, "159": 52, "160": 53, "161": 53, "162": 56, "163": 56, "164": 56, "165": 58, "166": 58, "172": 61, "181": 61, "182": 62, "183": 63, "184": 64, "185": 64, "186": 64, "187": 64, "193": 187}}
 __M_END_METADATA
 """
