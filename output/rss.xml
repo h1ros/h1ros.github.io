@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 25 Feb 2019 05:08:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 25 Feb 2019 06:11:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>995. Minimum Number of K Consecutive Bit Flips</title><link>https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Problem-setting"&gt;Problem setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/995-minimum-number-of-k-consecutive-bit-flips/#Problem-setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This problem "Minimum Number of K Consecutive Bit Flips" is one of the &lt;code&gt;hard&lt;/code&gt; problems in LeetCode weekly contest 124. I was not able to spend the time during the contest. So let me review the solution line by line.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Given an array A of non-negative integers, the array is squareful if for every pair of adjacent elements, their sum is a perfect square.
-
-Return the number of permutations of A that are squareful.  Two permutations A1 and A2 differ if and only if there is some index i such that A1[i] != A2[i].
-
-Note:
+&lt;p&gt;Given an array A of non-negative integers, the array is squareful if for every pair of adjacent elements, their sum is a perfect square.&lt;/p&gt;
+&lt;p&gt;Return the number of permutations of A that are squareful.  Two permutations A1 and A2 differ if and only if there is some index i such that A1[i] != A2[i].&lt;/p&gt;
+&lt;p&gt;Note:
 1 &amp;lt;= A.length &amp;lt;= 30000
-1 &amp;lt;= K &amp;lt;= A.length&lt;/code&gt;&lt;/pre&gt;
+1 &amp;lt;= K &amp;lt;= A.length&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
