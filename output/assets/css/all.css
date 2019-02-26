@@ -828,3 +828,18 @@ article.post-micro {
     }
 }
 
+div.prompt {
+  padding: 0.6em;
+  font-size: 13px;
+  background-color: transparent !important ;
+  margin-right: 1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.rendered_html code {
+    background-color: #f8f8f8;
+    margin: 1em 0em;
+    font-size: 14px;
+}
