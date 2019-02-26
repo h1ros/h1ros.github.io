@@ -843,7 +843,13 @@ div.prompt {
     margin: 1em 0em;
     font-size: 14px;
 }
-
-a {
+.rendered_html pre, .rendered_html code {
+	background-color: #f8f8f8 !important;
+}
+.p-name.entry-title  {
 	color: #0074CA !important;
+}
+
+.navbar-inverse{
+	background-image: linear-gradient(to bottom,#585858 0,#8a8282 100% !important;
 }
