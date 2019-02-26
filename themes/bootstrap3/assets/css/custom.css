@@ -9,7 +9,11 @@ div.prompt {
 }
 
 .rendered_html code {
-    background-color: #f8f8f8;
+    background-color: #f8f8f8 !important;
     margin: 1em 0em;
     font-size: 14px;
+}
+
+a {
+	color: #0074CA !important;
 }
