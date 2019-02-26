@@ -140,6 +140,15 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2:">Example 2:<a class="anchor-link" href="#Example-2:">¶</a>
 </h3>
 <p>Input: A = [1,1,0], K = 2</p>
@@ -173,7 +182,15 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution-from-Huoran-Li">Solution from <a href="https://leetcode.com/lihuoran/">Huoran Li</a><a class="anchor-link" href="#Solution-from-Huoran-Li">¶</a>
 </h2>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
 
 <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">minKBitFlips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="s1">'List[int]'</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'int'</span><span class="p">:</span>
@@ -219,8 +236,10 @@ Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]</p>
         <span class="k">return</span> <span class="n">ans</span>
 </pre></div>
 
+    </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -368,7 +387,16 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
 <h3 id="First-for-Loop">First <code>for</code> Loop<a class="anchor-link" href="#First-for-Loop">¶</a>
 </h3>
 <p><code>n</code> is the length of an given array <code>A</code>, and <code>k</code> is the maximum number of the length of a sub array that we can flip.</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">mark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
         <span class="n">cnt</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="n">mark</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
@@ -392,8 +420,10 @@ remove(c): ['a', 'b', 'd', 'e', 'f', 'g']
             <span class="c1"># print(i, a, mark)</span>
 </pre></div>
 
+    </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
