@@ -13,7 +13,7 @@ Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], a data scientist an
 
 
 ## Objectives 
-Through explaining the concept, theories, technologies, technique, and tools to myself and others in this blog, I would like to deepen my knowledge and expertise (following (Learn better)[https://www.amazon.com/Learn-Better-Mastering-Business-Anything-ebook/dp/B01IIQQF10/ref=sr_1_2?keywords=learn+better&qid=1551251923&s=books&sr=1-2] and (Feynman Technique)[https://mattyford.com/blog/2014/1/23/the-feynman-technique-model]). I will be glad that anyone see this would be helpful in any aspect. 
+Through explaining the concept, theories, technologies, technique, and tools to myself and others in this blog, I would like to deepen my knowledge and expertise (following the lessons from [Learn Better](https://www.amazon.com/Learn-Better-Mastering-Business-Anything-ebook/dp/B01IIQQF10/ref=sr_1_2?keywords=learn+better&qid=1551251923&s=books&sr=1-2) and [Feynman Technique](https://mattyford.com/blog/2014/1/23/the-feynman-technique-model). I will be glad that anyone see this would be helpful in any aspect. 
 
 ## Motto
 * I compare myself with who I was yesterday to progress
