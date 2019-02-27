@@ -1,0 +1,851 @@
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction-to-graphviz-in-Jupyter-Noboteook">Introduction to graphviz in Jupyter Noboteook<a class="anchor-link" href="#Introduction-to-graphviz-in-Jupyter-Noboteook">&#182;</a></h1><p>The goal in this post is to introduce <code>graphviz</code> to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly digest problems and solutions.</p>
+<p>Since we work with <code>TreeNode</code> and trees in a list-expresion e.g., [1, 2, null, 3] in LeetCode, the goal of this post is to easily convert the given tree in a list-expression into the visualization like below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="k">import</span> <span class="n">SVG</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;digraph.svg.svg&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<svg height="188pt" viewBox="0.00 0.00 206.00 188.00" width="206pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="#ffffff" points="-4,4 -4,-184 202,-184 202,4 -4,4" stroke="transparent"/>
+<!-- __main__.TreeNode object at 0x10be5a390 -->
+<g class="node" id="node1">
+<title>__main__.TreeNode object at 0x10be5a390</title>
+<ellipse cx="135" cy="-162" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="135" y="-157.8">3</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a438 -->
+<g class="node" id="node2">
+<title>__main__.TreeNode object at 0x10be5a438</title>
+<ellipse cx="99" cy="-90" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="99" y="-85.8">4</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a390&#45;&gt;__main__.TreeNode object at 0x10be5a438 -->
+<g class="edge" id="edge1">
+<title>__main__.TreeNode object at 0x10be5a390-&gt;__main__.TreeNode object at 0x10be5a438</title>
+<path d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477" stroke="#000000"/>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a400 -->
+<g class="node" id="node5">
+<title>__main__.TreeNode object at 0x10be5a400</title>
+<ellipse cx="171" cy="-90" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="171" y="-85.8">5</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a390&#45;&gt;__main__.TreeNode object at 0x10be5a400 -->
+<g class="edge" id="edge4">
+<title>__main__.TreeNode object at 0x10be5a390-&gt;__main__.TreeNode object at 0x10be5a400</title>
+<path d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782" stroke="#000000"/>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a208 -->
+<g class="node" id="node3">
+<title>__main__.TreeNode object at 0x10be5a208</title>
+<ellipse cx="27" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="27" y="-13.8">5</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a438&#45;&gt;__main__.TreeNode object at 0x10be5a208 -->
+<g class="edge" id="edge2">
+<title>__main__.TreeNode object at 0x10be5a438-&gt;__main__.TreeNode object at 0x10be5a208</title>
+<path d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436" stroke="#000000"/>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a3c8 -->
+<g class="node" id="node4">
+<title>__main__.TreeNode object at 0x10be5a3c8</title>
+<ellipse cx="99" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="99" y="-13.8">4</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a438&#45;&gt;__main__.TreeNode object at 0x10be5a3c8 -->
+<g class="edge" id="edge3">
+<title>__main__.TreeNode object at 0x10be5a438-&gt;__main__.TreeNode object at 0x10be5a3c8</title>
+<path d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132" stroke="#000000"/>
+</g>
+<!-- __main__.TreeNode object at 0x10be5af28 -->
+<g class="node" id="node6">
+<title>__main__.TreeNode object at 0x10be5af28</title>
+<ellipse cx="171" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"/>
+<text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="171" y="-13.8">7</text>
+</g>
+<!-- __main__.TreeNode object at 0x10be5a400&#45;&gt;__main__.TreeNode object at 0x10be5af28 -->
+<g class="edge" id="edge5">
+<title>__main__.TreeNode object at 0x10be5a400-&gt;__main__.TreeNode object at 0x10be5af28</title>
+<path d="M171,-71.8314C171,-64.131 171,-54.9743 171,-46.4166" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="174.5001,-46.4132 171,-36.4133 167.5001,-46.4133 174.5001,-46.4132" stroke="#000000"/>
+</g>
+</g>
+</svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Usage">Basic Usage<a class="anchor-link" href="#Basic-Usage">&#182;</a></h1><p>First of all, let's plot simplest two nodes and the edge between them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+<span class="c1"># Create Digraph object</span>
+<span class="n">dot</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Add nodes 1 and 2</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add edge between 1 and 2</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">&#39;12&#39;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Visualize the graph</span>
+<span class="n">dot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %3 Pages: 1 -->
+<svg width="62pt" height="116pt"
+ viewBox="0.00 0.00 62.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 58,-112 58,4 -4,4"/>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- 2 -->
+<g id="node2" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 1&#45;&gt;2 -->
+<g id="edge1" class="edge">
+<title>1&#45;&gt;2</title>
+<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Input-Tree-Nodes">Input Tree Nodes<a class="anchor-link" href="#Input-Tree-Nodes">&#182;</a></h1><p>Now we look at an example of input tree nodes like below. We wrote the function to merge two trees in <a href="https://h1ros.github.io/posts/617-merge-two-binary-trees/">617. Merge Two Binary Trees</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Definition for a binary tree node.</span>
+<span class="k">class</span> <span class="nc">TreeNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+        
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">mergeTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :type t1: TreeNode</span>
+<span class="sd">        :type t2: TreeNode</span>
+<span class="sd">        :rtype: TreeNode</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">t1</span> <span class="ow">and</span> <span class="n">t2</span><span class="p">:</span>
+            <span class="c1"># Merge the values from two trees</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">t2</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            
+            <span class="c1"># Merge the left trees using the function recursively</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            
+            <span class="c1"># Merge the right trees using the function recursively</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">node</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">t1</span> <span class="ow">or</span> <span class="n">t2</span>
+        
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example 1</span>
+
+<span class="c1"># Left tree</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Right tree</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="n">merged_tree</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualize-One-Tree-t1">Visualize One Tree <code>t1</code><a class="anchor-link" href="#Visualize-One-Tree-t1">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Manual-creation">Manual creation<a class="anchor-link" href="#Manual-creation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create Digraph object</span>
+<span class="n">dot</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
+
+<span class="c1"># Add nodes</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add edges</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;13&#39;</span><span class="p">,</span> <span class="s1">&#39;35&#39;</span><span class="p">])</span>
+
+<span class="c1"># Visualize the graph</span>
+<span class="n">dot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %3 Pages: 1 -->
+<svg width="134pt" height="188pt"
+ viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- 3 -->
+<g id="node2" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- 1&#45;&gt;3 -->
+<g id="edge2" class="edge">
+<title>1&#45;&gt;3</title>
+<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"/>
+</g>
+<!-- 2 -->
+<g id="node3" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 1&#45;&gt;2 -->
+<g id="edge1" class="edge">
+<title>1&#45;&gt;2</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"/>
+</g>
+<!-- 5 -->
+<g id="node4" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- 3&#45;&gt;5 -->
+<g id="edge3" class="edge">
+<title>3&#45;&gt;5</title>
+<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Programatic-Creation">Programatic Creation<a class="anchor-link" href="#Programatic-Creation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">visualize_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_nodes_edges</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">dot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Create Digraph object</span>
+        <span class="k">if</span> <span class="n">dot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dot</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
+            <span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
+
+        <span class="c1"># Add nodes</span>
+        <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+            <span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
+            <span class="n">dot</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">))</span>
+            <span class="n">dot</span> <span class="o">=</span> <span class="n">add_nodes_edges</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">dot</span><span class="o">=</span><span class="n">dot</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="n">dot</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
+            <span class="n">dot</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+            <span class="n">dot</span> <span class="o">=</span> <span class="n">add_nodes_edges</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">dot</span><span class="o">=</span><span class="n">dot</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">dot</span>
+    
+    <span class="c1"># Add nodes recursively and create a list of edges</span>
+    <span class="n">dot</span> <span class="o">=</span> <span class="n">add_nodes_edges</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+
+    <span class="c1"># Visualize the graph</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">dot</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">dot</span>
+    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_svg output_subarea ">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %3 Pages: 1 -->
+<svg width="134pt" height="188pt"
+ viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
+<!-- __main__.TreeNode object at 0x1059596a0 -->
+<g id="node1" class="node">
+<title>__main__.TreeNode object at 0x1059596a0</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959358 -->
+<g id="node2" class="node">
+<title>__main__.TreeNode object at 0x105959358</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059596a0&#45;&gt;__main__.TreeNode object at 0x105959358 -->
+<g id="edge1" class="edge">
+<title>__main__.TreeNode object at 0x1059596a0&#45;&gt;__main__.TreeNode object at 0x105959358</title>
+<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"/>
+</g>
+<!-- __main__.TreeNode object at 0x105959518 -->
+<g id="node4" class="node">
+<title>__main__.TreeNode object at 0x105959518</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059596a0&#45;&gt;__main__.TreeNode object at 0x105959518 -->
+<g id="edge3" class="edge">
+<title>__main__.TreeNode object at 0x1059596a0&#45;&gt;__main__.TreeNode object at 0x105959518</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"/>
+</g>
+<!-- __main__.TreeNode object at 0x1059592b0 -->
+<g id="node3" class="node">
+<title>__main__.TreeNode object at 0x1059592b0</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959358&#45;&gt;__main__.TreeNode object at 0x1059592b0 -->
+<g id="edge2" class="edge">
+<title>__main__.TreeNode object at 0x105959358&#45;&gt;__main__.TreeNode object at 0x1059592b0</title>
+<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_svg output_subarea ">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %3 Pages: 1 -->
+<svg width="134pt" height="188pt"
+ viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
+<!-- __main__.TreeNode object at 0x1059595f8 -->
+<g id="node1" class="node">
+<title>__main__.TreeNode object at 0x1059595f8</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959668 -->
+<g id="node2" class="node">
+<title>__main__.TreeNode object at 0x105959668</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059595f8&#45;&gt;__main__.TreeNode object at 0x105959668 -->
+<g id="edge1" class="edge">
+<title>__main__.TreeNode object at 0x1059595f8&#45;&gt;__main__.TreeNode object at 0x105959668</title>
+<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"/>
+</g>
+<!-- __main__.TreeNode object at 0x105959eb8 -->
+<g id="node4" class="node">
+<title>__main__.TreeNode object at 0x105959eb8</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059595f8&#45;&gt;__main__.TreeNode object at 0x105959eb8 -->
+<g id="edge3" class="edge">
+<title>__main__.TreeNode object at 0x1059595f8&#45;&gt;__main__.TreeNode object at 0x105959eb8</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"/>
+</g>
+<!-- __main__.TreeNode object at 0x1059594a8 -->
+<g id="node3" class="node">
+<title>__main__.TreeNode object at 0x1059594a8</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959668&#45;&gt;__main__.TreeNode object at 0x1059594a8 -->
+<g id="edge2" class="edge">
+<title>__main__.TreeNode object at 0x105959668&#45;&gt;__main__.TreeNode object at 0x1059594a8</title>
+<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"/>
+</g>
+<!-- __main__.TreeNode object at 0x105959fd0 -->
+<g id="node5" class="node">
+<title>__main__.TreeNode object at 0x105959fd0</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959eb8&#45;&gt;__main__.TreeNode object at 0x105959fd0 -->
+<g id="edge4" class="edge">
+<title>__main__.TreeNode object at 0x105959eb8&#45;&gt;__main__.TreeNode object at 0x105959fd0</title>
+<path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">merged_tree</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_svg output_subarea ">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %3 Pages: 1 -->
+<svg width="206pt" height="188pt"
+ viewBox="0.00 0.00 206.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 202,-184 202,4 -4,4"/>
+<!-- __main__.TreeNode object at 0x1059590f0 -->
+<g id="node1" class="node">
+<title>__main__.TreeNode object at 0x1059590f0</title>
+<ellipse fill="none" stroke="#000000" cx="135" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="135" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959dd8 -->
+<g id="node2" class="node">
+<title>__main__.TreeNode object at 0x105959dd8</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059590f0&#45;&gt;__main__.TreeNode object at 0x105959dd8 -->
+<g id="edge1" class="edge">
+<title>__main__.TreeNode object at 0x1059590f0&#45;&gt;__main__.TreeNode object at 0x105959dd8</title>
+<path fill="none" stroke="#000000" d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477"/>
+</g>
+<!-- __main__.TreeNode object at 0x105959e48 -->
+<g id="node5" class="node">
+<title>__main__.TreeNode object at 0x105959e48</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- __main__.TreeNode object at 0x1059590f0&#45;&gt;__main__.TreeNode object at 0x105959e48 -->
+<g id="edge4" class="edge">
+<title>__main__.TreeNode object at 0x1059590f0&#45;&gt;__main__.TreeNode object at 0x105959e48</title>
+<path fill="none" stroke="#000000" d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782"/>
+</g>
+<!-- __main__.TreeNode object at 0x1059592b0 -->
+<g id="node3" class="node">
+<title>__main__.TreeNode object at 0x1059592b0</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959dd8&#45;&gt;__main__.TreeNode object at 0x1059592b0 -->
+<g id="edge2" class="edge">
+<title>__main__.TreeNode object at 0x105959dd8&#45;&gt;__main__.TreeNode object at 0x1059592b0</title>
+<path fill="none" stroke="#000000" d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637"/>
+<polygon fill="#000000" stroke="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436"/>
+</g>
+<!-- __main__.TreeNode object at 0x1059594a8 -->
+<g id="node4" class="node">
+<title>__main__.TreeNode object at 0x1059594a8</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959dd8&#45;&gt;__main__.TreeNode object at 0x1059594a8 -->
+<g id="edge3" class="edge">
+<title>__main__.TreeNode object at 0x105959dd8&#45;&gt;__main__.TreeNode object at 0x1059594a8</title>
+<path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"/>
+</g>
+<!-- __main__.TreeNode object at 0x105959fd0 -->
+<g id="node6" class="node">
+<title>__main__.TreeNode object at 0x105959fd0</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text>
+</g>
+<!-- __main__.TreeNode object at 0x105959e48&#45;&gt;__main__.TreeNode object at 0x105959fd0 -->
+<g id="edge5" class="edge">
+<title>__main__.TreeNode object at 0x105959e48&#45;&gt;__main__.TreeNode object at 0x105959fd0</title>
+<path fill="none" stroke="#000000" d="M171,-71.8314C171,-64.131 171,-54.9743 171,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-46.4132 171,-36.4133 167.5001,-46.4133 174.5001,-46.4132"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Save as svg file</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;svg&#39;</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;digraph.svg&#39;</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;./digraph.svg.svg&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h1><p>We need <code>graphviz</code> package. You can also refer to <a href="https://graphviz.readthedocs.io/en/stable/manual.html"><code>graphviz</code> documentation</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install graphviz
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: graphviz in /Users/212339410/anaconda3/envs/py367/lib/python3.6/site-packages (0.10.1)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+

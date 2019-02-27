@@ -1,13 +1,15 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Problem-Setting">Problem Setting<a class="anchor-link" href="#Problem-Setting">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.</p>
 <p>You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.</p>
@@ -16,14 +18,16 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example-1:">Example 1:<a class="anchor-link" href="#Example-1:">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>Input: 
@@ -45,14 +49,16 @@ Merged tree:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- TEASER_END -->
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note: The merging process must start from the root nodes of both trees.</p>
 
@@ -60,7 +66,8 @@ Merged tree:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h1>
 </div>
@@ -105,13 +112,14 @@ Merged tree:
             
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Complexity-Analysis">Complexity Analysis<a class="anchor-link" href="#Complexity-Analysis">&#182;</a></h2><ul>
 <li><p>Time Complexity $O (m)$</p>
@@ -126,7 +134,8 @@ Merged tree:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Step-by-step-solution">Step-by-step solution<a class="anchor-link" href="#Step-by-step-solution">&#182;</a></h1><p>Let's see the solution code step-by-step.</p>
 
@@ -154,7 +163,7 @@ Merged tree:
 <span class="n">t2</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -169,13 +178,14 @@ Merged tree:
 <span class="n">t_merged</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="if-t1-and-t2:">if t1 and t2:<a class="anchor-link" href="#if-t1-and-t2:">&#182;</a></h2><p>The first if-statement determines if both input arguments <code>t1</code> and <code>t2</code> are not <code>None</code>.</p>
 
@@ -183,7 +193,8 @@ Merged tree:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Both-trees-are-not-None">Both trees are not <code>None</code><a class="anchor-link" href="#Both-trees-are-not-None">&#182;</a></h3>
 </div>
@@ -197,7 +208,7 @@ Merged tree:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t1</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -207,7 +218,7 @@ Merged tree:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -230,7 +241,7 @@ Merged tree:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t2</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -240,7 +251,7 @@ Merged tree:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -263,7 +274,7 @@ Merged tree:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t1</span> <span class="ow">and</span> <span class="n">t2</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -273,7 +284,7 @@ Merged tree:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -297,7 +308,7 @@ Merged tree:
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -307,7 +318,7 @@ Merged tree:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -321,7 +332,8 @@ Merged tree:
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Either-of-tree-is-None">Either of tree is <code>None</code><a class="anchor-link" href="#Either-of-tree-is-None">&#182;</a></h3>
 </div>
@@ -336,7 +348,7 @@ Merged tree:
 <span class="kc">None</span> <span class="ow">and</span> <span class="n">t2</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -354,13 +366,14 @@ Merged tree:
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Both-of-tree-is-None">Both of tree is <code>None</code><a class="anchor-link" href="#Both-of-tree-is-None">&#182;</a></h3>
 </div>
@@ -375,7 +388,7 @@ Merged tree:
 <span class="kc">None</span> <span class="ow">and</span> <span class="kc">None</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -391,13 +404,14 @@ Merged tree:
     
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="if-statement-is-False">if statement is <code>False</code><a class="anchor-link" href="#if-statement-is-False">&#182;</a></h2><ul>
 <li><code>t1 or t2</code> return "not <code>None</code>" object, if either of them is not None, and </li>
@@ -421,7 +435,7 @@ Merged tree:
         <span class="k">return</span> <span class="n">t1</span> <span class="ow">or</span> <span class="n">t2</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -435,7 +449,7 @@ Merged tree:
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;t2: </span><span class="si">{t2}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -445,7 +459,7 @@ Merged tree:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -467,7 +481,7 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">return_or</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -477,7 +491,7 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -500,7 +514,7 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">return_or</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -510,7 +524,7 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -533,20 +547,22 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">return_or</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="if-statement-is-True">if statement is <code>True</code><a class="anchor-link" href="#if-statement-is-True">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the example, "if statement is <code>True</code>" occurs only on the root node, which has both left and right nodes.</p>
 <p>First the sum of each value from both nodes i.e., $1 + 2 = 3$ is stored at the root node in a merged tree. Then the left merged node is recursively obtained by <code>node.left = self.mergeTrees(t1.left, t2.left)</code>. The same process occurs for the right node.</p>
@@ -555,14 +571,16 @@ t2: &lt;__main__.TreeNode object at 0x10e6870b8&gt;
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this problem, we saw the usage of</p>
 <ul>
