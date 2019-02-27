@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
 <meta property="og:title" content="Introduction to Graphviz in Jupyter Notebook">
 <meta property="og:url" content="https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/">
-<meta property="og:description" content="Introduction to graphviz in Jupyter Noboteook¶The goal in this post is to introduce graphviz to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer ">
+<meta property="og:description" content="Goal¶The goal in this post is to introduce graphviz to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly d">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-02-26T21:43:34-08:00">
 <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../assets/js/bootyper.js"></script>
@@ -108,7 +108,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction-to-graphviz-in-Jupyter-Noboteook">Introduction to graphviz in Jupyter Noboteook<a class="anchor-link" href="#Introduction-to-graphviz-in-Jupyter-Noboteook">¶</a>
+<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
 </h2>
 <p>The goal in this post is to introduce <code>graphviz</code> to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly digest problems and solutions.</p>
 <p>Since we work with <code>TreeNode</code> and trees in a list-expresion e.g., [1, 2, null, 3] in LeetCode, the goal of this post is to easily convert the given tree in a list-expression into the visualization like below.</p>
@@ -156,6 +156,35 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- TEASER_END --> 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="top"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">¶</a>
+</h2>
+<ol>
+<li><a href="#Goal">Goal</a></li>
+<li><a href="#Table-of-Contents">Table of Contents</a></li>
+<li><a href="#Basic-Usage">Basic Usage</a></li>
+<li><a href="#Preperation">Preperation of Tree Nodes</a></li>
+<li>
+<a href="#Visualize-Trees">Visualize Trees</a> </li>
+<li><a href="#Appendix">Appendix</a></li>
+</ol>
 </div>
 </div>
 </div>
@@ -247,7 +276,17 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Input-Tree-Nodes">Input Tree Nodes<a class="anchor-link" href="#Input-Tree-Nodes">¶</a>
+<p><a id="Preperation"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Preperation-of-Tree-Nodes">Preperation of Tree Nodes<a class="anchor-link" href="#Preperation-of-Tree-Nodes">¶</a>
 </h2>
 <p>Now we look at an example of input tree nodes like below. We wrote the function to merge two trees in <a href="https://h1ros.github.io/posts/617-merge-two-binary-trees/">617. Merge Two Binary Trees</a></p>
 
@@ -342,8 +381,23 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Visualize-One-Tree-t1">Visualize One Tree <code>t1</code><a class="anchor-link" href="#Visualize-One-Tree-t1">¶</a>
-</h3>
+<p>Now we have three trees <code>t1</code>, <code>t2</code>, and <code>merged_tree</code> like below:</p>
+
+<pre><code>Tree 1 (t1)                    Tree 2 (t2)               
+      1                         2                             
+     / \                       / \                            
+    3   2                     1   3                        
+   /                           \   \                      
+  5                             4   7                  
+
+
+Merged tree (merged_tree)
+         3
+        / \
+       4   5
+      / \   \ 
+     5   4   7</code></pre>
+
 </div>
 </div>
 </div>
@@ -352,8 +406,18 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Manual-creation">Manual creation<a class="anchor-link" href="#Manual-creation">¶</a>
-</h4>
+<h2 id="Visualize-Trees">Visualize Trees<a class="anchor-link" href="#Visualize-Trees">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Manual-creation">Manual creation<a class="anchor-link" href="#Manual-creation">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -416,8 +480,8 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Programatic-Creation">Programatic Creation<a class="anchor-link" href="#Programatic-Creation">¶</a>
-</h4>
+<h3 id="Programatic-Creation">Programatic Creation<a class="anchor-link" href="#Programatic-Creation">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -486,13 +550,13 @@
 <div class="output_svg output_subarea ">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
  --><!-- Title: %3 Pages: 1 --><svg width="134pt" height="188pt" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>%3</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x10aee9e48 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x10aee9e48</title>
-<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text></g><!-- __main__.TreeNode object at 0x10aee9c88 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x10aee9c88</title>
-<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x10aee9e48&#45;&gt;__main__.TreeNode object at 0x10aee9c88 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x10aee9e48-&gt;__main__.TreeNode object at 0x10aee9c88</title>
-<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x10aee9550 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x10aee9550</title>
-<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text></g><!-- __main__.TreeNode object at 0x10aee9e48&#45;&gt;__main__.TreeNode object at 0x10aee9550 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x10aee9e48-&gt;__main__.TreeNode object at 0x10aee9550</title>
-<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x10aee9e80 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x10aee9e80</title>
-<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x10aee9c88&#45;&gt;__main__.TreeNode object at 0x10aee9e80 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x10aee9c88-&gt;__main__.TreeNode object at 0x10aee9e80</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x105de7710 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x105de7710</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text></g><!-- __main__.TreeNode object at 0x105de7e48 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x105de7e48</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x105de7710&#45;&gt;__main__.TreeNode object at 0x105de7e48 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x105de7710-&gt;__main__.TreeNode object at 0x105de7e48</title>
+<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x105de7550 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x105de7550</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text></g><!-- __main__.TreeNode object at 0x105de7710&#45;&gt;__main__.TreeNode object at 0x105de7550 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x105de7710-&gt;__main__.TreeNode object at 0x105de7550</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x105de7518 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x105de7518</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x105de7e48&#45;&gt;__main__.TreeNode object at 0x105de7518 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x105de7e48-&gt;__main__.TreeNode object at 0x105de7518</title>
 <path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"></polygon></g></g></svg>
 </div>
 
@@ -527,15 +591,15 @@
 <div class="output_svg output_subarea ">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
  --><!-- Title: %3 Pages: 1 --><svg width="134pt" height="188pt" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>%3</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x10aee97b8 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x10aee97b8</title>
-<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text></g><!-- __main__.TreeNode object at 0x10aee9748 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x10aee9748</title>
-<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text></g><!-- __main__.TreeNode object at 0x10aee97b8&#45;&gt;__main__.TreeNode object at 0x10aee9748 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x10aee97b8-&gt;__main__.TreeNode object at 0x10aee9748</title>
-<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x10aee9630 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x10aee9630</title>
-<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x10aee97b8&#45;&gt;__main__.TreeNode object at 0x10aee9630 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x10aee97b8-&gt;__main__.TreeNode object at 0x10aee9630</title>
-<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x10aee9588 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x10aee9588</title>
-<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x10aee9748&#45;&gt;__main__.TreeNode object at 0x10aee9588 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x10aee9748-&gt;__main__.TreeNode object at 0x10aee9588</title>
-<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"></polygon></g><!-- __main__.TreeNode object at 0x10aee9710 --><g id="node5" class="node"><title>__main__.TreeNode object at 0x10aee9710</title>
-<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text></g><!-- __main__.TreeNode object at 0x10aee9630&#45;&gt;__main__.TreeNode object at 0x10aee9710 --><g id="edge4" class="edge"><title>__main__.TreeNode object at 0x10aee9630-&gt;__main__.TreeNode object at 0x10aee9710</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x105de7748 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x105de7748</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text></g><!-- __main__.TreeNode object at 0x105de7780 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x105de7780</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">1</text></g><!-- __main__.TreeNode object at 0x105de7748&#45;&gt;__main__.TreeNode object at 0x105de7780 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x105de7748-&gt;__main__.TreeNode object at 0x105de7780</title>
+<path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x105de7588 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x105de7588</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x105de7748&#45;&gt;__main__.TreeNode object at 0x105de7588 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x105de7748-&gt;__main__.TreeNode object at 0x105de7588</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x105de75f8 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x105de75f8</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x105de7780&#45;&gt;__main__.TreeNode object at 0x105de75f8 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x105de7780-&gt;__main__.TreeNode object at 0x105de75f8</title>
+<path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"></polygon></g><!-- __main__.TreeNode object at 0x105de7f98 --><g id="node5" class="node"><title>__main__.TreeNode object at 0x105de7f98</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text></g><!-- __main__.TreeNode object at 0x105de7588&#45;&gt;__main__.TreeNode object at 0x105de7f98 --><g id="edge4" class="edge"><title>__main__.TreeNode object at 0x105de7588-&gt;__main__.TreeNode object at 0x105de7f98</title>
 <path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"></polygon></g></g></svg>
 </div>
 
@@ -570,17 +634,17 @@
 <div class="output_svg output_subarea ">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
  --><!-- Title: %3 Pages: 1 --><svg width="206pt" height="188pt" viewbox="0.00 0.00 206.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>%3</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 202,-184 202,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x10aee94e0 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x10aee94e0</title>
-<ellipse fill="none" stroke="#000000" cx="135" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="135" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x10aee9668 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x10aee9668</title>
-<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x10aee94e0&#45;&gt;__main__.TreeNode object at 0x10aee9668 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x10aee94e0-&gt;__main__.TreeNode object at 0x10aee9668</title>
-<path fill="none" stroke="#000000" d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x10aee9518 --><g id="node5" class="node"><title>__main__.TreeNode object at 0x10aee9518</title>
-<ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x10aee94e0&#45;&gt;__main__.TreeNode object at 0x10aee9518 --><g id="edge4" class="edge"><title>__main__.TreeNode object at 0x10aee94e0-&gt;__main__.TreeNode object at 0x10aee9518</title>
-<path fill="none" stroke="#000000" d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x10aee9e80 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x10aee9e80</title>
-<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x10aee9668&#45;&gt;__main__.TreeNode object at 0x10aee9e80 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x10aee9668-&gt;__main__.TreeNode object at 0x10aee9e80</title>
-<path fill="none" stroke="#000000" d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637"></path><polygon fill="#000000" stroke="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436"></polygon></g><!-- __main__.TreeNode object at 0x10aee9588 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x10aee9588</title>
-<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x10aee9668&#45;&gt;__main__.TreeNode object at 0x10aee9588 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x10aee9668-&gt;__main__.TreeNode object at 0x10aee9588</title>
-<path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"></polygon></g><!-- __main__.TreeNode object at 0x10aee9710 --><g id="node6" class="node"><title>__main__.TreeNode object at 0x10aee9710</title>
-<ellipse fill="none" stroke="#000000" cx="171" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text></g><!-- __main__.TreeNode object at 0x10aee9518&#45;&gt;__main__.TreeNode object at 0x10aee9710 --><g id="edge5" class="edge"><title>__main__.TreeNode object at 0x10aee9518-&gt;__main__.TreeNode object at 0x10aee9710</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 202,-184 202,4 -4,4"></polygon><!-- __main__.TreeNode object at 0x105de73c8 --><g id="node1" class="node"><title>__main__.TreeNode object at 0x105de73c8</title>
+<ellipse fill="none" stroke="#000000" cx="135" cy="-162" rx="27" ry="18"></ellipse><text text-anchor="middle" x="135" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text></g><!-- __main__.TreeNode object at 0x105de7e80 --><g id="node2" class="node"><title>__main__.TreeNode object at 0x105de7e80</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x105de73c8&#45;&gt;__main__.TreeNode object at 0x105de7e80 --><g id="edge1" class="edge"><title>__main__.TreeNode object at 0x105de73c8-&gt;__main__.TreeNode object at 0x105de7e80</title>
+<path fill="none" stroke="#000000" d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477"></polygon></g><!-- __main__.TreeNode object at 0x105de7668 --><g id="node5" class="node"><title>__main__.TreeNode object at 0x105de7668</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"></ellipse><text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x105de73c8&#45;&gt;__main__.TreeNode object at 0x105de7668 --><g id="edge4" class="edge"><title>__main__.TreeNode object at 0x105de73c8-&gt;__main__.TreeNode object at 0x105de7668</title>
+<path fill="none" stroke="#000000" d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674"></path><polygon fill="#000000" stroke="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782"></polygon></g><!-- __main__.TreeNode object at 0x105de7518 --><g id="node3" class="node"><title>__main__.TreeNode object at 0x105de7518</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text></g><!-- __main__.TreeNode object at 0x105de7e80&#45;&gt;__main__.TreeNode object at 0x105de7518 --><g id="edge2" class="edge"><title>__main__.TreeNode object at 0x105de7e80-&gt;__main__.TreeNode object at 0x105de7518</title>
+<path fill="none" stroke="#000000" d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637"></path><polygon fill="#000000" stroke="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436"></polygon></g><!-- __main__.TreeNode object at 0x105de75f8 --><g id="node4" class="node"><title>__main__.TreeNode object at 0x105de75f8</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">4</text></g><!-- __main__.TreeNode object at 0x105de7e80&#45;&gt;__main__.TreeNode object at 0x105de75f8 --><g id="edge3" class="edge"><title>__main__.TreeNode object at 0x105de7e80-&gt;__main__.TreeNode object at 0x105de75f8</title>
+<path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"></polygon></g><!-- __main__.TreeNode object at 0x105de7f98 --><g id="node6" class="node"><title>__main__.TreeNode object at 0x105de7f98</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-18" rx="27" ry="18"></ellipse><text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text></g><!-- __main__.TreeNode object at 0x105de7668&#45;&gt;__main__.TreeNode object at 0x105de7f98 --><g id="edge5" class="edge"><title>__main__.TreeNode object at 0x105de7668-&gt;__main__.TreeNode object at 0x105de7f98</title>
 <path fill="none" stroke="#000000" d="M171,-71.8314C171,-64.131 171,-54.9743 171,-46.4166"></path><polygon fill="#000000" stroke="#000000" points="174.5001,-46.4132 171,-36.4133 167.5001,-46.4133 174.5001,-46.4132"></polygon></g></g></svg>
 </div>
 
@@ -630,7 +694,17 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reference">Reference<a class="anchor-link" href="#Reference">¶</a>
+<p><a href="#top">Back to Top</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">¶</a>
 </h2>
 <p>We need <code>graphviz</code> package. You can also refer to <a href="https://graphviz.readthedocs.io/en/stable/manual.html"><code>graphviz</code> documentation</a></p>
 
