@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Wed, 27 Feb 2019 07:03:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Wed, 27 Feb 2019 07:34:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -9,109 +9,14 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.core.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SVG&lt;/span&gt;
-&lt;span class="n"&gt;SVG&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'digraph.svg.svg'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img style="float: left;" src="https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/digraph.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
-
-
-
-&lt;div class="output_svg output_subarea output_execute_result"&gt;
-&lt;svg height="188pt" viewbox="0.00 0.00 206.00 188.00" width="206pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-&lt;g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 184)"&gt;
-&lt;title&gt;%3&lt;/title&gt;
-&lt;polygon fill="#ffffff" points="-4,4 -4,-184 202,-184 202,4 -4,4" stroke="transparent"&gt;&lt;/polygon&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a390 --&gt;
-&lt;g class="node" id="node1"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a390&lt;/title&gt;
-&lt;ellipse cx="135" cy="-162" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="135" y="-157.8"&gt;3&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a438 --&gt;
-&lt;g class="node" id="node2"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a438&lt;/title&gt;
-&lt;ellipse cx="99" cy="-90" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="99" y="-85.8"&gt;4&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a390&amp;#45;&amp;gt;__main__.TreeNode object at 0x10be5a438 --&gt;
-&lt;g class="edge" id="edge1"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a390-&amp;gt;__main__.TreeNode object at 0x10be5a438&lt;/title&gt;
-&lt;path d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674" fill="none" stroke="#000000"&gt;&lt;/path&gt;
-&lt;polygon fill="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477" stroke="#000000"&gt;&lt;/polygon&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a400 --&gt;
-&lt;g class="node" id="node5"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a400&lt;/title&gt;
-&lt;ellipse cx="171" cy="-90" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="171" y="-85.8"&gt;5&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a390&amp;#45;&amp;gt;__main__.TreeNode object at 0x10be5a400 --&gt;
-&lt;g class="edge" id="edge4"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a390-&amp;gt;__main__.TreeNode object at 0x10be5a400&lt;/title&gt;
-&lt;path d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674" fill="none" stroke="#000000"&gt;&lt;/path&gt;
-&lt;polygon fill="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782" stroke="#000000"&gt;&lt;/polygon&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a208 --&gt;
-&lt;g class="node" id="node3"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a208&lt;/title&gt;
-&lt;ellipse cx="27" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="27" y="-13.8"&gt;5&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a438&amp;#45;&amp;gt;__main__.TreeNode object at 0x10be5a208 --&gt;
-&lt;g class="edge" id="edge2"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a438-&amp;gt;__main__.TreeNode object at 0x10be5a208&lt;/title&gt;
-&lt;path d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637" fill="none" stroke="#000000"&gt;&lt;/path&gt;
-&lt;polygon fill="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436" stroke="#000000"&gt;&lt;/polygon&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a3c8 --&gt;
-&lt;g class="node" id="node4"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a3c8&lt;/title&gt;
-&lt;ellipse cx="99" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="99" y="-13.8"&gt;4&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a438&amp;#45;&amp;gt;__main__.TreeNode object at 0x10be5a3c8 --&gt;
-&lt;g class="edge" id="edge3"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a438-&amp;gt;__main__.TreeNode object at 0x10be5a3c8&lt;/title&gt;
-&lt;path d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166" fill="none" stroke="#000000"&gt;&lt;/path&gt;
-&lt;polygon fill="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132" stroke="#000000"&gt;&lt;/polygon&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5af28 --&gt;
-&lt;g class="node" id="node6"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5af28&lt;/title&gt;
-&lt;ellipse cx="171" cy="-18" fill="none" rx="27" ry="18" stroke="#000000"&gt;&lt;/ellipse&gt;
-&lt;text fill="#000000" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="171" y="-13.8"&gt;7&lt;/text&gt;
-&lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x10be5a400&amp;#45;&amp;gt;__main__.TreeNode object at 0x10be5af28 --&gt;
-&lt;g class="edge" id="edge5"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x10be5a400-&amp;gt;__main__.TreeNode object at 0x10be5af28&lt;/title&gt;
-&lt;path d="M171,-71.8314C171,-64.131 171,-54.9743 171,-46.4166" fill="none" stroke="#000000"&gt;&lt;/path&gt;
-&lt;polygon fill="#000000" points="174.5001,-46.4132 171,-36.4133 167.5001,-46.4133 174.5001,-46.4132" stroke="#000000"&gt;&lt;/polygon&gt;
-&lt;/g&gt;
-&lt;/g&gt;
-&lt;/svg&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -124,7 +29,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;graphviz&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Digraph&lt;/span&gt;
@@ -139,7 +44,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Add nodes 1 and 2&lt;/span&gt;
@@ -157,7 +62,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Visualize the graph&lt;/span&gt;
@@ -174,7 +79,7 @@
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
 
@@ -228,7 +133,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Definition for a binary tree node.&lt;/span&gt;
@@ -271,7 +176,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Example 1&lt;/span&gt;
@@ -297,7 +202,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Solution&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -327,7 +232,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create Digraph object&lt;/span&gt;
@@ -356,7 +261,7 @@
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
 
 
 
@@ -433,7 +338,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;visualize_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -473,7 +378,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;visualize_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -503,45 +408,45 @@
 &lt;g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"&gt;
 &lt;title&gt;%3&lt;/title&gt;
 &lt;polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"&gt;&lt;/polygon&gt;
-&lt;!-- __main__.TreeNode object at 0x1059596a0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf5f8 --&gt;
 &lt;g id="node1" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059596a0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf5f8&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;1&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959358 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bfd30 --&gt;
 &lt;g id="node2" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959358&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bfd30&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;3&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059596a0&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959358 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf5f8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bfd30 --&gt;
 &lt;g id="edge1" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059596a0-&amp;gt;__main__.TreeNode object at 0x105959358&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf5f8-&amp;gt;__main__.TreeNode object at 0x1126bfd30&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959518 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf2b0 --&gt;
 &lt;g id="node4" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959518&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf2b0&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;2&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059596a0&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959518 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf5f8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf2b0 --&gt;
 &lt;g id="edge3" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059596a0-&amp;gt;__main__.TreeNode object at 0x105959518&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf5f8-&amp;gt;__main__.TreeNode object at 0x1126bf2b0&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059592b0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf320 --&gt;
 &lt;g id="node3" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059592b0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf320&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;5&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959358&amp;#45;&amp;gt;__main__.TreeNode object at 0x1059592b0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bfd30&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf320 --&gt;
 &lt;g id="edge2" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959358-&amp;gt;__main__.TreeNode object at 0x1059592b0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bfd30-&amp;gt;__main__.TreeNode object at 0x1126bf320&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
@@ -558,7 +463,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;visualize_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -588,57 +493,57 @@
 &lt;g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"&gt;
 &lt;title&gt;%3&lt;/title&gt;
 &lt;polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"&gt;&lt;/polygon&gt;
-&lt;!-- __main__.TreeNode object at 0x1059595f8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf630 --&gt;
 &lt;g id="node1" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059595f8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf630&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;2&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959668 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf668 --&gt;
 &lt;g id="node2" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959668&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf668&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;1&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059595f8&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959668 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf630&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf668 --&gt;
 &lt;g id="edge1" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059595f8-&amp;gt;__main__.TreeNode object at 0x105959668&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf630-&amp;gt;__main__.TreeNode object at 0x1126bf668&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M54.2854,-144.5708C50.0403,-136.0807 44.8464,-125.6929 40.1337,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="43.237,-114.6477 35.6343,-107.2687 36.976,-117.7782 43.237,-114.6477"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959eb8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf470 --&gt;
 &lt;g id="node4" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959eb8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf470&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;3&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059595f8&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959eb8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf630&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf470 --&gt;
 &lt;g id="edge3" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059595f8-&amp;gt;__main__.TreeNode object at 0x105959eb8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf630-&amp;gt;__main__.TreeNode object at 0x1126bf470&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059594a8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf4e0 --&gt;
 &lt;g id="node3" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059594a8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf4e0&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;4&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959668&amp;#45;&amp;gt;__main__.TreeNode object at 0x1059594a8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf668&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf4e0 --&gt;
 &lt;g id="edge2" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959668-&amp;gt;__main__.TreeNode object at 0x1059594a8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf668-&amp;gt;__main__.TreeNode object at 0x1126bf4e0&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M27,-71.8314C27,-64.131 27,-54.9743 27,-46.4166"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="30.5001,-46.4132 27,-36.4133 23.5001,-46.4133 30.5001,-46.4132"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959fd0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bfef0 --&gt;
 &lt;g id="node5" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959fd0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bfef0&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;7&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959eb8&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959fd0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf470&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bfef0 --&gt;
 &lt;g id="edge4" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959eb8-&amp;gt;__main__.TreeNode object at 0x105959fd0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf470-&amp;gt;__main__.TreeNode object at 0x1126bfef0&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
@@ -655,7 +560,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;visualize_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;merged_tree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -685,69 +590,69 @@
 &lt;g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"&gt;
 &lt;title&gt;%3&lt;/title&gt;
 &lt;polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 202,-184 202,4 -4,4"&gt;&lt;/polygon&gt;
-&lt;!-- __main__.TreeNode object at 0x1059590f0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf4a8 --&gt;
 &lt;g id="node1" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059590f0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf4a8&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="135" cy="-162" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="135" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;3&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959dd8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf550 --&gt;
 &lt;g id="node2" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959dd8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf550&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;4&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059590f0&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959dd8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf4a8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf550 --&gt;
 &lt;g id="edge1" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059590f0-&amp;gt;__main__.TreeNode object at 0x105959dd8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf4a8-&amp;gt;__main__.TreeNode object at 0x1126bf550&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M126.2854,-144.5708C122.0403,-136.0807 116.8464,-125.6929 112.1337,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="115.237,-114.6477 107.6343,-107.2687 108.976,-117.7782 115.237,-114.6477"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959e48 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf518 --&gt;
 &lt;g id="node5" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959e48&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf518&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;5&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059590f0&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959e48 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf4a8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf518 --&gt;
 &lt;g id="edge4" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059590f0-&amp;gt;__main__.TreeNode object at 0x105959e48&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf4a8-&amp;gt;__main__.TreeNode object at 0x1126bf518&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M143.7146,-144.5708C147.9597,-136.0807 153.1536,-125.6929 157.8663,-116.2674"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="161.024,-117.7782 162.3657,-107.2687 154.763,-114.6477 161.024,-117.7782"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059592b0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf320 --&gt;
 &lt;g id="node3" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059592b0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf320&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;5&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959dd8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1059592b0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf550&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf320 --&gt;
 &lt;g id="edge2" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959dd8-&amp;gt;__main__.TreeNode object at 0x1059592b0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf550-&amp;gt;__main__.TreeNode object at 0x1126bf320&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M83.7307,-74.7307C73.803,-64.803 60.6847,-51.6847 49.5637,-40.5637"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="51.7933,-37.8436 42.2473,-33.2473 46.8436,-42.7933 51.7933,-37.8436"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x1059594a8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf4e0 --&gt;
 &lt;g id="node4" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x1059594a8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf4e0&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;4&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959dd8&amp;#45;&amp;gt;__main__.TreeNode object at 0x1059594a8 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf550&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bf4e0 --&gt;
 &lt;g id="edge3" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959dd8-&amp;gt;__main__.TreeNode object at 0x1059594a8&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf550-&amp;gt;__main__.TreeNode object at 0x1126bf4e0&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M99,-71.8314C99,-64.131 99,-54.9743 99,-46.4166"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="102.5001,-46.4132 99,-36.4133 95.5001,-46.4133 102.5001,-46.4132"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959fd0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bfef0 --&gt;
 &lt;g id="node6" class="node"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959fd0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bfef0&lt;/title&gt;
 &lt;ellipse fill="none" stroke="#000000" cx="171" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
 &lt;text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;7&lt;/text&gt;
 &lt;/g&gt;
-&lt;!-- __main__.TreeNode object at 0x105959e48&amp;#45;&amp;gt;__main__.TreeNode object at 0x105959fd0 --&gt;
+&lt;!-- __main__.TreeNode object at 0x1126bf518&amp;#45;&amp;gt;__main__.TreeNode object at 0x1126bfef0 --&gt;
 &lt;g id="edge5" class="edge"&gt;
-&lt;title&gt;__main__.TreeNode object at 0x105959e48-&amp;gt;__main__.TreeNode object at 0x105959fd0&lt;/title&gt;
+&lt;title&gt;__main__.TreeNode object at 0x1126bf518-&amp;gt;__main__.TreeNode object at 0x1126bfef0&lt;/title&gt;
 &lt;path fill="none" stroke="#000000" d="M171,-71.8314C171,-64.131 171,-54.9743 171,-46.4166"&gt;&lt;/path&gt;
 &lt;polygon fill="#000000" stroke="#000000" points="174.5001,-46.4132 171,-36.4133 167.5001,-46.4133 174.5001,-46.4132"&gt;&lt;/polygon&gt;
 &lt;/g&gt;
@@ -764,12 +669,12 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Save as svg file&lt;/span&gt;
-&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'svg'&lt;/span&gt;
-&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'digraph.svg'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'./'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'png'&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'digraph'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'./'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -782,13 +687,13 @@
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
 
 
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'./digraph.svg.svg'&lt;/pre&gt;
+&lt;pre&gt;'./digraph.png'&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -808,7 +713,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;pip install graphviz
@@ -994,12 +899,4 @@ Merged tree:
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/us-census-in-2014/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/us-census-in-2014/</guid><pubDate>Mon, 04 Feb 2019 06:41:18 GMT</pubDate></item><item><title>About</title><link>https://h1ros.github.io/posts/about/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;p&gt;Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], a data scientist and has a passion about data science, machine learning, deep learning, and computer science. &lt;/p&gt;
-&lt;p&gt;Through this blog, I would like to deepen my extertise by explaining to myself and others (following Learn better and Feynman Technique). I will be glad that anyone see this would be helpful in any aspect. &lt;/p&gt;
-&lt;h4&gt;Objectives&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;I compare myself with who I was yesterday to progress&lt;/li&gt;
-&lt;li&gt;I do NOT intend to obtain others' approval or &lt;code&gt;like&lt;/code&gt;, but I am open to any feedback or critisism. "I still do not understad" or "does not make sense" would be alsowelcomed. I appreciate your time for reading my sentences.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Contact&lt;/h4&gt;
-&lt;p&gt;If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on &lt;a href="https://h1ros.github.io/posts/about/%5Bhttps:/twitter.com/__h1r0__"&gt;Twitter&lt;/a&gt;and &lt;a href="https://github.com/h1ros"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/about/</guid><pubDate>Mon, 04 Feb 2019 06:39:39 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/us-census-in-2014/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/us-census-in-2014/</guid><pubDate>Mon, 04 Feb 2019 06:41:18 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,13 @@
+digraph {
+	<__main__.TreeNode object at 0x1126bf4a8> [label=3]
+	<__main__.TreeNode object at 0x1126bf550> [label=4]
+	<__main__.TreeNode object at 0x1126bf4a8> -> <__main__.TreeNode object at 0x1126bf550>
+	<__main__.TreeNode object at 0x1126bf320> [label=5]
+	<__main__.TreeNode object at 0x1126bf550> -> <__main__.TreeNode object at 0x1126bf320>
+	<__main__.TreeNode object at 0x1126bf4e0> [label=4]
+	<__main__.TreeNode object at 0x1126bf550> -> <__main__.TreeNode object at 0x1126bf4e0>
+	<__main__.TreeNode object at 0x1126bf518> [label=5]
+	<__main__.TreeNode object at 0x1126bf4a8> -> <__main__.TreeNode object at 0x1126bf518>
+	<__main__.TreeNode object at 0x1126bfef0> [label=7]
+	<__main__.TreeNode object at 0x1126bf518> -> <__main__.TreeNode object at 0x1126bfef0>
+}
