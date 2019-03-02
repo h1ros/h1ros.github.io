@@ -16,8 +16,8 @@ Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], a data scientist an
 Through explaining the concept, theories, technologies, technique, and tools to myself and others in this blog, I would like to deepen my knowledge and expertise (following the lessons from [Learn Better](https://www.amazon.com/Learn-Better-Mastering-Business-Anything-ebook/dp/B01IIQQF10/ref=sr_1_2?keywords=learn+better&qid=1551251923&s=books&sr=1-2) and [Feynman Technique](https://mattyford.com/blog/2014/1/23/the-feynman-technique-model). I will be glad that anyone see this would be helpful in any aspect. 
 
 ## Motto
-* I compare myself with who I was yesterday to progress
-* I do NOT intend to obtain others' approval or `like`, but I am open to any feedback or critisism. Even comments like "I still do not understad" or "does not make sense" would be welcomed. First of all I will appreciate your time for reading my posts.
+* I compare myself with who I was yesterday to progress. 
+* I am open to any feedback or critisism. I will appreciate your precious time for reading my posts.
 
 
 ## Contact
