@@ -1,5 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Mar 2019 17:49:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2019 06:40:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>1000. Minimum Cost to Merge Stones</title><link>https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There are &lt;code&gt;N&lt;/code&gt; piles of stones arranged in a row.  The i-th pile has stones[i] stones.&lt;/p&gt;
+&lt;p&gt;A move consists of merging exactly &lt;code&gt;K&lt;/code&gt; consecutive piles into one pile, and the cost of this move is equal to the total number of stones in these &lt;code&gt;K&lt;/code&gt; piles.&lt;/p&gt;
+&lt;p&gt;Find the minimum cost to merge all piles of stones into one pile.  If it is impossible, return -1.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:left"&gt;Variable&lt;/th&gt;
+&lt;th style="text-align:center"&gt;Type&lt;/th&gt;
+&lt;th style="text-align:left"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;stones&lt;/td&gt;
+&lt;td style="text-align:center"&gt;list&lt;/td&gt;
+&lt;td style="text-align:left"&gt;an array of stones with the merging cost&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;K&lt;/td&gt;
+&lt;td style="text-align:center"&gt;int&lt;/td&gt;
+&lt;td style="text-align:left"&gt;the maximum number of consecutive piles&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Interactive-Python-Execution"&gt;Interactive Python Execution&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/#Interactive-Python-Execution"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href="http://pythontutor.com/"&gt;Pythontutor&lt;/a&gt; is an awesome website which allows us to execute the code and visualize the flow of the code and variables taking account into data structure and stored values.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;IFrame&lt;/span&gt;
+&lt;span class="n"&gt;IFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://goo.gl/Jjbj8Q"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+
+        &lt;iframe width="1000" height="500" src="https://goo.gl/Jjbj8Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+        
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Example-1"&gt;Example 1&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/#Example-1"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: stones = [3,2,4,1], K = 2&lt;/p&gt;
+&lt;p&gt;Output: 20&lt;/p&gt;
+&lt;p&gt;Explanation:&lt;/p&gt;
+&lt;p&gt;We start with [3, 2, 4, 1].&lt;/p&gt;
+&lt;p&gt;We merge [3, 2] for a cost of 5, and we are left with [5, 4, 1].&lt;/p&gt;
+&lt;p&gt;We merge [4, 1] for a cost of 5, and we are left with [5, 5].&lt;/p&gt;
+&lt;p&gt;We merge [5, 5] for a cost of 10, and we are left with [10].&lt;/p&gt;
+&lt;p&gt;The total cost was 20, and this is the minimum possible.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/</guid><pubDate>Sun, 03 Mar 2019 04:52:36 GMT</pubDate></item><item><title>1004. Max Consecutive Ones III</title><link>https://h1ros.github.io/posts/1004-max-consecutive-ones-iii/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1004-max-consecutive-ones-iii/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given an array &lt;code&gt;A&lt;/code&gt; of 0s and 1s, we may change up to &lt;code&gt;K&lt;/code&gt; values from 0 to 1.&lt;/p&gt;
+&lt;p&gt;Return the length of the longest (contiguous) subarray that contains only 1s.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:left"&gt;Variable&lt;/th&gt;
+&lt;th style="text-align:center"&gt;Type&lt;/th&gt;
+&lt;th style="text-align:left"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;A&lt;/td&gt;
+&lt;td style="text-align:center"&gt;list&lt;/td&gt;
+&lt;td style="text-align:left"&gt;an array of 0s and 1s e.g., 111000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;K&lt;/td&gt;
+&lt;td style="text-align:center"&gt;int&lt;/td&gt;
+&lt;td style="text-align:left"&gt;the maximum number of changes fliping from 0 to 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Example-1"&gt;Example 1&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1004-max-consecutive-ones-iii/#Example-1"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: A = [1,1,1,0,0,0,1,1,1,1,0], K = 2&lt;/p&gt;
+&lt;p&gt;Output: 6&lt;/p&gt;
+&lt;p&gt;Explanation: 
+[1,1,1,0,0,&lt;strong&gt;1*,1,1,1,1,1*&lt;/strong&gt;]&lt;/p&gt;
+&lt;p&gt;Numbers with * (astarisk) were flipped from 0 to 1.  The longest subarray is indicated as a line of bold numers.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/1004-max-consecutive-ones-iii/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/1004-max-consecutive-ones-iii/</guid><pubDate>Sun, 03 Mar 2019 04:52:36 GMT</pubDate></item><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -140,11 +275,10 @@ Merged tree:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/990-satisfiability-of-equality-equations/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/990-satisfiability-of-equality-equations/</guid><pubDate>Tue, 12 Feb 2019 06:13:04 GMT</pubDate></item><item><title>998 Smallest String Starting From Leaf</title><link>https://h1ros.github.io/posts/Coding%20Problem/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/990-satisfiability-of-equality-equations/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/990-satisfiability-of-equality-equations/</guid><pubDate>Tue, 12 Feb 2019 06:13:04 GMT</pubDate></item><item><title>998 Smallest String Starting From Leaf</title><link>https://h1ros.github.io/posts/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/Coding%20Problem/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The 2nd problem in Weekly Contest 122 is &lt;code&gt;Smallest String Starting From Leaf&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The 2nd problem in Weekly Contest 122 is &lt;code&gt;Smallest String Starting From Leaf&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.&lt;/p&gt;
 &lt;p&gt;Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.&lt;/p&gt;
 &lt;p&gt;(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)&lt;/p&gt;
@@ -153,10 +287,9 @@ Merged tree:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/Coding%20Problem/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Coding Problem</category><guid>https://h1ros.github.io/posts/Coding%20Problem/</guid><pubDate>Mon, 04 Feb 2019 06:43:19 GMT</pubDate></item><item><title>US Census in 2014</title><link>https://h1ros.github.io/posts/us-census-in-2014/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/</guid><pubDate>Mon, 04 Feb 2019 06:43:19 GMT</pubDate></item><item><title>US Census in 2014</title><link>https://h1ros.github.io/posts/us-census-in-2014/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="US-Census-Data-Analysis-(Census-Data-2014)"&gt;US Census Data Analysis (Census Data 2014)&lt;a class="anchor-link" href="https://h1ros.github.io/posts/us-census-in-2014/#US-Census-Data-Analysis-(Census-Data-2014)"&gt;¶&lt;/a&gt;&lt;/h2&gt;
