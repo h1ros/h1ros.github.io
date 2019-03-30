@@ -21,6 +21,6 @@ Through explaining the concept, theories, technologies, technique, and tools to 
 
 
 ## Contact
-If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on [Twitter]([https://twitter.com/__h1r0__) and [GitHub](https://github.com/h1ros).
+If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on [Twitter](https://twitter.com/__h1r0__) and [GitHub](https://github.com/h1ros).
 
 
