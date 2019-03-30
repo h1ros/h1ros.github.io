@@ -689,7 +689,7 @@ pre, pre code {
 }
 
 article.post-micro {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Source Sans Pro', 'Robota', Times, serif;
     font-size: 1.5em;
 }
 
@@ -802,7 +802,7 @@ article.post-micro {
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
     *, *:before, *:after {
-        font-family: Garamond, Junicode, serif;
+        font-family: 'Source Sans Pro', Junicode, serif;
     }
 
     body {
