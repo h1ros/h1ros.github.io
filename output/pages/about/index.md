@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], a data scientist and has a passion about data science, machine learning, deep learning, and computer science. 
+Hi, this is h1ros (Hiro), which sounds like Hero [hɪɹoʊ], has a passion about data science, machine learning, deep learning, and computer science. 
 
 
 ## Objectives 
