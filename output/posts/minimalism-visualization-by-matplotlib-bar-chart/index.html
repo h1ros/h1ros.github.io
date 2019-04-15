@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimalism visualization by matplotlib - Bar chart | Step-by-step Data Science &amp; Computer Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/">
+<link rel="icon" href="images/favicon.ico" sizes="16x16">
+<link rel="icon" href="images/favicon_128x128.png" sizes="128x128">
+<link rel="icon" href="images/favicon_400x400.png" sizes="400x400">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><meta name="author" content="h1ros">
+<link rel="prev" href="../how-to-visualize-a-decision-tree-beyond-scikit-learn/" title="How to visualize a decision tree beyond scikit-learn" type="text/html">
+<link rel="next" href="../1025-divisor-game/" title="1025. Divisor Game (C++)" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
+<meta property="og:title" content="Minimalism visualization by matplotlib - Bar chart">
+<meta property="og:url" content="https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/">
+<meta property="og:description" content="Overview¶This post aims to simplify Bar chart by matpltlib as much as possible based on the philosophy of minimalist
+
+
+
+
+
+
+
+
+Prerequisite¶
+
+
+
+
+
+In [1]:
+
+    
+import matplotlib.pyplot as plt
+import num">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-04-07T16:52:15-07:00">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../assets/js/bootyper.js"></script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://h1ros.github.io/">
+
+                <span id="blog-title">Step-by-step Data Science &amp; Computer Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../">Posts</a>
+                </li>
+<li>
+<a href="../../pages/about">About</a>
+                </li>
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Minimalism visualization by matplotlib - Bar chart</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-07T16:52:15-07:00" itemprop="datePublished" title="Apr 7, 2019, 4:52:15 PM">Apr 7, 2019, 4:52:15 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/desgin-of-visualization-by-matplotlib.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a>
+</h2>
+<p>This post aims to simplify <strong>Bar chart</strong> by matpltlib as much as possible based on the philosophy of minimalist</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56109936-7bec3c00-5f07-11e9-9916-88c4628c727f.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Prerequisite">Prerequisite<a class="anchor-link" href="#Prerequisite">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bar-plot">Bar plot<a class="anchor-link" href="#Bar-plot">¶</a>
+</h2>
+<p>The key points are as follows:</p>
+<blockquote><ol>
+<li>Clarify the key message</li>
+<li>Use comparison to show the size difference of data</li>
+<li>Think of what is the most effective way to convey the message</li>
+</ol></blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Default">Default<a class="anchor-link" href="#Default">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Default</span>
+<span class="n">df_bar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">6000</span><span class="p">],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'growth'</span><span class="p">])</span>
+<span class="n">df_bar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Simplified-Bar-chart">Simplified Bar chart<a class="anchor-link" href="#Simplified-Bar-chart">¶</a>
+</h3>
+<ul>
+<li>Delete legend</li>
+<li>Tighten the space between bars</li>
+<li>Re-order the y-axis</li>
+<li>Delete the square spines</li>
+<li>Delete ticks for x and y axis </li>
+<li>Delete tick label for x axis</li>
+<li>Increase the size of the label for y axis</li>
+<li>Display each value next to the bar </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Delete legend legend=False</span>
+<span class="c1"># 2. Tighten the space between bars width=0.8</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">df_bar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">);</span>
+<span class="c1"># 3. Re-order the y-axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="c1"># 4. Delete the square spines</span>
+<span class="p">[</span><span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+
+<span class="c1"># 5. Delete ticks for x and y axis</span>
+<span class="c1"># 6. Delete tick label for x axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># 7. Increase the size of the label for y axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">'x-large'</span><span class="p">)</span>
+
+<span class="c1"># 8. Display each value next to the bar</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="n">df_bar</span><span class="p">[</span><span class="s1">'growth'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_bar</span><span class="p">[</span><span class="s1">'growth'</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="n">vmax</span><span class="o">*</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="s1">'</span><span class="si">{value:,}</span><span class="s1">'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">'x-large'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## As a Function </span>
+<span class="k">def</span> <span class="nf">minimal_bar</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">fisize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> 
+               <span class="n">reorder_yaxis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">splines_off</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delete_ticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y_label_large</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">display_value</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fisize</span><span class="p">)</span>
+
+    <span class="c1"># 1. Delete legend legend=False</span>
+    <span class="c1"># 2. Tighten the space between bars width=0.8</span>
+    <span class="n">series</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">);</span>
+    
+    <span class="c1"># 3. Re-order the y-axis</span>
+    <span class="k">if</span> <span class="n">reorder_yaxis</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+    <span class="c1"># 4. Delete the square spines</span>
+    <span class="k">if</span> <span class="n">splines_off</span><span class="p">:</span>
+        <span class="p">[</span><span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+
+    <span class="c1"># 5. Delete ticks for x and y axis</span>
+    <span class="c1"># 6. Delete tick label for x axis</span>
+    <span class="k">if</span> <span class="n">delete_ticks</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># 7. Increase the size of the label for y axis</span>
+    <span class="k">if</span> <span class="n">y_label_large</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">'x-large'</span><span class="p">)</span>
+
+    <span class="c1"># 8. Display each value next to the bar</span>
+    <span class="k">if</span> <span class="n">display_value</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="n">vmax</span><span class="o">*</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="s1">'</span><span class="si">{value:,}</span><span class="s1">'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">'x-large'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minimal_bar</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df_bar</span><span class="p">[</span><span class="s1">'growth'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../how-to-visualize-a-decision-tree-beyond-scikit-learn/" rel="prev" title="How to visualize a decision tree beyond scikit-learn">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../1025-divisor-game/" rel="next" title="1025. Divisor Game (C++)">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/",
+        disqus_title="Minimalism visualization by matplotlib - Bar chart",
+        disqus_identifier="cache/posts/desgin-of-visualization-by-matplotlib.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><span class="pull-right">
+  <a class="twitter-follow-button" href="https://twitter.com/__h1r0__" data-show-count="false" data-show-screen-name="false">
+  Follow @h1r0
+  </a>
+  <a class="github-button" href="https://github.com/h1ros" aria-label="Follow @h1ros on GitHub" data-show-count="false">
+  Follow @h1ros
+  </a>
+  <form action="your-server-side-code" method="POST">
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_PEyX7cx0C86Yu80NmTJqcbq4" data-amount="999" data-name="Buy me a coffee" data-description="Thank you for your support" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto">
+  </script><script>
+    // Hide default stripe button, be careful there if you
+    // have more than 1 button of that class
+    document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+  </script><button type="submit" class="yourCustomClass">Buy me a coffee</button>
+</form>
+</span>
+
+
+    <!-- fancy dates -->
+    <script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>
