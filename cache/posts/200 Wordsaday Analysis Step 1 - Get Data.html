@@ -1,0 +1,296 @@
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Goal">Goal<a class="anchor-link" href="#Goal">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post aims to achieve the first step of analysis for your writing in <a href="https://200wordsaday.com">200Wordsaday</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get your post</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<span class="c1"># private_key = &#39;{your private key}&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Get-the-latest-post-data">Get the latest post data<a class="anchor-link" href="#Get-the-latest-post-data">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;https://200wordsaday.com/api/texts?api_key=</span><span class="si">{private_key}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">r</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;Response [200]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print your title</span>
+<span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;How to write a technical blog&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
+<span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;\r\n        \r\n        &lt;p&gt;This post is quite similar to what I wrote yesterday &#34;&lt;a href=&#34;https://200wordsaday.com/words/writing-a-technical-book-143055cab60926c093&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;How to write a technical book&lt;/a&gt;&#34; but a book is different from a blog. So today I will summarize some articles related to the way of writing a technical blog.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h3&gt;How to find a topic&lt;/h3&gt;&lt;p&gt;What to write? No topic to write... but you can write about&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;what you were stuck in a job&lt;/li&gt;&lt;li&gt;what you helped others&amp;nbsp;&lt;/li&gt;&lt;li&gt;pull request you made&lt;/li&gt;&lt;li&gt;lectures or conferences you attended&lt;/li&gt;&lt;li&gt;summarize what you did in a daily job&lt;/li&gt;&lt;li&gt;translate the foreign language into another language&lt;/li&gt;&lt;li&gt;read and break down an open source project or code&lt;/li&gt;&lt;li&gt;development methodology you are working on&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Whenever you find &#34;issues&#34;, &#34;needs&#34;, &#34;help&#34;, they could be potential contents as long as we have the desire to share them with others. Or it is okay just for your note.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h3&gt;Flor of writing a blog&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Find a potential topic&amp;nbsp;&lt;br&gt;If you cannot find by googling, it might be very &lt;b&gt;valuable&lt;/b&gt;.&amp;nbsp;&lt;/li&gt;&lt;li&gt;Determine the target audience&lt;br&gt;Is it for beginners or experts? What do you want the reader to do after reading?&amp;nbsp;&lt;/li&gt;&lt;li&gt;Finish writing&amp;nbsp;&lt;br&gt;&lt;i&gt;&#34;Done is better than perfect&#34;&lt;/i&gt;&lt;/li&gt;&lt;li&gt;Create a title&lt;br&gt;Spend more time on the most exposed part, which is a &lt;b&gt;&lt;i&gt;title&lt;/i&gt;&lt;/b&gt;. Come up with 30 relevant words and try a different combination of them accounting for the audience.&lt;/li&gt;&lt;li&gt;Read and revise over and over&lt;br&gt;You can read it one-day later.&amp;nbsp;&lt;/li&gt;&lt;li&gt;Post it&lt;/li&gt;&lt;li&gt;Share it&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Mindset&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;i style=&#34;font-size: 18px;&#34;&gt;&#34;Not only smart people write a blog or book. It is equally important to write it from a beginners\&#39; perspective. It is also an ability to find it difficult&#34;&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;***&lt;/p&gt;&lt;p&gt;To build a habit, I found it very powerful to have an appropriate mindset and the right strategy. That was an aha moment for me when I read and wrote about &#34;On Writing Well by William&#34;. &lt;/p&gt;&lt;p&gt;I unconsciously thought the writing was not that hard but in reality, it was hard. This gap between my unconscious expectation and the reality generated the mental blocker. &lt;/p&gt;&lt;p&gt;In addition, once you know some tips to continue your training, it could become a much lower bar to pass and make it sustainable mentally and physically.&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n        \r\n    \r\n    \r\n    &#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display your content as HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        
+        <p>This post is quite similar to what I wrote yesterday "<a href="https://200wordsaday.com/words/writing-a-technical-book-143055cab60926c093" target="_blank" rel="noopener noreferrer">How to write a technical book</a>" but a book is different from a blog. So today I will summarize some articles related to the way of writing a technical blog.&nbsp;</p><p><br></p><h3>How to find a topic</h3><p>What to write? No topic to write... but you can write about<br></p><ul><li>what you were stuck in a job</li><li>what you helped others&nbsp;</li><li>pull request you made</li><li>lectures or conferences you attended</li><li>summarize what you did in a daily job</li><li>translate the foreign language into another language</li><li>read and break down an open source project or code</li><li>development methodology you are working on&nbsp;</li></ul><p>Whenever you find "issues", "needs", "help", they could be potential contents as long as we have the desire to share them with others. Or it is okay just for your note.</p><p><br></p><h3>Flor of writing a blog</h3><ol><li>Find a potential topic&nbsp;<br>If you cannot find by googling, it might be very <b>valuable</b>.&nbsp;</li><li>Determine the target audience<br>Is it for beginners or experts? What do you want the reader to do after reading?&nbsp;</li><li>Finish writing&nbsp;<br><i>"Done is better than perfect"</i></li><li>Create a title<br>Spend more time on the most exposed part, which is a <b><i>title</i></b>. Come up with 30 relevant words and try a different combination of them accounting for the audience.</li><li>Read and revise over and over<br>You can read it one-day later.&nbsp;</li><li>Post it</li><li>Share it</li></ol><h3>Mindset</h3><p></p><ul><li><i style="font-size: 18px;">"Not only smart people write a blog or book. It is equally important to write it from a beginners' perspective. It is also an ability to find it difficult"</i></li></ul><p></p><p><br></p><p>***</p><p>To build a habit, I found it very powerful to have an appropriate mindset and the right strategy. That was an aha moment for me when I read and wrote about "On Writing Well by William". </p><p>I unconsciously thought the writing was not that hard but in reality, it was hard. This gap between my unconscious expectation and the reality generated the mental blocker. </p><p>In addition, once you know some tips to continue your training, it could become a much lower bar to pass and make it sustainable mentally and physically.&nbsp;&nbsp;</p><p><br></p><p><br></p>
+        
+    
+    
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Get-multiple-posts">Get multiple posts<a class="anchor-link" href="#Get-multiple-posts">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">uuid</span> <span class="o">=</span> <span class="s1">&#39;141775ca97a9903416&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d_requests</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">d_requests</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;https://200wordsaday.com/api/texts/</span><span class="si">{uuid}</span><span class="s1">?api_key=</span><span class="si">{private_key}</span><span class="s1">&amp;categories=test&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d_requests</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;Response [200]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d_requests</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;{&#34;uuid&#34;:&#34;141775ca97a9903416&#34;,&#34;status&#34;:&#34;draft&#34;,&#34;access_rights&#34;:&#34;public&#34;,&#34;slug&#34;:&#34;murphy-s-law-141775ca97a9903416&#34;,&#34;canonical_url&#34;:null,&#34;datetime&#34;:{&#34;date&#34;:&#34;2019-04-06 21:20:40.000000&#34;,&#34;timezone_type&#34;:3,&#34;timezone&#34;:&#34;America\\/Los_Angeles&#34;},&#34;published_datetime&#34;:{&#34;date&#34;:&#34;2019-04-06 21:44:45.000000&#34;,&#34;timezone_type&#34;:3,&#34;timezone&#34;:&#34;America\\/Los_Angeles&#34;},&#34;title&#34;:&#34;Murphy\&#39;s law&#34;,&#34;content&#34;:&#34;\\r\\n        \\r\\n        &lt;p&gt;My wife said to me today when she fed the milk in the afternoon, and I was cooking in the kitchen, it was 4:44. This happened twice yesterday and today. In addition, she said she felt like this happened a couple of time before.&lt;\\/p&gt;&lt;p&gt;I said \\&#34;that is Murphy\&#39;s law.\\&#34;&lt;\\/p&gt;&lt;p&gt;I knew Murphy\&#39;s law is one of&amp;nbsp;cognitive bias phenomena where human being tend to make a mistake because of a sort of illusion but did not know more than that. So let me try to explain it.&lt;\\/p&gt;&lt;p&gt;In my understanding, Murphy\&#39;s law is that ones tend to believe something happens more likely &lt;b&gt;only when something bad or unusual happens. &lt;\\/b&gt;This is because ones remember more vividly because of such a bad thing. Our brain is designed to store the memory which has more meanings, changes, surprises, not boring, not normal things to avoid storing meaningless information.&lt;\\/p&gt;&lt;p&gt;Thanks to this law, there exists a lot of humors.&amp;nbsp; One of the famous ones is&amp;nbsp;&lt;\\/p&gt;&lt;blockquote&gt;The chance of the bread falling with the buttered side down is directly proportional to the cost of the carpet.&lt;\\/blockquote&gt;&lt;p&gt;Different variations related to our life are as follows:&lt;\\/p&gt;&lt;ul&gt;&lt;li&gt;The areas that I studied was not asked in the exam but only the area I did not study was asked.&amp;nbsp;&lt;\\/li&gt;&lt;li&gt;Only when I brought an umbrella, it did not rain.&amp;nbsp;&lt;\\/li&gt;&lt;li&gt;Only when I tried to use a printer, the printer is not working&lt;\\/li&gt;&lt;li&gt;At the last moment when I thought my work was completed, I fouud an mistake.&lt;\\/li&gt;&lt;li&gt;When I tried to prove it was not working, it started to work.&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;\\/li&gt;&lt;\\/ul&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;Do you have your version of Murphy\&#39;s law?&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;Hiro&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&amp;nbsp;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&amp;nbsp;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&amp;nbsp;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;\\r\\n    \\r\\n    &#34;,&#34;word_count&#34;:271,&#34;categories&#34;:[{&#34;name&#34;:&#34;#MurphysLaw&#34;},{&#34;name&#34;:&#34;#CognitiveBias&#34;}],&#34;collections&#34;:[],&#34;timezone&#34;:&#34;America\\/Los_Angeles&#34;,&#34;user&#34;:{&#34;username&#34;:&#34;hiro&#34;}}&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
