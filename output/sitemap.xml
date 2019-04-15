@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-04-05T15:56:00Z</lastmod>
+  <lastmod>2019-04-15T05:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-1.html</loc>
-  <lastmod>2019-04-05T15:56:00Z</lastmod>
+  <lastmod>2019-04-15T05:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/</loc>
-  <lastmod>2019-04-05T15:56:00Z</lastmod>
+  <lastmod>2019-04-15T05:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/1000-minimum-cost-to-merge-stones/</loc>
@@ -52,6 +52,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/1019-next-greater-node-in-linked-list/</loc>
   <lastmod>2019-04-02T07:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/1025-divisor-game/</loc>
+  <lastmod>2019-04-15T05:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/617-merge-two-binary-trees/</loc>
@@ -68,6 +72,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
   <lastmod>2019-03-30T23:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/desgin-of-visualization-by-matplotlib/</loc>
+  <lastmod>2019-04-15T05:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
