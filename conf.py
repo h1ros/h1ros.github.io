@@ -1126,6 +1126,12 @@ SOCIAL_BUTTONS_CODE = """
   </script>
     <button type="submit" class="yourCustomClass">Buy me a coffee</button>
 </form>
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'git-h1ros'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 </span>
 """
 
