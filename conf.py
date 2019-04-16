@@ -1128,11 +1128,10 @@ SOCIAL_BUTTONS_CODE = """
 </form>
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'git-h1ros'
+    room: 'h1ros.github.io/ama'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-</span>
 """
 
 # Show link to source for the posts?
