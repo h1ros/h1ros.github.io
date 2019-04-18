@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeetCode Top 100 Problem Selection | Step-by-step Data Science &amp; Computer Science</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/">
+<link rel="icon" href="images/favicon.ico" sizes="16x16">
+<link rel="icon" href="images/favicon_128x128.png" sizes="128x128">
+<link rel="icon" href="images/favicon_400x400.png" sizes="400x400">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><meta name="author" content="h1ros">
+<link rel="prev" href="../../split-up-dtreeviz-part-1/" title="Split-Up: dtreeviz Part 1" type="text/html">
+<link rel="next" href="../1026-maximum-difference-between-node-and-ancestor/" title="1026. Maximum Difference Between Node and Ancestor" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
+<meta property="og:title" content="LeetCode Top 100 Problem Selection">
+<meta property="og:url" content="https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/">
+<meta property="og:description" content="This link was posted on Dec 30, 2018 in blind Curated List of Top 100 LeetCode Questions. I found it so useful and would like to cover these problem in the following post as well.
+Array
+
+[ ] Two Sum -">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-04-16T23:14:23-07:00">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script><script src="../../../assets/js/bootyper.js"></script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://h1ros.github.io/">
+
+                <span id="blog-title">Step-by-step Data Science &amp; Computer Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../">Posts</a>
+                </li>
+<li>
+<a href="../../../pages/about">About</a>
+                </li>
+<li>
+<a href="../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">LeetCode Top 100 Problem Selection</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-16T23:14:23-07:00" itemprop="datePublished" title="Apr 16, 2019, 11:14:23 PM">Apr 16, 2019, 11:14:23 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/coding/leetcode-top-100-problem-selection.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This link was posted on Dec 30, 2018 in blind <a href="https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU">Curated List of Top 100 LeetCode Questions</a>. I found it so useful and would like to cover these problem in the following post as well.</p>
+<p>Array</p>
+<ul>
+<li>[ ] Two Sum - <a href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a>
+</li>
+<li>[ ] Best Time to Buy and Sell Stock - <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a>
+</li>
+<li>[ ] Contains Duplicate - <a href="https://leetcode.com/problems/contains-duplicate/">https://leetcode.com/problems/contains-duplicate/</a>
+</li>
+<li>[ ] Product of Array Except Self - <a href="https://leetcode.com/problems/product-of-array-except-self/">https://leetcode.com/problems/product-of-array-except-self/</a>
+</li>
+<li>[ ] Maximum Subarray - <a href="https://leetcode.com/problems/maximum-subarray/">https://leetcode.com/problems/maximum-subarray/</a>
+</li>
+<li>[ ] Maximum Product Subarray - <a href="https://leetcode.com/problems/maximum-product-subarray/">https://leetcode.com/problems/maximum-product-subarray/</a>
+</li>
+<li>[ ] Find Minimum in Rotated Sorted Array - <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/</a>
+</li>
+<li>[ ] Search in Rotated Sorted Array - <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">https://leetcode.com/problems/search-in-rotated-sorted-array/</a>
+</li>
+<li>[ ] 3Sum - <a href="https://leetcode.com/problems/3sum/">https://leetcode.com/problems/3sum/</a>
+</li>
+<li>[ ] Container With Most Water - <a href="https://leetcode.com/problems/container-with-most-water/">https://leetcode.com/problems/container-with-most-water/</a>
+</li>
+</ul>
+<!-- TEASER_END --><hr>
+<p>Binary</p>
+<ul>
+<li>[ ] Sum of Two Integers - <a href="https://leetcode.com/problems/sum-of-two-integers/">https://leetcode.com/problems/sum-of-two-integers/</a>
+</li>
+<li>[ ] Number of 1 Bits - <a href="https://leetcode.com/problems/number-of-1-bits/">https://leetcode.com/problems/number-of-1-bits/</a>
+</li>
+<li>[ ] Counting Bits - <a href="https://leetcode.com/problems/counting-bits/">https://leetcode.com/problems/counting-bits/</a>
+</li>
+<li>[ ] Missing Number - <a href="https://leetcode.com/problems/missing-number/">https://leetcode.com/problems/missing-number/</a>
+</li>
+<li>[ ] Reverse Bits - <a href="https://leetcode.com/problems/reverse-bits/">https://leetcode.com/problems/reverse-bits/</a>
+</li>
+</ul>
+<hr>
+<p>Dynamic Programming</p>
+<ul>
+<li>[ ] Climbing Stairs - <a href="https://leetcode.com/problems/climbing-stairs/">https://leetcode.com/problems/climbing-stairs/</a>
+</li>
+<li>[ ] Coin Change - <a href="https://leetcode.com/problems/coin-change/">https://leetcode.com/problems/coin-change/</a>
+</li>
+<li>[ ] Longest Increasing Subsequence - <a href="https://leetcode.com/problems/longest-increasing-subsequence/">https://leetcode.com/problems/longest-increasing-subsequence/</a>
+</li>
+<li>[ ] Longest Common Subsequence - </li>
+<li>[ ] Word Break Problem - <a href="https://leetcode.com/problems/word-break/">https://leetcode.com/problems/word-break/</a>
+</li>
+<li>[ ] Combination Sum - <a href="https://leetcode.com/problems/combination-sum-iv/">https://leetcode.com/problems/combination-sum-iv/</a>
+</li>
+<li>[ ] House Robber - <a href="https://leetcode.com/problems/house-robber/">https://leetcode.com/problems/house-robber/</a>
+</li>
+<li>[ ] House Robber II - <a href="https://leetcode.com/problems/house-robber-ii/">https://leetcode.com/problems/house-robber-ii/</a>
+</li>
+<li>[ ] Decode Ways - <a href="https://leetcode.com/problems/decode-ways/">https://leetcode.com/problems/decode-ways/</a>
+</li>
+<li>[ ] Unique Paths - <a href="https://leetcode.com/problems/unique-paths/">https://leetcode.com/problems/unique-paths/</a>
+</li>
+<li>[ ] Jump Game - <a href="https://leetcode.com/problems/jump-game/">https://leetcode.com/problems/jump-game/</a>
+</li>
+</ul>
+<hr>
+<p>Graph</p>
+<ul>
+<li>[ ] Clone Graph - <a href="https://leetcode.com/problems/clone-graph/">https://leetcode.com/problems/clone-graph/</a>
+</li>
+<li>[ ] Course Schedule - <a href="https://leetcode.com/problems/course-schedule/">https://leetcode.com/problems/course-schedule/</a>
+</li>
+<li>[ ] Pacific Atlantic Water Flow - <a href="https://leetcode.com/problems/pacific-atlantic-water-flow/">https://leetcode.com/problems/pacific-atlantic-water-flow/</a>
+</li>
+<li>[ ] Number of Islands - <a href="https://leetcode.com/problems/number-of-islands/">https://leetcode.com/problems/number-of-islands/</a>
+</li>
+<li>[ ] Longest Consecutive Sequence - <a href="https://leetcode.com/problems/longest-consecutive-sequence/">https://leetcode.com/problems/longest-consecutive-sequence/</a>
+</li>
+<li>[ ] Alien Dictionary (Leetcode Premium) - <a href="https://leetcode.com/problems/alien-dictionary/">https://leetcode.com/problems/alien-dictionary/</a>
+</li>
+<li>[ ] Graph Valid Tree (Leetcode Premium) - <a href="https://leetcode.com/problems/graph-valid-tree/">https://leetcode.com/problems/graph-valid-tree/</a>
+</li>
+<li>[ ] Number of Connected Components in an Undirected Graph (Leetcode Premium) - <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/">https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/</a>
+</li>
+</ul>
+<hr>
+<p>Interval</p>
+<ul>
+<li>[ ] Insert Interval - <a href="https://leetcode.com/problems/insert-interval/">https://leetcode.com/problems/insert-interval/</a>
+</li>
+<li>[ ] Merge Intervals - <a href="https://leetcode.com/problems/merge-intervals/">https://leetcode.com/problems/merge-intervals/</a>
+</li>
+<li>[ ] Non-overlapping Intervals - <a href="https://leetcode.com/problems/non-overlapping-intervals/">https://leetcode.com/problems/non-overlapping-intervals/</a>
+</li>
+<li>[ ] Meeting Rooms (Leetcode Premium) - <a href="https://leetcode.com/problems/meeting-rooms/">https://leetcode.com/problems/meeting-rooms/</a>
+</li>
+<li>[ ] Meeting Rooms II (Leetcode Premium) - <a href="https://leetcode.com/problems/meeting-rooms-ii/">https://leetcode.com/problems/meeting-rooms-ii/</a>
+</li>
+</ul>
+<hr>
+<p>Linked List</p>
+<ul>
+<li>[ ] Reverse a Linked List - <a href="https://leetcode.com/problems/reverse-linked-list/">https://leetcode.com/problems/reverse-linked-list/</a>
+</li>
+<li>[ ] Detect Cycle in a Linked List - <a href="https://leetcode.com/problems/linked-list-cycle/">https://leetcode.com/problems/linked-list-cycle/</a>
+</li>
+<li>[ ] Merge Two Sorted Lists - <a href="https://leetcode.com/problems/merge-two-sorted-lists/">https://leetcode.com/problems/merge-two-sorted-lists/</a>
+</li>
+<li>[ ] Merge K Sorted Lists - <a href="https://leetcode.com/problems/merge-k-sorted-lists/">https://leetcode.com/problems/merge-k-sorted-lists/</a>
+</li>
+<li>[ ] Remove Nth Node From End Of List - <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">https://leetcode.com/problems/remove-nth-node-from-end-of-list/</a>
+</li>
+<li>[ ] Reorder List - <a href="https://leetcode.com/problems/reorder-list/">https://leetcode.com/problems/reorder-list/</a>
+</li>
+</ul>
+<hr>
+<p>Matrix</p>
+<ul>
+<li>[ ] Set Matrix Zeroes - <a href="https://leetcode.com/problems/set-matrix-zeroes/">https://leetcode.com/problems/set-matrix-zeroes/</a>
+</li>
+<li>[ ] Spiral Matrix - <a href="https://leetcode.com/problems/spiral-matrix/">https://leetcode.com/problems/spiral-matrix/</a>
+</li>
+<li>[ ] Rotate Image - <a href="https://leetcode.com/problems/rotate-image/">https://leetcode.com/problems/rotate-image/</a>
+</li>
+<li>[ ] Word Search - <a href="https://leetcode.com/problems/word-search/">https://leetcode.com/problems/word-search/</a>
+</li>
+</ul>
+<hr>
+<p>String</p>
+<ul>
+<li>[ ] Longest Substring Without Repeating Characters - <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">https://leetcode.com/problems/longest-substring-without-repeating-characters/</a>
+</li>
+<li>[ ] Longest Repeating Character Replacement - <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">https://leetcode.com/problems/longest-repeating-character-replacement/</a>
+</li>
+<li>[ ] Minimum Window Substring - <a href="https://leetcode.com/problems/minimum-window-substring/">https://leetcode.com/problems/minimum-window-substring/</a>
+</li>
+<li>[ ] Valid Anagram - <a href="https://leetcode.com/problems/valid-anagram/">https://leetcode.com/problems/valid-anagram/</a>
+</li>
+<li>[ ] Group Anagrams - <a href="https://leetcode.com/problems/group-anagrams/">https://leetcode.com/problems/group-anagrams/</a>
+</li>
+<li>[ ] Valid Parentheses - <a href="https://leetcode.com/problems/valid-parentheses/">https://leetcode.com/problems/valid-parentheses/</a>
+</li>
+<li>[ ] Valid Palindrome - <a href="https://leetcode.com/problems/valid-palindrome/">https://leetcode.com/problems/valid-palindrome/</a>
+</li>
+<li>[ ] Longest Palindromic Substring - <a href="https://leetcode.com/problems/longest-palindromic-substring/">https://leetcode.com/problems/longest-palindromic-substring/</a>
+</li>
+<li>[ ] Palindromic Substrings - <a href="https://leetcode.com/problems/palindromic-substrings/">https://leetcode.com/problems/palindromic-substrings/</a>
+</li>
+<li>[ ] Encode and Decode Strings (Leetcode Premium) - <a href="https://leetcode.com/problems/encode-and-decode-strings/">https://leetcode.com/problems/encode-and-decode-strings/</a>
+</li>
+</ul>
+<hr>
+<p>Tree</p>
+<ul>
+<li>[ ] Maximum Depth of Binary Tree - <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">https://leetcode.com/problems/maximum-depth-of-binary-tree/</a>
+</li>
+<li>[ ] Same Tree - <a href="https://leetcode.com/problems/same-tree/">https://leetcode.com/problems/same-tree/</a>
+</li>
+<li>[ ] Invert/Flip Binary Tree - <a href="https://leetcode.com/problems/invert-binary-tree/">https://leetcode.com/problems/invert-binary-tree/</a>
+</li>
+<li>[ ] Binary Tree Maximum Path Sum - <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">https://leetcode.com/problems/binary-tree-maximum-path-sum/</a>
+</li>
+<li>[ ] Binary Tree Level Order Traversal - <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">https://leetcode.com/problems/binary-tree-level-order-traversal/</a>
+</li>
+<li>[ ] Serialize and Deserialize Binary Tree - <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">https://leetcode.com/problems/serialize-and-deserialize-binary-tree/</a>
+</li>
+<li>[ ] Subtree of Another Tree - <a href="https://leetcode.com/problems/subtree-of-another-tree/">https://leetcode.com/problems/subtree-of-another-tree/</a>
+</li>
+<li>[ ] Construct Binary Tree from Preorder and Inorder Traversal - <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a>
+</li>
+<li>[ ] Validate Binary Search Tree - <a href="https://leetcode.com/problems/validate-binary-search-tree/">https://leetcode.com/problems/validate-binary-search-tree/</a>
+</li>
+<li>[ ] Kth Smallest Element in a BST - <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">https://leetcode.com/problems/kth-smallest-element-in-a-bst/</a>
+</li>
+<li>[ ] Lowest Common Ancestor of BST - <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/</a>
+</li>
+<li>[ ] Implement Trie (Prefix Tree) - <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">https://leetcode.com/problems/implement-trie-prefix-tree/</a>
+</li>
+<li>[ ] Add and Search Word - <a href="https://leetcode.com/problems/add-and-search-word-data-structure-design/">https://leetcode.com/problems/add-and-search-word-data-structure-design/</a>
+</li>
+<li>[ ] Word Search II - <a href="https://leetcode.com/problems/word-search-ii/">https://leetcode.com/problems/word-search-ii/</a>
+</li>
+</ul>
+<hr>
+<p>Heap</p>
+<ul>
+<li>[ ] Merge K Sorted Lists - <a href="https://leetcode.com/problems/merge-k-sorted-lists/">https://leetcode.com/problems/merge-k-sorted-lists/</a>
+</li>
+<li>[ ] Top K Frequent Elements - <a href="https://leetcode.com/problems/top-k-frequent-elements/">https://leetcode.com/problems/top-k-frequent-elements/</a>
+</li>
+<li>[ ] Find Median from Data Stream - <a href="https://leetcode.com/problems/find-median-from-data-stream/">https://leetcode.com/problems/find-median-from-data-stream/</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Note">Note<a class="anchor-link" href="#Note">¶</a>
+</h5>
+<p>The above list is supposed to be checkbox but for now I could not render the checkbox (see below) properly from rmarkdonw / jupyter notebook to html
+<img src="https://user-images.githubusercontent.com/8764683/56265509-99074300-609e-11e9-9d49-1645730d83f2.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../split-up-dtreeviz-part-1/" rel="prev" title="Split-Up: dtreeviz Part 1">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../1026-maximum-difference-between-node-and-ancestor/" rel="next" title="1026. Maximum Difference Between Node and Ancestor">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/",
+        disqus_title="LeetCode Top 100 Problem Selection",
+        disqus_identifier="cache/posts/coding/leetcode-top-100-problem-selection.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>
