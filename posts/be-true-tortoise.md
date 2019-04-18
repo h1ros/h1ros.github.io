@@ -12,9 +12,9 @@
 
 ### Introduction
 
-The rabbit and the tortoise. What kind of story do you imagine? —Yes, the race. Who won the race?—The tortoise. What is the lesson from this fable?—Yea, one of the typical lesson is if you work diligently, you will win. My grandfather told me a slight different lesson. 
+The tortoise and the hare. What kind of story do you imagine? —Yes, the race. Who won the race?—The tortoise. What is the lesson from this fable?—Yea, one of the typical lesson is that if you work diligently, you will win. My grandfather told me a slight different lesson. 
 
-> The reason why the rabbit lost is because the rabbit looks at the tortoise. The reason why the tortoise win is because he looks at his own goal. 
+> The reason why the hare lost is because the hare looked at the tortoise. The reason why the tortoise won was because he looked at his own goal. 
 
 Young little Hiro said "I got it. I completely undestand it." 
 
@@ -24,7 +24,7 @@ Young little Hiro said "I got it. I completely undestand it."
 
 ### Failure & Overcome
 
-Today, I have two things to share with you: one is 1 year of my failure of applying this lesson in 2018, and another is about how I am overcoming this failure now in 2019. 
+Today, I have two things to share with you: one is about my failure of applying this lesson in 2018. Another is about how I am overcoming this failure  in 2019. 
 
 At the end of 2017, I keenly felt that I needed to create a technical blog or some sites to share and publish my technical ideas since I read a lot of technical blogs and tutorials in my daily job as a data scientist, and thought this was essential skill for us. One day I talked to my wife and she was also interested in hosting her own blog. So we excitedly researched about rental servers, domains, and blogging tools, all that kind of stuff. We together started to host each of blog. 
 
@@ -35,7 +35,7 @@ At the end of 2018, my wife successfully hosted two blogs and made 54 posts in t
 I did not give it up yet. At the beginning of this year, I happened to see one service called, ***200 Word A day***. It is very simple platform for those who wants to build writing habits. This platform has two simple functions: 	
 
 * word counter: when you write a post, it shows how many words left till 200 words
-* streaks counter: which indicates how many consecutive days you have made your post. 
+* streak counter: which indicates how many consecutive days you have made your post. 
 
 I started at Jan 3rd as a part of new year resolution, and broke the streak on Jan 5th. However, I still did not give it up. Now (Feb 20, 2019), I have **44 STREAKS.**  
 
@@ -43,7 +43,7 @@ I started at Jan 3rd as a part of new year resolution, and broke the streak on J
 
 ### Lessons
 
-Even to get there, it was not that straightforward. I had difficulty to continue sometimes. But Let me share 3 lessons I learned through this experience. 
+Getting there, it was not that straightforward. I had difficulties. But Let me share 3 lessons I learned through this experience. 
 
 - start small
 
