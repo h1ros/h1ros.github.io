@@ -846,9 +846,10 @@ article.post-micro {
     }
 }
 
-div.prompt {
+CodeMirrordiv.prompt {
   padding: 0.6em;
   font-size: 13px;
+  font-family: Roboto; 
   background-color: transparent !important ;
   margin-right: 1em;
   -webkit-border-radius: 3px;

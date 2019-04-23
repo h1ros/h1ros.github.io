@@ -81,7 +81,117 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coding/1004-max-consecutive-ones-iii/" class="u-url">1004. Max Consecutive Ones III</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coding/1000-minimum-cost-to-merge-stones/" class="u-url">1000. Minimum Cost to Merge Stones</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="posts/coding/1000-minimum-cost-to-merge-stones/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-03-02T20:52:36-08:00" itemprop="datePublished" title="Mar 2, 2019, 8:52:36 PM">Mar 2, 2019, 8:52:36 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/coding/1000-minimum-cost-to-merge-stones/#disqus_thread" data-disqus-identifier="cache/posts/coding/1000. Minimum Cost to Merge Stones.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="posts/coding/1000-minimum-cost-to-merge-stones/#Problem-Setting">¶</a>
+</h2>
+<p>There are <code>N</code> piles of stones arranged in a row.  The i-th pile has stones[i] stones.</p>
+<p>A move consists of merging exactly <code>K</code> consecutive piles into one pile, and the cost of this move is equal to the total number of stones in these <code>K</code> piles.</p>
+<p>Find the minimum cost to merge all piles of stones into one pile.  If it is impossible, return -1.</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Variable</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">stones</td>
+<td style="text-align:center">list</td>
+<td style="text-align:left">an array of stones with the merging cost</td>
+</tr>
+<tr>
+<td style="text-align:left">K</td>
+<td style="text-align:center">int</td>
+<td style="text-align:left">the maximum number of consecutive piles</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interactive-Python-Execution">Interactive Python Execution<a class="anchor-link" href="posts/coding/1000-minimum-cost-to-merge-stones/#Interactive-Python-Execution">¶</a>
+</h3>
+<p><a href="http://pythontutor.com/">Pythontutor</a> is an awesome website which allows us to execute the code and visualize the flow of the code and variables taking account into data structure and stored values.</p>
+<ul>
+<li><a href="https://goo.gl/Jjbj8Q">https://goo.gl/Jjbj8Q</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s2">"https://pythontutor.com/iframe-embed.html#code=class%20Solution</span><span class="si">%28o</span><span class="s2">bject</span><span class="si">%29%</span><span class="s2">3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20def%20mergeStones</span><span class="si">%28s</span><span class="s2">elf,%20A,%20K</span><span class="si">%29%</span><span class="s2">3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20N</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20le</span><span class="s2">n%28A</span><span class="si">%29%</span><span class="s2">0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20if</span><span class="si">%20%</span><span class="s2">28N%20-</span><span class="si">%201%</span><span class="s2">29</span><span class="si">%20%</span><span class="s2">25</span><span class="si">%20%</span><span class="s2">28K%20-</span><span class="si">%201%</span><span class="s2">29%3A</span><span class="si">%20r</span><span class="s2">eturn%20-1%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20INF</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20f</span><span class="s2">loat%28'inf'</span><span class="si">%29%</span><span class="s2">0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20memo</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20%</span><span class="s2">7B%7D%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20prefix</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20%</span><span class="s2">5B0%5D</span><span class="si">%20%</span><span class="s2">23%20prefix</span><span class="si">%20s</span><span class="s2">um%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20for</span><span class="si">%20x%20i</span><span class="s2">n%20A%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20prefix.append%28prefix%5B-1%5D</span><span class="si">%20%</span><span class="s2">2B</span><span class="si">%20x%29%</span><span class="s2">0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20def</span><span class="si">%20d</span><span class="s2">p</span><span class="si">%28i</span><span class="s2">,%20j,%20m</span><span class="si">%29%</span><span class="s2">3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20if</span><span class="si">%20%</span><span class="s2">28j%20-</span><span class="si">%20i%20%</span><span class="s2">2B</span><span class="si">%201%</span><span class="s2">20-%20m</span><span class="si">%29%</span><span class="s2">20</span><span class="si">%25%</span><span class="s2">20%28K%20-</span><span class="si">%201%</span><span class="s2">29%3A</span><span class="si">%20r</span><span class="s2">eturn%20INF</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%23%</span><span class="s2">20optimize%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20if</span><span class="si">%20%</span><span class="s2">28i,%20j,%20m</span><span class="si">%29%</span><span class="s2">20in%20memo%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20return%20memo%5Bi,%20j,%20m%5D%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20if</span><span class="si">%20i%20%</span><span class="s2">3D%3D%20j%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20res</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%200%</span><span class="s2">20if%20m</span><span class="si">%20%</span><span class="s2">3D%3D</span><span class="si">%201%</span><span class="s2">20else%20INF%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20else%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20if%20m</span><span class="si">%20%</span><span class="s2">3D%3D</span><span class="si">%201%</span><span class="s2">3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20res</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20d</span><span class="s2">p</span><span class="si">%28i</span><span class="s2">,%20j,%20K</span><span class="si">%29%</span><span class="s2">20%2B%20prefix%5Bj</span><span class="si">%20%</span><span class="s2">2B</span><span class="si">%201%</span><span class="s2">5D%20-%20prefix%5Bi%5D%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20else%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20res</span><span class="si">%20%</span><span class="s2">3D%20INF%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20for%20mid</span><span class="si">%20i</span><span class="s2">n</span><span class="si">%20r</span><span class="s2">ange</span><span class="si">%28i</span><span class="s2">,%20j,%20K%20-</span><span class="si">%201%</span><span class="s2">29%3A%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20res</span><span class="si">%20%</span><span class="s2">3D%20min</span><span class="si">%28r</span><span class="s2">es,</span><span class="si">%20d</span><span class="s2">p</span><span class="si">%28i</span><span class="s2">,%20mid,</span><span class="si">%201%</span><span class="s2">29</span><span class="si">%20%</span><span class="s2">2B</span><span class="si">%20d</span><span class="s2">p%28mid</span><span class="si">%20%</span><span class="s2">2B%201,%20j,%20m%20-</span><span class="si">%201%</span><span class="s2">29</span><span class="si">%29%</span><span class="s2">0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20memo%5Bi,%20j,%20m%5D</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20r</span><span class="s2">es%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20return</span><span class="si">%20r</span><span class="s2">es%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20res</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20d</span><span class="s2">p%280,%20N%20-%201,</span><span class="si">%201%</span><span class="s2">29%0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20return</span><span class="si">%20r</span><span class="s2">es</span><span class="si">%20i</span><span class="s2">f</span><span class="si">%20r</span><span class="s2">es</span><span class="si">%20%</span><span class="s2">3C%20INF</span><span class="si">%20e</span><span class="s2">lse</span><span class="si">%200%</span><span class="s2">0A</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20</span><span class="si">%20%</span><span class="s2">20%0Astones</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%20%</span><span class="s2">5B3,5,1,2,6%5D%0AK</span><span class="si">%20%</span><span class="s2">3D</span><span class="si">%203%</span><span class="s2">0As</span><span class="si">%20%</span><span class="s2">3D%20Solution</span><span class="si">%28%</span><span class="s2">29%0As.mergeStones</span><span class="si">%28s</span><span class="s2">tones,%20K%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe width="1000" height="500" src="https://pythontutor.com/iframe-embed.html#code=class%20Solution%28object%29%3A%0A%20%20%20%20def%20mergeStones%28self,%20A,%20K%29%3A%0A%20%20%20%20%20%20%20%20N%20%3D%20len%28A%29%0A%20%20%20%20%20%20%20%20if%20%28N%20-%201%29%20%25%20%28K%20-%201%29%3A%20return%20-1%0A%20%20%20%20%20%20%20%20INF%20%3D%20float%28'inf'%29%0A%20%20%20%20%20%20%20%20memo%20%3D%20%7B%7D%0A%20%20%20%20%20%20%20%20prefix%20%3D%20%5B0%5D%20%23%20prefix%20sum%0A%20%20%20%20%20%20%20%20for%20x%20in%20A%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20prefix.append%28prefix%5B-1%5D%20%2B%20x%29%0A%20%20%20%20%20%20%20%20def%20dp%28i,%20j,%20m%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28j%20-%20i%20%2B%201%20-%20m%29%20%25%20%28K%20-%201%29%3A%20return%20INF%20%20%23%20optimize%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28i,%20j,%20m%29%20in%20memo%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20memo%5Bi,%20j,%20m%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20i%20%3D%3D%20j%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20res%20%3D%200%20if%20m%20%3D%3D%201%20else%20INF%0A%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20m%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20res%20%3D%20dp%28i,%20j,%20K%29%20%2B%20prefix%5Bj%20%2B%201%5D%20-%20prefix%5Bi%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20res%20%3D%20INF%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20for%20mid%20in%20range%28i,%20j,%20K%20-%201%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20res%20%3D%20min%28res,%20dp%28i,%20mid,%201%29%20%2B%20dp%28mid%20%2B%201,%20j,%20m%20-%201%29%29%0A%20%20%20%20%20%20%20%20%20%20%20%20memo%5Bi,%20j,%20m%5D%20%3D%20res%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20res%0A%20%20%20%20%20%20%20%20res%20%3D%20dp%280,%20N%20-%201,%201%29%0A%20%20%20%20%20%20%20%20return%20res%20if%20res%20%3C%20INF%20else%200%0A%20%20%20%20%20%20%20%20%0Astones%20%3D%20%5B3,5,1,2,6%5D%0AK%20%3D%203%0As%20%3D%20Solution%28%29%0As.mergeStones%28stones,%20K%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" frameborder="0" allowfullscreen></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="posts/coding/1000-minimum-cost-to-merge-stones/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coding/1004-max-consecutive-ones-iii/" class="u-url">1004. Max Consecutive Ones III</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
