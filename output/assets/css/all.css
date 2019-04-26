@@ -839,9 +839,35 @@ CodeMirrordiv.prompt {
   border-radius: 3px;
 }
 
-prompt.input_prompt{
-    background-color: transparent !important ;
+/*https://notes.mikejarrett.ca/optimizing-your-nikola-blog-for-jupyter-notebooks/*/
+div.prompt {
+    display: none;
+}
 
+div.input  {
+    border: none;
+    background-color: none;
+}
+
+div.input * {
+    background-color: none;
+}
+
+prompt.input_prompt{
+    background-color: transparent  !important;
+
+}
+
+/* set a max-width for horizontal fluid layout and make it centered */
+.body-content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 950px; /* or 950px */
+}
+
+div.output_subarea {
+    /* Widens image-containing divs so that image is full body width */
+    max-width: 100%;
 }
 
 .rendered_html code {
