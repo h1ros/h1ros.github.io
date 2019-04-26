@@ -161,7 +161,7 @@ THEME = "bootstrap3-gradients"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#FFFFFF'
+THEME_COLOR = '#4285F4'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -1312,13 +1312,13 @@ FILE_METADATA_UNSLUGIFY_TITLES = True
 # The value on the right should be a dict of callables.
 # METADATA_VALUE_MAPPING = {}
 # Examples:
-# METADATA_VALUE_MAPPING = {
-#     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
-#     "nikola": {
-#         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
-#         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
-#      }
-# }
+METADATA_VALUE_MAPPING = {
+    "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
+    "nikola": {
+        "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
+        "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
+     }
+}
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}

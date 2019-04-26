@@ -2,7 +2,7 @@ CodeMirrordiv.prompt {
   padding: 0.6em;
   font-size: 11px;
   background-color: transparent !important ;
-  font-family: Robota; 
+  font-family: Roboto; 
   margin-right: 1em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -21,6 +21,28 @@ div.input  {
 
 div.input * {
     background-color: none;
+}
+.u-url {
+  color: #4285F4;
+}
+
+.published.dt-published{
+  color: #4285F4;
+}
+
+p a{
+  color:#4285F4;
+}
+
+.anchor-link{
+  display: none;
+}
+
+h2{
+  color: #444444;
+}
+div.text_cell_render{
+  color: #444444;
 }
 
 prompt.input_prompt{
@@ -52,6 +74,7 @@ div.output_subarea {
 	color: #0074CA !important;
 }
 
-.navbar-inverse{
+/*nav.navbar.navbar-inverse.navbar-static-top * {
+  background-color:#444444;
 	background-image: linear-gradient(to bottom,#585858 0,#8a8282 100% !important;
-}
+*/}
