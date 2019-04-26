@@ -1,12 +1,17 @@
 CodeMirrordiv.prompt {
   padding: 0.6em;
-  font-size: 13px;
-  font-family: Roboto; 
+  font-size: 11px;
   background-color: transparent !important ;
+  font-family: Robota; 
   margin-right: 1em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+prompt.input_prompt{
+    background-color: transparent !important ;
+
 }
 
 .rendered_html code {
