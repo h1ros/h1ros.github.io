@@ -74,7 +74,7 @@ div.output_subarea {
 	color: #0074CA !important;
 }
 
-/*nav.navbar.navbar-inverse.navbar-static-top * {
+nav.navbar.navbar-inverse.navbar-static-top * {
   background-color:#444444;
-	background-image: linear-gradient(to bottom,#585858 0,#8a8282 100% !important;
-*/}
+	/*background-image: linear-gradient(to bottom,#585858 0,#8a8282 100% !important;*/
+}
