@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
 CodeMirrordiv.prompt {
   padding: 0.6em;
   font-size: 11px;
@@ -8,6 +11,15 @@ CodeMirrordiv.prompt {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /*font-size: 3em;*/
+  /*line-height: 1.42857143;*/
+  /*color: #777777;*/
+  /*background-color: #ffffff;*/
+}
+
 
 /*https://notes.mikejarrett.ca/optimizing-your-nikola-blog-for-jupyter-notebooks/*/
 div.prompt {
@@ -78,7 +90,8 @@ div.output_subarea {
 	color: #0074CA !important;
 }
 
-nav.navbar.navbar-inverse.navbar-static-top * {
-  background-color:#444444;
+nav.navbar.navbar-inverse.navbar-static-top {
+  background:#444444;
+  color:#444444;
 	/*background-image: linear-gradient(to bottom,#585858 0,#8a8282 100% !important;*/
 }

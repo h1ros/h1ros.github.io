@@ -4,7 +4,7 @@
 }
 
 #contentcolumn {
-    max-width: 760px;
+    max-width: 860px;
 }
 #q {
     width: 150px;
@@ -78,7 +78,7 @@ pre, pre code {
 }
 
 article.post-micro {
-    font-family: 'Source Sans Pro', 'Robota', Times, serif;
+    font-family: 'Robota', 'Source Sans Pro', Times, serif;
     font-size: 1.5em;
 }
 
