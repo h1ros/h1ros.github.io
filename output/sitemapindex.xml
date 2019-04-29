@@ -6,12 +6,40 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
+  <lastmod>2019-04-29T01:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/c%2B%2B.xml</loc>
+  <lastmod>2019-04-29T01:24:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/coding.xml</loc>
-  <lastmod>2019-04-28T20:14:00Z</lastmod>
+  <lastmod>2019-04-29T01:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
+  <lastmod>2019-04-29T01:28:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/dynamic-programming.xml</loc>
+  <lastmod>2019-04-29T01:24:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/linked-list.xml</loc>
+  <lastmod>2019-04-29T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
-  <lastmod>2019-04-15T06:09:00Z</lastmod>
+  <lastmod>2019-04-29T01:28:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/scikit-learn.xml</loc>
+  <lastmod>2019-04-29T01:28:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/tree.xml</loc>
+  <lastmod>2019-04-29T01:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/visualization.xml</loc>
@@ -19,10 +47,10 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-04-28T20:14:00Z</lastmod>
+  <lastmod>2019-04-29T01:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-28T20:14:00Z</lastmod>
+  <lastmod>2019-04-29T01:28:00Z</lastmod>
  </sitemap>
 </sitemapindex>

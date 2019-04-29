@@ -1,0 +1,252 @@
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-Setting">Problem Setting<a class="anchor-link" href="#Problem-Setting">&#182;</a></h1><p>We write the integers of <code>A</code> and <code>B</code> (in the order they are given) on two separate horizontal lines.</p>
+<p>Now, we may draw a straight line connecting two numbers <code>A[i]</code> and <code>B[j]</code> as long as <code>A[i] == B[j]</code>, and the line we draw does not intersect any other connecting (non-horizontal) line.</p>
+<p>Return the maximum number of connecting lines we can draw in this way.</p>
+<p>Link for Problem: <a href="https://leetcode.com/contest/weekly-contest-134/problems/uncrossed-lines/">leetcode</a></p>
+<h2 id="Example-1:">Example 1:<a class="anchor-link" href="#Example-1:">&#182;</a></h2><p><img src="https://user-images.githubusercontent.com/8764683/56871936-2f5d3200-69d8-11e9-9566-f9caafc555d2.png" alt="image"></p>
+<p>Input: A = [1,4,2], B = [1,2,4]</p>
+<p>Output: 2</p>
+<p>Explanation: We can draw 2 uncrossed lines as in the diagram.
+We cannot draw 3 uncrossed lines, because the line from A[1]=4 to B[2]=4 will intersect the line from A[2]=2 to B[1]=2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-2:">Example 2:<a class="anchor-link" href="#Example-2:">&#182;</a></h2><p>Input: A = [2,5,1,2,5], B = [10,5,2,1,5,2]</p>
+<p>Output: 3</p>
+<h2 id="Example-3:">Example 3:<a class="anchor-link" href="#Example-3:">&#182;</a></h2><p>Input: A = [1,3,7,1,7,5], B = [1,9,2,5,1]</p>
+<p>Output: 2</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Solution-from-hanshaohey">Solution from <a href="https://leetcode.com/hanshaohey">hanshaohey</a><a class="anchor-link" href="#Solution-from-hanshaohey">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">maxUncrossedLines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :type A: List[int]</span>
+<span class="sd">        :type B: List[int]</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">memo</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=</span><span class="n">la</span> <span class="ow">or</span> <span class="n">j</span><span class="o">&gt;=</span><span class="n">lb</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ans</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">ans</span>
+            <span class="k">return</span> <span class="n">ans</span>
+        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This problem can be solved by "Recursive function" and "Dynamic Programming" approach to re-use the calculated intermediate result for the final result.</p>
+<p>In the above example, <code>helper</code> is the recursive function to calculate the intermediate/final results at given conditions <code>(i, j)</code>. The <code>memo</code> variable stores those intermediate results</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tips-to-use-a-dictionary-for-dynamic-programming">Tips to use a dictionary for dynamic programming<a class="anchor-link" href="#Tips-to-use-a-dictionary-for-dynamic-programming">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dictionary can be indexed by 2 dimentions and keys will be tubple</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{(1, 2): 1, (1, 3): 2, (3, 1): 5}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dictionary can be indexed by N dimentions and keys will be tubple</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{(1, 2, 3): 1, (1, 3, 5): 2, (3, 1, &#39;s&#39;): 5}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="#Step-by-step-understanding">&#182;</a></h2><p>The overall flow is:</p>
+<ol>
+<li>Initial setup</li>
+<li>Define the recursive function <code>helper</code></li>
+<li>Execute <code>helper</code> with <code>(i, j) = (0, 0)</code> as a starting point.</li>
+</ol>
+<h3 id="Initial-setup">Initial setup<a class="anchor-link" href="#Initial-setup">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># dictionary to store intermediate results for i, j </span>
+<span class="n">memo</span><span class="o">=</span><span class="p">{}</span>
+
+<span class="c1"># length of the list A and B</span>
+<span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Define-the-recursive-function-helper">Define the recursive function <code>helper</code><a class="anchor-link" href="#Define-the-recursive-function-helper">&#182;</a></h3><p>What we want to implement for a recursive function are as follows:</p>
+<p><strong>Input &amp; Output</strong></p>
+<ul>
+<li>the inputs are two indexes <code>(i, j)</code> of pointer on list <code>A</code> and <code>B</code></li>
+<li>the output is the maximum number of uncrossed lines
+<br></li>
+</ul>
+<p><strong>Edge Cases</strong></p>
+<ul>
+<li>Given <code>0</code> length of <code>A</code> and <code>B</code></li>
+<li><code>(i, j)</code> already reaches to the end index i.e., <code>i==len(A)</code>, <code>j ==len(B)</code></li>
+</ul>
+<p><strong>Internal Process</strong></p>
+<ol>
+<li><p>We would like to split the lists <code>A</code> and <code>B</code> when we find the same value in both list. In the example 2, first we will find <code>5</code> and draw the line.</p>
+</li>
+<li><p>Add <code>+1</code> to the non crossed line count</p>
+</li>
+<li><p>Re-use the function for $A_2$ and $B_2$ as below.
+<img src="https://user-images.githubusercontent.com/8764683/56872330-bc09ef00-69dc-11e9-916e-88d7e51ce453.png" alt="split lists and use for a recursive function" style="height: 400px;"/></p>
+</li>
+</ol>
+
+<pre><code>This means to call `helper(i+1,j+1)` as below.
+
+</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>On the other hand, if we do not find the same value, we will run two scenarios: move <code>i</code> to one index ahead or move <code>j</code> to one index ahead.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>Compare the two scenario and take the larger number of non crossed lines. </li>
+</ol>
+<div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">helper</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Similar-problems">Similar problems<a class="anchor-link" href="#Similar-problems">&#182;</a></h1><ul>
+<li>Longest Increasing Subsequence - <a href="https://leetcode.com/problems/longest-increasing-subsequence/">https://leetcode.com/problems/longest-increasing-subsequence/</a></li>
+<li>Longest Common Subsequence - <a href="https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/">https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+ 
+
