@@ -844,10 +844,15 @@ CodeMirrordiv.prompt {
 
 body {
   font-family: 'Roboto', sans-serif;
-  /*font-size: 3em;*/
+  font-size: 16px;
   /*line-height: 1.42857143;*/
   /*color: #777777;*/
   /*background-color: #ffffff;*/
+}
+
+h2, h3, h4 {
+  padding-top:    1px;
+  padding-bottom: 1px;
 }
 
 

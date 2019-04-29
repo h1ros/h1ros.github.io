@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://h1ros.github.io/</loc>
-  <lastmod>2019-04-20T07:27:00Z</lastmod>
+  <lastmod>2019-04-29T15:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-04-29T01:28:00Z</lastmod>
+  <lastmod>2019-04-29T15:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -59,7 +59,11 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-1.html</loc>
-  <lastmod>2019-04-29T01:26:00Z</lastmod>
+  <lastmod>2019-04-29T15:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/index-2.html</loc>
+  <lastmod>2019-04-29T15:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -72,6 +76,10 @@
  <url>
   <loc>https://h1ros.github.io/pages/algorithm_and_data_structure/index.src.html</loc>
   <lastmod>2019-04-28T23:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/1035-uncrossed-lines/</loc>
+  <lastmod>2019-04-29T15:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
