@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://h1ros.github.io/categories/array.xml</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
   <lastmod>2019-04-29T01:26:00Z</lastmod>
  </sitemap>
@@ -30,6 +34,14 @@
   <lastmod>2019-04-29T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://h1ros.github.io/categories/machine-learning-basics.xml</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/matrix.xml</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
   <lastmod>2019-04-29T01:28:00Z</lastmod>
  </sitemap>
@@ -42,15 +54,19 @@
   <lastmod>2019-04-29T01:22:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://h1ros.github.io/categories/vector.xml</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/visualization.xml</loc>
   <lastmod>2019-03-02T17:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-04-29T15:46:00Z</lastmod>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-29T15:46:00Z</lastmod>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>

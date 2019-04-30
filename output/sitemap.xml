@@ -11,11 +11,15 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-04-29T15:46:00Z</lastmod>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
-  <lastmod>2019-04-29T01:28:00Z</lastmod>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/array/</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/binary-tree/</loc>
@@ -42,6 +46,14 @@
   <lastmod>2019-04-29T01:23:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/categories/machine-learning-basics/</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/matrix/</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/categories/python/</loc>
   <lastmod>2019-03-30T07:14:00Z</lastmod>
  </url>
@@ -54,6 +66,10 @@
   <lastmod>2019-04-29T01:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/categories/vector/</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/categories/visualization/</loc>
   <lastmod>2019-03-02T17:47:00Z</lastmod>
  </url>
@@ -63,7 +79,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-04-29T15:18:00Z</lastmod>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -132,6 +148,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/</loc>
   <lastmod>2019-04-18T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/create-a-sparse-matrix/</loc>
+  <lastmod>2019-04-30T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
