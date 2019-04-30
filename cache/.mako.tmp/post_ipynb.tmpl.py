@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1556608361.553764
+_modified_time = 1556609039.61698
 _enable_loop = True
 _template_filename = 'themes/bootstrap3-gradients/templates/post_ipynb.tmpl'
 _template_uri = 'post_ipynb.tmpl'
@@ -39,21 +39,21 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def content():
-            return render_content(context._locals(__M_locals))
-        parent = context.get('parent', UNDEFINED)
-        math = _mako_get_namespace(context, 'math')
-        post = context.get('post', UNDEFINED)
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
-        helper = _mako_get_namespace(context, 'helper')
         pheader = _mako_get_namespace(context, 'pheader')
-        def sourcelink():
-            return render_sourcelink(context._locals(__M_locals))
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        post = context.get('post', UNDEFINED)
+        math = _mako_get_namespace(context, 'math')
+        messages = context.get('messages', UNDEFINED)
+        parent = context.get('parent', UNDEFINED)
+        def sourcelink():
+            return render_sourcelink(context._locals(__M_locals))
+        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
+        helper = _mako_get_namespace(context, 'helper')
+        comments = _mako_get_namespace(context, 'comments')
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -82,11 +82,11 @@ def render_body(context,**pageargs):
 def render_extra_head(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        parent = context.get('parent', UNDEFINED)
         math = _mako_get_namespace(context, 'math')
-        post = context.get('post', UNDEFINED)
+        parent = context.get('parent', UNDEFINED)
         def extra_head():
             return render_extra_head(context)
+        post = context.get('post', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
         __M_writer = context.writer()
         __M_writer('\n    ')
@@ -96,9 +96,7 @@ def render_extra_head(context,**pageargs):
             __M_writer('    <meta name="keywords" content="')
             __M_writer(filters.html_escape(str(post.meta('keywords'))))
             __M_writer('">\n')
-        __M_writer('\n    {# <meta name="author" content="')
-        __M_writer(filters.html_escape(str(post.author())))
-        __M_writer('"> #}\n')
+        __M_writer('\n\n')
         if post.prev_post:
             __M_writer('        <link rel="prev" href="')
             __M_writer(str(post.prev_post.permalink()))
@@ -132,15 +130,15 @@ def render_extra_head(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def content():
-            return render_content(context)
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
         post = context.get('post', UNDEFINED)
         math = _mako_get_namespace(context, 'math')
         messages = context.get('messages', UNDEFINED)
-        comments = _mako_get_namespace(context, 'comments')
         helper = _mako_get_namespace(context, 'helper')
         pheader = _mako_get_namespace(context, 'pheader')
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        comments = _mako_get_namespace(context, 'comments')
+        def content():
+            return render_content(context)
         __M_writer = context.writer()
         __M_writer('\n<article class="post-')
         __M_writer(str(post.meta('type')))
@@ -172,11 +170,11 @@ def render_content(context,**pageargs):
 def render_sourcelink(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        messages = context.get('messages', UNDEFINED)
+        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         post = context.get('post', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         def sourcelink():
             return render_sourcelink(context)
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if show_sourcelink:
@@ -192,6 +190,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "themes/bootstrap3-gradients/templates/post_ipynb.tmpl", "uri": "post_ipynb.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 3, "29": 4, "32": 5, "38": 0, "58": 2, "59": 3, "60": 4, "61": 5, "62": 6, "67": 34, "72": 59, "82": 8, "92": 8, "93": 9, "94": 9, "95": 10, "96": 11, "97": 11, "98": 11, "99": 13, "100": 14, "101": 14, "102": 15, "103": 16, "104": 16, "105": 16, "106": 16, "107": 16, "108": 18, "109": 19, "110": 20, "111": 20, "112": 20, "113": 20, "114": 20, "115": 22, "116": 23, "117": 24, "118": 26, "119": 27, "120": 27, "121": 28, "122": 28, "123": 29, "124": 29, "125": 30, "126": 30, "132": 36, "145": 36, "146": 37, "147": 37, "148": 38, "149": 38, "150": 42, "151": 42, "152": 46, "153": 46, "154": 47, "155": 47, "156": 50, "157": 51, "158": 52, "159": 52, "160": 53, "161": 53, "162": 56, "163": 56, "164": 56, "165": 58, "166": 58, "172": 61, "181": 61, "182": 62, "183": 63, "184": 64, "185": 64, "186": 64, "187": 64, "193": 187}}
+{"filename": "themes/bootstrap3-gradients/templates/post_ipynb.tmpl", "uri": "post_ipynb.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 3, "29": 4, "32": 5, "38": 0, "58": 2, "59": 3, "60": 4, "61": 5, "62": 6, "67": 34, "72": 59, "82": 8, "92": 8, "93": 9, "94": 9, "95": 10, "96": 11, "97": 11, "98": 11, "99": 13, "100": 15, "101": 16, "102": 16, "103": 16, "104": 16, "105": 16, "106": 18, "107": 19, "108": 20, "109": 20, "110": 20, "111": 20, "112": 20, "113": 22, "114": 23, "115": 24, "116": 26, "117": 27, "118": 27, "119": 28, "120": 28, "121": 29, "122": 29, "123": 30, "124": 30, "130": 36, "143": 36, "144": 37, "145": 37, "146": 38, "147": 38, "148": 42, "149": 42, "150": 46, "151": 46, "152": 47, "153": 47, "154": 50, "155": 51, "156": 52, "157": 52, "158": 53, "159": 53, "160": 56, "161": 56, "162": 56, "163": 58, "164": 58, "170": 61, "179": 61, "180": 62, "181": 63, "182": 64, "183": 64, "184": 64, "185": 64, "191": 185}}
 __M_END_METADATA
 """
