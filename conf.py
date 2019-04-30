@@ -1316,7 +1316,8 @@ METADATA_VALUE_MAPPING = {
     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
     "nikola": {
         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
-        "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
+        "tags": str.lower,  # nikola: force lowercase 'tags' (input would be string)
+        "keywords": lambda value: ', '.join(value),
      }
 }
 
