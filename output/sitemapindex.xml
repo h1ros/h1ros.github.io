@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://h1ros.github.io/categories/array.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/coding.xml</loc>
-  <lastmod>2019-04-29T15:12:00Z</lastmod>
+  <lastmod>2019-04-30T07:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/dynamic-programming.xml</loc>
-  <lastmod>2019-04-29T15:46:00Z</lastmod>
+  <lastmod>2019-04-30T07:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/linked-list.xml</loc>
@@ -35,11 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/machine-learning-basics.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/matrix.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/vector.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/visualization.xml</loc>
@@ -63,10 +63,10 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-30T06:56:00Z</lastmod>
+  <lastmod>2019-04-30T07:11:00Z</lastmod>
  </sitemap>
 </sitemapindex>
