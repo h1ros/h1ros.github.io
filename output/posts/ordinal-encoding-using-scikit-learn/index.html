@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Convert Pandas Categorical Data For Scikit-Learn | Step-by-step Data Science &amp; Computer Science</title>
+<title>Ordinal Encoding using Scikit-learn | Step-by-step Data Science &amp; Computer Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -22,10 +22,38 @@
   gtag('config', 'UA-134273341-1');
 </script><link rel="prev" href="../create-a-sparse-matrix/" title="Create A Sparse Matrix" type="text/html">
 <meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
-<meta property="og:title" content="Convert Pandas Categorical Data For Scikit-Learn">
+<meta property="og:title" content="Ordinal Encoding using Scikit-learn">
 <meta property="og:url" content="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/">
 <meta property="og:description" content="Goal¶This post aims to convert one of the categorical columns for further process using scikit-learn:
-Referring to Chris Albon's blog, I only look at his title of the post but wrote my own contents wi">
+
+
+
+
+
+
+
+Library¶
+
+
+
+
+
+In [1]:
+
+    
+import pandas as pd
+import sklearn.preprocessing
+
+
+    
+
+
+
+
+
+
+
+">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-04-30T20:17:07-07:00">
 <meta property="article:tag" content="Scikit-learn">
@@ -82,7 +110,7 @@ Referring to Chris Albon's blog, I only look at his title of the post but wrote 
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Convert Pandas Categorical Data For Scikit-Learn</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Ordinal Encoding using Scikit-learn</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -113,7 +141,6 @@ Referring to Chris Albon's blog, I only look at his title of the post but wrote 
 <h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
 </h2>
 <p>This post aims to convert one of the categorical columns for further process using scikit-learn:</p>
-<p>Referring to <a href="https://chrisalbon.com/">Chris Albon</a>'s blog, I <strong>only look at his title of the post</strong> but wrote my own contents without looking at the contents to deepen my understanding about the topic.</p>
 
 </div>
 </div>
@@ -334,7 +361,7 @@ Referring to Chris Albon's blog, I only look at his title of the post but wrote 
         <script>
         var disqus_shortname ="https-h1ros-github-io",
             disqus_url="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/",
-        disqus_title="Convert Pandas Categorical Data For Scikit-Learn",
+        disqus_title="Ordinal Encoding using Scikit-learn",
         disqus_identifier="cache/posts/Ordinal Encoding using Scikit-learn.html",
         disqus_config = function () {
             this.language = "en";
