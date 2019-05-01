@@ -7,66 +7,70 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://h1ros.github.io/categories/array.xml</loc>
-  <lastmod>2019-04-30T07:04:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
-  <lastmod>2019-04-29T01:26:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/c%2B%2B.xml</loc>
-  <lastmod>2019-04-29T01:24:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/coding.xml</loc>
-  <lastmod>2019-04-30T07:10:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
-  <lastmod>2019-04-29T01:28:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/dynamic-programming.xml</loc>
-  <lastmod>2019-04-30T07:10:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/linked-list.xml</loc>
-  <lastmod>2019-04-29T01:23:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/machine-learning-basic.xml</loc>
+  <lastmod>2019-05-01T05:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/machine-learning-basics.xml</loc>
-  <lastmod>2019-04-30T07:04:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/matrix.xml</loc>
-  <lastmod>2019-04-30T07:04:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
-  <lastmod>2019-04-29T01:28:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/scikit-learn.xml</loc>
-  <lastmod>2019-04-29T01:28:00Z</lastmod>
+  <lastmod>2019-05-01T05:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/tree.xml</loc>
-  <lastmod>2019-04-29T01:22:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/vector.xml</loc>
-  <lastmod>2019-04-30T07:04:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/visualization.xml</loc>
-  <lastmod>2019-03-02T17:49:00Z</lastmod>
+  <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-04-30T07:11:00Z</lastmod>
+  <lastmod>2019-05-01T05:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-30T07:37:00Z</lastmod>
+  <lastmod>2019-05-01T05:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
