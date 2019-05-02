@@ -20,7 +20,8 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><meta name="robots" content="noindex">
+</script><link rel="prev" href="../1035-uncrossed-lines/" title="1035. Uncrossed Lines" type="text/html">
+<link rel="next" href="../create-a-sparse-matrix/" title="Create A Sparse Matrix" type="text/html">
 <meta property="og:site_name" content="Step-by-step Data Science &amp; Computer Science">
 <meta property="og:title" content="1036. Escape a Large Maze">
 <meta property="og:url" content="https://h1ros.github.io/posts/1036-escape-a-large-maze/">
@@ -145,10 +146,339 @@ The target square is inaccessible starting from the source square, because we ca
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-from-badgergo">Solution from <a href="https://leetcode.com/badgergo/">badgergo</a><a class="anchor-link" href="#Solution-from-badgergo">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isEscapePossible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocked</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">source</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">blocked</span> <span class="o">=</span> <span class="p">{(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">blocked</span><span class="p">}</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+            <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">}</span>
+            <span class="n">frontier</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">s</span><span class="p">])</span>
+            <span class="k">while</span> <span class="n">frontier</span><span class="p">:</span>
+                <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">frontier</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">sz</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocked</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="mi">1</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sz</span><span class="p">):</span>
+                    <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="mi">2</span>
+                    <span class="k">for</span> <span class="n">newr</span><span class="p">,</span> <span class="n">newc</span> <span class="ow">in</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newr</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newc</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blocked</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+                            <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">bfs</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="o">+</span> <span class="n">bfs</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example 1</span>
+<span class="n">blocked</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]];</span> <span class="n">source</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">];</span> <span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">isEscapePossible</span><span class="p">(</span><span class="n">blocked</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-by-step-understanding">Step-by-step understanding<a class="anchor-link" href="#Step-by-step-understanding">¶</a>
+</h3>
+<p>This problem can be solved by using dynamic programming. Overall flow is as blew:</p>
+<ol>
+<li>Initial setting</li>
+<li>Define recursive function <code>bfs</code> for dynamic programming</li>
+<li>Execute the recursive function from the starting point i.e., <code>source</code> to the end point i.e. <code>target</code> as well as the other way around i.e., from <code>target</code> to <code>source</code>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Initial-setting">Initial setting<a class="anchor-link" href="#Initial-setting">¶</a>
+</h4>
+<p>L5-7 convert input arguments into tuple format.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Before: '</span><span class="p">,</span> <span class="n">blocked</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="n">blocked</span> <span class="o">=</span> <span class="p">{(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">blocked</span><span class="p">}</span>
+<span class="n">source</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<span class="n">target</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'After: '</span><span class="p">,</span> <span class="n">blocked</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before:  [[0, 1], [1, 0]] [0, 0] [0, 2]
+After:  {(0, 1), (1, 0)} (0, 0) (0, 2)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Define-dfs">Define <code>dfs</code><a class="anchor-link" href="#Define-dfs">¶</a>
+</h4>
+<p>This recursive function explore the 1 million by 1 million grid using <strong>DFS (Depth First Search)</strong>, in which a recursive function goes deeper search areas first until it reaches a sort of the end.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">}</span>
+    <span class="n">frontier</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">s</span><span class="p">])</span>
+    <span class="k">while</span> <span class="n">frontier</span><span class="p">:</span>
+        <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">frontier</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sz</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocked</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sz</span><span class="p">):</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">2</span>
+            <span class="k">for</span> <span class="n">newr</span><span class="p">,</span> <span class="n">newc</span> <span class="ow">in</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newr</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newc</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blocked</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+                    <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>visited</code> keeps tracking where it is already searched. </li>
+<li>
+<code>frontier</code> keeps tracking the grid coordinates it needs to check.  </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">source</span><span class="p">;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">target</span>
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">}</span>
+<span class="n">frontier</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">s</span><span class="p">])</span>
+<span class="k">while</span> <span class="n">frontier</span><span class="p">:</span>
+    <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">frontier</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sz</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocked</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">pass</span>
+<span class="c1">#         return 1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sz</span><span class="p">):</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">pass</span>
+<span class="c1">#             return 2</span>
+        <span class="k">for</span> <span class="n">newr</span><span class="p">,</span> <span class="n">newc</span> <span class="ow">in</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newr</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newc</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blocked</span> <span class="ow">and</span> <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+                <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+    <span class="k">break</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">frontier</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocked</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{(0, 0)} deque([]) 1 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Check-a-4-directionally-adjacent-square">Check a 4-directionally adjacent square<a class="anchor-link" href="#Check-a-4-directionally-adjacent-square">¶</a>
+</h4>
+<p>There are 4 different direction that we can move. The <code>if</code> statement checks the followings:</p>
+<ul>
+<li>the next point is within the grid (make sure that it is not out of indexes.)</li>
+<li>the next point is not in the <code>blocked</code> list</li>
+<li>the next point is not in the <code>visited</code> list</li>
+</ul>
+<p>If all three conditions are met, it adds the next points <code>(newr, newc)</code> to <code>visited</code>. 
+Also, it appends the next points are <code>frontier</code></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">newr</span><span class="p">,</span> <span class="n">newc</span> <span class="ow">in</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newr</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">newc</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="ow">and</span>
+    <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blocked</span> <span class="ow">and</span>
+    <span class="p">(</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+
+        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+        <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">newr</span><span class="p">,</span> <span class="n">newc</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Check-if-one-of-the-frontiers-reaches-the-end-e">Check if one of the frontiers reaches the end <code>e</code><a class="anchor-link" href="#Check-if-one-of-the-frontiers-reaches-the-end-e">¶</a>
+</h4>
+<p>In the for loop, it takes one coordinate <code>(r, c)</code> from <code>frontier</code> and check if it matches with <code>e</code>, the end destination.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sz</span><span class="p">):</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Execute-dfs-from-both-source-and-target">Execute <code>dfs</code> from both <code>source</code> and <code>target</code><a class="anchor-link" href="#Execute-dfs-from-both-source-and-target">¶</a>
+</h3>
+<p>By executing the <code>dfs</code> from both <code>source</code> and <code>target</code>, if it meets on the same coordinate, it means it is solved.</p>
+<div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">bfs</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="o">+</span> <span class="n">bfs</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/dynamic-programming/" rel="tag">Dynamic Programming</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../1035-uncrossed-lines/" rel="prev" title="1035. Uncrossed Lines">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../create-a-sparse-matrix/" rel="next" title="Create A Sparse Matrix">Next post</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
