@@ -22,7 +22,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="prefetch" href="posts/adding-or-substracting-time/" type="text/html">
+</script><link rel="prefetch" href="posts/stemming-words-and-sentences/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -81,7 +81,517 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/adding-or-substracting-time/" class="u-url">Adding Or Substracting Time</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/stemming-words-and-sentences/" class="u-url">Stemming Words and Sentences</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="posts/stemming-words-and-sentences/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-03T08:23:39-07:00" itemprop="datePublished" title="May 3, 2019, 8:23:39 AM">May 3, 2019, 8:23:39 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/stemming-words-and-sentences/#disqus_thread" data-disqus-identifier="cache/posts/stemming-words-and-sentences.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="posts/stemming-words-and-sentences/#Goal">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post aims to introduce <strong>stemming words and sentences</strong> using <code>nltk</code> (Natural Language Tool Kit)</p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://www.datacamp.com/community/tutorials/stemming-lemmatization-python">
+Stemming and Lemmatization in Python</a></li>
+<li>
+<a href="https://chrisalbon.com/">Chris Albon</a>'s blog (I look at his post's title and wrote my own contents to deepen my understanding about the topic.)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Library">Library<a class="anchor-link" href="posts/stemming-words-and-sentences/#Library">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="k">import</span> <span class="n">PorterStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="k">import</span> <span class="n">LancasterStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">sent_tokenize</span><span class="p">,</span> <span class="n">word_tokenize</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'punkt'</span><span class="p">)</span>
+<span class="n">porter</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">lancaster</span><span class="o">=</span><span class="n">LancasterStemmer</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package punkt to /Users/hiro/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Words-&amp;-Sentences-to-be-stemmed">Words &amp; Sentences to be stemmed<a class="anchor-link" href="posts/stemming-words-and-sentences/#Words-&amp;-Sentences-to-be-stemmed">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l_words1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'cats'</span><span class="p">,</span> <span class="s1">'trouble'</span><span class="p">,</span> <span class="s1">'troubling'</span><span class="p">,</span> <span class="s1">'troubled'</span><span class="p">]</span>
+<span class="n">l_words2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'dogs'</span><span class="p">,</span> <span class="s1">'programming'</span><span class="p">,</span> <span class="s1">'programs'</span><span class="p">,</span> <span class="s1">'programmed'</span><span class="p">,</span> <span class="s1">'cakes'</span><span class="p">,</span> <span class="s1">'indices'</span><span class="p">,</span> <span class="s1">'matrices'</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">l_words1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l_words2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['cats', 'trouble', 'troubling', 'troubled']
+['dogs', 'programming', 'programs', 'programmed', 'cakes', 'indices', 'matrices']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The example of sentences is <a href="https://en.wikipedia.org/wiki/Stemming">Wiki - Stemming #Examples</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s1">'A stemmer for English operating on the stem cat should identify such strings as cats, catlike, and catty. A stemming algorithm might also reduce the words fishing, fished, and fisher to the stem fish. The stem need not be a word, for example the Porter algorithm reduces, argue, argued, argues, arguing, and argus to the stem argu.'</span>
+<span class="n">sentence</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'A stemmer for English operating on the stem cat should identify such strings as cats, catlike, and catty. A stemming algorithm might also reduce the words fishing, fished, and fisher to the stem fish. The stem need not be a word, for example the Porter algorithm reduces, argue, argued, argues, arguing, and argus to the stem argu.'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Stemming-words">Stemming words<a class="anchor-link" href="posts/stemming-words-and-sentences/#Stemming-words">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Porter-Stemming">Porter Stemming<a class="anchor-link" href="posts/stemming-words-and-sentences/#Porter-Stemming">¶</a>
+</h3>
+<p>Porter Stemming keeps only prefix for each words and leave non English words like <code>troubl</code>. It might not be useful to see non English words for further analysis but it is simple and efficient.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">l_words1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'</span><span class="si">{word}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> -&gt; {porter.stem(word)}'</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>cats            -&gt; cat
+trouble         -&gt; troubl
+troubling       -&gt; troubl
+troubled        -&gt; troubl
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">l_words2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'</span><span class="si">{word}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> -&gt; {porter.stem(word)}'</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dogs            -&gt; dog
+programming     -&gt; program
+programs        -&gt; program
+programmed      -&gt; program
+cakes           -&gt; cake
+indices         -&gt; indic
+matrices        -&gt; matric
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lancaster-Stemming">Lancaster Stemming<a class="anchor-link" href="posts/stemming-words-and-sentences/#Lancaster-Stemming">¶</a>
+</h3>
+<p>Lancaster stemming is a rule-based stemming based on the last letter of the words. It is computationally heavier than Porter stemming.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">l_words1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'</span><span class="si">{word}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> -&gt; {lancaster.stem(word)}'</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>cats            -&gt; cat
+trouble         -&gt; troubl
+troubling       -&gt; troubl
+troubled        -&gt; troubl
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">l_words2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'</span><span class="si">{word}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> -&gt; {lancaster.stem(word)}'</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dogs            -&gt; dog
+programming     -&gt; program
+programs        -&gt; program
+programmed      -&gt; program
+cakes           -&gt; cak
+indices         -&gt; ind
+matrices        -&gt; mat
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Stemming-sentences">Stemming sentences<a class="anchor-link" href="posts/stemming-words-and-sentences/#Stemming-sentences">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tokenize">Tokenize<a class="anchor-link" href="posts/stemming-words-and-sentences/#Tokenize">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenized_words</span><span class="o">=</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokenized_words</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['A', 'stemmer', 'for', 'English', 'operating', 'on', 'the', 'stem', 'cat', 'should', 'identify', 'such', 'strings', 'as', 'cats', ',', 'catlike', ',', 'and', 'catty', '.', 'A', 'stemming', 'algorithm', 'might', 'also', 'reduce', 'the', 'words', 'fishing', ',', 'fished', ',', 'and', 'fisher', 'to', 'the', 'stem', 'fish', '.', 'The', 'stem', 'need', 'not', 'be', 'a', 'word', ',', 'for', 'example', 'the', 'Porter', 'algorithm', 'reduces', ',', 'argue', ',', 'argued', ',', 'argues', ',', 'arguing', ',', 'and', 'argus', 'to', 'the', 'stem', 'argu', '.']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Stemming-by-Porter-stemming">Stemming by Porter stemming<a class="anchor-link" href="posts/stemming-words-and-sentences/#Stemming-by-Porter-stemming">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_words</span><span class="p">:</span>
+    <span class="n">tokenized_sentence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+<span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokenized_sentence</span><span class="p">)</span>
+<span class="n">tokenized_sentence</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'A stemmer for english oper on the stem cat should identifi such string as cat , catlik , and catti . A stem algorithm might also reduc the word fish , fish , and fisher to the stem fish . the stem need not be a word , for exampl the porter algorithm reduc , argu , argu , argu , argu , and argu to the stem argu .'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Stemming-by-lancaster">Stemming by lancaster<a class="anchor-link" href="posts/stemming-words-and-sentences/#Stemming-by-lancaster">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_words</span><span class="p">:</span>
+    <span class="n">tokenized_sentence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lancaster</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+<span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokenized_sentence</span><span class="p">)</span>
+<span class="n">tokenized_sentence</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'a stem for engl op on the stem cat should ident such strings as cat , catlik , and catty . a stem algorithm might also reduc the word fish , fish , and fish to the stem fish . the stem nee not be a word , for exampl the port algorithm reduc , argu , argu , argu , argu , and arg to the stem argu .'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/adding-or-substracting-time/" class="u-url">Adding Or Substracting Time</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -1126,67 +1636,6 @@ Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p class="more"><a href="posts/coding/1026-maximum-difference-between-node-and-ancestor/">Read more…</a></p>
 </div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coding/leetcode-top-100-problem-selection/" class="u-url">LeetCode Top 100 Problem Selection</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="posts/coding/leetcode-top-100-problem-selection/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-04-16T23:14:23-07:00" itemprop="datePublished" title="Apr 16, 2019, 11:14:23 PM">Apr 16, 2019, 11:14:23 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/coding/leetcode-top-100-problem-selection/#disqus_thread" data-disqus-identifier="cache/posts/coding/leetcode-top-100-problem-selection.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This link was posted on Dec 30, 2018 in blind <a href="https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU">Curated List of Top 100 LeetCode Questions</a>. I found it so useful and would like to cover these problem in the following post as well.</p>
-<p>Array</p>
-<ul>
-<li>
-<input type="checkbox"> Two Sum - <a href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a>
-</li>
-<li>
-<input type="checkbox"> Best Time to Buy and Sell Stock - <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a>
-</li>
-<li>
-<input type="checkbox"> Contains Duplicate - <a href="https://leetcode.com/problems/contains-duplicate/">https://leetcode.com/problems/contains-duplicate/</a>
-</li>
-<li>
-<input type="checkbox"> Product of Array Except Self - <a href="https://leetcode.com/problems/product-of-array-except-self/">https://leetcode.com/problems/product-of-array-except-self/</a>
-</li>
-<li>
-<input type="checkbox"> Maximum Subarray - <a href="https://leetcode.com/problems/maximum-subarray/">https://leetcode.com/problems/maximum-subarray/</a>
-</li>
-<li>
-<input type="checkbox"> Maximum Product Subarray - <a href="https://leetcode.com/problems/maximum-product-subarray/">https://leetcode.com/problems/maximum-product-subarray/</a>
-</li>
-<li>
-<input type="checkbox"> Find Minimum in Rotated Sorted Array - <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/</a>
-</li>
-<li>
-<input type="checkbox"> Search in Rotated Sorted Array - <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">https://leetcode.com/problems/search-in-rotated-sorted-array/</a>
-</li>
-<li>
-<input type="checkbox"> 3Sum - <a href="https://leetcode.com/problems/3sum/">https://leetcode.com/problems/3sum/</a>
-</li>
-<li>
-<input type="checkbox"> Container With Most Water - <a href="https://leetcode.com/problems/container-with-most-water/">https://leetcode.com/problems/container-with-most-water/</a>
-</li>
-</ul>
-<p class="more"><a href="posts/coding/leetcode-top-100-problem-selection/">Read more…</a></p>
 </div>
 </div>
 </div>
