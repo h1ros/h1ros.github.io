@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 02 May 2019 06:31:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>1036. Escape a Large Maze</title><link>https://h1ros.github.io/posts/1036-escape-a-large-maze/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2019 06:20:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Adding Or Substracting Time</title><link>https://h1ros.github.io/posts/adding-or-substracting-time/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to add or subtract time from date column using pandas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pandas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://chrisalbon.com/"&gt;Chris Albon&lt;/a&gt;'s blog (I look at his post's title and wrote my own contents to deepen my understanding about the topic.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Create-date-columns-using-date_range"&gt;Create date columns using date_range&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Create-date-columns-using-date_range"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;date_rng&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date_range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'20160101'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'20190101'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'m'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'left'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;date_rng&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;DatetimeIndex(['2016-01-31', '2016-02-29', '2016-03-31', '2016-04-30',
+               '2016-05-31', '2016-06-30', '2016-07-31', '2016-08-31',
+               '2016-09-30', '2016-10-31', '2016-11-30', '2016-12-31',
+               '2017-01-31', '2017-02-28', '2017-03-31', '2017-04-30',
+               '2017-05-31', '2017-06-30', '2017-07-31', '2017-08-31',
+               '2017-09-30', '2017-10-31', '2017-11-30', '2017-12-31',
+               '2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
+               '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31',
+               '2018-09-30', '2018-10-31', '2018-11-30', '2018-12-31'],
+              dtype='datetime64[ns]', freq='M')&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/adding-or-substracting-time/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/adding-or-substracting-time/</guid><pubDate>Fri, 03 May 2019 06:10:13 GMT</pubDate></item><item><title>1036. Escape a Large Maze</title><link>https://h1ros.github.io/posts/1036-escape-a-large-maze/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1036-escape-a-large-maze/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In a 1 million by 1 million grid, the coordinates of each grid square are &lt;code&gt;(x, y)&lt;/code&gt; with &lt;code&gt;0 &amp;lt;= x, y &amp;lt; 10^6&lt;/code&gt;.&lt;/p&gt;
@@ -656,33 +744,4 @@ Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 
 &lt;li&gt;&lt;input type="checkbox"&gt; 3Sum - &lt;a href="https://leetcode.com/problems/3sum/"&gt;https://leetcode.com/problems/3sum/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox"&gt; Container With Most Water - &lt;a href="https://leetcode.com/problems/container-with-most-water/"&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/</guid><pubDate>Wed, 17 Apr 2019 06:14:23 GMT</pubDate></item><item><title>Split-Up: dtreeviz Part 1</title><link>https://h1ros.github.io/posts/split-up-dtreeviz-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we will go through each function in &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module  to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
-&lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;You would just have to get ShadowDecisionTree wrappers for those trees.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Based on this comment, I need first understand the class object &lt;code&gt;ShadowDecisionTree&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56184236-40687500-5fce-11e9-8e82-922cb1c7cd20.png" alt="image"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Understand-folder-structure"&gt;Understand folder structure&lt;a class="anchor-link" href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/#Understand-folder-structure"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we will deep dive into the core module &lt;code&gt;dtreeviz&lt;/code&gt;
-&lt;img src="https://user-images.githubusercontent.com/8764683/56184705-eb2d6300-5fcf-11e9-9111-83f79f5c34f7.png" alt="image"&gt;&lt;/p&gt;
-&lt;p&gt;This module comprises of 4 python files. 
-&lt;img src="https://user-images.githubusercontent.com/8764683/56184787-3778a300-5fd0-11e9-9835-c837080de3cd.png" alt="image"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;__init__.py&lt;/code&gt; is empty so we can skip it.&lt;/p&gt;
-&lt;p&gt;Let's see one by one.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/split-up-dtreeviz-part-1/</guid><pubDate>Tue, 16 Apr 2019 05:27:13 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/</guid><pubDate>Wed, 17 Apr 2019 06:14:23 GMT</pubDate></item></channel></rss>

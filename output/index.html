@@ -22,7 +22,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="prefetch" href="posts/1036-escape-a-large-maze/" type="text/html">
+</script><link rel="prefetch" href="posts/adding-or-substracting-time/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -81,7 +81,131 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/1036-escape-a-large-maze/" class="u-url">1036. Escape a Large Maze</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/adding-or-substracting-time/" class="u-url">Adding Or Substracting Time</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="posts/adding-or-substracting-time/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-02T23:10:13-07:00" itemprop="datePublished" title="May 2, 2019, 11:10:13 PM">May 2, 2019, 11:10:13 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/adding-or-substracting-time/#disqus_thread" data-disqus-identifier="cache/posts/adding-or-substracting-time.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="posts/adding-or-substracting-time/#Goal">¶</a>
+</h2>
+<p>This post aims to add or subtract time from date column using pandas:</p>
+<ul>
+<li>Pandas</li>
+</ul>
+<p>Reference:</p>
+<ul>
+<li>
+<a href="https://chrisalbon.com/">Chris Albon</a>'s blog (I look at his post's title and wrote my own contents to deepen my understanding about the topic.)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Library">Library<a class="anchor-link" href="posts/adding-or-substracting-time/#Library">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-date-columns-using-date_range">Create date columns using date_range<a class="anchor-link" href="posts/adding-or-substracting-time/#Create-date-columns-using-date_range">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">date_rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">'20160101'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'20190101'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'m'</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="n">date_rng</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>DatetimeIndex(['2016-01-31', '2016-02-29', '2016-03-31', '2016-04-30',
+               '2016-05-31', '2016-06-30', '2016-07-31', '2016-08-31',
+               '2016-09-30', '2016-10-31', '2016-11-30', '2016-12-31',
+               '2017-01-31', '2017-02-28', '2017-03-31', '2017-04-30',
+               '2017-05-31', '2017-06-30', '2017-07-31', '2017-08-31',
+               '2017-09-30', '2017-10-31', '2017-11-30', '2017-12-31',
+               '2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
+               '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31',
+               '2018-09-30', '2018-10-31', '2018-11-30', '2018-12-31'],
+              dtype='datetime64[ns]', freq='M')</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="posts/adding-or-substracting-time/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/1036-escape-a-large-maze/" class="u-url">1036. Escape a Large Maze</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -1063,70 +1187,6 @@ Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 
 </li>
 </ul>
 <p class="more"><a href="posts/coding/leetcode-top-100-problem-selection/">Read more…</a></p>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/split-up-dtreeviz-part-1/" class="u-url">Split-Up: dtreeviz Part 1</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="posts/split-up-dtreeviz-part-1/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-04-15T22:27:13-07:00" itemprop="datePublished" title="Apr 15, 2019, 10:27:13 PM">Apr 15, 2019, 10:27:13 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/split-up-dtreeviz-part-1/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreeviz-part-1.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="posts/split-up-dtreeviz-part-1/#Goal">¶</a>
-</h2>
-<p>In this post, we will go through each function in <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module  to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
-<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
-<blockquote>
-<p>You would just have to get ShadowDecisionTree wrappers for those trees.</p>
-</blockquote>
-<p>Based on this comment, I need first understand the class object <code>ShadowDecisionTree</code></p>
-<p><img src="https://user-images.githubusercontent.com/8764683/56184236-40687500-5fce-11e9-8e82-922cb1c7cd20.png" alt="image"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Understand-folder-structure">Understand folder structure<a class="anchor-link" href="posts/split-up-dtreeviz-part-1/#Understand-folder-structure">¶</a>
-</h2>
-<p>In this post, we will deep dive into the core module <code>dtreeviz</code>
-<img src="https://user-images.githubusercontent.com/8764683/56184705-eb2d6300-5fcf-11e9-9111-83f79f5c34f7.png" alt="image"></p>
-<p>This module comprises of 4 python files. 
-<img src="https://user-images.githubusercontent.com/8764683/56184787-3778a300-5fd0-11e9-9835-c837080de3cd.png" alt="image"></p>
-<p><code>__init__.py</code> is empty so we can skip it.</p>
-<p>Let's see one by one.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="posts/split-up-dtreeviz-part-1/">Read more…</a></p>
-</div>
 </div>
 </div>
 </div>
