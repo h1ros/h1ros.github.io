@@ -10,6 +10,10 @@
   <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://h1ros.github.io/categories/basic.xml</loc>
+  <lastmod>2019-05-03T06:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
@@ -20,6 +24,10 @@
  <sitemap>
   <loc>https://h1ros.github.io/categories/coding.xml</loc>
   <lastmod>2019-05-02T06:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/date-handling.xml</loc>
+  <lastmod>2019-05-03T06:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
@@ -46,6 +54,10 @@
   <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://h1ros.github.io/categories/pandas.xml</loc>
+  <lastmod>2019-05-03T06:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
  </sitemap>
@@ -67,10 +79,10 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-05-03T06:20:00Z</lastmod>
+  <lastmod>2019-05-03T06:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-05-03T06:20:00Z</lastmod>
+  <lastmod>2019-05-03T06:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
