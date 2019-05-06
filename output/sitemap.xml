@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-03T16:40:00Z</lastmod>
+  <lastmod>2019-05-06T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/01/</loc>
@@ -118,8 +118,12 @@
   <lastmod>2019-05-03T16:40:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/2019/05/05/</loc>
+  <lastmod>2019-05-06T06:54:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-03T16:40:00Z</lastmod>
+  <lastmod>2019-05-06T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -215,7 +219,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-05-03T16:40:00Z</lastmod>
+  <lastmod>2019-05-06T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -308,6 +312,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/</loc>
   <lastmod>2019-05-01T05:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/reshape-an-array/</loc>
+  <lastmod>2019-05-06T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/</loc>
