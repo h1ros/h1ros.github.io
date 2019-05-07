@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-06T06:54:00Z</lastmod>
+  <lastmod>2019-05-07T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/01/</loc>
@@ -122,8 +122,12 @@
   <lastmod>2019-05-06T06:54:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/2019/05/06/</loc>
+  <lastmod>2019-05-07T06:52:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-06T06:54:00Z</lastmod>
+  <lastmod>2019-05-07T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -219,7 +223,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-05-06T06:54:00Z</lastmod>
+  <lastmod>2019-05-07T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -304,6 +308,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/invert-a-matrix/</loc>
+  <lastmod>2019-05-07T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
