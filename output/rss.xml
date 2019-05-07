@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Tue, 07 May 2019 06:52:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Invert A Matrix</title><link>https://h1ros.github.io/posts/invert-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Tue, 07 May 2019 08:26:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Create a word cloud</title><link>https://h1ros.github.io/posts/create-a-word-cloud/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/create-a-word-cloud/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create a word cloud using &lt;code&gt;wordcloud&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;As the source of words, I use one of my posts in &lt;a href="https://200wordsaday.com"&gt;200Wordsaday&lt;/a&gt; a.k.a. &lt;strong&gt;200WaD&lt;/strong&gt; where is the community for those who want to build a writing habit.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/57284858-df7d0b80-7066-11e9-9aea-1628216aab0c.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.datacamp.com/community/tutorials/wordcloud-python"&gt;Datacamp - Generating WordClouds in Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/create-a-word-cloud/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/create-a-word-cloud/</guid><pubDate>Tue, 07 May 2019 07:08:10 GMT</pubDate></item><item><title>Invert A Matrix</title><link>https://h1ros.github.io/posts/invert-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to show how to invert a matrix using numpy i.e., calculating a inverse matrix $A^{-1}$ from $A$&lt;/p&gt;
@@ -16,7 +33,7 @@ $$A A^{-1} = I = \begin{bmatrix}
 \end{bmatrix}
 $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.mathsisfun.com/algebra/matrix-inverse.html"&gt;algebra matirx-inver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.mathsisfun.com/algebra/matrix-inverse.html"&gt;algebra matirx-inverse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.inv.html"&gt;numpy documentation - numpy.linalg.inv&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1495,31 +1512,4 @@ We cannot draw 3 uncrossed lines, because the line from A[1]=4 to B[2]=4 will in
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/</guid><pubDate>Sat, 27 Apr 2019 20:00:25 GMT</pubDate></item><item><title>1031. Maximum Sum of Two Non-Overlapping Subarrays</title><link>https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given an array &lt;code&gt;A&lt;/code&gt; of non-negative integers, return the maximum sum of elements in two non-overlapping (contiguous) subarrays, which have lengths &lt;code&gt;L&lt;/code&gt; and &lt;code&gt;M&lt;/code&gt;.  (For clarification, the &lt;code&gt;L&lt;/code&gt;-length subarray could occur before or after the &lt;code&gt;M&lt;/code&gt;-length subarray.)&lt;/p&gt;
-&lt;p&gt;Formally, return the largest &lt;code&gt;V&lt;/code&gt; for which &lt;code&gt;V = (A[i] + A[i+1] + ... + A[i+L-1]) + (A[j] + A[j+1] + ... + A[j+M-1])&lt;/code&gt; and either:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt; i + L - 1 &amp;lt; j &amp;lt; j + M - 1 &amp;lt; A.length&lt;/code&gt;, or&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= j &amp;lt; j + M - 1 &amp;lt; i &amp;lt; i + L - 1 &amp;lt; A.length&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Example-1:"&gt;Example 1:&lt;a class="anchor-link" href="https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Example-1:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: A = [0,6,5,2,2,5,1,9,4], L = 1, M = 2&lt;/p&gt;
-&lt;p&gt;Output: 20&lt;/p&gt;
-&lt;p&gt;Explanation: One choice of subarrays is [9] with length 1, and [6,5] with length 2.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56563539-d0736500-6560-11e9-9cae-a7c2ae2cc2b9.png" alt="image"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</guid><pubDate>Tue, 23 Apr 2019 03:42:05 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/</guid><pubDate>Sat, 27 Apr 2019 20:00:25 GMT</pubDate></item></channel></rss>
