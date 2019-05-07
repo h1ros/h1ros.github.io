@@ -131,15 +131,23 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-07T08:26:00Z</lastmod>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
-  <lastmod>2019-05-03T16:40:00Z</lastmod>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/200wad/</loc>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/array/</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/basic-text-mining/</loc>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/basic/</loc>
@@ -210,6 +218,10 @@
   <lastmod>2019-05-03T16:40:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/categories/text-processing/</loc>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/categories/tree/</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
  </url>
@@ -220,6 +232,10 @@
  <url>
   <loc>https://h1ros.github.io/categories/visualization/</loc>
   <lastmod>2019-05-01T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/wordcloud/</loc>
+  <lastmod>2019-05-07T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/index-1.html</loc>
