@@ -38,6 +38,8 @@ I woud like to contribute to one of the open source projects. I will write about
 * Compare yourself with who your were yesterday
 * Open to any suggestion
 
+## Special Thanks
+* Logo is created at [LogoMakr.com](https://my.logomakr.com)
 
 ## Contact
 If you would like to reach out to me, please email at data.h1ros at [gmail] or follow me on [Twitter](https://twitter.com/__h1r0__) and [GitHub](https://github.com/h1ros).
