@@ -1,5 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 May 2019 06:53:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Add Padding Around String</title><link>https://h1ros.github.io/posts/add-padding-around-string/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 10 May 2019 06:11:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Replace Characters</title><link>https://h1ros.github.io/posts/replace-characters/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to replace the characters in python.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Create-strings"&gt;Create strings&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Create-strings"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create strings&lt;/span&gt;
+&lt;span class="n"&gt;strings&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'String (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects'&lt;/span&gt;
+&lt;span class="n"&gt;strings&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'String (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Replace-characters"&gt;Replace characters&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Replace-characters"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id=".replace('{before}',-'{after}')"&gt;.replace('{before}', '{after}')&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#.replace('%7Bbefore%7D',-'%7Bafter%7D')"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# .replace('{before}', '{after}')&lt;/span&gt;
+&lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'S'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'atring (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id=".replace-can-be-chained"&gt;.replace can be chained&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#.replace-can-be-chained"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# .replace can be chained&lt;/span&gt;
+&lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'('&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'_'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'String_structure),_a_long_flexible_structure_made_from_threads_twisted_together,_which_is_used_to_tie,_bind,_or_hang_other_objects'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="replace-multiple-characters-using-dictionary"&gt;replace multiple characters using dictionary&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#replace-multiple-characters-using-dictionary"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;d_replace&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'('&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;')'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;d_replace&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'replace &lt;/span&gt;&lt;span class="si"&gt;{old}&lt;/span&gt;&lt;span class="s1"&gt; with &lt;/span&gt;&lt;span class="si"&gt;{new}&lt;/span&gt;&lt;span class="s1"&gt; '&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;strings&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;strings&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;replace ( with  
+replace ) with  
+replace   with  
+replace , with  
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'Stringstructurealongflexiblestructuremadefromthreadstwistedtogetherwhichisusedtotiebindorhangotherobjects'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/replace-characters/</guid><pubDate>Fri, 10 May 2019 06:02:21 GMT</pubDate></item><item><title>Add Padding Around String</title><link>https://h1ros.github.io/posts/add-padding-around-string/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/add-padding-around-string/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to add padding around string.&lt;/p&gt;
@@ -1596,23 +1796,4 @@ The target square is inaccessible starting from the source square, because we ca
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/create-a-sparse-matrix/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Array</category><category>Matrix</category><category>Vector</category><guid>https://h1ros.github.io/posts/create-a-sparse-matrix/</guid><pubDate>Tue, 30 Apr 2019 06:29:15 GMT</pubDate></item><item><title>1035. Uncrossed Lines</title><link>https://h1ros.github.io/posts/1035-uncrossed-lines/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1035-uncrossed-lines/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We write the integers of &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; (in the order they are given) on two separate horizontal lines.&lt;/p&gt;
-&lt;p&gt;Now, we may draw a straight line connecting two numbers &lt;code&gt;A[i]&lt;/code&gt; and &lt;code&gt;B[j]&lt;/code&gt; as long as &lt;code&gt;A[i] == B[j]&lt;/code&gt;, and the line we draw does not intersect any other connecting (non-horizontal) line.&lt;/p&gt;
-&lt;p&gt;Return the maximum number of connecting lines we can draw in this way.&lt;/p&gt;
-&lt;p&gt;Link for Problem: &lt;a href="https://leetcode.com/contest/weekly-contest-134/problems/uncrossed-lines/"&gt;leetcode&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="Example-1:"&gt;Example 1:&lt;a class="anchor-link" href="https://h1ros.github.io/posts/1035-uncrossed-lines/#Example-1:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56871936-2f5d3200-69d8-11e9-9566-f9caafc555d2.png" alt="image"&gt;&lt;/p&gt;
-&lt;p&gt;Input: A = [1,4,2], B = [1,2,4]&lt;/p&gt;
-&lt;p&gt;Output: 2&lt;/p&gt;
-&lt;p&gt;Explanation: We can draw 2 uncrossed lines as in the diagram.
-We cannot draw 3 uncrossed lines, because the line from A[1]=4 to B[2]=4 will intersect the line from A[2]=2 to B[1]=2.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/1035-uncrossed-lines/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><guid>https://h1ros.github.io/posts/1035-uncrossed-lines/</guid><pubDate>Mon, 29 Apr 2019 00:00:44 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/create-a-sparse-matrix/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Array</category><category>Matrix</category><category>Vector</category><guid>https://h1ros.github.io/posts/create-a-sparse-matrix/</guid><pubDate>Tue, 30 Apr 2019 06:29:15 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,204 @@
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Goal">Goal<a class="anchor-link" href="#Goal">&#182;</a></h1><p>This post aims to introduce how to replace the characters in python.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Create-strings">Create strings<a class="anchor-link" href="#Create-strings">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create strings</span>
+<span class="n">strings</span> <span class="o">=</span> <span class="s1">&#39;String (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects&#39;</span>
+<span class="n">strings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;String (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Replace-characters">Replace characters<a class="anchor-link" href="#Replace-characters">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".replace('{before}',-'{after}')">.replace('{before}', '{after}')<a class="anchor-link" href="#.replace('{before}',-'{after}')">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># .replace(&#39;{before}&#39;, &#39;{after}&#39;)</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;atring (structure), a long flexible structure made from threads twisted together, which is used to tie, bind, or hang other objects&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".replace-can-be-chained">.replace can be chained<a class="anchor-link" href="#.replace-can-be-chained">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># .replace can be chained</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;String_structure),_a_long_flexible_structure_made_from_threads_twisted_together,_which_is_used_to_tie,_bind,_or_hang_other_objects&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="replace-multiple-characters-using-dictionary">replace multiple characters using dictionary<a class="anchor-link" href="#replace-multiple-characters-using-dictionary">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d_replace</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;(&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;)&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+             <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;,&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="ow">in</span> <span class="n">d_replace</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;replace </span><span class="si">{old}</span><span class="s1"> with </span><span class="si">{new}</span><span class="s1"> &#39;</span><span class="p">)</span>
+    <span class="n">strings</span> <span class="o">=</span> <span class="n">strings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+<span class="n">strings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>replace ( with  
+replace ) with  
+replace   with  
+replace , with  
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Stringstructurealongflexiblestructuremadefromthreadstwistedtogetherwhichisusedtotiebindorhangotherobjects&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
