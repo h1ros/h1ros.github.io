@@ -883,9 +883,7 @@ CODE_COLOR_SCHEME = 'default'
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
 FAVICONS = (
-    ("icon", "images/favicon.ico", "16x16"),
-    ("icon", "images/favicon_128x128.png", "128x128"),
-    ("icon", "images/favicon_400x400.png", "400x400")
+    ("icon", "images/LogoMakr_2dGBSO.png", "16x16"),
 )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
