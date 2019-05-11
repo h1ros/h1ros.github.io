@@ -143,11 +143,11 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-11T07:00:00Z</lastmod>
+  <lastmod>2019-05-11T07:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
-  <lastmod>2019-05-07T08:27:00Z</lastmod>
+  <lastmod>2019-05-11T07:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/200wad/</loc>
@@ -212,6 +212,10 @@
  <url>
   <loc>https://h1ros.github.io/categories/nltk/</loc>
   <lastmod>2019-05-03T16:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/pandas-styling/</loc>
+  <lastmod>2019-05-11T07:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/pandas/</loc>
