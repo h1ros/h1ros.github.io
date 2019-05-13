@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-11T06:53:00Z</lastmod>
+  <lastmod>2019-05-13T06:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/01/</loc>
@@ -142,8 +142,12 @@
   <lastmod>2019-05-11T06:53:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/2019/05/12/</loc>
+  <lastmod>2019-05-13T06:14:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-11T07:16:00Z</lastmod>
+  <lastmod>2019-05-13T06:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -263,7 +267,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-3.html</loc>
-  <lastmod>2019-05-11T06:53:00Z</lastmod>
+  <lastmod>2019-05-13T06:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -368,6 +372,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/invert-a-matrix/</loc>
   <lastmod>2019-05-07T06:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/</loc>
+  <lastmod>2019-05-13T06:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
