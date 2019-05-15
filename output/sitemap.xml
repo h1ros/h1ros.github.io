@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-14T06:42:00Z</lastmod>
+  <lastmod>2019-05-15T06:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/01/</loc>
@@ -150,8 +150,12 @@
   <lastmod>2019-05-14T06:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/2019/05/14/</loc>
+  <lastmod>2019-05-15T06:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-15T03:17:00Z</lastmod>
+  <lastmod>2019-05-15T06:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -267,15 +271,15 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-1.html</loc>
-  <lastmod>2019-05-10T04:02:00Z</lastmod>
+  <lastmod>2019-05-15T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-05-11T06:53:00Z</lastmod>
+  <lastmod>2019-05-15T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/index-3.html</loc>
-  <lastmod>2019-05-14T06:42:00Z</lastmod>
+  <lastmod>2019-05-15T06:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -368,6 +372,10 @@
  <url>
   <loc>https://h1ros.github.io/posts/create-a-word-cloud/</loc>
   <lastmod>2019-05-07T08:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/posts/histograms-in-matplotlib/</loc>
+  <lastmod>2019-05-15T06:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
