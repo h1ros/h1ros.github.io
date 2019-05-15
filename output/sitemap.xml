@@ -155,7 +155,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-15T06:59:00Z</lastmod>
+  <lastmod>2019-05-15T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
@@ -271,15 +271,15 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-1.html</loc>
-  <lastmod>2019-05-15T06:42:00Z</lastmod>
+  <lastmod>2019-05-15T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-05-15T06:42:00Z</lastmod>
+  <lastmod>2019-05-15T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/index-3.html</loc>
-  <lastmod>2019-05-15T06:58:00Z</lastmod>
+  <lastmod>2019-05-15T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
@@ -372,10 +372,6 @@
  <url>
   <loc>https://h1ros.github.io/posts/create-a-word-cloud/</loc>
   <lastmod>2019-05-07T08:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/posts/histograms-in-matplotlib/</loc>
-  <lastmod>2019-05-15T06:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/histograms-in-pandas/</loc>
