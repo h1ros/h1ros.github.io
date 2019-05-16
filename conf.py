@@ -135,12 +135,13 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/index.html", "Posts"),
-        ("/pages/about", "About"),
+        ("/", "Post"),
+        ("pages/about/", 'About'),
+        # ("/pages/home.html", "About Hiro"),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
-        ((('/categories/coding/', 'Coding'),  ('/categories/machine-learning-basics/', 'Machine Learning')), 'Categories')
+        ("/rss.xml", "RSS feed")
+        # ((('/categories/coding/', 'Coding'),  ('/categories/machine-learning-basics/', 'Machine Learning')), 'Categories')
     ),
 
     # "ja": (

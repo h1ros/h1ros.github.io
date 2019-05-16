@@ -1,7 +1,6 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Goal">Goal<a class="anchor-link" href="#Goal">&#182;</a></h1><p>The goal in this post is to introduce <code>graphviz</code> to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly digest problems and solutions.</p>
 <p>Since we work with <code>TreeNode</code> and trees in a list-expresion e.g., [1, 2, null, 3] in LeetCode, the goal of this post is to easily convert the given tree in a list-expression into the visualization like below.</p>
@@ -18,7 +17,7 @@
 <span class="n">Image</span><span class="p">(</span><span class="s1">&#39;digraph.png&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -28,7 +27,7 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -46,16 +45,14 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- TEASER_END --> 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='top'></a></p>
 
@@ -63,8 +60,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><ol>
 <li><a href="#Goal">Goal</a></li>
@@ -79,8 +75,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Basic-Usage">Basic Usage<a class="anchor-link" href="#Basic-Usage">&#182;</a></h1><p>First of all, let's plot simplest two nodes and the edge between them.</p>
 
@@ -97,7 +92,7 @@
 <span class="n">dot</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -115,7 +110,7 @@
 <span class="n">dot</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">&#39;12&#39;</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -129,7 +124,7 @@
 <span class="n">dot</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -139,7 +134,7 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -185,8 +180,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='Preperation'></a></p>
 
@@ -194,8 +188,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Preperation-of-Tree-Nodes">Preperation of Tree Nodes<a class="anchor-link" href="#Preperation-of-Tree-Nodes">&#182;</a></h1><p>Now we look at an example of input tree nodes like below. We wrote the function to merge two trees in <a href="https://h1ros.github.io/posts/617-merge-two-binary-trees/">617. Merge Two Binary Trees</a></p>
 
@@ -240,7 +233,7 @@
         
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -266,7 +259,7 @@
 <span class="n">t2</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -280,14 +273,13 @@
 <span class="n">merged_tree</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we have three trees <code>t1</code>, <code>t2</code>, and <code>merged_tree</code> like below:</p>
 
@@ -310,16 +302,14 @@ Merged tree (merged_tree)
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Visualize-Trees">Visualize Trees<a class="anchor-link" href="#Visualize-Trees">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Manual-creation">Manual creation<a class="anchor-link" href="#Manual-creation">&#182;</a></h2>
 </div>
@@ -346,7 +336,7 @@ Merged tree (merged_tree)
 <span class="n">dot</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -356,7 +346,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -426,8 +416,7 @@ Merged tree (merged_tree)
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Programatic-Creation">Programatic Creation<a class="anchor-link" href="#Programatic-Creation">&#182;</a></h2>
 </div>
@@ -468,7 +457,7 @@ Merged tree (merged_tree)
     
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -481,7 +470,7 @@ Merged tree (merged_tree)
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -491,7 +480,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -568,7 +557,7 @@ Merged tree (merged_tree)
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -578,7 +567,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -667,7 +656,7 @@ Merged tree (merged_tree)
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dot</span> <span class="o">=</span> <span class="n">visualize_tree</span><span class="p">(</span><span class="n">merged_tree</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -677,7 +666,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -780,7 +769,7 @@ Merged tree (merged_tree)
 <span class="n">dot</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;digraph&#39;</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -790,7 +779,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -806,8 +795,7 @@ Merged tree (merged_tree)
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="#top">Back to Top</a></p>
 
@@ -815,8 +803,7 @@ Merged tree (merged_tree)
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">&#182;</a></h1><p>We need <code>graphviz</code> package. You can also refer to <a href="https://graphviz.readthedocs.io/en/stable/manual.html"><code>graphviz</code> documentation</a></p>
 
@@ -831,7 +818,7 @@ Merged tree (merged_tree)
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install graphviz
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -841,7 +828,7 @@ Merged tree (merged_tree)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
