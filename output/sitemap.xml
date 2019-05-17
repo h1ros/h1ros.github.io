@@ -167,7 +167,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/categories/</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <lastmod>2019-05-17T21:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/categories/200wad/</loc>
@@ -175,14 +175,6 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/categories/array/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/categories/basic-machine-learning/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/categories/basic-text-mining/</loc>
   <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
@@ -239,10 +231,6 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/categories/linked-list/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/categories/machine-learning-basics/</loc>
   <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
@@ -318,32 +306,12 @@
   <lastmod>2019-05-17T21:53:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/about/pages/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
   <loc>https://h1ros.github.io/pages/about/pages/about/</loc>
-  <lastmod>2019-05-17T17:36:00Z</lastmod>
+  <lastmod>2019-05-17T21:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/pages/about/index.src.html</loc>
   <lastmod>2019-05-17T21:54:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/pages/algorithm_and_data_structure/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/pages/algorithm_and_data_structure/index.src.html</loc>
-  <lastmod>2019-05-16T05:38:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/pages/index.src.html</loc>
-  <lastmod>2019-05-17T17:51:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/about/pages/step-by-step-data-science-and-computer-science/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/about/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>

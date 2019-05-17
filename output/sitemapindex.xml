@@ -14,14 +14,6 @@
   <lastmod>2019-05-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/basic-machine-learning.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/basic-text-mining.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://h1ros.github.io/pages/about/categories/basic.xml</loc>
   <lastmod>2019-05-17T21:53:00Z</lastmod>
  </sitemap>
@@ -75,10 +67,6 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/pages/about/categories/linked-list.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/machine-learning-basics.xml</loc>
   <lastmod>2019-05-17T21:26:00Z</lastmod>
  </sitemap>
  <sitemap>
@@ -147,6 +135,6 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/pages/about/sitemap.xml</loc>
-  <lastmod>2019-05-17T21:54:00Z</lastmod>
+  <lastmod>2019-05-17T21:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>
