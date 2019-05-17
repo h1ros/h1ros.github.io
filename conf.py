@@ -25,7 +25,7 @@ SITE_URL = "https://h1ros.github.io/"
 # If not set, defaults to SITE_URL
 BASE_URL = "https://h1ros.github.io/pages/about/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
-BLOG_DESCRIPTION = "Data Science & Computer Science Step-by-step"  # (translatable)
+BLOG_DESCRIPTION = "Explain things related to data scieence step-by-step"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -223,6 +223,7 @@ THEME_COLOR = '#4285F4'
 
 POSTS = (
 	("posts/*.ipynb", "posts", "post_ipynb.tmpl"), # -- add this line
+    ("posts/coding/*.ipynb", "posts/coding", "post_ipynb.tmpl"), # -- add this line
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
@@ -618,7 +619,7 @@ ATOM_FILENAME_BASE = "feed"
 # relative URL.
 #
 # If you don't need any of these, just set to []
-REDIRECTIONS = []
+# REDIRECTIONS = [("/", "/pages/about/")]
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
@@ -904,7 +905,7 @@ INDEX_TEASERS = True
 # }}                            A literal } (U+007D RIGHT CURLY BRACKET)
 
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
-INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
+INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}… </a>({min_remaining_read})</p>'
 # 'Read more...' for the feeds, if FEED_TEASERS is True (translatable)
 FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
 
