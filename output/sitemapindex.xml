@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/basic-machine-learning.xml</loc>
-  <lastmod>2019-05-16T06:54:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/basic-text-mining.xml</loc>
@@ -48,6 +48,10 @@
  <sitemap>
   <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/descriptive-analysis.xml</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/dynamic-programming.xml</loc>
@@ -83,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/pandas.xml</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/categories/python.xml</loc>
@@ -119,10 +123,10 @@
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/rss.xml</loc>
-  <lastmod>2019-05-16T06:54:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://h1ros.github.io/sitemap.xml</loc>
-  <lastmod>2019-05-16T06:56:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </sitemap>
 </sitemapindex>

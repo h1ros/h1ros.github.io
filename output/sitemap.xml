@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-16T06:42:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/2019/05/01/</loc>
@@ -158,12 +158,16 @@
   <lastmod>2019-05-16T06:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/2019/05/17/</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-16T06:56:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/</loc>
-  <lastmod>2019-05-16T06:45:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/200wad/</loc>
@@ -208,6 +212,10 @@
  <url>
   <loc>https://h1ros.github.io/categories/decision-tree/</loc>
   <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/categories/descriptive-analysis/</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/categories/dynamic-programming/</loc>
@@ -287,7 +295,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/index-3.html</loc>
-  <lastmod>2019-05-16T06:56:00Z</lastmod>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/</loc>
@@ -390,6 +398,10 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://h1ros.github.io/posts/describe-an-array/</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://h1ros.github.io/posts/histograms-in-pandas/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -424,10 +436,6 @@
  <url>
   <loc>https://h1ros.github.io/posts/random-forest-classfier/</loc>
   <lastmod>2019-05-16T06:45:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/posts/random-forest-classier/</loc>
-  <lastmod>2019-05-16T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/posts/replace-characters/</loc>
