@@ -17,13 +17,13 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "h1ros"  # (translatable)
-BLOG_TITLE = "Step-by-step Data Science & Computer Science"  # (translatable)
+BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://h1ros.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://h1ros.github.io/"
+BASE_URL = "https://h1ros.github.io/pages/about"
 BLOG_EMAIL = "data.h1ros@gmail.com"
 BLOG_DESCRIPTION = "Data Science & Computer Science Step-by-step"  # (translatable)
 
@@ -135,9 +135,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/pages/about/", 'Home'),
         ("/", "Post"),
-        ("pages/about/", 'About'),
-        # ("/pages/home.html", "About Hiro"),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed")
@@ -1407,26 +1406,6 @@ WARN_ABOUT_TAG_METADATA = False
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
-    "mdl__version": "1.3.0",
-    "mdl__color_scheme": "Alabaster",
-    "mdl__roboto_font": False,
-    "mdl__late_load_css": False,
-    "mdl__cachebusting": "1",
-    "mdl__fixed_header": False,
-    "mdl__fixed_drawer": False,
-    "mdl__no_drawer_button": False,
-    "mdl__no_desktop_drawer_button": False,
-    "mdl__multiple_header": False,
-    "mdl__header_scroll": False,
-    "mdl__header_waterfall": False,
-    "mdl__header_waterfall_hide_top": False,
-    "mdl__header_transparent": False,
-    "mdl__header_seamed": False,
-    "mdl__footer": "",
-    "mdl__navigation_large_screen_only": False,
-    "mdl__drawer_small_screen_only": False,
-    "mdl__custom_css": False,
-    "mdl__custom_js": False,
     "drawer_title": "",
     "drawer_logo_url": "",
     "drawer_show_title": "",

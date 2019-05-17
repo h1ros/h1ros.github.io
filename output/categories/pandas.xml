@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science (Posts about pandas)</title><link>https://h1ros.github.io/</link><description></description><atom:link href="https://h1ros.github.io/categories/pandas.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 17:30:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about pandas)</title><link>https://h1ros.github.io/</link><description></description><atom:link href="https://h1ros.github.io/pages/about/categories/pandas.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 21:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/pages/about/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/"&gt;Loading scikit-learn's Boston Housing Dataset&lt;/a&gt;&lt;/li&gt;
@@ -14,7 +14,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -36,7 +36,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -193,7 +193,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
+&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -393,10 +393,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Adding Or Substracting Time</title><link>https://h1ros.github.io/posts/adding-or-substracting-time/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/pages/about/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Adding Or Substracting Time</title><link>https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to add or subtract time from date column using pandas:&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to add or subtract time from date column using pandas:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Pandas&lt;/li&gt;
 &lt;/ul&gt;
@@ -411,7 +411,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -431,7 +431,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-date-columns-using-date_range"&gt;Create date columns using date_range&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Create-date-columns-using-date_range"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-date-columns-using-date_range"&gt;Create date columns using date_range&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/#Create-date-columns-using-date_range"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -481,4 +481,4 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/adding-or-substracting-time/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>date handling</category><category>pandas</category><guid>https://h1ros.github.io/posts/adding-or-substracting-time/</guid><pubDate>Fri, 03 May 2019 06:10:13 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>date handling</category><category>pandas</category><guid>https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/</guid><pubDate>Fri, 03 May 2019 06:10:13 GMT</pubDate></item></channel></rss>

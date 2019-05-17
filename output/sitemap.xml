@@ -6,467 +6,487 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://h1ros.github.io/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/02/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/02/03/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/02/11/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/02/22/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/02/26/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/03/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/03/02/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/03/29/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/01/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/02/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/07/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/14/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/15/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/16/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/17/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/20/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/22/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/27/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/28/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/29/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/04/30/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/</loc>
-  <lastmod>2019-05-17T17:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/01/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/02/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/03/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/05/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/06/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/07/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/08/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/09/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/10/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/12/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/13/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/14/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/15/</loc>
-  <lastmod>2019-05-16T06:42:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/16/</loc>
-  <lastmod>2019-05-17T17:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/2019/05/17/</loc>
-  <lastmod>2019-05-17T07:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/archive.html</loc>
-  <lastmod>2019-05-17T17:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/</loc>
-  <lastmod>2019-05-17T07:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/200wad/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/array/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/basic-machine-learning/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/basic-text-mining/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/basic/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/binary-tree/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/boosting/</loc>
-  <lastmod>2019-05-16T06:45:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/c%2B%2B/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/coding/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/date-handling/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/decision-tree/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/descriptive-analysis/</loc>
-  <lastmod>2019-05-17T07:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/dynamic-programming/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/linear-regression/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/linked-list/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/machine-learning-basics/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/matrix/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/nlp/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/nltk/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/pandas-styling/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/pandas/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/python/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/scikit-learn/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/stemming/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/text-processing/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/tree/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/vector/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/visualization/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/categories/wordcloud/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/index-1.html</loc>
-  <lastmod>2019-05-16T06:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/index-2.html</loc>
-  <lastmod>2019-05-16T06:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/index-3.html</loc>
-  <lastmod>2019-05-17T07:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
   <loc>https://h1ros.github.io/pages/about/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/algorithm_and_data_structure/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/algorithm_and_data_structure/index.src.html</loc>
-  <lastmod>2019-05-16T05:38:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/02/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/index.src.html</loc>
-  <lastmod>2019-05-16T06:13:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/02/03/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/step-by-step-data-science-and-computer-science/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/02/11/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/02/22/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/add-padding-around-string/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/02/26/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/adding-or-substracting-time/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/03/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1000-minimum-cost-to-merge-stones/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/03/02/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1004-max-consecutive-ones-iii/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/03/29/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1019-next-greater-node-in-linked-list/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1025-divisor-game/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/01/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1026-maximum-difference-between-node-and-ancestor/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/02/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/07/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1035-uncrossed-lines/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/14/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1036-escape-a-large-maze/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/15/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/1039-minimum-score-triangulation-of-polygon/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/16/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/617-merge-two-binary-trees/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/17/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/990-satisfiability-of-equality-equations/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/20/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/995-minimum-number-of-k-consecutive-bit-flips/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/22/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/998-smallest-string-Starting-from-leaf/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/27/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/coding/leetcode-top-100-problem-selection/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/28/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/create-a-sparse-matrix/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/29/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/create-a-word-cloud/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/04/30/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/describe-an-array/</loc>
-  <lastmod>2019-05-17T07:29:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/</loc>
+  <lastmod>2019-05-17T17:30:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/histograms-in-pandas/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/01/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/02/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/03/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/invert-a-matrix/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/05/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/linear-regression/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/06/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/07/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/08/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/</loc>
-  <lastmod>2019-05-16T06:33:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/about/2019/05/09/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/random-forest-classfier/</loc>
+  <loc>https://h1ros.github.io/pages/about/2019/05/10/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/2019/05/12/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/2019/05/13/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/2019/05/14/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/2019/05/15/</loc>
+  <lastmod>2019-05-16T06:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/2019/05/16/</loc>
+  <lastmod>2019-05-17T17:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/archive.html</loc>
+  <lastmod>2019-05-17T21:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/</loc>
+  <lastmod>2019-05-17T21:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/200wad/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/array/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/basic-machine-learning/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/basic-text-mining/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/basic/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/binary-tree/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/boosting/</loc>
   <lastmod>2019-05-16T06:45:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/replace-characters/</loc>
+  <loc>https://h1ros.github.io/pages/about/categories/c%2B%2B/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/coding/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/date-handling/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/decision-tree/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/descriptive-analysis/</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/dynamic-programming/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/encoding/</loc>
+  <lastmod>2019-05-17T21:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/graphviz/</loc>
+  <lastmod>2019-05-17T21:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/jupyter-notebook/</loc>
+  <lastmod>2019-05-17T21:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/linear-regression/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/linked-list/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/machine-learning-basics/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/machine-learning/</loc>
+  <lastmod>2019-05-17T21:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/matrix/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/nlp/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/nltk/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/pandas-styling/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/pandas/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/python/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/scikit-learn/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/stemming/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/text-processing/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/text/</loc>
+  <lastmod>2019-05-17T21:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/tree/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/vector/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/visualization/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/categories/wordcloud/</loc>
+  <lastmod>2019-05-16T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/index-1.html</loc>
+  <lastmod>2019-05-17T21:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/index-2.html</loc>
+  <lastmod>2019-05-17T21:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/index-3.html</loc>
+  <lastmod>2019-05-17T21:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/pages/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/reshape-an-array/</loc>
+  <loc>https://h1ros.github.io/pages/about/pages/about/</loc>
+  <lastmod>2019-05-17T17:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/pages/about/index.src.html</loc>
+  <lastmod>2019-05-17T21:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/pages/algorithm_and_data_structure/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/selecting-elements-in-a-1d-array/</loc>
+  <loc>https://h1ros.github.io/pages/about/pages/algorithm_and_data_structure/index.src.html</loc>
+  <lastmod>2019-05-16T05:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/pages/index.src.html</loc>
+  <lastmod>2019-05-17T17:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/pages/step-by-step-data-science-and-computer-science/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/split-up-dtreeviz-part-1/</loc>
+  <loc>https://h1ros.github.io/pages/about/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/stemming-words-and-sentences/</loc>
+  <loc>https://h1ros.github.io/pages/about/posts/add-padding-around-string/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/transpose-a-matrix-or-tensor/</loc>
+  <loc>https://h1ros.github.io/pages/about/posts/adding-or-substracting-time/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/posts/us-census-in-2014/</loc>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1000-minimum-cost-to-merge-stones/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1004-max-consecutive-ones-iii/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1019-next-greater-node-in-linked-list/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1025-divisor-game/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1035-uncrossed-lines/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1036-escape-a-large-maze/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/1039-minimum-score-triangulation-of-polygon/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/617-merge-two-binary-trees/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/990-satisfiability-of-equality-equations/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/995-minimum-number-of-k-consecutive-bit-flips/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/998-smallest-string-Starting-from-leaf/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/coding/leetcode-top-100-problem-selection/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/create-a-sparse-matrix/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/create-a-word-cloud/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/describe-an-array/</loc>
+  <lastmod>2019-05-17T07:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/histograms-in-pandas/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/invert-a-matrix/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/linear-regression/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/random-forest-classfier/</loc>
+  <lastmod>2019-05-16T06:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/replace-characters/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/reshape-an-array/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/selecting-elements-in-a-1d-array/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/split-up-dtreeviz-part-1/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/stemming-words-and-sentences/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/transpose-a-matrix-or-tensor/</loc>
+  <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/about/posts/us-census-in-2014/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
 </urlset>

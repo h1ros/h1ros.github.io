@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science &amp; Computer Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 17:30:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io/</link><description>Data Science &amp; Computer Science Step-by-step</description><atom:link href="https://h1ros.github.io/pages/about/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 21:53:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/pages/about/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/"&gt;Loading scikit-learn's Boston Housing Dataset&lt;/a&gt;&lt;/li&gt;
@@ -14,7 +14,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -36,7 +36,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -193,7 +193,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
+&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -393,10 +393,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/pages/about/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/pages/about/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/ensemble.html#forest"&gt;Scikit learn - Ensemble methods&lt;/a&gt;&lt;/li&gt;
@@ -408,7 +408,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -434,7 +434,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -650,7 +650,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -733,10 +733,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>Histograms In Pandas</title><link>https://h1ros.github.io/posts/histograms-in-pandas/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/pages/about/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>Histograms In Pandas</title><link>https://h1ros.github.io/pages/about/posts/histograms-in-pandas/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/histograms-in-pandas/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create histogram plot using &lt;code&gt;pandas&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/histograms-in-pandas/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create histogram plot using &lt;code&gt;pandas&lt;/code&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -744,7 +744,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/histograms-in-pandas/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/histograms-in-pandas/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -767,7 +767,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-data"&gt;Create data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/histograms-in-pandas/#Create-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-data"&gt;Create data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/histograms-in-pandas/#Create-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -851,7 +851,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-Histogram"&gt;Create Histogram&lt;a class="anchor-link" href="https://h1ros.github.io/posts/histograms-in-pandas/#Create-Histogram"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-Histogram"&gt;Create Histogram&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/histograms-in-pandas/#Create-Histogram"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -887,10 +887,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/histograms-in-pandas/</guid><pubDate>Wed, 15 May 2019 06:55:14 GMT</pubDate></item><item><title>Linear Regression</title><link>https://h1ros.github.io/posts/linear-regression/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/pages/about/posts/histograms-in-pandas/</guid><pubDate>Wed, 15 May 2019 06:55:14 GMT</pubDate></item><item><title>Linear Regression</title><link>https://h1ros.github.io/pages/about/posts/linear-regression/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce linear regression using dummy data.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/linear-regression/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce linear regression using dummy data.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://towardsdatascience.com/linear-regression-using-python-ce21aa90ade6"&gt;Towards Data Science - Linear Regression using Python&lt;/a&gt;&lt;/p&gt;
@@ -905,7 +905,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/linear-regression/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -930,7 +930,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-dummy-linear-data"&gt;Create dummy linear data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Create-dummy-linear-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's create 1-dimensional $\mathbf{y}$ data which has the linear relationship based on the following equations:&lt;/p&gt;
+&lt;h2 id="Create-dummy-linear-data"&gt;Create dummy linear data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/linear-regression/#Create-dummy-linear-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's create 1-dimensional $\mathbf{y}$ data which has the linear relationship based on the following equations:&lt;/p&gt;
 \begin{equation*}
 \mathbf{y} = \mathbf{A}\mathbf{x} + \mathbf{b} + \mathbf{e}
 \end{equation*}&lt;p&gt;Here $\mathbf{x}$ is 1 dimension data, $\mathbf{b}$ is constant, $\mathbf{e}$ is white noise.&lt;/p&gt;
@@ -994,7 +994,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Fitting"&gt;Fitting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Fitting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now we can see how the coefficient A and the intercept b are close to the ones I used to create this dataset.&lt;/p&gt;
+&lt;h2 id="Fitting"&gt;Fitting&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/linear-regression/#Fitting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now we can see how the coefficient A and the intercept b are close to the ones I used to create this dataset.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1043,10 +1043,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Linear Regression</category><category>Scikit-learn</category><guid>https://h1ros.github.io/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item><item><title>Loading scikit-learn's Boston Housing Dataset</title><link>https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>https://h1ros.github.io/pages/about/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item><item><title>Loading scikit-learn's Boston Housing Dataset</title><link>https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to load Boston housing using scikit-learn&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to load Boston housing using scikit-learn&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1054,7 +1054,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1075,7 +1075,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Dataset"&gt;Load Dataset&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Load-Dataset"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Dataset"&gt;Load Dataset&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Load-Dataset"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1161,7 +1161,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Data"&gt;Data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Data"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Data"&gt;Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Data"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1316,7 +1316,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Target"&gt;Target&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Target"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Target"&gt;Target&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Target"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1399,7 +1399,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Feature-Name"&gt;Feature Name&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Feature-Name"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Feature-Name"&gt;Feature Name&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Feature-Name"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1438,7 +1438,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Description"&gt;Description&lt;a class="anchor-link" href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/#Description"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Description"&gt;Description&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/#Description"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1522,10 +1522,10 @@ problems.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/</guid><pubDate>Mon, 13 May 2019 06:08:53 GMT</pubDate></item><item><title>1039. Minimum Score Triangulation of Polygon</title><link>https://h1ros.github.io/posts/coding/1039-minimum-score-triangulation-of-polygon/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/pages/about/posts/loading-scikit-learns-boston-housing-dataset/</guid><pubDate>Mon, 13 May 2019 06:08:53 GMT</pubDate></item><item><title>1039. Minimum Score Triangulation of Polygon</title><link>https://h1ros.github.io/pages/about/posts/coding/1039-minimum-score-triangulation-of-polygon/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/coding/1039-minimum-score-triangulation-of-polygon/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given &lt;code&gt;N&lt;/code&gt;, consider a convex N-sided polygon with vertices labelled &lt;code&gt;A[0], A[i], ..., A[N-1]&lt;/code&gt; in clockwise order.&lt;/p&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/coding/1039-minimum-score-triangulation-of-polygon/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given &lt;code&gt;N&lt;/code&gt;, consider a convex N-sided polygon with vertices labelled &lt;code&gt;A[0], A[i], ..., A[N-1]&lt;/code&gt; in clockwise order.&lt;/p&gt;
 &lt;p&gt;Suppose you triangulate the polygon into &lt;code&gt;N-2&lt;/code&gt; triangles. For each triangle, the value of that triangle is the product of the labels of the vertices, and the total score of the triangulation is the sum of these values over all &lt;code&gt;N-2&lt;/code&gt; triangles in the triangulation.&lt;/p&gt;
 &lt;p&gt;Return the smallest possible total score that you can achieve with some triangulation of the polygon.&lt;/p&gt;
 &lt;p&gt;Source: LeetCode &lt;a href="https://leetcode.com/contest/weekly-contest-135/problems/minimum-score-triangulation-of-polygon/"&gt;link&lt;/a&gt;&lt;/p&gt;
@@ -1553,10 +1553,10 @@ problems.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/coding/1039-minimum-score-triangulation-of-polygon/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><category>Pandas Styling</category><guid>https://h1ros.github.io/posts/coding/1039-minimum-score-triangulation-of-polygon/</guid><pubDate>Sat, 11 May 2019 04:20:04 GMT</pubDate></item><item><title>Replace Characters</title><link>https://h1ros.github.io/posts/replace-characters/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/about/posts/coding/1039-minimum-score-triangulation-of-polygon/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><category>Pandas Styling</category><guid>https://h1ros.github.io/pages/about/posts/coding/1039-minimum-score-triangulation-of-polygon/</guid><pubDate>Sat, 11 May 2019 04:20:04 GMT</pubDate></item><item><title>Replace Characters</title><link>https://h1ros.github.io/pages/about/posts/replace-characters/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to replace the characters in python.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to replace the characters in python.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1564,7 +1564,7 @@ problems.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-strings"&gt;Create strings&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Create-strings"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-strings"&gt;Create strings&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#Create-strings"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1606,14 +1606,14 @@ problems.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Replace-characters"&gt;Replace characters&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#Replace-characters"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Replace-characters"&gt;Replace characters&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#Replace-characters"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id=".replace('{old}',-'{new}')"&gt;&lt;code&gt;.replace('{old}', '{new}')&lt;/code&gt;&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#.replace('%7Bold%7D',-'%7Bnew%7D')"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=".replace('{old}',-'{new}')"&gt;&lt;code&gt;.replace('{old}', '{new}')&lt;/code&gt;&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#.replace('%7Bold%7D',-'%7Bnew%7D')"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1654,7 +1654,7 @@ problems.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id=".replace-can-be-chained"&gt;&lt;code&gt;.replace&lt;/code&gt; can be chained&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#.replace-can-be-chained"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=".replace-can-be-chained"&gt;&lt;code&gt;.replace&lt;/code&gt; can be chained&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#.replace-can-be-chained"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1695,7 +1695,7 @@ problems.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="replace-multiple-characters-using-dictionary"&gt;replace multiple characters using dictionary&lt;a class="anchor-link" href="https://h1ros.github.io/posts/replace-characters/#replace-multiple-characters-using-dictionary"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="replace-multiple-characters-using-dictionary"&gt;replace multiple characters using dictionary&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/replace-characters/#replace-multiple-characters-using-dictionary"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1753,10 +1753,10 @@ replace , with
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/replace-characters/</guid><pubDate>Fri, 10 May 2019 06:02:21 GMT</pubDate></item><item><title>Add Padding Around String</title><link>https://h1ros.github.io/posts/add-padding-around-string/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/pages/about/posts/replace-characters/</guid><pubDate>Fri, 10 May 2019 06:02:21 GMT</pubDate></item><item><title>Add Padding Around String</title><link>https://h1ros.github.io/pages/about/posts/add-padding-around-string/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/add-padding-around-string/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to add padding around string.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/add-padding-around-string/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to add padding around string.&lt;/p&gt;
 &lt;p&gt;Reference:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/5676646/how-can-i-fill-out-a-python-string-with-spaces"&gt;How can I fill out a Python string with spaces?&lt;/a&gt;&lt;/p&gt;
@@ -1771,7 +1771,7 @@ replace , with
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-string-and-number"&gt;Create a string and number&lt;a class="anchor-link" href="https://h1ros.github.io/posts/add-padding-around-string/#Create-a-string-and-number"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-a-string-and-number"&gt;Create a string and number&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/add-padding-around-string/#Create-a-string-and-number"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1792,7 +1792,7 @@ replace , with
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id='Add-padding-by-"-"(space)-or-other-character'&gt;Add padding by " "(space) or other character&lt;a class="anchor-link" href="https://h1ros.github.io/posts/add-padding-around-string/#Add-padding-by-%22-%22(space)-or-other-character"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There is a method for string, called &lt;code&gt;ljust&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id='Add-padding-by-"-"(space)-or-other-character'&gt;Add padding by " "(space) or other character&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/add-padding-around-string/#Add-padding-by-%22-%22(space)-or-other-character"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There is a method for string, called &lt;code&gt;ljust&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;S.ljust(width[, fillchar]) -&amp;gt; str&lt;/code&gt;&lt;/pre&gt;
 
@@ -1868,7 +1868,7 @@ replace , with
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Add-zero-padding-to-numbers"&gt;Add zero padding to numbers&lt;a class="anchor-link" href="https://h1ros.github.io/posts/add-padding-around-string/#Add-zero-padding-to-numbers"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Add-zero-padding-to-numbers"&gt;Add zero padding to numbers&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/add-padding-around-string/#Add-zero-padding-to-numbers"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1940,10 +1940,10 @@ replace , with
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/add-padding-around-string/</guid><pubDate>Thu, 09 May 2019 06:43:55 GMT</pubDate></item><item><title>Create a word cloud</title><link>https://h1ros.github.io/posts/create-a-word-cloud/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/pages/about/posts/add-padding-around-string/</guid><pubDate>Thu, 09 May 2019 06:43:55 GMT</pubDate></item><item><title>Create a word cloud</title><link>https://h1ros.github.io/pages/about/posts/create-a-word-cloud/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/create-a-word-cloud/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create a word cloud using &lt;code&gt;wordcloud&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/create-a-word-cloud/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create a word cloud using &lt;code&gt;wordcloud&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;As the source of words, I use one of my posts in &lt;a href="https://200wordsaday.com"&gt;200Wordsaday&lt;/a&gt; a.k.a. &lt;strong&gt;200WaD&lt;/strong&gt; where is the community for those who want to build a writing habit.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/57284858-df7d0b80-7066-11e9-9aea-1628216aab0c.png" alt="image"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
@@ -1957,10 +1957,10 @@ replace , with
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/create-a-word-cloud/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>200WaD</category><category>Text Processing</category><category>WordCloud</category><guid>https://h1ros.github.io/posts/create-a-word-cloud/</guid><pubDate>Tue, 07 May 2019 07:08:10 GMT</pubDate></item><item><title>Invert A Matrix</title><link>https://h1ros.github.io/posts/invert-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/about/posts/create-a-word-cloud/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>200WaD</category><category>Text Processing</category><category>WordCloud</category><guid>https://h1ros.github.io/pages/about/posts/create-a-word-cloud/</guid><pubDate>Tue, 07 May 2019 07:08:10 GMT</pubDate></item><item><title>Invert A Matrix</title><link>https://h1ros.github.io/pages/about/posts/invert-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to show how to invert a matrix using numpy i.e., calculating a inverse matrix $A^{-1}$ from $A$&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/invert-a-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to show how to invert a matrix using numpy i.e., calculating a inverse matrix $A^{-1}$ from $A$&lt;/p&gt;
 &lt;p&gt;For example, if we have&lt;/p&gt;
 $$A = 
 \begin{bmatrix} 
@@ -1984,7 +1984,7 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/invert-a-matrix/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2005,7 +2005,7 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-matrix"&gt;Create a matrix&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Create-a-matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-a-matrix"&gt;Create a matrix&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/invert-a-matrix/#Create-a-matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2047,7 +2047,7 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Invert-a-matrix"&gt;Invert a matrix&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Invert-a-matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Invert-a-matrix"&gt;Invert a matrix&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/invert-a-matrix/#Invert-a-matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2089,7 +2089,7 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Check-$A-A^{-1}--=-I$"&gt;Check $A A^{-1}  = I$&lt;a class="anchor-link" href="https://h1ros.github.io/posts/invert-a-matrix/#Check-%24A-A%5E%7B-1%7D--=-I%24"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Check-$A-A^{-1}--=-I$"&gt;Check $A A^{-1}  = I$&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/invert-a-matrix/#Check-%24A-A%5E%7B-1%7D--=-I%24"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2160,4 +2160,4 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/posts/invert-a-matrix/</guid><pubDate>Tue, 07 May 2019 06:26:46 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://h1ros.github.io/pages/about/posts/invert-a-matrix/</guid><pubDate>Tue, 07 May 2019 06:26:46 GMT</pubDate></item></channel></rss>
