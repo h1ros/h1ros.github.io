@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Stemming)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/pages/categories/stemming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 23:52:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stemming Words and Sentences</title><link>https://h1ros.github.io/pages/posts/stemming-words-and-sentences/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Stemming)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/categories/stemming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 18 May 2019 06:05:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stemming Words and Sentences</title><link>https://h1ros.github.io/posts/stemming-words-and-sentences/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -23,7 +23,7 @@ Stemming and Lemmatization in Python&lt;/a&gt;&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -68,7 +68,7 @@ Stemming and Lemmatization in Python&lt;/a&gt;&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Words-&amp;amp;-Sentences-to-be-stemmed"&gt;Words &amp;amp; Sentences to be stemmed&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Words-&amp;amp;-Sentences-to-be-stemmed"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Words-&amp;amp;-Sentences-to-be-stemmed"&gt;Words &amp;amp; Sentences to be stemmed&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Words-&amp;amp;-Sentences-to-be-stemmed"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -153,14 +153,14 @@ Stemming and Lemmatization in Python&lt;/a&gt;&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Stemming-words"&gt;Stemming words&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Stemming-words"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Stemming-words"&gt;Stemming words&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Stemming-words"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Porter-Stemming"&gt;Porter Stemming&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Porter-Stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Porter Stemming keeps only prefix for each words and leave non English words like &lt;code&gt;troubl&lt;/code&gt;. It might not be useful to see non English words for further analysis but it is simple and efficient.&lt;/p&gt;
+&lt;h3 id="Porter-Stemming"&gt;Porter Stemming&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Porter-Stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Porter Stemming keeps only prefix for each words and leave non English words like &lt;code&gt;troubl&lt;/code&gt;. It might not be useful to see non English words for further analysis but it is simple and efficient.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -241,7 +241,7 @@ matrices        -&amp;gt; matric
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Lancaster-Stemming"&gt;Lancaster Stemming&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Lancaster-Stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lancaster stemming is a rule-based stemming based on the last letter of the words. It is computationally heavier than Porter stemming.&lt;/p&gt;
+&lt;h3 id="Lancaster-Stemming"&gt;Lancaster Stemming&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Lancaster-Stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lancaster stemming is a rule-based stemming based on the last letter of the words. It is computationally heavier than Porter stemming.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -322,14 +322,14 @@ matrices        -&amp;gt; mat
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Stemming-sentences"&gt;Stemming sentences&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Stemming-sentences"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Stemming-sentences"&gt;Stemming sentences&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Stemming-sentences"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Tokenize"&gt;Tokenize&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Tokenize"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Tokenize"&gt;Tokenize&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Tokenize"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -368,7 +368,7 @@ matrices        -&amp;gt; mat
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Stemming-by-Porter-stemming"&gt;Stemming by Porter stemming&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Stemming-by-Porter-stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Stemming-by-Porter-stemming"&gt;Stemming by Porter stemming&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Stemming-by-Porter-stemming"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -412,7 +412,7 @@ matrices        -&amp;gt; mat
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Stemming-by-lancaster"&gt;Stemming by lancaster&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/stemming-words-and-sentences/#Stemming-by-lancaster"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Stemming-by-lancaster"&gt;Stemming by lancaster&lt;a class="anchor-link" href="https://h1ros.github.io/posts/stemming-words-and-sentences/#Stemming-by-lancaster"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -452,4 +452,4 @@ matrices        -&amp;gt; mat
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>NLP</category><category>NLTK</category><category>Stemming</category><guid>https://h1ros.github.io/pages/posts/stemming-words-and-sentences/</guid><pubDate>Fri, 03 May 2019 15:23:39 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>NLP</category><category>NLTK</category><category>Stemming</category><guid>https://h1ros.github.io/posts/stemming-words-and-sentences/</guid><pubDate>Fri, 03 May 2019 15:23:39 GMT</pubDate></item></channel></rss>

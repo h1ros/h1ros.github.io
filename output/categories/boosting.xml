@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Boosting)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/pages/categories/boosting.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 23:52:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/pages/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Boosting)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/categories/boosting.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 18 May 2019 06:05:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/ensemble.html#forest"&gt;Scikit learn - Ensemble methods&lt;/a&gt;&lt;/li&gt;
@@ -14,7 +14,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -40,7 +40,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -256,7 +256,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -339,4 +339,4 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/pages/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item></channel></rss>

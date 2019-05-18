@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/pages/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 23:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/pages/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 18 May 2019 06:05:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Describe An Array</title><link>https://h1ros.github.io/posts/describe-an-array/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe an array using pandas. As an example, Boston Housing Data is used in this post.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://h1ros.github.io/posts/loading-scikit-learns-boston-housing-dataset/"&gt;Loading scikit-learn's Boston Housing Dataset&lt;/a&gt;&lt;/li&gt;
@@ -14,7 +14,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -36,7 +36,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-an-array"&gt;Create an array&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Create-an-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -193,7 +193,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
+&lt;h2 id="Describe-numerical-values"&gt;Describe numerical values&lt;a class="anchor-link" href="https://h1ros.github.io/posts/describe-an-array/#Describe-numerical-values"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; DataFrame has a method, called &lt;code&gt;describe&lt;/code&gt;, which shows basic statistics based on the data types for each columns&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -393,10 +393,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/pages/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/pages/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Descriptive Analysis</category><category>pandas</category><guid>https://h1ros.github.io/posts/describe-an-array/</guid><pubDate>Fri, 17 May 2019 06:03:30 GMT</pubDate></item><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/ensemble.html#forest"&gt;Scikit learn - Ensemble methods&lt;/a&gt;&lt;/li&gt;
@@ -408,7 +408,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -434,7 +434,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -650,7 +650,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -733,10 +733,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/pages/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>Linear Regression</title><link>https://h1ros.github.io/pages/posts/linear-regression/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>Linear Regression</title><link>https://h1ros.github.io/posts/linear-regression/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/linear-regression/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce linear regression using dummy data.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce linear regression using dummy data.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://towardsdatascience.com/linear-regression-using-python-ce21aa90ade6"&gt;Towards Data Science - Linear Regression using Python&lt;/a&gt;&lt;/p&gt;
@@ -751,7 +751,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/linear-regression/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -776,7 +776,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-dummy-linear-data"&gt;Create dummy linear data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/linear-regression/#Create-dummy-linear-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's create 1-dimensional $\mathbf{y}$ data which has the linear relationship based on the following equations:&lt;/p&gt;
+&lt;h2 id="Create-dummy-linear-data"&gt;Create dummy linear data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Create-dummy-linear-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's create 1-dimensional $\mathbf{y}$ data which has the linear relationship based on the following equations:&lt;/p&gt;
 \begin{equation*}
 \mathbf{y} = \mathbf{A}\mathbf{x} + \mathbf{b} + \mathbf{e}
 \end{equation*}&lt;p&gt;Here $\mathbf{x}$ is 1 dimension data, $\mathbf{b}$ is constant, $\mathbf{e}$ is white noise.&lt;/p&gt;
@@ -840,7 +840,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Fitting"&gt;Fitting&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/linear-regression/#Fitting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now we can see how the coefficient A and the intercept b are close to the ones I used to create this dataset.&lt;/p&gt;
+&lt;h2 id="Fitting"&gt;Fitting&lt;a class="anchor-link" href="https://h1ros.github.io/posts/linear-regression/#Fitting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now we can see how the coefficient A and the intercept b are close to the ones I used to create this dataset.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -889,10 +889,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>https://h1ros.github.io/pages/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item><item><title>Adding Or Substracting Time</title><link>https://h1ros.github.io/pages/posts/adding-or-substracting-time/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>https://h1ros.github.io/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item><item><title>Adding Or Substracting Time</title><link>https://h1ros.github.io/posts/adding-or-substracting-time/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/adding-or-substracting-time/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to add or subtract time from date column using pandas:&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to add or subtract time from date column using pandas:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Pandas&lt;/li&gt;
 &lt;/ul&gt;
@@ -907,7 +907,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/adding-or-substracting-time/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -927,7 +927,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-date-columns-using-date_range"&gt;Create date columns using date_range&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/adding-or-substracting-time/#Create-date-columns-using-date_range"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-date-columns-using-date_range"&gt;Create date columns using date_range&lt;a class="anchor-link" href="https://h1ros.github.io/posts/adding-or-substracting-time/#Create-date-columns-using-date_range"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -977,10 +977,10 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/posts/adding-or-substracting-time/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>date handling</category><category>pandas</category><guid>https://h1ros.github.io/pages/posts/adding-or-substracting-time/</guid><pubDate>Fri, 03 May 2019 06:10:13 GMT</pubDate></item><item><title>Ordinal Encoding using Scikit-learn</title><link>https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/adding-or-substracting-time/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>date handling</category><category>pandas</category><guid>https://h1ros.github.io/posts/adding-or-substracting-time/</guid><pubDate>Fri, 03 May 2019 06:10:13 GMT</pubDate></item><item><title>Ordinal Encoding using Scikit-learn</title><link>https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to convert one of the categorical columns for further process using scikit-learn:&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to convert one of the categorical columns for further process using scikit-learn:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -988,7 +988,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1009,7 +1009,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-categorical-data"&gt;Create categorical data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Create-categorical-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-categorical-data"&gt;Create categorical data&lt;a class="anchor-link" href="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/#Create-categorical-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1090,7 +1090,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Ordinal-Encoding"&gt;Ordinal Encoding&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Ordinal-Encoding"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ordinal encoding is replacing the categories into numbers.&lt;/p&gt;
+&lt;h2 id="Ordinal-Encoding"&gt;Ordinal Encoding&lt;a class="anchor-link" href="https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/#Ordinal-Encoding"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ordinal encoding is replacing the categories into numbers.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1176,10 +1176,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Encoding</category><category>Scikit-learn</category><guid>https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/</guid><pubDate>Wed, 01 May 2019 03:17:07 GMT</pubDate></item><item><title>Create A Sparse Matrix</title><link>https://h1ros.github.io/pages/posts/create-a-sparse-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Encoding</category><category>Scikit-learn</category><guid>https://h1ros.github.io/posts/ordinal-encoding-using-scikit-learn/</guid><pubDate>Wed, 01 May 2019 03:17:07 GMT</pubDate></item><item><title>Create A Sparse Matrix</title><link>https://h1ros.github.io/posts/create-a-sparse-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/create-a-sparse-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to create a sparse matrix in python using following modules:&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/create-a-sparse-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to create a sparse matrix in python using following modules:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Numpy&lt;/li&gt;
 &lt;li&gt;Scipy&lt;/li&gt;
@@ -1196,7 +1196,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/create-a-sparse-matrix/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/posts/create-a-sparse-matrix/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1217,7 +1217,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-sparse-matrix-using-csr_matrix"&gt;Create a sparse matrix using csr_matrix&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/create-a-sparse-matrix/#Create-a-sparse-matrix-using-csr_matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;CSR stands for "Compressed Sparse Row" matrix&lt;/p&gt;
+&lt;h2 id="Create-a-sparse-matrix-using-csr_matrix"&gt;Create a sparse matrix using csr_matrix&lt;a class="anchor-link" href="https://h1ros.github.io/posts/create-a-sparse-matrix/#Create-a-sparse-matrix-using-csr_matrix"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;CSR stands for "Compressed Sparse Row" matrix&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1264,10 +1264,10 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/posts/create-a-sparse-matrix/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Array</category><category>Basic</category><category>Matrix</category><category>Vector</category><guid>https://h1ros.github.io/pages/posts/create-a-sparse-matrix/</guid><pubDate>Tue, 30 Apr 2019 06:29:15 GMT</pubDate></item><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/pages/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/create-a-sparse-matrix/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Array</category><category>Basic</category><category>Matrix</category><category>Vector</category><guid>https://h1ros.github.io/posts/create-a-sparse-matrix/</guid><pubDate>Tue, 30 Apr 2019 06:29:15 GMT</pubDate></item><item><title>Introduction to Graphviz in Jupyter Notebook</title><link>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/introduction-to-graphviz-in-jupyter-notebook/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The goal in this post is to introduce &lt;code&gt;graphviz&lt;/code&gt; to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly digest problems and solutions.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The goal in this post is to introduce &lt;code&gt;graphviz&lt;/code&gt; to draw the graph when we explain graph-related algorithm e.g., tree, binary search etc. It would be nicer to have such a visualization to quickly digest problems and solutions.&lt;/p&gt;
 &lt;p&gt;Since we work with &lt;code&gt;TreeNode&lt;/code&gt; and trees in a list-expresion e.g., [1, 2, null, 3] in LeetCode, the goal of this post is to easily convert the given tree in a list-expression into the visualization like below.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -1310,4 +1310,4 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/posts/introduction-to-graphviz-in-jupyter-notebook/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Graphviz</category><category>Jupyter Notebook</category><category>Visualization</category><guid>https://h1ros.github.io/pages/posts/introduction-to-graphviz-in-jupyter-notebook/</guid><pubDate>Wed, 27 Feb 2019 05:43:34 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Graphviz</category><category>Jupyter Notebook</category><category>Visualization</category><guid>https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/</guid><pubDate>Wed, 27 Feb 2019 05:43:34 GMT</pubDate></item></channel></rss>
