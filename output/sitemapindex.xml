@@ -6,135 +6,259 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/200wad.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/200wad.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/array.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/array.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/basic.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/basic.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/binary-tree.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/binary-tree.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/boosting.xml</loc>
-  <lastmod>2019-05-17T21:52:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/boosting.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/c%2B%2B.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/c%2B%2B.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/coding.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/cat_coding.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/date-handling.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/cat_machine-learning.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/decision-tree.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/cat_python.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/descriptive-analysis.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/cat_text.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/dynamic-programming.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/coding.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/encoding.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/date-handling.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/graphviz.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/decision-tree.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/jupyter-notebook.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/descriptive-analysis.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/linear-regression.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/dynamic-programming.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/linked-list.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/encoding.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/graphviz.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/matrix.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/jupyter-notebook.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/nlp.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/linear-regression.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/nltk.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/linked-list.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/pandas-styling.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/machine-learning.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/pandas.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/matrix.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/python.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/nlp.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/scikit-learn.xml</loc>
-  <lastmod>2019-05-17T21:53:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/nltk.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/stemming.xml</loc>
-  <lastmod>2019-05-17T21:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/pandas-styling.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/text-processing.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/pandas.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/text.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/python.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/tree.xml</loc>
-  <lastmod>2019-05-17T21:52:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/scikit-learn.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/vector.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/stemming.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/visualization.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/text-processing.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/categories/wordcloud.xml</loc>
-  <lastmod>2019-05-17T21:51:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/text.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/rss.xml</loc>
-  <lastmod>2019-05-17T22:10:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/tree.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://h1ros.github.io/pages/about/sitemap.xml</loc>
-  <lastmod>2019-05-17T22:52:00Z</lastmod>
+  <loc>https://h1ros.github.io/categories/vector.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/visualization.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/categories/wordcloud.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/rss.xml</loc>
+  <lastmod>2019-05-17T23:52:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/sitemap.xml</loc>
+  <lastmod>2019-05-17T23:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/200wad.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/array.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/basic.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/binary-tree.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/boosting.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/c%2B%2B.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/date-handling.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/decision-tree.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/descriptive-analysis.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/dynamic-programming.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/encoding.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/graphviz.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/jupyter-notebook.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/linear-regression.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/linked-list.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/matrix.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/nlp.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/nltk.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/pandas-styling.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/pandas.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/scikit-learn.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/stemming.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/text-processing.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/tree.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/vector.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/visualization.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://h1ros.github.io/tags/wordcloud.xml</loc>
+  <lastmod>2019-05-17T23:44:00Z</lastmod>
  </sitemap>
 </sitemapindex>

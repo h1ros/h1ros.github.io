@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Encoding)</title><link>https://h1ros.github.io/</link><description></description><atom:link href="https://h1ros.github.io/pages/about/categories/encoding.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 21:53:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ordinal Encoding using Scikit-learn</title><link>https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Encoding)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/pages/categories/encoding.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 23:52:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ordinal Encoding using Scikit-learn</title><link>https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to convert one of the categorical columns for further process using scikit-learn:&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to convert one of the categorical columns for further process using scikit-learn:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10,7 +10,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -31,7 +31,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-categorical-data"&gt;Create categorical data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/#Create-categorical-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-categorical-data"&gt;Create categorical data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Create-categorical-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -112,7 +112,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Ordinal-Encoding"&gt;Ordinal Encoding&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/#Ordinal-Encoding"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ordinal encoding is replacing the categories into numbers.&lt;/p&gt;
+&lt;h2 id="Ordinal-Encoding"&gt;Ordinal Encoding&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/#Ordinal-Encoding"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ordinal encoding is replacing the categories into numbers.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -198,4 +198,4 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Encoding</category><category>Scikit-learn</category><guid>https://h1ros.github.io/pages/about/posts/ordinal-encoding-using-scikit-learn/</guid><pubDate>Wed, 01 May 2019 03:17:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Encoding</category><category>Scikit-learn</category><guid>https://h1ros.github.io/pages/posts/ordinal-encoding-using-scikit-learn/</guid><pubDate>Wed, 01 May 2019 03:17:07 GMT</pubDate></item></channel></rss>

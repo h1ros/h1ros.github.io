@@ -20,10 +20,10 @@ BLOG_AUTHOR = "h1ros"  # (translatable)
 BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://h1ros.github.io/"
+SITE_URL = "https://h1ros.github.io"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "https://h1ros.github.io/pages/about/"
+# BASE_URL = "https://h1ros.github.io/pages/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
 BLOG_DESCRIPTION = "Explain things related to data scieence step-by-step"  # (translatable)
 
@@ -135,10 +135,13 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/pages/about/", 'Home'),
-        ("/", "Post"),
+        ("/pages/", 'Home'),
+        ((
+          ("/posts/", "All Post"),
+          ("/categories/coding", "Coding Problems"), 
+          ("/categories/machine-learning", "Machine Learning") 
+          ), 'Posts'),
         ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed")
         # ((('/categories/coding/', 'Coding'),  ('/categories/machine-learning-basics/', 'Machine Learning')), 'Categories')
     ),
@@ -369,7 +372,7 @@ TAG_PATH = "categories"
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# TAG_PAGES_ARE_INDEXES = False
+TAG_PAGES_ARE_INDEXES = True
 
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
@@ -382,12 +385,12 @@ TAG_PATH = "categories"
 # }
 
 # Set special titles for tag pages. The default is "Posts about TAG".
-# TAG_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
+TAG_TITLES = {
+   DEFAULT_LANG: {
+       "Coding": "Posts about coding problems",
+       "Machine Learning": "Posts about machine learning"
+   },
+}
 
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page and posts.
@@ -542,7 +545,7 @@ HIDDEN_AUTHORS = ['Guest']
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-# INDEX_PATH = ""
+INDEX_PATH = "posts"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
@@ -619,7 +622,7 @@ ATOM_FILENAME_BASE = "feed"
 # relative URL.
 #
 # If you don't need any of these, just set to []
-# REDIRECTIONS = [("/", "/pages/about/")]
+REDIRECTIONS = []
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
@@ -905,7 +908,7 @@ INDEX_TEASERS = True
 # }}                            A literal } (U+007D RIGHT CURLY BRACKET)
 
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
-INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}… </a>({min_remaining_read})</p>'
+INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}… </a></p>'
 # 'Read more...' for the feeds, if FEED_TEASERS is True (translatable)
 FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
 
@@ -1407,23 +1410,24 @@ WARN_ABOUT_TAG_METADATA = False
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
-    "drawer_title": "",
-    "drawer_logo_url": "",
-    "drawer_show_title": "",
-    "drawer_description": "",
-    "drawer_note": "",
-    "title_row_middle": False,
-    "navigation_row_middle": False,
-    "breadcrumb_separator": ">",
-    "post_type": {
-        "text": "format_align_justify",
-    },
-    "top_nav_header": False,
-    "more_button_header": [
-        ("/pages/handbook.html", "Handbook", "Handbook"),
-    ],
-    "image_plugin": "colorbox",
+
 }
+    # "drawer_title": "",
+    # "drawer_logo_url": "",
+    # "drawer_show_title": "",
+    # "drawer_description": "",
+    # "drawer_note": "",
+    # "title_row_middle": False,
+    # "navigation_row_middle": False,
+    # "breadcrumb_separator": ">",
+    # "post_type": {
+    #     "text": "format_align_justify",
+    # },
+    # "top_nav_header": False,
+    # "more_button_header": [
+    #     ("/pages/handbook.html", "Handbook", "Handbook"),
+    # ],
+    # "image_plugin": "colorbox",
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

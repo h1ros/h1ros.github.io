@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#4285F4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
-<link rel="canonical" href="https://h1ros.github.io/pages/about/categories/c%2B%2B/">
+<link rel="canonical" href="https://h1ros.github.io/pages/categories/c%2B%2B/">
 <link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://h1ros.github.io/pages/about/">
+            <a class="navbar-brand" href="https://h1ros.github.io/pages/">
 
                 <span id="blog-title">Step-by-step Data Science</span>
             </a>
@@ -43,16 +43,24 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../pages/about/">Home</a>
-                </li>
+<a href="../../pages/">Home</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts <b class="caret"></b></a>
+            <ul class="dropdown-menu">
 <li>
-<a href="../../">Post</a>
-                </li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../coding">Coding Problems</a>
+                    </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+</ul>
+</li>
 <li>
 <a href="../../archive.html">Archive</a>
-                </li>
-<li>
-<a href="../">Tags</a>
                 </li>
 <li>
 <a href="../../rss.xml">RSS feed</a>
@@ -71,7 +79,8 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about C++</h1>
+
+    <header><h1>Posts about C++</h1>
         <div class="metadata">
             
                 <p class="feedlink">
@@ -80,14 +89,84 @@
 
                 </p>
 
-        </div>
-        
+            
 
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2019-04-14T12:54:24-07:00" title="Apr 14, 2019, 12:54:24 PM">Apr 14, 2019, 12:54:24 PM</time><a href="../../posts/coding/1025-divisor-game/" class="listtitle">1025. Divisor Game (C++)</a><a></a>
-</li>
-        </ul></article>
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/1025-divisor-game/" class="u-url">1025. Divisor Game (C++)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/coding/1025-divisor-game/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-14T12:54:24-07:00" itemprop="datePublished" title="Apr 14, 2019, 12:54:24 PM">Apr 14, 2019, 12:54:24 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/coding/1025-divisor-game/#disqus_thread" data-disqus-identifier="cache/posts/coding/1025-divisor-game.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/1025-divisor-game/#Problem-Setting">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alice and Bob take turns playing a game, with Alice starting first.</p>
+<p>Initially, there is a number <code>N</code> on the chalkboard.  On each player's turn, that player makes a move consisting of:</p>
+<p>Choosing any <code>x</code> with <code>0 &lt; x &lt; N</code> and <code>N % x == 0</code>.
+Replacing the number N on the chalkboard with <code>N - x</code>.
+Also, if a player cannot make a move, they lose the game.</p>
+<p>Return <code>True</code> if and only if Alice wins the game, assuming both players play optimally.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56098642-28520200-5eb7-11e9-8741-33362a06c8b7.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/coding/1025-divisor-game/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
 </div>
         <!--End of body content-->
 

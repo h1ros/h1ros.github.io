@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#4285F4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
-<link rel="canonical" href="https://h1ros.github.io/pages/about/categories/array/">
+<link rel="canonical" href="https://h1ros.github.io/pages/categories/array/">
 <link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://h1ros.github.io/pages/about/">
+            <a class="navbar-brand" href="https://h1ros.github.io/pages/">
 
                 <span id="blog-title">Step-by-step Data Science</span>
             </a>
@@ -43,16 +43,24 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../pages/about/">Home</a>
-                </li>
+<a href="../../pages/">Home</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts <b class="caret"></b></a>
+            <ul class="dropdown-menu">
 <li>
-<a href="../../">Post</a>
-                </li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../coding">Coding Problems</a>
+                    </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+</ul>
+</li>
 <li>
 <a href="../../archive.html">Archive</a>
-                </li>
-<li>
-<a href="../">Tags</a>
                 </li>
 <li>
 <a href="../../rss.xml">RSS feed</a>
@@ -71,7 +79,8 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about Array</h1>
+
+    <header><h1>Posts about Array</h1>
         <div class="metadata">
             
                 <p class="feedlink">
@@ -80,14 +89,154 @@
 
                 </p>
 
-        </div>
-        
+            
 
-    </header><ul class="postlist">
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/create-a-sparse-matrix/" class="u-url">Create A Sparse Matrix</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/create-a-sparse-matrix/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-29T23:29:15-07:00" itemprop="datePublished" title="Apr 29, 2019, 11:29:15 PM">Apr 29, 2019, 11:29:15 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/create-a-sparse-matrix/#disqus_thread" data-disqus-identifier="cache/posts/create-a-sparse-matrix.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/create-a-sparse-matrix/#Goal">¶</a>
+</h2>
+<p>This post aims to create a sparse matrix in python using following modules:</p>
+<ul>
+<li>Numpy</li>
+<li>Scipy</li>
+</ul>
+<p>Reference:</p>
+<ul>
+<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html">Scipy Document</a></li>
 <li>
-<time class="listdate" datetime="2019-04-29T23:29:15-07:00" title="Apr 29, 2019, 11:29:15 PM">Apr 29, 2019, 11:29:15 PM</time><a href="../../posts/create-a-sparse-matrix/" class="listtitle">Create A Sparse Matrix</a><a></a>
-</li>
-        </ul></article>
+<a href="https://chrisalbon.com/">Chris Albon</a>'s blog (I look at his post's title and wrote my own contents to deepen my understanding about the topic.)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Library">Library<a class="anchor-link" href="../../posts/create-a-sparse-matrix/#Library">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-sparse-matrix-using-csr_matrix">Create a sparse matrix using csr_matrix<a class="anchor-link" href="../../posts/create-a-sparse-matrix/#Create-a-sparse-matrix-using-csr_matrix">¶</a>
+</h2>
+<p>CSR stands for "Compressed Sparse Row" matrix</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nrow</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="c1"># CSR stands for "Compressed Sparse Row" matrix</span>
+<span class="n">arr_sparse</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">((</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">))</span>
+<span class="n">arr_sparse</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;10000x10000 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+	with 0 stored elements in Compressed Sparse Row format&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/create-a-sparse-matrix/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
 </div>
         <!--End of body content-->
 

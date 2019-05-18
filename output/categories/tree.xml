@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Tree)</title><link>https://h1ros.github.io/</link><description></description><atom:link href="https://h1ros.github.io/pages/about/categories/tree.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 21:52:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/pages/about/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Tree)</title><link>https://h1ros.github.io</link><description></description><atom:link href="https://h1ros.github.io/pages/categories/tree.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 17 May 2019 23:52:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Forest Classifer</title><link>https://h1ros.github.io/pages/posts/random-forest-classfier/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to train random forest classifier, which is one of most popular machine learning model.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/ensemble.html#forest"&gt;Scikit learn - Ensemble methods&lt;/a&gt;&lt;/li&gt;
@@ -14,7 +14,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -40,7 +40,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Data"&gt;Load Data&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Load-Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -256,7 +256,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Train-a-model-using-Cross-Validation"&gt;Train a model using Cross Validation&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/random-forest-classfier/#Train-a-model-using-Cross-Validation"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -339,10 +339,10 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/pages/about/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>1026. Maximum Difference Between Node and Ancestor</title><link>https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>https://h1ros.github.io/pages/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>1026. Maximum Difference Between Node and Ancestor</title><link>https://h1ros.github.io/pages/posts/coding/1026-maximum-difference-between-node-and-ancestor/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given the &lt;code&gt;root&lt;/code&gt; of a binary tree, find the maximum value &lt;code&gt;V&lt;/code&gt; for which there exists different nodes &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; where &lt;code&gt;V = |A.val - B.val|&lt;/code&gt; and &lt;code&gt;A&lt;/code&gt; is an ancestor of &lt;code&gt;B&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given the &lt;code&gt;root&lt;/code&gt; of a binary tree, find the maximum value &lt;code&gt;V&lt;/code&gt; for which there exists different nodes &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; where &lt;code&gt;V = |A.val - B.val|&lt;/code&gt; and &lt;code&gt;A&lt;/code&gt; is an ancestor of &lt;code&gt;B&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -356,7 +356,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Example-1"&gt;Example 1&lt;a class="anchor-link" href="https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Example-1"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: [8,3,10,1,6,null,14,null,null,4,7,13]&lt;/p&gt;
+&lt;h3 id="Example-1"&gt;Example 1&lt;a class="anchor-link" href="https://h1ros.github.io/pages/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Example-1"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: [8,3,10,1,6,null,14,null,null,4,7,13]&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56340742-b3592380-6167-11e9-8704-0e9767e3707a.png" alt="Example 1" width="300"&gt;&lt;/p&gt;
 &lt;p&gt;Output: 7&lt;/p&gt;
 &lt;p&gt;Explanation:&lt;/p&gt;
@@ -373,4 +373,4 @@ Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Binary Tree</category><category>Tree</category><guid>https://h1ros.github.io/pages/about/posts/coding/1026-maximum-difference-between-node-and-ancestor/</guid><pubDate>Thu, 18 Apr 2019 05:48:04 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://h1ros.github.io/pages/posts/coding/1026-maximum-difference-between-node-and-ancestor/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Binary Tree</category><category>Tree</category><guid>https://h1ros.github.io/pages/posts/coding/1026-maximum-difference-between-node-and-ancestor/</guid><pubDate>Thu, 18 Apr 2019 05:48:04 GMT</pubDate></item></channel></rss>

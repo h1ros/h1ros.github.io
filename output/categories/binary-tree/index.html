@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#4285F4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
-<link rel="canonical" href="https://h1ros.github.io/pages/about/categories/binary-tree/">
+<link rel="canonical" href="https://h1ros.github.io/pages/categories/binary-tree/">
 <link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://h1ros.github.io/pages/about/">
+            <a class="navbar-brand" href="https://h1ros.github.io/pages/">
 
                 <span id="blog-title">Step-by-step Data Science</span>
             </a>
@@ -43,16 +43,24 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../pages/about/">Home</a>
-                </li>
+<a href="../../pages/">Home</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts <b class="caret"></b></a>
+            <ul class="dropdown-menu">
 <li>
-<a href="../../">Post</a>
-                </li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../coding">Coding Problems</a>
+                    </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+</ul>
+</li>
 <li>
 <a href="../../archive.html">Archive</a>
-                </li>
-<li>
-<a href="../">Tags</a>
                 </li>
 <li>
 <a href="../../rss.xml">RSS feed</a>
@@ -71,7 +79,8 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about Binary Tree</h1>
+
+    <header><h1>Posts about Binary Tree</h1>
         <div class="metadata">
             
                 <p class="feedlink">
@@ -80,20 +89,224 @@
 
                 </p>
 
-        </div>
-        
+            
 
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2019-04-17T22:48:04-07:00" title="Apr 17, 2019, 10:48:04 PM">Apr 17, 2019, 10:48:04 PM</time><a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/" class="listtitle">1026. Maximum Difference Between Node and Ancestor</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2019-02-26T09:11:59-08:00" title="Feb 26, 2019, 9:11:59 AM">Feb 26, 2019, 9:11:59 AM</time><a href="../../posts/coding/617-merge-two-binary-trees/" class="listtitle">617. Merge Two Binary Trees</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2019-02-03T22:43:19-08:00" title="Feb 3, 2019, 10:43:19 PM">Feb 3, 2019, 10:43:19 PM</time><a href="../../posts/coding/998-smallest-string-Starting-from-leaf/" class="listtitle">998 Smallest String Starting From Leaf</a><a></a>
-</li>
-        </ul></article>
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/" class="u-url">1026. Maximum Difference Between Node and Ancestor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-17T22:48:04-07:00" itemprop="datePublished" title="Apr 17, 2019, 10:48:04 PM">Apr 17, 2019, 10:48:04 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#disqus_thread" data-disqus-identifier="cache/posts/coding/1026-maximum-difference-between-node-and-ancestor.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting">¶</a>
+</h2>
+<p>Given the <code>root</code> of a binary tree, find the maximum value <code>V</code> for which there exists different nodes <code>A</code> and <code>B</code> where <code>V = |A.val - B.val|</code> and <code>A</code> is an ancestor of <code>B</code>.</p>
+<p>(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of nodes in the tree is between 2 and 5000.</li>
+<li>Each node will have value between 0 and 100000.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1">Example 1<a class="anchor-link" href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#Example-1">¶</a>
+</h3>
+<p>Input: [8,3,10,1,6,null,14,null,null,4,7,13]</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56340742-b3592380-6167-11e9-8704-0e9767e3707a.png" alt="Example 1" width="300"></p>
+<p>Output: 7</p>
+<p>Explanation:</p>
+<p>We have various ancestor-node differences, some of which are given below :
+|8 - 3| = 5
+|3 - 7| = 4
+|8 - 1| = 7
+|10 - 13| = 3
+Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/617-merge-two-binary-trees/" class="u-url">617. Merge Two Binary Trees</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/coding/617-merge-two-binary-trees/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-02-26T09:11:59-08:00" itemprop="datePublished" title="Feb 26, 2019, 9:11:59 AM">Feb 26, 2019, 9:11:59 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/coding/617-merge-two-binary-trees/#disqus_thread" data-disqus-identifier="cache/posts/coding/617. Merge Two Binary Trees.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/617-merge-two-binary-trees/#Problem-Setting">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.</p>
+<p>You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1:">Example 1:<a class="anchor-link" href="../../posts/coding/617-merge-two-binary-trees/#Example-1:">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>Input: 
+    Tree 1                     Tree 2                  
+          1                         2                             
+         / \                       / \                            
+        3   2                     1   3                        
+       /                           \   \                      
+      5                             4   7                  
+Output: 
+Merged tree:
+         3
+        / \
+       4   5
+      / \   \ 
+     5   4   7</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/coding/617-merge-two-binary-trees/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/998-smallest-string-Starting-from-leaf/" class="u-url">998 Smallest String Starting From Leaf</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/coding/998-smallest-string-Starting-from-leaf/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-02-03T22:43:19-08:00" itemprop="datePublished" title="Feb 3, 2019, 10:43:19 PM">Feb 3, 2019, 10:43:19 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/coding/998-smallest-string-Starting-from-leaf/#disqus_thread" data-disqus-identifier="cache/posts/coding/998 Smallest String Starting From Leaf.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/998-smallest-string-Starting-from-leaf/#Problem-Setting">¶</a>
+</h2>
+<p>The 2nd problem in Weekly Contest 122 is <code>Smallest String Starting From Leaf</code></p>
+<p>Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.</p>
+<p>Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.</p>
+<p>(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/coding/998-smallest-string-Starting-from-leaf/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
 </div>
         <!--End of body content-->
 
