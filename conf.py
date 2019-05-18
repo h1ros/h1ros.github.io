@@ -138,6 +138,7 @@ NAVIGATION_LINKS = {
         ("/", 'Home'),
         ((
           ("/posts/", "All Post"),
+          ("/categories/", "Categories and Tags"),
           ("/categories/coding", "Coding Problems"), 
           ("/categories/machine-learning", "Machine Learning") 
           ), 'Posts'),
