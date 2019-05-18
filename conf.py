@@ -23,7 +23,7 @@ BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
 SITE_URL = "https://h1ros.github.io"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "https://h1ros.github.io/pages/"
+BASE_URL = "https://h1ros.github.io/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
 BLOG_DESCRIPTION = "Explain things related to data scieence step-by-step"  # (translatable)
 
