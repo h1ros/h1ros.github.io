@@ -1,4 +1,4 @@
-Sitemap: https://h1ros.github.io/sitemapindex.xml
+Sitemap: https://h1ros.github.io/pages/sitemapindex.xml
 
 User-Agent: *
 Host: h1ros.github.io

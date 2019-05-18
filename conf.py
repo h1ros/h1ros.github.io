@@ -23,7 +23,7 @@ BLOG_TITLE = "Step-by-step Data Science"  # (translatable)
 SITE_URL = "https://h1ros.github.io"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://h1ros.github.io/pages/"
+BASE_URL = "https://h1ros.github.io/pages/"
 BLOG_EMAIL = "data.h1ros@gmail.com"
 BLOG_DESCRIPTION = "Explain things related to data scieence step-by-step"  # (translatable)
 
@@ -135,15 +135,14 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/pages/", 'Home'),
+        ("/", 'Home'),
         ((
           ("/posts/", "All Post"),
           ("/categories/coding", "Coding Problems"), 
           ("/categories/machine-learning", "Machine Learning") 
           ), 'Posts'),
         ("/archive.html", "Archive"),
-        ("/rss.xml", "RSS feed")
-        # ((('/categories/coding/', 'Coding'),  ('/categories/machine-learning-basics/', 'Machine Learning')), 'Categories')
+        ("/rss.xml", "RSS")
     ),
 
     # "ja": (
@@ -233,11 +232,12 @@ POSTS = (
     ("posts/*.html", "posts", "post.tmpl"),
 )
 PAGES = (
-	("pages/*.ipynb", "pages", "page.tmpl"), # -- add this line
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+	("pages/*.ipynb", "", "page.tmpl"), # -- add this line
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
+    # ("pages/about.html", "", "page.tmpl"),
 )
 
 
@@ -545,7 +545,7 @@ HIDDEN_AUTHORS = ['Guest']
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-INDEX_PATH = "posts"
+INDEX_PATH = ""
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
