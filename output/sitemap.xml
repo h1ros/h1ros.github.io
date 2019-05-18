@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://h1ros.github.io/pages/</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/2019/</loc>
@@ -171,7 +171,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/archive.html</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/categories/</loc>
@@ -207,7 +207,7 @@
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/categories/coding/index-1.html</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/categories/date-handling/</loc>
@@ -306,32 +306,12 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/index-1.html</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/index.src.html</loc>
+  <lastmod>2019-05-18T00:31:00Z</lastmod>
  </url>
  <url>
-  <loc>https://h1ros.github.io/pages/index-2.html</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/index-3.html</loc>
-  <lastmod>2019-05-18T00:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/pages/</loc>
-  <lastmod>2019-05-18T00:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/pages/index-1.html</loc>
-  <lastmod>2019-05-18T00:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/pages/index-2.html</loc>
-  <lastmod>2019-05-18T00:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://h1ros.github.io/pages/pages/index-3.html</loc>
-  <lastmod>2019-05-18T00:26:00Z</lastmod>
+  <loc>https://h1ros.github.io/pages/posts/</loc>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -420,6 +400,18 @@
  <url>
   <loc>https://h1ros.github.io/pages/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/posts/index-1.html</loc>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/posts/index-2.html</loc>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://h1ros.github.io/pages/posts/index-3.html</loc>
+  <lastmod>2019-05-18T00:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://h1ros.github.io/pages/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
