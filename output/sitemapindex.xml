@@ -30,6 +30,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/clustering.xml</loc>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/coding.xml</loc>
   <lastmod>2019-05-18T07:04:00Z</lastmod>
  </sitemap>
@@ -66,6 +70,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/k-means.xml</loc>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/linear-regression.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -75,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-19T05:27:00Z</lastmod>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
@@ -131,10 +139,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-19T06:19:00Z</lastmod>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-19T06:19:00Z</lastmod>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>

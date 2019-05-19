@@ -167,11 +167,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-19T06:19:00Z</lastmod>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-19T05:27:00Z</lastmod>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -196,6 +196,10 @@
  <url>
   <loc>/categories/c%2B%2B/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/clustering/</loc>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/coding/</loc>
@@ -236,6 +240,10 @@
  <url>
   <loc>/categories/jupyter-notebook/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/k-means/</loc>
+  <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/linear-regression/</loc>
