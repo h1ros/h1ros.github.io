@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>/categories/200wad.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/array.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/coding.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-18T07:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/date-handling.xml</loc>
@@ -54,6 +54,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/exploration.xml</loc>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/graphviz.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -71,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
@@ -95,7 +99,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/python.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
@@ -107,7 +111,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/text.xml</loc>
@@ -123,18 +127,18 @@
  </sitemap>
  <sitemap>
   <loc>/categories/visualization.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/wordcloud.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-18T07:03:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
 </sitemapindex>

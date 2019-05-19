@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-17T23:22:00Z</lastmod>
+  <lastmod>2019-05-18T17:44:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -162,12 +162,16 @@
   <lastmod>2019-05-17T17:30:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/18/</loc>
+  <lastmod>2019-05-18T17:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-18T07:03:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-18T00:04:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -220,6 +224,10 @@
  <url>
   <loc>/categories/encoding/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/exploration/</loc>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/graphviz/</loc>
@@ -303,7 +311,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-18T00:32:00Z</lastmod>
+  <lastmod>2019-05-18T17:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -395,15 +403,15 @@
  </url>
  <url>
   <loc>/posts/index-1.html</loc>
-  <lastmod>2019-05-18T07:03:00Z</lastmod>
+  <lastmod>2019-05-19T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-05-18T07:03:00Z</lastmod>
+  <lastmod>2019-05-18T17:45:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-05-18T07:03:00Z</lastmod>
+  <lastmod>2019-05-18T17:46:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -444,6 +452,10 @@
  <url>
   <loc>/posts/selecting-elements-in-a-1d-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/selecting-elements-in-an-array/</loc>
+  <lastmod>2019-05-18T17:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/split-up-dtreeviz-part-1/</loc>
