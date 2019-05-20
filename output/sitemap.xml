@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-18T17:44:00Z</lastmod>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -166,8 +166,12 @@
   <lastmod>2019-05-19T06:13:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/19/</loc>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-19T06:21:00Z</lastmod>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -315,7 +319,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-19T06:13:00Z</lastmod>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -415,7 +419,7 @@
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-05-19T06:13:00Z</lastmod>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -436,6 +440,10 @@
  <url>
   <loc>/posts/loading-scikit-learns-boston-housing-dataset/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/make-simulated-data-for-clustering/</loc>
+  <lastmod>2019-05-20T02:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
