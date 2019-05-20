@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about preprocessing)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/preprocessing.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 20 May 2019 08:07:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dimensionality Reduction With PCA</title><link>/posts/dimensionality-reduction-with-pca/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/dimensionality-reduction-with-pca/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to conduct dimensionality reduction with Principal Component Analysis (PCA).&lt;/p&gt;
+&lt;p&gt;Dimensionality reduction with PCA can be used as a part of preprocessing to improve the accuracy of prediction when we have a lot of features that has correlation mutually.&lt;/p&gt;
+&lt;p&gt;The figure below visually explains what PCA does. The &lt;strong&gt;blue dots&lt;/strong&gt; are original data points in 2D. The &lt;strong&gt;red dots&lt;/strong&gt; are projected data onto 1D rotating line. The &lt;strong&gt;red dotted line&lt;/strong&gt; from blue points to red points are the trace of the projection. When the moving line overlaps with the &lt;strong&gt;pink line&lt;/strong&gt;, the projected dot on the line is most widely distributed. If we apply PCA to this 2D data, 1D data can be obtained on this 1D line.&lt;/p&gt;
+&lt;center&gt;
+&lt;figure&gt;
+  &lt;img src="https://poissonisfish.files.wordpress.com/2017/01/q7hip.gif?w=912" alt="Visual Example of Dimensionality Reduction with PCA" style="width:70%"&gt;
+  &lt;figcaption&gt;Fig.1 PCA to project 2D data into 1D dimension from &lt;a href="https://www.r-bloggers.com/principal-component-analysis-in-r"&gt;R-bloggers PCA in R&lt;/a&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"&gt;scikit-learn standard scaler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.r-bloggers.com/principal-component-analysis-in-r"&gt;R-bloggers PCA in R&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/dimensionality-reduction-with-pca/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dimensionality Reduction</category><category>PCA</category><category>preprocessing</category><guid>/posts/dimensionality-reduction-with-pca/</guid><pubDate>Mon, 20 May 2019 07:56:13 GMT</pubDate></item></channel></rss>

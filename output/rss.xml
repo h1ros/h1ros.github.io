@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 20 May 2019 05:58:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Make Simulated Data For Clustering</title><link>/posts/make-simulated-data-for-clustering/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 20 May 2019 08:07:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dimensionality Reduction With PCA</title><link>/posts/dimensionality-reduction-with-pca/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/dimensionality-reduction-with-pca/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to conduct dimensionality reduction with Principal Component Analysis (PCA).&lt;/p&gt;
+&lt;p&gt;Dimensionality reduction with PCA can be used as a part of preprocessing to improve the accuracy of prediction when we have a lot of features that has correlation mutually.&lt;/p&gt;
+&lt;p&gt;The figure below visually explains what PCA does. The &lt;strong&gt;blue dots&lt;/strong&gt; are original data points in 2D. The &lt;strong&gt;red dots&lt;/strong&gt; are projected data onto 1D rotating line. The &lt;strong&gt;red dotted line&lt;/strong&gt; from blue points to red points are the trace of the projection. When the moving line overlaps with the &lt;strong&gt;pink line&lt;/strong&gt;, the projected dot on the line is most widely distributed. If we apply PCA to this 2D data, 1D data can be obtained on this 1D line.&lt;/p&gt;
+&lt;center&gt;
+&lt;figure&gt;
+  &lt;img src="https://poissonisfish.files.wordpress.com/2017/01/q7hip.gif?w=912" alt="Visual Example of Dimensionality Reduction with PCA" style="width:70%"&gt;
+  &lt;figcaption&gt;Fig.1 PCA to project 2D data into 1D dimension from &lt;a href="https://www.r-bloggers.com/principal-component-analysis-in-r"&gt;R-bloggers PCA in R&lt;/a&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"&gt;scikit-learn standard scaler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.r-bloggers.com/principal-component-analysis-in-r"&gt;R-bloggers PCA in R&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/dimensionality-reduction-with-pca/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dimensionality Reduction</category><category>PCA</category><category>preprocessing</category><guid>/posts/dimensionality-reduction-with-pca/</guid><pubDate>Mon, 20 May 2019 07:56:13 GMT</pubDate></item><item><title>Make Simulated Data For Clustering</title><link>/posts/make-simulated-data-for-clustering/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/make-simulated-data-for-clustering/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post introduce how to create artificial data for clustering using &lt;code&gt;numpy&lt;/code&gt;.&lt;/p&gt;
@@ -1777,191 +1800,4 @@ replace , with
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/replace-characters/</guid><pubDate>Fri, 10 May 2019 06:02:21 GMT</pubDate></item><item><title>Add Padding Around String</title><link>/posts/add-padding-around-string/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/add-padding-around-string/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to add padding around string.&lt;/p&gt;
-&lt;p&gt;Reference:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/5676646/how-can-i-fill-out-a-python-string-with-spaces"&gt;How can I fill out a Python string with spaces?&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/339007/nicest-way-to-pad-zeroes-to-a-string/24386708"&gt;Nicest way to pad zeroes to a string&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-string-and-number"&gt;Create a string and number&lt;a class="anchor-link" href="/posts/add-padding-around-string/#Create-a-string-and-number"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'abc_def'&lt;/span&gt;
-&lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id='Add-padding-by-"-"(space)-or-other-character'&gt;Add padding by " "(space) or other character&lt;a class="anchor-link" href="/posts/add-padding-around-string/#Add-padding-by-%22-%22(space)-or-other-character"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There is a method for string, called &lt;code&gt;ljust&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;S.ljust(width[, fillchar]) -&amp;gt; str&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ljust&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'abc_def   '&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ljust&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'abc_defaaa'&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Add-zero-padding-to-numbers"&gt;Add zero padding to numbers&lt;a class="anchor-link" href="/posts/add-padding-around-string/#Add-zero-padding-to-numbers"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# the chaaracter after ":" is the one used for padding&lt;/span&gt;
-&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;{:010}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'0000000010'&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# python &amp;gt;= 3.6 &lt;/span&gt;
-&lt;span class="c1"&gt;# the character after ":" is the one used for padding&lt;/span&gt;
-&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;{num:010}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'0000000010'&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/add-padding-around-string/</guid><pubDate>Thu, 09 May 2019 06:43:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/replace-characters/</guid><pubDate>Fri, 10 May 2019 06:02:21 GMT</pubDate></item></channel></rss>

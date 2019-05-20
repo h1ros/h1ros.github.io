@@ -50,6 +50,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/dimensionality-reduction.xml</loc>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/dummy-data.xml</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
@@ -91,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-20T05:58:00Z</lastmod>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
@@ -112,6 +116,14 @@
  <sitemap>
   <loc>/categories/pandas.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/pca.xml</loc>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/preprocessing.xml</loc>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/python.xml</loc>
@@ -147,10 +159,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-20T05:58:00Z</lastmod>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-20T05:58:00Z</lastmod>
+  <lastmod>2019-05-20T08:07:00Z</lastmod>
  </sitemap>
 </sitemapindex>
