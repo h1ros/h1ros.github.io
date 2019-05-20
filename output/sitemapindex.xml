@@ -50,6 +50,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/dummy-data.xml</loc>
+  <lastmod>2019-05-20T05:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/dynamic-programming.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -60,6 +64,10 @@
  <sitemap>
   <loc>/categories/exploration.xml</loc>
   <lastmod>2019-05-19T05:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/gaussian.xml</loc>
+  <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/graphviz.xml</loc>
@@ -83,7 +91,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-19T06:21:00Z</lastmod>
+  <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
@@ -139,10 +147,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-20T02:06:00Z</lastmod>
+  <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-20T02:06:00Z</lastmod>
+  <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
 </sitemapindex>
