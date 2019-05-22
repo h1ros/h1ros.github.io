@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -174,12 +174,16 @@
   <lastmod>2019-05-20T08:07:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/21/</loc>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -215,7 +219,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-05-20T08:06:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/date-handling/</loc>
@@ -228,6 +232,10 @@
  <url>
   <loc>/categories/descriptive-analysis/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/determinant/</loc>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/dimensionality-reduction/</loc>
@@ -279,7 +287,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/math/</loc>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/matrix/</loc>
@@ -347,7 +359,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-20T05:58:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -360,6 +372,10 @@
  <url>
   <loc>/posts/adding-or-substracting-time/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/calculate-the-determinant-of-a-matrix/</loc>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/coding/1000-minimum-cost-to-merge-stones/</loc>
@@ -443,15 +459,15 @@
  </url>
  <url>
   <loc>/posts/index-1.html</loc>
-  <lastmod>2019-05-20T08:06:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-05-20T08:06:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
