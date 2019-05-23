@@ -30,6 +30,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/chris-albon.xml</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/clustering.xml</loc>
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
@@ -51,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/determinant.xml</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dimensionality-reduction.xml</loc>
@@ -90,6 +94,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/linear-algebra.xml</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/linear-regression.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -99,15 +107,15 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-20T08:07:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/nlp.xml</loc>
@@ -150,6 +158,10 @@
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/trace.xml</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/tree.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -167,10 +179,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
 </sitemapindex>

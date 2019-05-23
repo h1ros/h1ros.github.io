@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -178,12 +178,16 @@
   <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/22/</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -208,6 +212,10 @@
  <url>
   <loc>/categories/c%2B%2B/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/chris-albon/</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/clustering/</loc>
@@ -274,6 +282,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/linear-algebra/</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/linear-regression/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -287,7 +299,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -338,6 +350,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/trace/</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/tree/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -359,7 +375,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -376,6 +392,10 @@
  <url>
   <loc>/posts/calculate-the-determinant-of-a-matrix/</loc>
   <lastmod>2019-05-22T05:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/calculate-the-trace-of-a-matrix/</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/coding/1000-minimum-cost-to-merge-stones/</loc>
@@ -467,7 +487,11 @@
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/index-4.html</loc>
+  <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
