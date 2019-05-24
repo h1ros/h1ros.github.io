@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-23T07:08:00Z</lastmod>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -182,8 +182,12 @@
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/23/</loc>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-23T07:08:00Z</lastmod>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -371,11 +375,11 @@
  </url>
  <url>
   <loc>/index.src.html</loc>
-  <lastmod>2019-05-18T06:32:00Z</lastmod>
+  <lastmod>2019-05-24T06:16:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-23T07:08:00Z</lastmod>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -491,7 +495,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-23T07:08:00Z</lastmod>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -524,6 +528,10 @@
  <url>
   <loc>/posts/ordinal-encoding-using-scikit-learn/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/parse-html/</loc>
+  <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/random-forest-classfier/</loc>

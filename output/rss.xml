@@ -1,5 +1,505 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 May 2019 07:08:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Calculate The Trace Of A Matrix</title><link>/posts/calculate-the-trace-of-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 24 May 2019 06:29:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Parse HTML</title><link>/posts/parse-html/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/parse-html/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to parse the HTML data fetched by &lt;code&gt;BeautifulSoup&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/"&gt;Using BeautifulSoup to parse HTML and extract press briefings URLs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="/posts/parse-html/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Simple-HTML-from-string"&gt;Simple HTML from string&lt;a class="anchor-link" href="/posts/parse-html/#Simple-HTML-from-string"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;html_simple&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;This is Title&amp;lt;h1&amp;gt;'&lt;/span&gt;
+&lt;span class="n"&gt;html_simple&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'&amp;lt;h1&amp;gt;This is Title&amp;lt;h1&amp;gt;'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;html_simple&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;dir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;['ASCII_SPACES',
+ 'DEFAULT_BUILDER_FEATURES',
+ 'HTML_FORMATTERS',
+ 'NO_PARSER_SPECIFIED_WARNING',
+ 'ROOT_TAG_NAME',
+ 'XML_FORMATTERS',
+ '__bool__',
+ '__call__',
+ '__class__',
+ '__contains__',
+ '__copy__',
+ '__delattr__',
+ '__delitem__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattr__',
+ '__getattribute__',
+ '__getitem__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__unicode__',
+ '__weakref__',
+ '_all_strings',
+ '_check_markup_is_url',
+ '_feed',
+ '_find_all',
+ '_find_one',
+ '_formatter_for_name',
+ '_is_xml',
+ '_lastRecursiveChild',
+ '_last_descendant',
+ '_linkage_fixer',
+ '_most_recent_element',
+ '_namespaces',
+ '_popToTag',
+ '_should_pretty_print',
+ 'append',
+ 'attrs',
+ 'builder',
+ 'can_be_empty_element',
+ 'childGenerator',
+ 'children',
+ 'clear',
+ 'contains_replacement_characters',
+ 'contents',
+ 'currentTag',
+ 'current_data',
+ 'declared_html_encoding',
+ 'decode',
+ 'decode_contents',
+ 'decompose',
+ 'descendants',
+ 'encode',
+ 'encode_contents',
+ 'endData',
+ 'extend',
+ 'extract',
+ 'fetchNextSiblings',
+ 'fetchParents',
+ 'fetchPrevious',
+ 'fetchPreviousSiblings',
+ 'find',
+ 'findAll',
+ 'findAllNext',
+ 'findAllPrevious',
+ 'findChild',
+ 'findChildren',
+ 'findNext',
+ 'findNextSibling',
+ 'findNextSiblings',
+ 'findParent',
+ 'findParents',
+ 'findPrevious',
+ 'findPreviousSibling',
+ 'findPreviousSiblings',
+ 'find_all',
+ 'find_all_next',
+ 'find_all_previous',
+ 'find_next',
+ 'find_next_sibling',
+ 'find_next_siblings',
+ 'find_parent',
+ 'find_parents',
+ 'find_previous',
+ 'find_previous_sibling',
+ 'find_previous_siblings',
+ 'format_string',
+ 'get',
+ 'getText',
+ 'get_attribute_list',
+ 'get_text',
+ 'handle_data',
+ 'handle_endtag',
+ 'handle_starttag',
+ 'has_attr',
+ 'has_key',
+ 'hidden',
+ 'index',
+ 'insert',
+ 'insert_after',
+ 'insert_before',
+ 'isSelfClosing',
+ 'is_empty_element',
+ 'is_xml',
+ 'known_xml',
+ 'markup',
+ 'name',
+ 'namespace',
+ 'new_string',
+ 'new_tag',
+ 'next',
+ 'nextGenerator',
+ 'nextSibling',
+ 'nextSiblingGenerator',
+ 'next_element',
+ 'next_elements',
+ 'next_sibling',
+ 'next_siblings',
+ 'object_was_parsed',
+ 'original_encoding',
+ 'parent',
+ 'parentGenerator',
+ 'parents',
+ 'parse_only',
+ 'parserClass',
+ 'parser_class',
+ 'popTag',
+ 'prefix',
+ 'preserve_whitespace_tag_stack',
+ 'preserve_whitespace_tags',
+ 'prettify',
+ 'previous',
+ 'previousGenerator',
+ 'previousSibling',
+ 'previousSiblingGenerator',
+ 'previous_element',
+ 'previous_elements',
+ 'previous_sibling',
+ 'previous_siblings',
+ 'pushTag',
+ 'recursiveChildGenerator',
+ 'renderContents',
+ 'replaceWith',
+ 'replaceWithChildren',
+ 'replace_with',
+ 'replace_with_children',
+ 'reset',
+ 'select',
+ 'select_one',
+ 'setup',
+ 'string',
+ 'strings',
+ 'stripped_strings',
+ 'tagStack',
+ 'text',
+ 'unwrap',
+ 'wrap']&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'This is Title'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&amp;lt;h1&amp;gt;This is Title&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Parsing-HTML-webpage"&gt;Parsing HTML webpage&lt;a class="anchor-link" href="/posts/parse-html/#Parsing-HTML-webpage"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;target_html&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'https://h1ros.github.io/'&lt;/span&gt;
+&lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;target_html&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'\n\n\n\nHome | Step-by-step Data Science\n\n\n\n\n\n\n\n\n\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\'js\', new Date());\n\n  gtag(\'config\', \'UA-134273341-1\');\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\n\n\nToggle navigation\n\n\n\n\n\nStep-by-step Data Science\n\n\n\n\n\n\nCoding Problems\n\n\nMachine Learning\n\n\nAll \n\n\nAll Post\n\n\nCategories and Tags\n\n\nHistory\n\n\n\n\nRSS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Step by Step \n\n\n\n\n\n\n\n\nAbout me\n\nI am Hiro, who is passionate about data science and deep learning. I have a few years of industry and research experinence in machine learning. By explaining things to learn, I would like to accerelate my learning process, but step by step.  \n\t\t\n\n\n\n\nExpected Readers\n\nI mainly write about it for myself but hope it would be benefitial for those who learn machine learning and coding. I am very happy to work and think together if anyone has a question. Feel free to leave a comment or use chat located at the right bottom.  \n\t\t\n\n\n\n\n\n\n\n\n\n\n\nCoding Problem\n"Compare yourself with who you were yesterday"\n\nEvery Sturday I join LeetCode Weekly Contest and improve coding skill by solving coding problems. I know there are a lot of better coders in the world but I compare myself who I was yesterday to move forward.\n\n\n\n\nDynamic Programming\n\n\nBinary Tree\n\nRecursive\n      \t\nLinked List\n      \t\nHeap\n      \n\n\n\n\n\n\nMachine Learning\n"The best way to learn is to explain"\n\nEven if we can use them, we do not fully understand the things. I explain the things I used for my daily job as well as the ones that I would like to learn. \n\n\nPreprocessing\n\n\nVisualization\n\n\nText\n\nAudio\n      \t\nImages\n    \t\nDeep Learning\n\n      \n\n\n\n\n\n\n\n\n\n\n            Contents © 2019         h1ros - Powered by         Nikola\n\n\n\n\n  ((window.gitter = {}).chat = {}).options = {\n    room: \'h1ros-github-io/ama\'\n  };\n\n    moment.locale("en");\n    fancydates(1, "YYYY-MM-DD");\n    \n    baguetteBox.run(\'div#content\', {\n        ignoreClass: \'islink\',\n        captions: function(element) {\n            return element.getElementsByTagName(\'img\')[0].alt;\n    }});\n    window.twttr = (function(d, s, id) {\n  var js, fjs = d.getElementsByTagName(s)[0],\n    t = window.twttr || {};\n  if (d.getElementById(id)) return t;\n  js = d.createElement(s);\n  js.id = id;\n  js.src = "https://platform.twitter.com/widgets.js";\n  fjs.parentNode.insertBefore(js, fjs);\n  t._e = [];\n  t.ready = function(f) {\n    t._e.push(f);\n  };\n  return t;\n}(document, "script", "twitter-wjs"));\n\n\n'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3&gt;Collect all href in tag &lt;a&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;all_urls&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find_all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;all_urls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    
+&lt;span class="n"&gt;all_urls&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;['#content',
+ '.',
+ 'categories/coding',
+ 'categories/machine-learning',
+ '#',
+ 'posts/',
+ 'categories/',
+ 'archive.html',
+ 'rss.xml',
+ '.',
+ '.',
+ 'categories/coding/',
+ '.',
+ 'categories/coding/',
+ 'categories/dynamic-programming',
+ 'categories/binary-tree',
+ 'categories/machine-learning/',
+ '.',
+ 'categories/machine-learning/',
+ 'categories/peprocessing',
+ 'categories/visualization',
+ 'categories/text',
+ 'mailto:data.h1ros@gmail.com',
+ 'https://getnikola.com']&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/parse-html/</guid><pubDate>Fri, 24 May 2019 06:18:35 GMT</pubDate></item><item><title>Calculate The Trace Of A Matrix</title><link>/posts/calculate-the-trace-of-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/calculate-the-trace-of-a-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to show how to calculate the trace of a matrix using numpy i.e., $tr(A)$&lt;/p&gt;
@@ -1397,483 +1897,4 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item><item><title>Loading scikit-learn's Boston Housing Dataset</title><link>/posts/loading-scikit-learns-boston-housing-dataset/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to load Boston housing using scikit-learn&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Library"&gt;Library&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Library"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_boston&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Dataset"&gt;Load Dataset&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Load-Dataset"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_boston&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;sklearn.utils.Bunch&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;dict_keys(['data', 'target', 'feature_names', 'DESCR', 'filename'])&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Data"&gt;Data&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Data"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;th&gt;5&lt;/th&gt;
-      &lt;th&gt;6&lt;/th&gt;
-      &lt;th&gt;7&lt;/th&gt;
-      &lt;th&gt;8&lt;/th&gt;
-      &lt;th&gt;9&lt;/th&gt;
-      &lt;th&gt;10&lt;/th&gt;
-      &lt;th&gt;11&lt;/th&gt;
-      &lt;th&gt;12&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;0.00632&lt;/td&gt;
-      &lt;td&gt;18.0&lt;/td&gt;
-      &lt;td&gt;2.31&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.538&lt;/td&gt;
-      &lt;td&gt;6.575&lt;/td&gt;
-      &lt;td&gt;65.2&lt;/td&gt;
-      &lt;td&gt;4.0900&lt;/td&gt;
-      &lt;td&gt;1.0&lt;/td&gt;
-      &lt;td&gt;296.0&lt;/td&gt;
-      &lt;td&gt;15.3&lt;/td&gt;
-      &lt;td&gt;396.90&lt;/td&gt;
-      &lt;td&gt;4.98&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;0.02731&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;7.07&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.469&lt;/td&gt;
-      &lt;td&gt;6.421&lt;/td&gt;
-      &lt;td&gt;78.9&lt;/td&gt;
-      &lt;td&gt;4.9671&lt;/td&gt;
-      &lt;td&gt;2.0&lt;/td&gt;
-      &lt;td&gt;242.0&lt;/td&gt;
-      &lt;td&gt;17.8&lt;/td&gt;
-      &lt;td&gt;396.90&lt;/td&gt;
-      &lt;td&gt;9.14&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;0.02729&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;7.07&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.469&lt;/td&gt;
-      &lt;td&gt;7.185&lt;/td&gt;
-      &lt;td&gt;61.1&lt;/td&gt;
-      &lt;td&gt;4.9671&lt;/td&gt;
-      &lt;td&gt;2.0&lt;/td&gt;
-      &lt;td&gt;242.0&lt;/td&gt;
-      &lt;td&gt;17.8&lt;/td&gt;
-      &lt;td&gt;392.83&lt;/td&gt;
-      &lt;td&gt;4.03&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;0.03237&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;2.18&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.458&lt;/td&gt;
-      &lt;td&gt;6.998&lt;/td&gt;
-      &lt;td&gt;45.8&lt;/td&gt;
-      &lt;td&gt;6.0622&lt;/td&gt;
-      &lt;td&gt;3.0&lt;/td&gt;
-      &lt;td&gt;222.0&lt;/td&gt;
-      &lt;td&gt;18.7&lt;/td&gt;
-      &lt;td&gt;394.63&lt;/td&gt;
-      &lt;td&gt;2.94&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;0.06905&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;2.18&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.458&lt;/td&gt;
-      &lt;td&gt;7.147&lt;/td&gt;
-      &lt;td&gt;54.2&lt;/td&gt;
-      &lt;td&gt;6.0622&lt;/td&gt;
-      &lt;td&gt;3.0&lt;/td&gt;
-      &lt;td&gt;222.0&lt;/td&gt;
-      &lt;td&gt;18.7&lt;/td&gt;
-      &lt;td&gt;396.90&lt;/td&gt;
-      &lt;td&gt;5.33&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Target"&gt;Target&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Target"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;0&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;24.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;21.6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;34.7&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;33.4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;36.2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Feature-Name"&gt;Feature Name&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Feature-Name"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;feature_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;['CRIM' 'ZN' 'INDUS' 'CHAS' 'NOX' 'RM' 'AGE' 'DIS' 'RAD' 'TAX' 'PTRATIO'
- 'B' 'LSTAT']
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Description"&gt;Description&lt;a class="anchor-link" href="/posts/loading-scikit-learns-boston-housing-dataset/#Description"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boston&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DESCR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;.. _boston_dataset:
-
-Boston house prices dataset
----------------------------
-
-**Data Set Characteristics:**  
-
-    :Number of Instances: 506 
-
-    :Number of Attributes: 13 numeric/categorical predictive. Median Value (attribute 14) is usually the target.
-
-    :Attribute Information (in order):
-        - CRIM     per capita crime rate by town
-        - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
-        - INDUS    proportion of non-retail business acres per town
-        - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
-        - NOX      nitric oxides concentration (parts per 10 million)
-        - RM       average number of rooms per dwelling
-        - AGE      proportion of owner-occupied units built prior to 1940
-        - DIS      weighted distances to five Boston employment centres
-        - RAD      index of accessibility to radial highways
-        - TAX      full-value property-tax rate per $10,000
-        - PTRATIO  pupil-teacher ratio by town
-        - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
-        - LSTAT    % lower status of the population
-        - MEDV     Median value of owner-occupied homes in $1000's
-
-    :Missing Attribute Values: None
-
-    :Creator: Harrison, D. and Rubinfeld, D.L.
-
-This is a copy of UCI ML housing dataset.
-https://archive.ics.uci.edu/ml/machine-learning-databases/housing/
-
-
-This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University.
-
-The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic
-prices and the demand for clean air', J. Environ. Economics &amp;amp; Management,
-vol.5, 81-102, 1978.   Used in Belsley, Kuh &amp;amp; Welsch, 'Regression diagnostics
-...', Wiley, 1980.   N.B. Various transformations are used in the table on
-pages 244-261 of the latter.
-
-The Boston house-price data has been used in many machine learning papers that address regression
-problems.   
-     
-.. topic:: References
-
-   - Belsley, Kuh &amp;amp; Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of Collinearity', Wiley, 1980. 244-261.
-   - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/loading-scikit-learns-boston-housing-dataset/</guid><pubDate>Mon, 13 May 2019 06:08:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item></channel></rss>

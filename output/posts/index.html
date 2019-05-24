@@ -87,7 +87,543 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="calculate-the-trace-of-a-matrix/" class="u-url">Calculate The Trace Of A Matrix</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="parse-html/" class="u-url">Parse HTML</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="parse-html/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-23T23:18:35-07:00" itemprop="datePublished" title="May 23, 2019, 11:18:35 PM">May 23, 2019, 11:18:35 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="parse-html/#disqus_thread" data-disqus-identifier="cache/posts/parse-html.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="parse-html/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to parse the HTML data fetched by <code>BeautifulSoup</code></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/">Using BeautifulSoup to parse HTML and extract press briefings URLs</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Library">Library<a class="anchor-link" href="parse-html/#Library">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-HTML-from-string">Simple HTML from string<a class="anchor-link" href="parse-html/#Simple-HTML-from-string">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">html_simple</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is Title&lt;h1&gt;'</span>
+<span class="n">html_simple</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'&lt;h1&gt;This is Title&lt;h1&gt;'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_simple</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['ASCII_SPACES',
+ 'DEFAULT_BUILDER_FEATURES',
+ 'HTML_FORMATTERS',
+ 'NO_PARSER_SPECIFIED_WARNING',
+ 'ROOT_TAG_NAME',
+ 'XML_FORMATTERS',
+ '__bool__',
+ '__call__',
+ '__class__',
+ '__contains__',
+ '__copy__',
+ '__delattr__',
+ '__delitem__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattr__',
+ '__getattribute__',
+ '__getitem__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__unicode__',
+ '__weakref__',
+ '_all_strings',
+ '_check_markup_is_url',
+ '_feed',
+ '_find_all',
+ '_find_one',
+ '_formatter_for_name',
+ '_is_xml',
+ '_lastRecursiveChild',
+ '_last_descendant',
+ '_linkage_fixer',
+ '_most_recent_element',
+ '_namespaces',
+ '_popToTag',
+ '_should_pretty_print',
+ 'append',
+ 'attrs',
+ 'builder',
+ 'can_be_empty_element',
+ 'childGenerator',
+ 'children',
+ 'clear',
+ 'contains_replacement_characters',
+ 'contents',
+ 'currentTag',
+ 'current_data',
+ 'declared_html_encoding',
+ 'decode',
+ 'decode_contents',
+ 'decompose',
+ 'descendants',
+ 'encode',
+ 'encode_contents',
+ 'endData',
+ 'extend',
+ 'extract',
+ 'fetchNextSiblings',
+ 'fetchParents',
+ 'fetchPrevious',
+ 'fetchPreviousSiblings',
+ 'find',
+ 'findAll',
+ 'findAllNext',
+ 'findAllPrevious',
+ 'findChild',
+ 'findChildren',
+ 'findNext',
+ 'findNextSibling',
+ 'findNextSiblings',
+ 'findParent',
+ 'findParents',
+ 'findPrevious',
+ 'findPreviousSibling',
+ 'findPreviousSiblings',
+ 'find_all',
+ 'find_all_next',
+ 'find_all_previous',
+ 'find_next',
+ 'find_next_sibling',
+ 'find_next_siblings',
+ 'find_parent',
+ 'find_parents',
+ 'find_previous',
+ 'find_previous_sibling',
+ 'find_previous_siblings',
+ 'format_string',
+ 'get',
+ 'getText',
+ 'get_attribute_list',
+ 'get_text',
+ 'handle_data',
+ 'handle_endtag',
+ 'handle_starttag',
+ 'has_attr',
+ 'has_key',
+ 'hidden',
+ 'index',
+ 'insert',
+ 'insert_after',
+ 'insert_before',
+ 'isSelfClosing',
+ 'is_empty_element',
+ 'is_xml',
+ 'known_xml',
+ 'markup',
+ 'name',
+ 'namespace',
+ 'new_string',
+ 'new_tag',
+ 'next',
+ 'nextGenerator',
+ 'nextSibling',
+ 'nextSiblingGenerator',
+ 'next_element',
+ 'next_elements',
+ 'next_sibling',
+ 'next_siblings',
+ 'object_was_parsed',
+ 'original_encoding',
+ 'parent',
+ 'parentGenerator',
+ 'parents',
+ 'parse_only',
+ 'parserClass',
+ 'parser_class',
+ 'popTag',
+ 'prefix',
+ 'preserve_whitespace_tag_stack',
+ 'preserve_whitespace_tags',
+ 'prettify',
+ 'previous',
+ 'previousGenerator',
+ 'previousSibling',
+ 'previousSiblingGenerator',
+ 'previous_element',
+ 'previous_elements',
+ 'previous_sibling',
+ 'previous_siblings',
+ 'pushTag',
+ 'recursiveChildGenerator',
+ 'renderContents',
+ 'replaceWith',
+ 'replaceWithChildren',
+ 'replace_with',
+ 'replace_with_children',
+ 'reset',
+ 'select',
+ 'select_one',
+ 'setup',
+ 'string',
+ 'strings',
+ 'stripped_strings',
+ 'tagStack',
+ 'text',
+ 'unwrap',
+ 'wrap']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'This is Title'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">h1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;h1&gt;This is Title&lt;h1&gt;&lt;/h1&gt;&lt;/h1&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">h2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Parsing-HTML-webpage">Parsing HTML webpage<a class="anchor-link" href="parse-html/#Parsing-HTML-webpage">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">target_html</span> <span class="o">=</span> <span class="s1">'https://h1ros.github.io/'</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">target_html</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">soup</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'\n\n\n\nHome | Step-by-step Data Science\n\n\n\n\n\n\n\n\n\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\'js\', new Date());\n\n  gtag(\'config\', \'UA-134273341-1\');\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\n\n\nToggle navigation\n\n\n\n\n\nStep-by-step Data Science\n\n\n\n\n\n\nCoding Problems\n\n\nMachine Learning\n\n\nAll \n\n\nAll Post\n\n\nCategories and Tags\n\n\nHistory\n\n\n\n\nRSS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Step by Step \n\n\n\n\n\n\n\n\nAbout me\n\nI am Hiro, who is passionate about data science and deep learning. I have a few years of industry and research experinence in machine learning. By explaining things to learn, I would like to accerelate my learning process, but step by step.  \n\t\t\n\n\n\n\nExpected Readers\n\nI mainly write about it for myself but hope it would be benefitial for those who learn machine learning and coding. I am very happy to work and think together if anyone has a question. Feel free to leave a comment or use chat located at the right bottom.  \n\t\t\n\n\n\n\n\n\n\n\n\n\n\nCoding Problem\n"Compare yourself with who you were yesterday"\n\nEvery Sturday I join LeetCode Weekly Contest and improve coding skill by solving coding problems. I know there are a lot of better coders in the world but I compare myself who I was yesterday to move forward.\n\n\n\n\nDynamic Programming\n\n\nBinary Tree\n\nRecursive\n      \t\nLinked List\n      \t\nHeap\n      \n\n\n\n\n\n\nMachine Learning\n"The best way to learn is to explain"\n\nEven if we can use them, we do not fully understand the things. I explain the things I used for my daily job as well as the ones that I would like to learn. \n\n\nPreprocessing\n\n\nVisualization\n\n\nText\n\nAudio\n      \t\nImages\n    \t\nDeep Learning\n\n      \n\n\n\n\n\n\n\n\n\n\n            Contents © 2019         h1ros - Powered by         Nikola\n\n\n\n\n  ((window.gitter = {}).chat = {}).options = {\n    room: \'h1ros-github-io/ama\'\n  };\n\n    moment.locale("en");\n    fancydates(1, "YYYY-MM-DD");\n    \n    baguetteBox.run(\'div#content\', {\n        ignoreClass: \'islink\',\n        captions: function(element) {\n            return element.getElementsByTagName(\'img\')[0].alt;\n    }});\n    window.twttr = (function(d, s, id) {\n  var js, fjs = d.getElementsByTagName(s)[0],\n    t = window.twttr || {};\n  if (d.getElementById(id)) return t;\n  js = d.createElement(s);\n  js.id = id;\n  js.src = "https://platform.twitter.com/widgets.js";\n  fjs.parentNode.insertBefore(js, fjs);\n  t._e = [];\n  t.ready = function(f) {\n    t._e.push(f);\n  };\n  return t;\n}(document, "script", "twitter-wjs"));\n\n\n'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Collect all href in tag <a></a>
+</h3>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_urls</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">):</span>
+    <span class="n">all_urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'href'</span><span class="p">])</span>
+    
+<span class="n">all_urls</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['#content',
+ '.',
+ 'categories/coding',
+ 'categories/machine-learning',
+ '#',
+ 'posts/',
+ 'categories/',
+ 'archive.html',
+ 'rss.xml',
+ '.',
+ '.',
+ 'categories/coding/',
+ '.',
+ 'categories/coding/',
+ 'categories/dynamic-programming',
+ 'categories/binary-tree',
+ 'categories/machine-learning/',
+ '.',
+ 'categories/machine-learning/',
+ 'categories/peprocessing',
+ 'categories/visualization',
+ 'categories/text',
+ 'mailto:data.h1ros@gmail.com',
+ 'https://getnikola.com']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="calculate-the-trace-of-a-matrix/" class="u-url">Calculate The Trace Of A Matrix</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -1756,524 +2292,6 @@ $$<p>Reference:</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Coefficients A: 9.8, Intercept b: 4.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="loading-scikit-learns-boston-housing-dataset/" class="u-url">Loading scikit-learn's Boston Housing Dataset</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="loading-scikit-learns-boston-housing-dataset/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-12T23:08:53-07:00" itemprop="datePublished" title="May 12, 2019, 11:08:53 PM">May 12, 2019, 11:08:53 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="loading-scikit-learns-boston-housing-dataset/#disqus_thread" data-disqus-identifier="cache/posts/loading-scikit-learns-boston-housing-dataset.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to load Boston housing using scikit-learn</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Library">Library<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Library">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_boston</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Load-Dataset">Load Dataset<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Load-Dataset">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>sklearn.utils.Bunch</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">boston</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>dict_keys(['data', 'target', 'feature_names', 'DESCR', 'filename'])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data">Data<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Data">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>0.00632</td>
-      <td>18.0</td>
-      <td>2.31</td>
-      <td>0.0</td>
-      <td>0.538</td>
-      <td>6.575</td>
-      <td>65.2</td>
-      <td>4.0900</td>
-      <td>1.0</td>
-      <td>296.0</td>
-      <td>15.3</td>
-      <td>396.90</td>
-      <td>4.98</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>0.02731</td>
-      <td>0.0</td>
-      <td>7.07</td>
-      <td>0.0</td>
-      <td>0.469</td>
-      <td>6.421</td>
-      <td>78.9</td>
-      <td>4.9671</td>
-      <td>2.0</td>
-      <td>242.0</td>
-      <td>17.8</td>
-      <td>396.90</td>
-      <td>9.14</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>0.02729</td>
-      <td>0.0</td>
-      <td>7.07</td>
-      <td>0.0</td>
-      <td>0.469</td>
-      <td>7.185</td>
-      <td>61.1</td>
-      <td>4.9671</td>
-      <td>2.0</td>
-      <td>242.0</td>
-      <td>17.8</td>
-      <td>392.83</td>
-      <td>4.03</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>0.03237</td>
-      <td>0.0</td>
-      <td>2.18</td>
-      <td>0.0</td>
-      <td>0.458</td>
-      <td>6.998</td>
-      <td>45.8</td>
-      <td>6.0622</td>
-      <td>3.0</td>
-      <td>222.0</td>
-      <td>18.7</td>
-      <td>394.63</td>
-      <td>2.94</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>0.06905</td>
-      <td>0.0</td>
-      <td>2.18</td>
-      <td>0.0</td>
-      <td>0.458</td>
-      <td>7.147</td>
-      <td>54.2</td>
-      <td>6.0622</td>
-      <td>3.0</td>
-      <td>222.0</td>
-      <td>18.7</td>
-      <td>396.90</td>
-      <td>5.33</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Target">Target<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Target">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>0</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>24.0</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>21.6</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>34.7</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>33.4</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>36.2</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Feature-Name">Feature Name<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Feature-Name">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>['CRIM' 'ZN' 'INDUS' 'CHAS' 'NOX' 'RM' 'AGE' 'DIS' 'RAD' 'TAX' 'PTRATIO'
- 'B' 'LSTAT']
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Description">Description<a class="anchor-link" href="loading-scikit-learns-boston-housing-dataset/#Description">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.. _boston_dataset:
-
-Boston house prices dataset
----------------------------
-
-**Data Set Characteristics:**  
-
-    :Number of Instances: 506 
-
-    :Number of Attributes: 13 numeric/categorical predictive. Median Value (attribute 14) is usually the target.
-
-    :Attribute Information (in order):
-        - CRIM     per capita crime rate by town
-        - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
-        - INDUS    proportion of non-retail business acres per town
-        - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
-        - NOX      nitric oxides concentration (parts per 10 million)
-        - RM       average number of rooms per dwelling
-        - AGE      proportion of owner-occupied units built prior to 1940
-        - DIS      weighted distances to five Boston employment centres
-        - RAD      index of accessibility to radial highways
-        - TAX      full-value property-tax rate per $10,000
-        - PTRATIO  pupil-teacher ratio by town
-        - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
-        - LSTAT    % lower status of the population
-        - MEDV     Median value of owner-occupied homes in $1000's
-
-    :Missing Attribute Values: None
-
-    :Creator: Harrison, D. and Rubinfeld, D.L.
-
-This is a copy of UCI ML housing dataset.
-https://archive.ics.uci.edu/ml/machine-learning-databases/housing/
-
-
-This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University.
-
-The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic
-prices and the demand for clean air', J. Environ. Economics &amp; Management,
-vol.5, 81-102, 1978.   Used in Belsley, Kuh &amp; Welsch, 'Regression diagnostics
-...', Wiley, 1980.   N.B. Various transformations are used in the table on
-pages 244-261 of the latter.
-
-The Boston house-price data has been used in many machine learning papers that address regression
-problems.   
-     
-.. topic:: References
-
-   - Belsley, Kuh &amp; Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of Collinearity', Wiley, 1980. 244-261.
-   - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
-
 </pre>
 </div>
 </div>
