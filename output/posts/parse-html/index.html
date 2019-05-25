@@ -19,6 +19,7 @@
 
   gtag('config', 'UA-134273341-1');
 </script><link rel="prev" href="../calculate-the-trace-of-a-matrix/" title="Calculate The Trace Of A Matrix" type="text/html">
+<link rel="next" href="../survival-analysis/" title="Survival Analysis" type="text/html">
 <meta property="og:site_name" content="Step-by-step Data Science">
 <meta property="og:title" content="Parse HTML">
 <meta property="og:url" content="/posts/parse-html/">
@@ -46,6 +47,9 @@ In [12]:
 ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-05-23T23:18:35-07:00">
+<meta property="article:tag" content="beautifulsoup">
+<meta property="article:tag" content="preprocessing">
+<meta property="article:tag" content="Text Processing">
 <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
@@ -181,7 +185,7 @@ In [12]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">html_simple</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is Title&lt;h1&gt;'</span>
@@ -198,7 +202,7 @@ In [12]:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -215,7 +219,7 @@ In [12]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_simple</span><span class="p">)</span>
@@ -228,10 +232,10 @@ In [12]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
 </pre></div>
 
     </div>
@@ -244,7 +248,49 @@ In [12]:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'This is Title'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -256,58 +302,6 @@ In [12]:
  'NO_PARSER_SPECIFIED_WARNING',
  'ROOT_TAG_NAME',
  'XML_FORMATTERS',
- '__bool__',
- '__call__',
- '__class__',
- '__contains__',
- '__copy__',
- '__delattr__',
- '__delitem__',
- '__dict__',
- '__dir__',
- '__doc__',
- '__eq__',
- '__format__',
- '__ge__',
- '__getattr__',
- '__getattribute__',
- '__getitem__',
- '__getstate__',
- '__gt__',
- '__hash__',
- '__init__',
- '__init_subclass__',
- '__iter__',
- '__le__',
- '__len__',
- '__lt__',
- '__module__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__setattr__',
- '__setitem__',
- '__sizeof__',
- '__str__',
- '__subclasshook__',
- '__unicode__',
- '__weakref__',
- '_all_strings',
- '_check_markup_is_url',
- '_feed',
- '_find_all',
- '_find_one',
- '_formatter_for_name',
- '_is_xml',
- '_lastRecursiveChild',
- '_last_descendant',
- '_linkage_fixer',
- '_most_recent_element',
- '_namespaces',
- '_popToTag',
- '_should_pretty_print',
  'append',
  'attrs',
  'builder',
@@ -429,39 +423,6 @@ In [12]:
  'text',
  'unwrap',
  'wrap']</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>'This is Title'</pre>
 </div>
 
 </div>
@@ -633,24 +594,19 @@ In [12]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/beautifulsoup/" rel="tag">beautifulsoup</a></li>
+            <li><a class="tag p-category" href="../../categories/preprocessing/" rel="tag">preprocessing</a></li>
+            <li><a class="tag p-category" href="../../categories/text-processing/" rel="tag">Text Processing</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../calculate-the-trace-of-a-matrix/" rel="prev" title="Calculate The Trace Of A Matrix">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../survival-analysis/" rel="next" title="Survival Analysis">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         

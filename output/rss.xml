@@ -1,5 +1,610 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 24 May 2019 06:29:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Parse HTML</title><link>/posts/parse-html/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 25 May 2019 06:52:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deleting Missing Values</title><link>/posts/deleting-missing-values/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/deleting-missing-values/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to delete missing values using &lt;code&gt;pandas&lt;/code&gt; in python.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/deleting-missing-values/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Create-DataFrame"&gt;Create DataFrame&lt;a class="anchor-link" href="/posts/deleting-missing-values/#Create-DataFrame"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'ABCD'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;-1.111902&lt;/td&gt;
+      &lt;td&gt;1.095301&lt;/td&gt;
+      &lt;td&gt;0.140572&lt;/td&gt;
+      &lt;td&gt;0.541279&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1.197394&lt;/td&gt;
+      &lt;td&gt;0.173438&lt;/td&gt;
+      &lt;td&gt;-0.369171&lt;/td&gt;
+      &lt;td&gt;0.861130&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1.472260&lt;/td&gt;
+      &lt;td&gt;2.063012&lt;/td&gt;
+      &lt;td&gt;-1.214586&lt;/td&gt;
+      &lt;td&gt;-1.709280&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;-2.990860&lt;/td&gt;
+      &lt;td&gt;-0.315950&lt;/td&gt;
+      &lt;td&gt;-0.521123&lt;/td&gt;
+      &lt;td&gt;-0.889226&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;-0.148088&lt;/td&gt;
+      &lt;td&gt;0.891630&lt;/td&gt;
+      &lt;td&gt;-0.422730&lt;/td&gt;
+      &lt;td&gt;-0.095359&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;0.297797&lt;/td&gt;
+      &lt;td&gt;-0.617062&lt;/td&gt;
+      &lt;td&gt;-0.144902&lt;/td&gt;
+      &lt;td&gt;-1.628348&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# create missing values&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;-1.111902&lt;/td&gt;
+      &lt;td&gt;1.095301&lt;/td&gt;
+      &lt;td&gt;0.140572&lt;/td&gt;
+      &lt;td&gt;0.541279&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1.197394&lt;/td&gt;
+      &lt;td&gt;0.173438&lt;/td&gt;
+      &lt;td&gt;-0.369171&lt;/td&gt;
+      &lt;td&gt;0.861130&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1.472260&lt;/td&gt;
+      &lt;td&gt;2.063012&lt;/td&gt;
+      &lt;td&gt;-1.214586&lt;/td&gt;
+      &lt;td&gt;-1.709280&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;-2.990860&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;-0.521123&lt;/td&gt;
+      &lt;td&gt;-0.889226&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;-0.148088&lt;/td&gt;
+      &lt;td&gt;0.891630&lt;/td&gt;
+      &lt;td&gt;-0.422730&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;0.297797&lt;/td&gt;
+      &lt;td&gt;-0.617062&lt;/td&gt;
+      &lt;td&gt;-0.144902&lt;/td&gt;
+      &lt;td&gt;-1.628348&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Deleting-Missing-Values"&gt;Deleting Missing Values&lt;a class="anchor-link" href="/posts/deleting-missing-values/#Deleting-Missing-Values"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# identify the index by fillna&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isna&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [21]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isna&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;0    False
+1    False
+2    False
+3     True
+4     True
+5    False
+dtype: bool&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [23]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Deleteging the rows containing NaN&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isna&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;:]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;-1.111902&lt;/td&gt;
+      &lt;td&gt;1.095301&lt;/td&gt;
+      &lt;td&gt;0.140572&lt;/td&gt;
+      &lt;td&gt;0.541279&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1.197394&lt;/td&gt;
+      &lt;td&gt;0.173438&lt;/td&gt;
+      &lt;td&gt;-0.369171&lt;/td&gt;
+      &lt;td&gt;0.861130&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1.472260&lt;/td&gt;
+      &lt;td&gt;2.063012&lt;/td&gt;
+      &lt;td&gt;-1.214586&lt;/td&gt;
+      &lt;td&gt;-1.709280&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;0.297797&lt;/td&gt;
+      &lt;td&gt;-0.617062&lt;/td&gt;
+      &lt;td&gt;-0.144902&lt;/td&gt;
+      &lt;td&gt;-1.628348&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Deleteging the ciks containing NaN&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isna&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;-1.111902&lt;/td&gt;
+      &lt;td&gt;0.140572&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1.197394&lt;/td&gt;
+      &lt;td&gt;-0.369171&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1.472260&lt;/td&gt;
+      &lt;td&gt;-1.214586&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;-2.990860&lt;/td&gt;
+      &lt;td&gt;-0.521123&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;-0.148088&lt;/td&gt;
+      &lt;td&gt;-0.422730&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;0.297797&lt;/td&gt;
+      &lt;td&gt;-0.144902&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/deleting-missing-values/</guid><pubDate>Sat, 25 May 2019 06:43:34 GMT</pubDate></item><item><title>Survival Analysis</title><link>/posts/survival-analysis/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/survival-analysis/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to do survival analysis. In this post, I use fellowship information in &lt;a href="https://200wordsaday.com/"&gt;200 Words a day&lt;/a&gt; to see what the survival curve looks like, which might be useful for users retention.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://200wordsaday.com/"&gt;200 Words a day&lt;/a&gt; is the platform where those who wants to build a writing habit make a post with more than 200 words. There is a function to show how many consecutive days each user has been making a post as X-day streak.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://towardsdatascience.com/survival-analysis-in-python-a-model-for-customer-churn-e737c5242822"&gt;Towards Data Science in Medium - Survival Analysis to Explore Customer Churn in Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/survival-analysis/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [129]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;lifelines&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KaplanMeierFitter&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/survival-analysis/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/survival-analysis/</guid><pubDate>Fri, 24 May 2019 06:30:44 GMT</pubDate></item><item><title>Parse HTML</title><link>/posts/parse-html/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/parse-html/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to parse the HTML data fetched by &lt;code&gt;BeautifulSoup&lt;/code&gt;&lt;/p&gt;
@@ -41,7 +646,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;html_simple&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;This is Title&amp;lt;h1&amp;gt;'&lt;/span&gt;
@@ -58,7 +663,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
 
 
 
@@ -75,7 +680,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [25]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;html_simple&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -88,218 +693,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;dir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;['ASCII_SPACES',
- 'DEFAULT_BUILDER_FEATURES',
- 'HTML_FORMATTERS',
- 'NO_PARSER_SPECIFIED_WARNING',
- 'ROOT_TAG_NAME',
- 'XML_FORMATTERS',
- '__bool__',
- '__call__',
- '__class__',
- '__contains__',
- '__copy__',
- '__delattr__',
- '__delitem__',
- '__dict__',
- '__dir__',
- '__doc__',
- '__eq__',
- '__format__',
- '__ge__',
- '__getattr__',
- '__getattribute__',
- '__getitem__',
- '__getstate__',
- '__gt__',
- '__hash__',
- '__init__',
- '__init_subclass__',
- '__iter__',
- '__le__',
- '__len__',
- '__lt__',
- '__module__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__setattr__',
- '__setitem__',
- '__sizeof__',
- '__str__',
- '__subclasshook__',
- '__unicode__',
- '__weakref__',
- '_all_strings',
- '_check_markup_is_url',
- '_feed',
- '_find_all',
- '_find_one',
- '_formatter_for_name',
- '_is_xml',
- '_lastRecursiveChild',
- '_last_descendant',
- '_linkage_fixer',
- '_most_recent_element',
- '_namespaces',
- '_popToTag',
- '_should_pretty_print',
- 'append',
- 'attrs',
- 'builder',
- 'can_be_empty_element',
- 'childGenerator',
- 'children',
- 'clear',
- 'contains_replacement_characters',
- 'contents',
- 'currentTag',
- 'current_data',
- 'declared_html_encoding',
- 'decode',
- 'decode_contents',
- 'decompose',
- 'descendants',
- 'encode',
- 'encode_contents',
- 'endData',
- 'extend',
- 'extract',
- 'fetchNextSiblings',
- 'fetchParents',
- 'fetchPrevious',
- 'fetchPreviousSiblings',
- 'find',
- 'findAll',
- 'findAllNext',
- 'findAllPrevious',
- 'findChild',
- 'findChildren',
- 'findNext',
- 'findNextSibling',
- 'findNextSiblings',
- 'findParent',
- 'findParents',
- 'findPrevious',
- 'findPreviousSibling',
- 'findPreviousSiblings',
- 'find_all',
- 'find_all_next',
- 'find_all_previous',
- 'find_next',
- 'find_next_sibling',
- 'find_next_siblings',
- 'find_parent',
- 'find_parents',
- 'find_previous',
- 'find_previous_sibling',
- 'find_previous_siblings',
- 'format_string',
- 'get',
- 'getText',
- 'get_attribute_list',
- 'get_text',
- 'handle_data',
- 'handle_endtag',
- 'handle_starttag',
- 'has_attr',
- 'has_key',
- 'hidden',
- 'index',
- 'insert',
- 'insert_after',
- 'insert_before',
- 'isSelfClosing',
- 'is_empty_element',
- 'is_xml',
- 'known_xml',
- 'markup',
- 'name',
- 'namespace',
- 'new_string',
- 'new_tag',
- 'next',
- 'nextGenerator',
- 'nextSibling',
- 'nextSiblingGenerator',
- 'next_element',
- 'next_elements',
- 'next_sibling',
- 'next_siblings',
- 'object_was_parsed',
- 'original_encoding',
- 'parent',
- 'parentGenerator',
- 'parents',
- 'parse_only',
- 'parserClass',
- 'parser_class',
- 'popTag',
- 'prefix',
- 'preserve_whitespace_tag_stack',
- 'preserve_whitespace_tags',
- 'prettify',
- 'previous',
- 'previousGenerator',
- 'previousSibling',
- 'previousSiblingGenerator',
- 'previous_element',
- 'previous_elements',
- 'previous_sibling',
- 'previous_siblings',
- 'pushTag',
- 'recursiveChildGenerator',
- 'renderContents',
- 'replaceWith',
- 'replaceWithChildren',
- 'replace_with',
- 'replace_with_children',
- 'reset',
- 'select',
- 'select_one',
- 'setup',
- 'string',
- 'strings',
- 'stripped_strings',
- 'tagStack',
- 'text',
- 'unwrap',
- 'wrap']&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [26]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
@@ -315,7 +709,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[26]:&lt;/div&gt;
 
 
 
@@ -330,176 +724,10 @@
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;&amp;lt;h1&amp;gt;This is Title&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Parsing-HTML-webpage"&gt;Parsing HTML webpage&lt;a class="anchor-link" href="/posts/parse-html/#Parsing-HTML-webpage"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;target_html&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'https://h1ros.github.io/'&lt;/span&gt;
-&lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;target_html&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'\n\n\n\nHome | Step-by-step Data Science\n\n\n\n\n\n\n\n\n\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\'js\', new Date());\n\n  gtag(\'config\', \'UA-134273341-1\');\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\n\n\nToggle navigation\n\n\n\n\n\nStep-by-step Data Science\n\n\n\n\n\n\nCoding Problems\n\n\nMachine Learning\n\n\nAll \n\n\nAll Post\n\n\nCategories and Tags\n\n\nHistory\n\n\n\n\nRSS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Step by Step \n\n\n\n\n\n\n\n\nAbout me\n\nI am Hiro, who is passionate about data science and deep learning. I have a few years of industry and research experinence in machine learning. By explaining things to learn, I would like to accerelate my learning process, but step by step.  \n\t\t\n\n\n\n\nExpected Readers\n\nI mainly write about it for myself but hope it would be benefitial for those who learn machine learning and coding. I am very happy to work and think together if anyone has a question. Feel free to leave a comment or use chat located at the right bottom.  \n\t\t\n\n\n\n\n\n\n\n\n\n\n\nCoding Problem\n"Compare yourself with who you were yesterday"\n\nEvery Sturday I join LeetCode Weekly Contest and improve coding skill by solving coding problems. I know there are a lot of better coders in the world but I compare myself who I was yesterday to move forward.\n\n\n\n\nDynamic Programming\n\n\nBinary Tree\n\nRecursive\n      \t\nLinked List\n      \t\nHeap\n      \n\n\n\n\n\n\nMachine Learning\n"The best way to learn is to explain"\n\nEven if we can use them, we do not fully understand the things. I explain the things I used for my daily job as well as the ones that I would like to learn. \n\n\nPreprocessing\n\n\nVisualization\n\n\nText\n\nAudio\n      \t\nImages\n    \t\nDeep Learning\n\n      \n\n\n\n\n\n\n\n\n\n\n            Contents © 2019         h1ros - Powered by         Nikola\n\n\n\n\n  ((window.gitter = {}).chat = {}).options = {\n    room: \'h1ros-github-io/ama\'\n  };\n\n    moment.locale("en");\n    fancydates(1, "YYYY-MM-DD");\n    \n    baguetteBox.run(\'div#content\', {\n        ignoreClass: \'islink\',\n        captions: function(element) {\n            return element.getElementsByTagName(\'img\')[0].alt;\n    }});\n    window.twttr = (function(d, s, id) {\n  var js, fjs = d.getElementsByTagName(s)[0],\n    t = window.twttr || {};\n  if (d.getElementById(id)) return t;\n  js = d.createElement(s);\n  js.id = id;\n  js.src = "https://platform.twitter.com/widgets.js";\n  fjs.parentNode.insertBefore(js, fjs);\n  t._e = [];\n  t.ready = function(f) {\n    t._e.push(f);\n  };\n  return t;\n}(document, "script", "twitter-wjs"));\n\n\n'&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3&gt;Collect all href in tag &lt;a&gt;&lt;/a&gt;&lt;/h3&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;all_urls&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find_all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;all_urls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-    
-&lt;span class="n"&gt;all_urls&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;['#content',
- '.',
- 'categories/coding',
- 'categories/machine-learning',
- '#',
- 'posts/',
- 'categories/',
- 'archive.html',
- 'rss.xml',
- '.',
- '.',
- 'categories/coding/',
- '.',
- 'categories/coding/',
- 'categories/dynamic-programming',
- 'categories/binary-tree',
- 'categories/machine-learning/',
- '.',
- 'categories/machine-learning/',
- 'categories/peprocessing',
- 'categories/visualization',
- 'categories/text',
- 'mailto:data.h1ros@gmail.com',
- 'https://getnikola.com']&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/parse-html/</guid><pubDate>Fri, 24 May 2019 06:18:35 GMT</pubDate></item><item><title>Calculate The Trace Of A Matrix</title><link>/posts/calculate-the-trace-of-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="/posts/parse-html/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>beautifulsoup</category><category>preprocessing</category><category>Text Processing</category><guid>/posts/parse-html/</guid><pubDate>Fri, 24 May 2019 06:18:35 GMT</pubDate></item><item><title>Calculate The Trace Of A Matrix</title><link>/posts/calculate-the-trace-of-a-matrix/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/calculate-the-trace-of-a-matrix/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to show how to calculate the trace of a matrix using numpy i.e., $tr(A)$&lt;/p&gt;
@@ -1587,314 +1815,4 @@ $$&lt;p&gt;Reference:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item><item><title>Histograms In Pandas</title><link>/posts/histograms-in-pandas/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/histograms-in-pandas/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to create histogram plot using &lt;code&gt;pandas&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/histograms-in-pandas/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-data"&gt;Create data&lt;a class="anchor-link" href="/posts/histograms-in-pandas/#Create-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;0&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;0.984265&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;0.862053&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;0.360947&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;0.146953&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;0.439591&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-Histogram"&gt;Create Histogram&lt;a class="anchor-link" href="/posts/histograms-in-pandas/#Create-Histogram"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'hist'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,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"&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/histograms-in-pandas/</guid><pubDate>Wed, 15 May 2019 06:55:14 GMT</pubDate></item><item><title>Linear Regression</title><link>/posts/linear-regression/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/linear-regression/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce linear regression using dummy data.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://towardsdatascience.com/linear-regression-using-python-ce21aa90ade6"&gt;Towards Data Science - Linear Regression using Python&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://scikit-learn.org/stable/modules/cross_validation.html"&gt;scikit-learn documentation - cross validation&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/linear-regression/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [37]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.model_selection&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cross_val_score&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-dummy-linear-data"&gt;Create dummy linear data&lt;a class="anchor-link" href="/posts/linear-regression/#Create-dummy-linear-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's create 1-dimensional $\mathbf{y}$ data which has the linear relationship based on the following equations:&lt;/p&gt;
-\begin{equation*}
-\mathbf{y} = \mathbf{A}\mathbf{x} + \mathbf{b} + \mathbf{e}
-\end{equation*}&lt;p&gt;Here $\mathbf{x}$ is 1 dimension data, $\mathbf{b}$ is constant, $\mathbf{e}$ is white noise.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [56]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
-&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
-&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
-&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [61]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'observed y'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'r'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'true y'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,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"&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Fitting"&gt;Fitting&lt;a class="anchor-link" href="/posts/linear-regression/#Fitting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now we can see how the coefficient A and the intercept b are close to the ones I used to create this dataset.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [73]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;reg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;reg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [77]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'Coefficients A: &lt;/span&gt;&lt;span class="si"&gt;{reg.coef_[0]:.2}&lt;/span&gt;&lt;span class="s1"&gt;, Intercept b: &lt;/span&gt;&lt;span class="si"&gt;{reg.intercept_:.2}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Coefficients A: 9.8, Intercept b: 4.0
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Linear Regression</category><category>Scikit-learn</category><guid>/posts/linear-regression/</guid><pubDate>Tue, 14 May 2019 05:25:33 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Basic</category><category>Boosting</category><category>Tree</category><guid>/posts/random-forest-classfier/</guid><pubDate>Thu, 16 May 2019 06:42:05 GMT</pubDate></item></channel></rss>
