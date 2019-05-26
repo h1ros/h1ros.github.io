@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -190,12 +190,16 @@
   <lastmod>2019-05-25T06:52:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/25/</loc>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -294,6 +298,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/lifelines/</loc>
+  <lastmod>2019-05-26T06:54:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/linear-algebra/</loc>
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
@@ -311,7 +319,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -356,6 +364,10 @@
  <url>
   <loc>/categories/stemming/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/survival-analysis/</loc>
+  <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/text-processing/</loc>

@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>/categories/200wad.xml</loc>
-  <lastmod>2019-05-19T05:27:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/array.xml</loc>
@@ -98,6 +98,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/lifelines.xml</loc>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/linear-algebra.xml</loc>
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
@@ -111,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -158,6 +162,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/survival-analysis.xml</loc>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/text-processing.xml</loc>
   <lastmod>2019-05-25T06:52:00Z</lastmod>
  </sitemap>
@@ -183,10 +191,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-26T06:59:00Z</lastmod>
  </sitemap>
 </sitemapindex>
