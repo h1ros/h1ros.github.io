@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-26T06:59:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -194,12 +194,16 @@
   <lastmod>2019-05-26T06:59:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/26/</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-26T06:59:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-26T06:54:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -282,6 +286,10 @@
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/feature-engineering/</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/gaussian/</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </url>
@@ -319,7 +327,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-26T06:54:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -374,6 +382,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/tf-idf/</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/trace/</loc>
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
@@ -399,7 +411,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -519,7 +531,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -584,6 +596,10 @@
  <url>
   <loc>/posts/survival-analysis/</loc>
   <lastmod>2019-05-25T06:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/term-frequency-inverse-document-frequency/</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/transpose-a-matrix-or-tensor/</loc>

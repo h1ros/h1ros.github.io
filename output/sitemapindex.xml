@@ -82,6 +82,10 @@
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/feature-engineering.xml</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/gaussian.xml</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
@@ -115,7 +119,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-26T06:59:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -167,7 +171,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
-  <lastmod>2019-05-25T06:52:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/tf-idf.xml</loc>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/trace.xml</loc>
@@ -191,10 +199,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-26T06:59:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-26T06:59:00Z</lastmod>
+  <lastmod>2019-05-27T06:04:00Z</lastmod>
  </sitemap>
 </sitemapindex>
