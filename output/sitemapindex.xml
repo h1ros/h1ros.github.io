@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/bag-of-words.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/basic.xml</loc>
@@ -87,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/feature-engineering.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/gaussian.xml</loc>
@@ -122,8 +122,12 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/machin-learning.xml</loc>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -158,6 +162,10 @@
   <lastmod>2019-05-25T06:52:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/punctuation.xml</loc>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/python.xml</loc>
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
@@ -175,7 +183,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tf-idf.xml</loc>
@@ -203,10 +211,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
