@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:51:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -198,12 +198,16 @@
   <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/27/</loc>
+  <lastmod>2019-05-28T06:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:51:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -212,6 +216,10 @@
  <url>
   <loc>/categories/array/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/bag-of-words/</loc>
+  <lastmod>2019-05-28T06:51:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/basic/</loc>
@@ -327,7 +335,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -411,7 +419,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -424,6 +432,10 @@
  <url>
   <loc>/posts/adding-or-substracting-time/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/bag-of-words/</loc>
+  <lastmod>2019-05-28T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/calculate-the-determinant-of-a-matrix/</loc>
@@ -531,7 +543,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-27T06:04:00Z</lastmod>
+  <lastmod>2019-05-28T06:51:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
