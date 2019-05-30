@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-29T23:13:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -202,20 +202,20 @@
   <lastmod>2019-05-28T06:51:00Z</lastmod>
  </url>
  <url>
-  <loc>/2019/05/28/</loc>
-  <lastmod>2019-05-28T07:22:00Z</lastmod>
- </url>
- <url>
   <loc>/2019/05/29/</loc>
   <lastmod>2019-05-29T23:13:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/30/</loc>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-29T23:13:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-28T07:22:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -347,7 +347,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-28T06:52:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -410,6 +410,10 @@
   <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/tokenize/</loc>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/trace/</loc>
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </url>
@@ -435,7 +439,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-28T07:22:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -559,7 +563,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-28T07:22:00Z</lastmod>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -632,6 +636,10 @@
  <url>
   <loc>/posts/term-frequency-inverse-document-frequency/</loc>
   <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/tokenize-text/</loc>
+  <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/transpose-a-matrix-or-tensor/</loc>
