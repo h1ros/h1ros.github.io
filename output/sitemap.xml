@@ -103,7 +103,7 @@
  </url>
  <url>
   <loc>/2019/05/</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/05/01/</loc>
@@ -210,8 +210,12 @@
   <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/05/31/</loc>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -439,7 +443,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -522,6 +526,10 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/convert-strings-to-dates/</loc>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/create-a-sparse-matrix/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -563,7 +571,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-05-31T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
