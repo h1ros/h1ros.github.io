@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/between.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/binary-tree.xml</loc>
@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dataframe.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/date-handling.xml</loc>
@@ -63,7 +63,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/date.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dates.xml</loc>
@@ -143,7 +143,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -167,7 +167,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pandas.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pca.xml</loc>
@@ -231,10 +231,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-02T11:38:00Z</lastmod>
+  <lastmod>2019-06-02T11:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>
