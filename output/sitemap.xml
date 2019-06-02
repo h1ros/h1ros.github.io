@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>/2019/</loc>
-  <lastmod>2019-05-16T06:32:00Z</lastmod>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/02/</loc>
@@ -214,12 +214,20 @@
   <lastmod>2019-05-31T22:19:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/</loc>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/06/01/</loc>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-05-31T22:19:00Z</lastmod>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -240,6 +248,10 @@
  <url>
   <loc>/categories/beautifulsoup/</loc>
   <lastmod>2019-05-25T06:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/between/</loc>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/binary-tree/</loc>
@@ -270,8 +282,20 @@
   <lastmod>2019-05-22T05:22:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/dataframe/</loc>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/date-handling/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/date/</loc>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/dates/</loc>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/decision-tree/</loc>
@@ -351,7 +375,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-05-30T12:50:00Z</lastmod>
+  <lastmod>2019-06-02T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -443,7 +467,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-05-31T22:15:00Z</lastmod>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -571,7 +595,7 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-05-31T22:15:00Z</lastmod>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -624,6 +648,10 @@
  <url>
   <loc>/posts/reshape-an-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/select-date-and-time-ranges/</loc>
+  <lastmod>2019-06-02T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/selecting-elements-in-a-1d-array/</loc>
