@@ -87,7 +87,651 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="f1-score/" class="u-url">F1 Score</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="variance-thresholding-for-feature-selection/" class="u-url">Variance Thresholding For Feature Selection</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="variance-thresholding-for-feature-selection/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-06-03T15:16:12-07:00" itemprop="datePublished" title="Jun 3, 2019, 3:16:12 PM">Jun 3, 2019, 3:16:12 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="variance-thresholding-for-feature-selection/#disqus_thread" data-disqus-identifier="cache/posts/variance-thresholding-for-feature-selection.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="variance-thresholding-for-feature-selection/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to conduct feature selection by <strong>variance thresholding</strong></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/feature_selection.html">scikit-learn - Feature Selection</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="variance-thresholding-for-feature-selection/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="k">import</span> <span class="n">VarianceThreshold</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_boston</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Load-Boston-housing-data">Load Boston housing data<a class="anchor-link" href="variance-thresholding-for-feature-selection/#Load-Boston-housing-data">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
+<span class="n">df_boston</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">df_boston</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>CRIM</th>
+      <th>ZN</th>
+      <th>INDUS</th>
+      <th>CHAS</th>
+      <th>NOX</th>
+      <th>RM</th>
+      <th>AGE</th>
+      <th>DIS</th>
+      <th>RAD</th>
+      <th>TAX</th>
+      <th>PTRATIO</th>
+      <th>B</th>
+      <th>LSTAT</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0.0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1.0</td>
+      <td>296.0</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0.0</td>
+      <td>0.469</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>396.90</td>
+      <td>9.14</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0.0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0.0</td>
+      <td>0.458</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0.0</td>
+      <td>0.458</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>396.90</td>
+      <td>5.33</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Add-low-variance-columns">Add low variance columns<a class="anchor-link" href="variance-thresholding-for-feature-selection/#Add-low-variance-columns">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">df_boston</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.08309365785384086</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_boston</span><span class="p">[</span><span class="s1">'low_variance'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">df_boston</span><span class="p">[</span><span class="s1">'low_variance2'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">df_boston</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="n">df_boston</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>CRIM</th>
+      <th>ZN</th>
+      <th>INDUS</th>
+      <th>CHAS</th>
+      <th>NOX</th>
+      <th>RM</th>
+      <th>AGE</th>
+      <th>DIS</th>
+      <th>RAD</th>
+      <th>TAX</th>
+      <th>PTRATIO</th>
+      <th>B</th>
+      <th>LSTAT</th>
+      <th>low_variance</th>
+      <th>low_variance2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0.0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1.0</td>
+      <td>296.0</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0.0</td>
+      <td>0.469</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>396.90</td>
+      <td>9.14</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0.0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0.0</td>
+      <td>0.458</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0.0</td>
+      <td>0.458</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>396.90</td>
+      <td>5.33</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variance-Thresholding">Variance Thresholding<a class="anchor-link" href="variance-thresholding-for-feature-selection/#Variance-Thresholding">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">variance_threshold</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">selection</span> <span class="o">=</span> <span class="n">VarianceThreshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="n">variance_threshold</span><span class="p">)</span>
+<span class="n">selection</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_boston</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>VarianceThreshold(threshold=0.1)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">variances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df_boston</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">logy</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">variance_threshold</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'dotted'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'r'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_boston_selected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_boston</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_boston</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">selection</span><span class="o">.</span><span class="n">get_support</span><span class="p">()])</span>
+<span class="n">df_boston_selected</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>CRIM</th>
+      <th>ZN</th>
+      <th>INDUS</th>
+      <th>RM</th>
+      <th>AGE</th>
+      <th>DIS</th>
+      <th>RAD</th>
+      <th>TAX</th>
+      <th>PTRATIO</th>
+      <th>B</th>
+      <th>LSTAT</th>
+      <th>low_variance2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1.0</td>
+      <td>296.0</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>396.90</td>
+      <td>9.14</td>
+      <td>1.0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+      <td>1.0</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3.0</td>
+      <td>222.0</td>
+      <td>18.7</td>
+      <td>396.90</td>
+      <td>5.33</td>
+      <td>1.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="f1-score/" class="u-url">F1 Score</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -2668,164 +3312,6 @@ dtype: bool</pre>
 </div>
 </div>
 
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="parse-html/" class="u-url">Parse HTML</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="parse-html/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-23T23:18:35-07:00" itemprop="datePublished" title="May 23, 2019, 11:18:35 PM">May 23, 2019, 11:18:35 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="parse-html/#disqus_thread" data-disqus-identifier="cache/posts/parse-html.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="parse-html/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to parse the HTML data fetched by <code>BeautifulSoup</code></p>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/">Using BeautifulSoup to parse HTML and extract press briefings URLs</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Library">Library<a class="anchor-link" href="parse-html/#Library">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simple-HTML-from-string">Simple HTML from string<a class="anchor-link" href="parse-html/#Simple-HTML-from-string">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">html_simple</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is Title&lt;h1&gt;'</span>
-<span class="n">html_simple</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>'&lt;h1&gt;This is Title&lt;h1&gt;'</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_simple</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>'This is Title'</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="parse-html/">Read more… </a></p>
-</div>
-</div>
 </div>
 </div>
     </div>

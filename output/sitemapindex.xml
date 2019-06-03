@@ -114,6 +114,10 @@
   <lastmod>2019-05-28T07:22:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/feature-selection.xml</loc>
+  <lastmod>2019-06-03T22:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/gaussian.xml</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
@@ -151,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-03T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -226,6 +230,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/variance-thresholding.xml</loc>
+  <lastmod>2019-06-03T22:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/vector.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -239,10 +247,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-03T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-03T22:35:00Z</lastmod>
  </sitemap>
 </sitemapindex>
