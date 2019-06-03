@@ -215,19 +215,19 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-02T11:34:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
-  <loc>/2019/06/01/</loc>
-  <lastmod>2019-06-02T11:34:00Z</lastmod>
+  <loc>/2019/06/02/</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-02T11:42:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-02T11:37:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -326,8 +326,16 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/evaluation/</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/exploration/</loc>
   <lastmod>2019-05-19T05:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/f1/</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/feature-engineering/</loc>
@@ -371,11 +379,15 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-05-20T05:58:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-06-02T11:37:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-2.html</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -467,7 +479,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-02T11:34:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -574,6 +586,10 @@
   <lastmod>2019-05-20T08:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/f1-score/</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/histograms-in-pandas/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -595,7 +611,11 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-06-02T11:34:00Z</lastmod>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/index-5.html</loc>
+  <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
