@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -226,12 +226,16 @@
   <lastmod>2019-06-03T22:35:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/04/</loc>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -395,7 +399,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -404,6 +408,10 @@
  <url>
   <loc>/categories/matrix/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/model-evaluation/</loc>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/nlp/</loc>
@@ -424,6 +432,10 @@
  <url>
   <loc>/categories/pca/</loc>
   <lastmod>2019-05-20T08:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/precision/</loc>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/preprocessing/</loc>
@@ -491,7 +503,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -627,7 +639,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-03T22:35:00Z</lastmod>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -664,6 +676,10 @@
  <url>
   <loc>/posts/parse-html/</loc>
   <lastmod>2019-05-24T06:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/precision/</loc>
+  <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/random-forest-classfier/</loc>
