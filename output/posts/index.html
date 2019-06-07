@@ -156,14 +156,14 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d_house</span><span class="o">=</span> <span class="p">[{</span><span class="s1">'area'</span><span class="p">:</span> <span class="mf">300.0</span><span class="p">,</span> <span class="s1">'price'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">'location'</span><span class="p">:</span> <span class="s1">'NY'</span><span class="p">},</span>
           <span class="p">{</span><span class="s1">'area'</span><span class="p">:</span> <span class="mf">600.0</span><span class="p">,</span> <span class="s1">'price'</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="s1">'location'</span><span class="p">:</span> <span class="s1">'CA'</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">'area'</span><span class="p">:</span> <span class="mf">500.0</span><span class="p">,</span> <span class="s1">'price'</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span> <span class="s1">'location'</span><span class="p">:</span> <span class="s1">'CH'</span><span class="p">}</span>
+          <span class="p">{</span><span class="s1">'price'</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span> <span class="s1">'location'</span><span class="p">:</span> <span class="s1">'CH'</span><span class="p">}</span>
          <span class="p">]</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">d_house</span><span class="p">)</span>
+<span class="n">d_house</span>
 </pre></div>
 
     </div>
@@ -176,7 +176,42 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{'area': 300.0, 'price': 1000, 'location': 'NY'},
+ {'area': 600.0, 'price': 2000, 'location': 'CA'},
+ {'price': 1500, 'location': 'CH'}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">d_house</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -217,7 +252,7 @@
     </tr>
 <tr>
 <th>2</th>
-      <td>500.0</td>
+      <td>NaN</td>
       <td>CH</td>
       <td>1500</td>
     </tr>
@@ -244,7 +279,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dv</span> <span class="o">=</span> <span class="n">DictVectorizer</span><span class="p">()</span>
@@ -261,7 +296,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -279,7 +314,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">d_house</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">dv</span><span class="o">.</span><span class="n">feature_names_</span><span class="p">)</span>
@@ -295,7 +330,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -342,7 +377,7 @@
     </tr>
 <tr>
 <th>2</th>
-      <td>500.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>

@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/convert.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dataframe.xml</loc>
@@ -87,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dictvectorizer.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dimensionality-reduction.xml</loc>
@@ -167,7 +167,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -267,10 +267,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-07T13:25:00Z</lastmod>
  </sitemap>
 </sitemapindex>
