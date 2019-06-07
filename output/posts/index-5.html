@@ -88,7 +88,360 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="survival-analysis/" class="u-url">Survival Analysis</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="term-frequency-inverse-document-frequency/" class="u-url">Term Frequency Inverse Document Frequency</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="term-frequency-inverse-document-frequency/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-26T22:15:17-07:00" itemprop="datePublished" title="May 26, 2019, 10:15:17 PM">May 26, 2019, 10:15:17 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="term-frequency-inverse-document-frequency/#disqus_thread" data-disqus-identifier="cache/posts/term-frequency-inverse-document-frequency.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="term-frequency-inverse-document-frequency/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce <strong>term frequency-inverse document frequency</strong> as known as <strong>TF-IDF</strong>, which indicates the importance of the words in a document considering the frequency of them across multiple documents and used for feature creation.</p>
+<p><strong>Term Frequency (TF)</strong></p>
+<p>Term Frequency can be computed as the number of occurrence of the word $n_{word}$ divided by the total number of words in a document $N_{word}$.</p>
+\begin{equation*}
+TF = \frac{n_{word}}{N_{word}}
+\end{equation*}<p><strong>Document Frequency (DF)</strong></p>
+<p>Document Frequency can be computed as the number of documents containing the word $n_{doc}$ divided by the number of documents $N_{doc}$.</p>
+\begin{equation*}
+DF = \frac{n_{doc}}{N_{doc}}
+\end{equation*}<p><strong>Inverse Document Frequency (IDF)</strong></p>
+<p>The inverse document frequency is the inverse of DF.</p>
+\begin{equation*}
+IDF = \frac{N_{doc}}{n_{doc}}
+\end{equation*}<p>Practically, to avoid the explosion of IDF and dividing by zero, IDF can be computed by log format with adding 1 to denominator as below.</p>
+\begin{equation*}
+IDF = log(\frac{N_{doc}}{n_{doc}+1})
+\end{equation*}<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Wikipedia - tf-idf</a></li>
+<li><a href="https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089">Towards Data Science - TF-IDF from scratch in python on real world dataset.</a></li>
+<li><a href="https://stevenloria.com/tf-idf/">Stevenloria.com - Tutorial: Finding Important Words in Text Using TF-IDF</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="term-frequency-inverse-document-frequency/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfVectorizer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-document">Create a document<a class="anchor-link" href="term-frequency-inverse-document-frequency/#Create-a-document">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'this is a sample.'</span><span class="p">,</span> 
+            <span class="s1">'this is another example. "this" also appears in the second example.'</span><span class="p">]</span>
+
+<span class="n">documents</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['this is a sample.',
+ 'this is another example. "this" also appears in the second example.']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Apply-TF-IDF-vectorizer">Apply TF-IDF vectorizer<a class="anchor-link" href="term-frequency-inverse-document-frequency/#Apply-TF-IDF-vectorizer">¶</a>
+</h2>
+<p>Now applying TF-IDF to each sentence, we will obtain the feature vector for each document accordingly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+<span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">df_tfidf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.501549</td>
+      <td>0.704909</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.501549</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.56498</td>
+      <td>0.28249</td>
+      <td>0.200994</td>
+      <td>0.000000</td>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.401988</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The highest TF-IDF for each document</span>
+<span class="n">df_tfidf</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0     sample
+1    example
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TF-IDF is zero if the word does not appear in a document</span>
+<span class="n">df_tfidf</span><span class="o">==</span><span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="survival-analysis/" class="u-url">Survival Analysis</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
