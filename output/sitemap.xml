@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-08T06:56:00Z</lastmod>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -238,12 +238,16 @@
   <lastmod>2019-06-07T13:23:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/08/</loc>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-07T13:30:00Z</lastmod>
+  <lastmod>2019-06-08T08:15:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-08T06:56:00Z</lastmod>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -419,11 +423,15 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
   <lastmod>2019-05-22T05:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/matplotlib/</loc>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/matrix/</loc>
@@ -518,12 +526,16 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/xkcd/</loc>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/index.src.html</loc>
   <lastmod>2019-06-08T07:39:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-08T06:56:00Z</lastmod>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -667,7 +679,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-07T13:23:00Z</lastmod>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -704,6 +716,10 @@
  <url>
   <loc>/posts/parse-html/</loc>
   <lastmod>2019-05-24T06:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/plot-in-a-xkcd-style/</loc>
+  <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/precision/</loc>
