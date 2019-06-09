@@ -19,11 +19,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/basic.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/bayesian.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/beautifulsoup.xml</loc>
@@ -155,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/linear-regression.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/linked-list.xml</loc>
@@ -171,7 +171,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/probabilistic.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/punctuation.xml</loc>
@@ -227,11 +227,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pymc.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pymc3.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/python.xml</loc>
@@ -239,7 +239,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -291,10 +291,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-09T14:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>
