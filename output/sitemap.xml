@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-08T08:08:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -242,12 +242,16 @@
   <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/09/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-08T08:19:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-08T08:08:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -264,6 +268,10 @@
  <url>
   <loc>/categories/basic/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/bayesian/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/beautifulsoup/</loc>
@@ -419,11 +427,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-08T08:08:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -470,8 +478,20 @@
   <lastmod>2019-05-20T08:07:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/probabilistic/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/punctuation/</loc>
   <lastmod>2019-05-28T07:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/pymc/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/pymc3/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/python/</loc>
@@ -535,7 +555,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-08T08:08:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -556,6 +576,10 @@
  <url>
   <loc>/posts/bag-of-words/</loc>
   <lastmod>2019-05-28T06:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/bayesian-regression-using-pymc3/</loc>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/calculate-the-determinant-of-a-matrix/</loc>
@@ -675,11 +699,11 @@
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-08T08:08:00Z</lastmod>
+  <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
