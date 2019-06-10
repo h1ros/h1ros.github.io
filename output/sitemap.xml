@@ -251,7 +251,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-10T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -571,7 +571,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-10T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -752,6 +752,10 @@
  <url>
   <loc>/posts/neural-network-classification/</loc>
   <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/neural-network-for-classification/</loc>
+  <lastmod>2019-06-10T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/ordinal-encoding-using-scikit-learn/</loc>

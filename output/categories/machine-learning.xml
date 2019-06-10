@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 10 Jun 2019 14:16:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Neural Network Classification</title><link>/posts/neural-network-classification/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Mon, 10 Jun 2019 14:20:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Neural Network for Classification</title><link>/posts/neural-network-for-classification/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/neural-network-classification/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce (shallow) neural network for classification using &lt;code&gt;scikit-learn&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/neural-network-for-classification/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce (shallow) neural network for classification using &lt;code&gt;scikit-learn&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/neural_networks_supervised.html"&gt;scikit-learn documentation - Neural network models (supervised)&lt;/a&gt;&lt;/li&gt;
@@ -15,7 +15,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/neural-network-classification/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/neural-network-for-classification/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -41,7 +41,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Load-Breast-Cancer-dataset"&gt;Load Breast Cancer dataset&lt;a class="anchor-link" href="/posts/neural-network-classification/#Load-Breast-Cancer-dataset"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Load-Breast-Cancer-dataset"&gt;Load Breast Cancer dataset&lt;a class="anchor-link" href="/posts/neural-network-for-classification/#Load-Breast-Cancer-dataset"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -249,7 +249,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-Neural-Network"&gt;Create Neural Network&lt;a class="anchor-link" href="/posts/neural-network-classification/#Create-Neural-Network"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-Neural-Network"&gt;Create Neural Network&lt;a class="anchor-link" href="/posts/neural-network-for-classification/#Create-Neural-Network"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -304,7 +304,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>MLP</category><category>Multi-layer Perceptron</category><category>Neural Network</category><guid>/posts/neural-network-classification/</guid><pubDate>Mon, 10 Jun 2019 13:42:28 GMT</pubDate></item><item><title>Bayesian Regression using pymc3</title><link>/posts/bayesian-regression-using-pymc3/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>MLP</category><category>Multi-layer Perceptron</category><category>Neural Network</category><guid>/posts/neural-network-for-classification/</guid><pubDate>Mon, 10 Jun 2019 13:42:28 GMT</pubDate></item><item><title>Bayesian Regression using pymc3</title><link>/posts/bayesian-regression-using-pymc3/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/bayesian-regression-using-pymc3/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to use &lt;code&gt;pymc3&lt;/code&gt; for Bayesian regression by showing the simplest single variable example.&lt;/p&gt;
