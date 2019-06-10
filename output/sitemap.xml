@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -246,12 +246,16 @@
   <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/10/</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-09T14:34:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -431,7 +435,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -446,8 +450,20 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/mlp/</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/model-evaluation/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/multi-layer-perceptron/</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/neural-network/</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/nlp/</loc>
@@ -555,7 +571,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -703,7 +719,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-09T14:03:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -732,6 +748,10 @@
  <url>
   <loc>/posts/minimalism-visualization-by-matplotlib-bar-chart/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/neural-network-classification/</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/ordinal-encoding-using-scikit-learn/</loc>

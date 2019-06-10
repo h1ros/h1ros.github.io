@@ -171,7 +171,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-09T14:34:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -186,8 +186,20 @@
   <lastmod>2019-05-23T07:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/mlp.xml</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/model-evaluation.xml</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/multi-layer-perceptron.xml</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/neural-network.xml</loc>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/nlp.xml</loc>
@@ -291,10 +303,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-09T14:34:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-09T14:34:00Z</lastmod>
+  <lastmod>2019-06-10T14:16:00Z</lastmod>
  </sitemap>
 </sitemapindex>
