@@ -255,11 +255,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-11T15:37:00Z</lastmod>
+  <lastmod>2019-06-11T15:40:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-11T15:37:00Z</lastmod>
+  <lastmod>2019-06-11T15:40:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -340,6 +340,10 @@
  <url>
   <loc>/categories/decision-tree/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/deep-learning/</loc>
+  <lastmod>2019-06-11T15:40:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/descriptive-analysis/</loc>
