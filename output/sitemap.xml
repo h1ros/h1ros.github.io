@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -250,12 +250,16 @@
   <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/11/</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-10T14:20:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -435,7 +439,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -472,6 +476,10 @@
  <url>
   <loc>/categories/nltk/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/operations/</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/pandas-styling/</loc>
@@ -512,6 +520,10 @@
  <url>
   <loc>/categories/python/</loc>
   <lastmod>2019-05-17T23:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/pytorch/</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/scikit-learn/</loc>
@@ -567,11 +579,11 @@
  </url>
  <url>
   <loc>/index.src.html</loc>
-  <lastmod>2019-06-08T07:39:00Z</lastmod>
+  <lastmod>2019-06-11T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-10T14:20:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -719,7 +731,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -750,10 +762,6 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
-  <loc>/posts/neural-network-classification/</loc>
-  <lastmod>2019-06-10T14:16:00Z</lastmod>
- </url>
- <url>
   <loc>/posts/neural-network-for-classification/</loc>
   <lastmod>2019-06-10T14:20:00Z</lastmod>
  </url>
@@ -772,6 +780,10 @@
  <url>
   <loc>/posts/precision/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/pytorch-basic-operations/</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/random-forest-classfier/</loc>

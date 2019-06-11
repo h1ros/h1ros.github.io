@@ -171,7 +171,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-10T14:20:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -208,6 +208,10 @@
  <sitemap>
   <loc>/categories/nltk.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/operations.xml</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pandas-styling.xml</loc>
@@ -248,6 +252,10 @@
  <sitemap>
   <loc>/categories/python.xml</loc>
   <lastmod>2019-05-19T05:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/pytorch.xml</loc>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
@@ -303,10 +311,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-10T14:20:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-10T14:20:00Z</lastmod>
+  <lastmod>2019-06-11T15:37:00Z</lastmod>
  </sitemap>
 </sitemapindex>
