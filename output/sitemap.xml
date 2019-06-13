@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-11T15:37:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -254,12 +254,16 @@
   <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/13/</loc>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-11T15:40:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-11T15:40:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -410,6 +414,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/lasso/</loc>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/lifelines/</loc>
   <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
@@ -443,7 +451,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-11T15:37:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -530,6 +538,14 @@
   <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/regression/</loc>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/regularization/</loc>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/scikit-learn/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -587,7 +603,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-12T01:21:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -735,7 +751,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-11T15:37:00Z</lastmod>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -748,6 +764,10 @@
  <url>
   <loc>/posts/k-means-clustering/</loc>
   <lastmod>2019-05-19T06:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/lasso-regression/</loc>
+  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/linear-regression/</loc>
