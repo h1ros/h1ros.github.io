@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -258,12 +258,16 @@
   <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/14/</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -406,6 +410,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/image/</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/jupyter-notebook/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -443,7 +451,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-06-03T07:43:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
@@ -451,7 +459,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-3.html</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -554,6 +566,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/style-transfer/</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/survival-analysis/</loc>
   <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
@@ -603,7 +619,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -751,7 +767,11 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/index-6.html</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -840,6 +860,10 @@
  <url>
   <loc>/posts/stemming-words-and-sentences/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/style-transfer-using-pytorch-part-1/</loc>
+  <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/survival-analysis/</loc>
