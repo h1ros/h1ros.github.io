@@ -254,7 +254,8 @@ $$MSE = \frac{1}{n} \sum^{n}_{i=1} (Y_{content} - Y_{output})^2$$
 <p>To compute style loss, we need to define the function to compute a gram matrix for style feature.</p>
 $$
 \mathbf{G} = \mathbf{F}^\top \mathbf{F} 
-$$
+$$<p>After converting features into gram matrix for style and output images, MSE is computed based on them.</p>
+
 </div>
 </div>
 </div>
@@ -267,7 +268,7 @@ $$
     <span class="c1"># Get the size of tensor</span>
     <span class="c1"># a: batch size</span>
     <span class="c1"># b: number of feature maps</span>
-    <span class="c1"># c, d: </span>
+    <span class="c1"># c, d: the dimension of a feature map</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> 
     
     <span class="c1"># Reshape the feature </span>

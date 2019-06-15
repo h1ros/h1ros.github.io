@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about PyTorch)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/pytorch.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 15 Jun 2019 03:21:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Style Transfer using Pytorch (Part 2)</title><link>/posts/style-transfer-using-pytorch-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about PyTorch)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/pytorch.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 15 Jun 2019 03:23:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Style Transfer using Pytorch (Part 2)</title><link>/posts/style-transfer-using-pytorch-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/style-transfer-using-pytorch-part-2/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to explain the concept of style transfer step-by-step. Part 2 is about loss functions.&lt;/p&gt;
@@ -122,7 +122,8 @@ $$MSE = \frac{1}{n} \sum^{n}_{i=1} (Y_{content} - Y_{output})^2$$
 &lt;h3 id="Style-loss"&gt;Style loss&lt;a class="anchor-link" href="/posts/style-transfer-using-pytorch-part-2/#Style-loss"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To compute style loss, we need to define the function to compute a gram matrix for style feature.&lt;/p&gt;
 $$
 \mathbf{G} = \mathbf{F}^\top \mathbf{F} 
-$$
+$$&lt;p&gt;After converting features into gram matrix for style and output images, MSE is computed based on them.&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -135,7 +136,7 @@ $$
     &lt;span class="c1"&gt;# Get the size of tensor&lt;/span&gt;
     &lt;span class="c1"&gt;# a: batch size&lt;/span&gt;
     &lt;span class="c1"&gt;# b: number of feature maps&lt;/span&gt;
-    &lt;span class="c1"&gt;# c, d: &lt;/span&gt;
+    &lt;span class="c1"&gt;# c, d: the dimension of a feature map&lt;/span&gt;
     &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; 
     
     &lt;span class="c1"&gt;# Reshape the feature &lt;/span&gt;
