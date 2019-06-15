@@ -93,7 +93,571 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/style-transfer-using-pytorch-part-1/" class="u-url">Style Transfer using Pytorch (Part 1)</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/style-transfer-using-pytorch-part-2/" class="u-url">Style Transfer using Pytorch (Part 2)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/style-transfer-using-pytorch-part-2/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-06-14T18:24:59-07:00" itemprop="datePublished" title="Jun 14, 2019, 6:24:59 PM">Jun 14, 2019, 6:24:59 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/style-transfer-using-pytorch-part-2/#disqus_thread" data-disqus-identifier="cache/posts/style-transfer-using-pytorch-part-2.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/style-transfer-using-pytorch-part-2/#Goal">¶</a>
+</h2>
+<p>This post aims to explain the concept of style transfer step-by-step. Part 2 is about loss functions.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://h1ros.github.io/posts/style-transfer-using-pytorch-part-1/">this blog - Style Transfer using Pytorch (Part 1)</a></li>
+<li><a href="https://arxiv.org/abs/1508.06576">Original paper in arxiv - A Neural Algorithm of Artistic Style</a></li>
+<li><a href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/style_transfer.ipynb#scrollTo=NyftRTSMuwue">Colab - Neural style transfer using tesnorslow</a></li>
+<li><a href="https://towardsdatascience.com/an-intuitive-understanding-to-neural-style-transfer-e85fd80394be">Towards Data Science - An Intuitive Understanding to Neural Style Transfer</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/style-transfer-using-pytorch-part-2/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Torch &amp; Tensorflow</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="c1"># Visualization</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loss-Functions">Loss Functions<a class="anchor-link" href="../../posts/style-transfer-using-pytorch-part-2/#Loss-Functions">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Content-loss">Content loss<a class="anchor-link" href="../../posts/style-transfer-using-pytorch-part-2/#Content-loss">¶</a>
+</h3>
+<p>Content loss is calculated using MSE (Mean Square Error) between the content images and the output image:</p>
+$$MSE = \frac{1}{n} \sum^{n}_{i=1} (Y_{content} - Y_{output})^2$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ContentLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ContentLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">input</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">content_loss</span> <span class="o">=</span> <span class="n">ContentLoss</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">0.5</span><span class="p">]))</span>
+<span class="n">content_loss</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">0.</span><span class="p">]))</span>
+<span class="n">content_loss</span><span class="o">.</span><span class="n">loss</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor(0.2500)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Style-loss">Style loss<a class="anchor-link" href="../../posts/style-transfer-using-pytorch-part-2/#Style-loss">¶</a>
+</h3>
+<p>To compute style loss, we need to define the function to compute a gram matrix for style feature.</p>
+$$
+\mathbf{G} = \mathbf{F}^\top \mathbf{F} 
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gram_matrix</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="c1"># Get the size of tensor</span>
+    <span class="c1"># a: batch size</span>
+    <span class="c1"># b: number of feature maps</span>
+    <span class="c1"># c, d: </span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> 
+    
+    <span class="c1"># Reshape the feature </span>
+    <span class="n">features</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># Multiplication</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>  
+    
+    <span class="c1"># Normalize </span>
+    <span class="n">G_norm</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G_norm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">StyleLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_feature</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">StyleLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Reshaped Feature for Target feature:'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="n">target_feature</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Reshaped Feature for Input feature:'</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Gram matrix for input feature:'</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Gram matrix for target feature:'</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">input</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[[[</span><span class="mf">1.</span><span class="p">,</span> <span class="o">.</span><span class="mi">0</span><span class="p">],</span> 
+                               <span class="p">[</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]],</span> 
+                              <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span> <span class="o">.</span><span class="mi">0</span><span class="p">],</span> 
+                               <span class="p">[</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]],</span> 
+                              <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">0</span><span class="p">],</span> 
+                               <span class="p">[</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]]]])</span>
+<span class="n">sample_input</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[73]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>torch.Size([1, 3, 2, 2])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">style_loss</span> <span class="o">=</span> <span class="n">StyleLoss</span><span class="p">(</span><span class="n">sample_input</span><span class="p">)</span>
+<span class="n">style_loss</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">style_loss</span><span class="o">.</span><span class="n">loss</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Reshaped Feature for Target feature:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Reshaped Feature for Input feature:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Gram matrix for input feature:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Gram matrix for target feature:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.166667</td>
+      <td>0.166667</td>
+      <td>0.166667</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.166667</td>
+      <td>0.166667</td>
+      <td>0.166667</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.166667</td>
+      <td>0.166667</td>
+      <td>0.166667</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[74]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor(0.0278)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/style-transfer-using-pytorch-part-1/" class="u-url">Style Transfer using Pytorch (Part 1)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -122,8 +686,9 @@
 <p><img src="https://user-images.githubusercontent.com/8764683/59514870-c46ca980-8ef8-11e9-8673-361e02ecb72c.png" alt="image"></p>
 <p><strong>Reference</strong></p>
 <ul>
-<li><a href="https://arxiv.org/abs/1508.06576">Original paper - A Neural Algorithm of Artistic Style</a></li>
-<li><a href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/style_transfer.ipynb#scrollTo=NyftRTSMuwue">Colab - Neural style transfer</a></li>
+<li><a href="https://arxiv.org/abs/1508.06576">Original paper in arxiv - A Neural Algorithm of Artistic Style</a></li>
+<li><a href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/style_transfer.ipynb#scrollTo=NyftRTSMuwue">Colab - Neural style transfer using tesnorslow</a></li>
+<li><a href="https://towardsdatascience.com/an-intuitive-understanding-to-neural-style-transfer-e85fd80394be">Towards Data Science - An Intuitive Understanding to Neural Style Transfer</a></li>
 </ul>
 </div>
 </div>
