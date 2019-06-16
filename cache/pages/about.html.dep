@@ -28,6 +28,7 @@ cache/posts/parse-html.html
 cache/posts/create-a-word-cloud.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/style-transfer-using-pytorch-part-3.html
 cache/posts/style-transfer-using-pytorch-part-2.html
 cache/posts/style-transfer-using-pytorch-part-1.html
 cache/posts/pytorch-basic-operations.html
