@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -143,7 +143,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -155,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/lasso.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T15:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/lifelines.xml</loc>
@@ -183,7 +183,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -267,15 +267,15 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pytorch.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/regression.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T15:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/regularization.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T15:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
@@ -287,7 +287,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/style-transfer.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/survival-analysis.xml</loc>
@@ -335,10 +335,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-17T15:39:00Z</lastmod>
+  <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
 </sitemapindex>
