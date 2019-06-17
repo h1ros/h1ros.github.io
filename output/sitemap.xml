@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>/</loc>
-  <lastmod>2019-06-08T07:37:00Z</lastmod>
+  <lastmod>2019-06-17T15:39:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/</loc>
@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
+  <lastmod>2019-06-17T15:39:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -256,10 +256,6 @@
  <url>
   <loc>/2019/06/12/</loc>
   <lastmod>2019-06-17T15:37:00Z</lastmod>
- </url>
- <url>
-  <loc>/2019/06/13/</loc>
-  <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/14/</loc>
