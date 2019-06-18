@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-17T22:45:00Z</lastmod>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -254,20 +254,12 @@
   <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
-  <loc>/2019/06/12/</loc>
-  <lastmod>2019-06-17T15:37:00Z</lastmod>
- </url>
- <url>
   <loc>/2019/06/13/</loc>
   <lastmod>2019-06-17T15:42:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/14/</loc>
   <lastmod>2019-06-14T14:05:00Z</lastmod>
- </url>
- <url>
-  <loc>/2019/06/15/</loc>
-  <lastmod>2019-06-16T01:02:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/16/</loc>
@@ -278,8 +270,12 @@
   <lastmod>2019-06-17T22:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/18/</loc>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-17T22:53:00Z</lastmod>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -479,7 +475,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-17T22:52:00Z</lastmod>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -635,7 +631,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-17T15:34:00Z</lastmod>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -660,6 +656,10 @@
  <url>
   <loc>/posts/bayesian-regression-using-pymc3/</loc>
   <lastmod>2019-06-09T14:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/calculate-the-average-variance-and-standard-deviation/</loc>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/calculate-the-determinant-of-a-matrix/</loc>
@@ -787,7 +787,7 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-17T22:52:00Z</lastmod>
+  <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
