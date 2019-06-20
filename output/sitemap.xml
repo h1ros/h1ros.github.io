@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-18T14:51:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -274,12 +274,16 @@
   <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/19/</loc>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-18T14:51:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-14T14:05:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -414,6 +418,10 @@
   <lastmod>2019-06-03T22:35:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/file-system/</loc>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/gaussian/</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </url>
@@ -475,7 +483,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-18T14:51:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -586,6 +594,10 @@
   <lastmod>2019-05-26T06:54:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/tempfile/</loc>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/text-processing/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -631,7 +643,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-18T14:51:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -738,6 +750,10 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/create-a-temporary-file/</loc>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/create-a-word-cloud/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -787,7 +803,7 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-18T14:51:00Z</lastmod>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
