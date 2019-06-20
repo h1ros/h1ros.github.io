@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/categorical.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/chris-albon.xml</loc>
@@ -139,7 +139,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/feature-enginner.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/feature-selection.xml</loc>
@@ -199,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -247,7 +247,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pandas.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pca.xml</loc>
@@ -259,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/preprocessing.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/probabilistic.xml</loc>
@@ -295,7 +295,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -367,10 +367,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-20T14:13:00Z</lastmod>
  </sitemap>
 </sitemapindex>
