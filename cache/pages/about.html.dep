@@ -10,6 +10,9 @@ cache/posts/coding/617. Merge Two Binary Trees.html
 cache/posts/coding/998 Smallest String Starting From Leaf.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/coding/1019-next-greater-node-in-linked-list.html
+themes/bootstrap3/templates/generic_post_list.tmpl
+####MAGIC####TIMELINE
 cache/posts/one-hot-encode-nominal-categorical-features.html
 cache/posts/convert-strings-to-dates.html
 cache/posts/parse-html.html
@@ -30,11 +33,16 @@ cache/posts/parse-html.html
 cache/posts/create-a-word-cloud.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/getting-real-time-stock-market-data.html
+themes/bootstrap3/templates/generic_post_list.tmpl
+####MAGIC####TIMELINE
 cache/posts/style-transfer-using-pytorch-part-4.html
 cache/posts/style-transfer-using-pytorch-part-3.html
 cache/posts/style-transfer-using-pytorch-part-2.html
 cache/posts/style-transfer-using-pytorch-part-1.html
 cache/posts/pytorch-basic-operations.html
+themes/bootstrap3/templates/generic_post_list.tmpl
+themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
