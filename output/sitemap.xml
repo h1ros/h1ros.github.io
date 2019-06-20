@@ -279,11 +279,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-20T01:43:00Z</lastmod>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-20T01:43:00Z</lastmod>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -344,6 +344,10 @@
  <url>
   <loc>/categories/convert/</loc>
   <lastmod>2019-06-07T13:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/cufflinks/</loc>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/dataframe/</loc>
@@ -483,7 +487,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-20T01:43:00Z</lastmod>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -586,6 +590,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/stock-price/</loc>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/style-transfer/</loc>
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
@@ -604,6 +612,10 @@
  <url>
   <loc>/categories/tf-idf/</loc>
   <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/time-series/</loc>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/tokenize/</loc>
@@ -636,6 +648,10 @@
  <url>
   <loc>/categories/xkcd/</loc>
   <lastmod>2019-06-08T08:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/yahoo-api/</loc>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/index.src.html</loc>
@@ -774,6 +790,10 @@
   <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/getting-real-time-stock-market-data/</loc>
+  <lastmod>2019-06-20T01:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/histograms-in-pandas/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -803,7 +823,7 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-20T01:43:00Z</lastmod>
+  <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
