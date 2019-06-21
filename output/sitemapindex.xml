@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/activation-function.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/array.xml</loc>
@@ -95,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -203,7 +203,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -287,7 +287,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pytorch.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/regression.xml</loc>
@@ -299,7 +299,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/relu.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
@@ -375,10 +375,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-21T23:00:00Z</lastmod>
+  <lastmod>2019-06-21T23:09:00Z</lastmod>
  </sitemap>
 </sitemapindex>
