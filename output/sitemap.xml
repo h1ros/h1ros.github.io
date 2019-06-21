@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -282,16 +282,24 @@
   <lastmod>2019-06-20T14:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/21/</loc>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-20T14:13:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/activation-function/</loc>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/array/</loc>
@@ -499,7 +507,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -594,6 +602,10 @@
   <lastmod>2019-06-13T15:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/relu/</loc>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/scikit-learn/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -671,7 +683,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -680,6 +692,10 @@
  <url>
   <loc>/posts/Logistic-regression/</loc>
   <lastmod>2019-06-06T11:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/activation-functions-in-neural-networks/</loc>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/add-padding-around-string/</loc>
@@ -835,7 +851,7 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-20T14:04:00Z</lastmod>
+  <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
