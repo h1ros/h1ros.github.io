@@ -79,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dataset.xml</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/date-handling.xml</loc>
@@ -170,6 +170,10 @@
   <lastmod>2019-06-17T22:53:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/images.xml</loc>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -203,7 +207,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -303,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -375,10 +379,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </sitemap>
 </sitemapindex>

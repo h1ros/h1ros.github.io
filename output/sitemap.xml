@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-21T22:25:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -286,12 +286,16 @@
   <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/22/</loc>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -462,6 +466,10 @@
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/images/</loc>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/jupyter-notebook/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -495,7 +503,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
@@ -507,7 +515,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-22T10:26:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-4.html</loc>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -851,7 +863,7 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-22T10:26:00Z</lastmod>
+  <lastmod>2019-06-22T10:30:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -876,6 +888,10 @@
  <url>
   <loc>/posts/loading-scikit-learns-boston-housing-dataset/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/loading-scikit-learns-mnist-dataset/</loc>
+  <lastmod>2019-06-22T10:28:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/make-simulated-data-for-clustering/</loc>
