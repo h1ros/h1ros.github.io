@@ -88,196 +88,7 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="calculate-the-determinant-of-a-matrix/" class="u-url">Calculate The Determinant Of A Matrix</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="calculate-the-determinant-of-a-matrix/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-21T22:14:24-07:00" itemprop="datePublished" title="May 21, 2019, 10:14:24 PM">May 21, 2019, 10:14:24 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="calculate-the-determinant-of-a-matrix/#disqus_thread" data-disqus-identifier="cache/posts/calculate-the-determinant-of-a-matrix.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="calculate-the-determinant-of-a-matrix/#Goal">¶</a>
-</h2>
-<p>This post aims to show how to calculate the determinant of a matrix using numpy i.e., $|A|$</p>
-<p>For example, if we have</p>
-$$A = 
-\begin{bmatrix} 
-a &amp; b \\
-c &amp; d 
-\end{bmatrix}
-$$<p>Then, $|A|$ is defined as</p>
-$$|A| =  \begin{vmatrix} 
-a &amp; b \\
-c &amp; d 
-\end{vmatrix} = ab - bc
-$$<p>Reference:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Determinant">Wiki - determinant</a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.det.html">numpy documentation - numpy.linalg.det</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Libraries">Libraries<a class="anchor-link" href="calculate-the-determinant-of-a-matrix/#Libraries">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-a-matrix">Create a matrix<a class="anchor-link" href="calculate-the-determinant-of-a-matrix/#Create-a-matrix">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span> 
-<span class="n">a</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[1, 2],
-       [3, 4]])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Calculate-the-determinant">Calculate the determinant<a class="anchor-link" href="calculate-the-determinant-of-a-matrix/#Calculate-the-determinant">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-2.0000000000000004
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>-2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="dimensionality-reduction-with-pca/" class="u-url">Dimensionality Reduction With PCA</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="dimensionality-reduction-with-pca/" class="u-url">Dimensionality Reduction With PCA</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -1955,6 +1766,51 @@ problems.
 </div>
 </div>
 
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="loading-scikit-learns-mnist-dataset/" class="u-url">Loading scikit-learn's MNIST Hand-Written Dataset</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="loading-scikit-learns-mnist-dataset/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-12T23:08:53-07:00" itemprop="datePublished" title="May 12, 2019, 11:08:53 PM">May 12, 2019, 11:08:53 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="loading-scikit-learns-mnist-dataset/#disqus_thread" data-disqus-identifier="cache/posts/loading-scikit-learns-mnist-dataset.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="loading-scikit-learns-mnist-dataset/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to load MNIST (hand-written digit image) dataset using scikit-learn</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/59962629-0d3ce780-9523-11e9-8b21-5ffc9c588fd7.png" alt="image"></p>
+<p><strong>Refernce</strong></p>
+<ul>
+<li><a href="https://scikit-learn.org/stable/tutorial/basic/tutorial.html#introduction">Scikit-learn Tutorial - introduction</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="loading-scikit-learns-mnist-dataset/">Read more… </a></p>
+</div>
+</div>
 </div>
 </div>
     </div>

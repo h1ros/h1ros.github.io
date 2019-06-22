@@ -51,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/categorical.xml</loc>
-  <lastmod>2019-06-21T22:58:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/chris-albon.xml</loc>
@@ -76,6 +76,10 @@
  <sitemap>
   <loc>/categories/dataframe.xml</loc>
   <lastmod>2019-06-02T11:42:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/dataset.xml</loc>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/date-handling.xml</loc>
@@ -143,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/feature-enginner.xml</loc>
-  <lastmod>2019-06-21T22:58:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/feature-selection.xml</loc>
@@ -164,6 +168,10 @@
  <sitemap>
   <loc>/categories/image.xml</loc>
   <lastmod>2019-06-17T22:53:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/images.xml</loc>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -203,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-21T23:09:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -251,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pandas.xml</loc>
-  <lastmod>2019-06-21T22:58:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pca.xml</loc>
@@ -263,7 +271,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/preprocessing.xml</loc>
-  <lastmod>2019-06-21T22:58:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/probabilistic.xml</loc>
@@ -303,7 +311,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
-  <lastmod>2019-06-21T22:58:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -375,10 +383,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-21T23:09:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-21T23:09:00Z</lastmod>
+  <lastmod>2019-06-22T10:24:00Z</lastmod>
  </sitemap>
 </sitemapindex>
