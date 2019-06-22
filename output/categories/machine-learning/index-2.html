@@ -95,18 +95,18 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/tokenize-text/" class="u-url">Tokenize Text</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/remove-punctuation/" class="u-url">Remove Punctuation</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
             </span></p>
             <p class="dateline">
-            <a href="../../posts/tokenize-text/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-30T05:40:08-07:00" itemprop="datePublished" title="May 30, 2019, 5:40:08 AM">May 30, 2019, 5:40:08 AM</time></a>
+            <a href="../../posts/remove-punctuation/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-29T00:15:44-07:00" itemprop="datePublished" title="May 29, 2019, 12:15:44 AM">May 29, 2019, 12:15:44 AM</time></a>
             </p>
                 <p class="commentline">
         
-    <a href="../../posts/tokenize-text/#disqus_thread" data-disqus-identifier="cache/posts/tokenize-text.html">Comments</a>
+    <a href="../../posts/remove-punctuation/#disqus_thread" data-disqus-identifier="cache/posts/remove-punctuation.html">Comments</a>
 
 
         </p>
@@ -118,13 +118,12 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/tokenize-text/#Goal">¶</a>
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/remove-punctuation/#Goal">¶</a>
 </h2>
-<p>This post aims to introduce how to tokenize text using <code>nltk</code>.</p>
+<p>This post aims to introduce how to remove punctuation using <code>string</code>.</p>
 <p><strong>Reference</strong></p>
 <ul>
-<li><a href="https://www.geeksforgeeks.org/tokenize-text-using-nltk-python/">GeeksforGeeks - Tokenize text using NLTK in python</a></li>
-<li><a href="https://text-processing.com/demo/tokenize/">Text-processing.com - Tokenize Demo</a></li>
+<li><a href="https://machinelearningmastery.com/clean-text-machine-learning-python/">Machine Learning Mastery - How to Clean Text for Machine Learning with Python</a></li>
 </ul>
 </div>
 </div>
@@ -134,74 +133,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/tokenize-text/#Libraries">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">sent_tokenize</span><span class="p">,</span> <span class="n">word_tokenize</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-a-sentences">Create a sentences<a class="anchor-link" href="../../posts/tokenize-text/#Create-a-sentences">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">paragraph</span> <span class="o">=</span> <span class="s2">"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects"</span>
-<span class="n">paragraph</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects"</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tokenize-a-paragraph-into-sentences">Tokenize a paragraph into sentences<a class="anchor-link" href="../../posts/tokenize-text/#Tokenize-a-paragraph-into-sentences">¶</a>
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/remove-punctuation/#Libraries">¶</a>
 </h2>
 </div>
 </div>
@@ -211,32 +143,10 @@
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>['Python is an interpreted, high-level, general-purpose programming language.',
- "Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.",
- 'Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects']</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -246,7 +156,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tokenize-a-paragraph-into-words">Tokenize a paragraph into words<a class="anchor-link" href="../../posts/tokenize-text/#Tokenize-a-paragraph-into-words">¶</a>
+<h2 id="Create-a-document">Create a document<a class="anchor-link" href="../../posts/remove-punctuation/#Create-a-document">¶</a>
 </h2>
 </div>
 </div>
@@ -256,7 +166,12 @@
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"this isn't a sample."</span><span class="p">,</span> 
+            <span class="s1">'this is another example.'</span> <span class="p">,</span>
+            <span class="s1">'this" also appears in the second example.'</span>
+            <span class="s1">'Is this an example?'</span><span class="p">]</span>
+
+<span class="n">documents</span>
 </pre></div>
 
     </div>
@@ -275,63 +190,56 @@
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>['Python',
- 'is',
- 'an',
- 'interpreted',
- ',',
- 'high-level',
- ',',
- 'general-purpose',
- 'programming',
- 'language',
- '.',
- 'Created',
- 'by',
- 'Guido',
- 'van',
- 'Rossum',
- 'and',
- 'first',
- 'released',
- 'in',
- '1991',
- ',',
- 'Python',
- "'s",
- 'design',
- 'philosophy',
- 'emphasizes',
- 'code',
- 'readability',
- 'with',
- 'its',
- 'notable',
- 'use',
- 'of',
- 'significant',
- 'whitespace',
- '.',
- 'Its',
- 'language',
- 'constructs',
- 'and',
- 'object-oriented',
- 'approach',
- 'aims',
- 'to',
- 'help',
- 'programmers',
- 'write',
- 'clear',
- ',',
- 'logical',
- 'code',
- 'for',
- 'small',
- 'and',
- 'large-scale',
- 'projects']</pre>
+<pre>["this isn't a sample.",
+ 'this is another example.',
+ 'this" also appears in the second example.Is this an example?']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Remove-Punctuation">Remove Punctuation<a class="anchor-link" href="../../posts/remove-punctuation/#Remove-Punctuation">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="n">doc_removed_punctuation</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
+<span class="n">doc_removed_punctuation</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['this isnt a sample',
+ 'this is another example',
+ 'this also appears in the second exampleIs this an example']</pre>
 </div>
 
 </div>

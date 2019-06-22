@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-22T10:24:00Z</lastmod>
+  <lastmod>2019-06-22T10:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/punctuation.xml</loc>
-  <lastmod>2019-05-29T23:13:00Z</lastmod>
+  <lastmod>2019-06-22T10:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pymc.xml</loc>
@@ -335,7 +335,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
-  <lastmod>2019-05-31T22:15:00Z</lastmod>
+  <lastmod>2019-06-22T10:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tf-idf.xml</loc>
@@ -383,10 +383,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-22T10:24:00Z</lastmod>
+  <lastmod>2019-06-22T10:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-22T10:24:00Z</lastmod>
+  <lastmod>2019-06-22T10:26:00Z</lastmod>
  </sitemap>
 </sitemapindex>
