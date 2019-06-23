@@ -291,11 +291,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-23T14:40:00Z</lastmod>
+  <lastmod>2019-06-23T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-06-23T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -519,7 +519,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-06-23T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -536,6 +536,10 @@
  <url>
   <loc>/categories/mlp/</loc>
   <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/mnist/</loc>
+  <lastmod>2019-06-23T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/model-evaluation/</loc>

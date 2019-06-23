@@ -36,6 +36,7 @@ themes/bootstrap3/templates/generic_post_list.tmpl
 cache/posts/getting-real-time-stock-market-data.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/train-the-image-classifier-using-pytorch.html
 cache/posts/activation-functions-in-neural-networks.html
 cache/posts/style-transfer-using-pytorch-part-4.html
 cache/posts/style-transfer-using-pytorch-part-3.html
