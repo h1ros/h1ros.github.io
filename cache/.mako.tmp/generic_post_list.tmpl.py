@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1561301073.5903318
+_modified_time = 1561301193.302482
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/generic_post_list.tmpl'
 _template_uri = 'generic_post_list.tmpl'
@@ -18,8 +18,8 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         lang = context.get('lang', UNDEFINED)
-        post_list_id = context.get('post_list_id', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
+        post_list_id = context.get('post_list_id', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -36,8 +36,8 @@ def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         lang = context.get('lang', UNDEFINED)
-        post_list_id = context.get('post_list_id', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
+        post_list_id = context.get('post_list_id', UNDEFINED)
         def content():
             return render_content(context)
         __M_writer = context.writer()
