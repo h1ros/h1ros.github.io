@@ -291,7 +291,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-06-23T14:40:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -695,7 +695,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-22T10:24:00Z</lastmod>
+  <lastmod>2019-06-23T14:41:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -863,7 +863,11 @@
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-06-23T14:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/index-7.html</loc>
+  <lastmod>2019-06-23T14:41:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -988,6 +992,10 @@
  <url>
   <loc>/posts/tokenize-text/</loc>
   <lastmod>2019-05-30T12:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/train-the-image-classifier-using-pytorch/</loc>
+  <lastmod>2019-06-23T14:41:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/transpose-a-matrix-or-tensor/</loc>
