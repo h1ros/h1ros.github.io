@@ -25,6 +25,14 @@ cache/posts/Data Exploration Tool - Lantern Part 1.html
 cache/posts/introduction-to-graphviz-in-jupyter-notebook.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/train-the-image-classifier-using-pytorch.html
+cache/posts/loading-scikit-learns-mnist-dataset.html
+cache/posts/style-transfer-using-pytorch-part-4.html
+cache/posts/style-transfer-using-pytorch-part-3.html
+cache/posts/style-transfer-using-pytorch-part-2.html
+cache/posts/style-transfer-using-pytorch-part-1.html
+themes/bootstrap3/templates/generic_post_list.tmpl
+####MAGIC####TIMELINE
 cache/posts/tokenize-text.html
 cache/posts/remove-punctuation.html
 cache/posts/bag-of-words.html
@@ -43,6 +51,7 @@ cache/posts/style-transfer-using-pytorch-part-3.html
 cache/posts/style-transfer-using-pytorch-part-2.html
 cache/posts/style-transfer-using-pytorch-part-1.html
 cache/posts/pytorch-basic-operations.html
+themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
 themes/bootstrap3/templates/generic_post_list.tmpl
