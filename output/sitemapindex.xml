@@ -167,7 +167,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
-  <lastmod>2019-06-23T14:46:00Z</lastmod>
+  <lastmod>2019-06-24T14:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -203,7 +203,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-23T14:46:00Z</lastmod>
+  <lastmod>2019-06-24T14:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/matplotlib.xml</loc>
-  <lastmod>2019-06-08T08:19:00Z</lastmod>
+  <lastmod>2019-06-24T14:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/matrix.xml</loc>
@@ -379,10 +379,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-23T14:46:00Z</lastmod>
+  <lastmod>2019-06-24T14:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-23T14:55:00Z</lastmod>
+  <lastmod>2019-06-24T14:10:00Z</lastmod>
  </sitemap>
 </sitemapindex>
