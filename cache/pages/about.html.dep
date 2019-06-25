@@ -19,6 +19,7 @@ cache/posts/parse-html.html
 cache/posts/dimensionality-reduction-with-pca.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/feature-importance.html
 cache/posts/getting-real-time-stock-market-data.html
 cache/posts/XKCD-style-plot-using-matplotlib.html
 cache/posts/Data Exploration Tool - Lantern Part 1.html
