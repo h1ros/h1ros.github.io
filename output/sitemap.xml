@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-25T13:46:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -298,12 +298,16 @@
   <lastmod>2019-06-25T13:46:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/26/</loc>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-25T13:50:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-25T13:46:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -372,6 +376,10 @@
  <url>
   <loc>/categories/convert/</loc>
   <lastmod>2019-06-07T13:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/correlation/</loc>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/cufflinks/</loc>
@@ -527,7 +535,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-06-25T13:46:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -711,7 +719,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-25T13:46:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -842,6 +850,10 @@
   <lastmod>2019-05-20T08:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/drop-highly-correlated-features/</loc>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/f1-score/</loc>
   <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
@@ -887,7 +899,7 @@
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-06-25T13:46:00Z</lastmod>
+  <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
