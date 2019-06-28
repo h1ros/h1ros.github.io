@@ -215,7 +215,7 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-06-27T15:05:00Z</lastmod>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -306,8 +306,12 @@
   <lastmod>2019-06-27T15:05:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/06/28/</loc>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-27T15:05:00Z</lastmod>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -543,7 +547,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-06-27T15:05:00Z</lastmod>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -731,7 +735,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-27T15:05:00Z</lastmod>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -752,6 +756,10 @@
  <url>
   <loc>/posts/adding-or-substracting-time/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/anomaly-detection-by-pca-in-pyod/</loc>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/bag-of-words/</loc>
@@ -911,7 +919,7 @@
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-06-27T15:05:00Z</lastmod>
+  <lastmod>2019-06-28T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
