@@ -15,11 +15,15 @@
  </sitemap>
  <sitemap>
   <loc>/categories/anomaly-detection.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/array.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/auto-encoder.xml</loc>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/bag-of-words.xml</loc>
@@ -107,7 +111,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-06-23T14:44:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -215,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -271,7 +275,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pca.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/precision.xml</loc>
@@ -299,7 +303,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pyod.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/python.xml</loc>
@@ -399,10 +403,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-28T15:04:00Z</lastmod>
+  <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
 </sitemapindex>
