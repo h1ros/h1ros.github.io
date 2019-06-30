@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1561904787.240412
+_modified_time = 1561906217.349469
 _enable_loop = True
 _template_filename = '/Users/hiro/anaconda3/envs/py367/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper.tmpl'
 _template_uri = 'comments_helper.tmpl'
@@ -63,11 +63,11 @@ def render_comment_form(context,url,title,identifier):
     try:
         intensedebate = _mako_get_namespace(context, 'intensedebate')
         facebook = _mako_get_namespace(context, 'facebook')
-        muut = _mako_get_namespace(context, 'muut')
-        commento = _mako_get_namespace(context, 'commento')
         disqus = _mako_get_namespace(context, 'disqus')
         isso = _mako_get_namespace(context, 'isso')
         comment_system = context.get('comment_system', UNDEFINED)
+        muut = _mako_get_namespace(context, 'muut')
+        commento = _mako_get_namespace(context, 'commento')
         __M_writer = context.writer()
         __M_writer('\n')
         if comment_system == 'disqus':
@@ -104,11 +104,11 @@ def render_comment_link(context,link,identifier):
     try:
         intensedebate = _mako_get_namespace(context, 'intensedebate')
         facebook = _mako_get_namespace(context, 'facebook')
-        muut = _mako_get_namespace(context, 'muut')
-        commento = _mako_get_namespace(context, 'commento')
         disqus = _mako_get_namespace(context, 'disqus')
         isso = _mako_get_namespace(context, 'isso')
         comment_system = context.get('comment_system', UNDEFINED)
+        muut = _mako_get_namespace(context, 'muut')
+        commento = _mako_get_namespace(context, 'commento')
         __M_writer = context.writer()
         __M_writer('\n')
         if comment_system == 'disqus':
@@ -147,8 +147,8 @@ def render_comment_link_script(context):
         facebook = _mako_get_namespace(context, 'facebook')
         muut = _mako_get_namespace(context, 'muut')
         comment_system = context.get('comment_system', UNDEFINED)
-        disqus = _mako_get_namespace(context, 'disqus')
         isso = _mako_get_namespace(context, 'isso')
+        disqus = _mako_get_namespace(context, 'disqus')
         commento = _mako_get_namespace(context, 'commento')
         __M_writer = context.writer()
         __M_writer('\n')
