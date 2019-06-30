@@ -70,6 +70,10 @@
   <lastmod>2019-05-19T06:21:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/coding-problem.xml</loc>
+  <lastmod>2019-06-30T05:37:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/coding.xml</loc>
   <lastmod>2019-05-18T07:04:00Z</lastmod>
  </sitemap>
@@ -135,7 +139,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dynamic-programming.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-06-30T05:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/encoding.xml</loc>
@@ -403,10 +407,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-06-29T15:01:00Z</lastmod>
+  <lastmod>2019-06-30T05:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-06-29T15:01:00Z</lastmod>
+  <lastmod>2019-06-30T05:37:00Z</lastmod>
  </sitemap>
 </sitemapindex>
