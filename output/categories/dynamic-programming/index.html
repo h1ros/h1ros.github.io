@@ -178,9 +178,28 @@ Notice that book number 2 does not have to be on the first shelf.</p>
 <ul>
 <li>try to place this book on the same row<ul>
 <li>if it is not feasible, we need to place on the next level</li>
+<li>if it is feasible, <ul>
+<li>place the book on the same level, </li>
+<li>update the maximum height at the same level, and</li>
+<li>keep the case for achieving the minimum height</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<p>This way only consider the best case scenario in the previous case, and take that case as the starting point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Original-Solution">Original Solution<a class="anchor-link" href="../../posts/1105-filling-bookcase-shelves-dynamic-programming/#Original-Solution">¶</a>
+</h3>
+<p>Line by line breakdown are as follows:</p>
 <ul>
 <li>Initial setting<ul>
 <li>
@@ -201,16 +220,6 @@ Notice that book number 2 does not have to be on the first shelf.</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Original-Solution">Original Solution<a class="anchor-link" href="../../posts/1105-filling-bookcase-shelves-dynamic-programming/#Original-Solution">¶</a>
-</h3>
 </div>
 </div>
 </div>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Jun 2019 14:21:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>1105. Filling Bookcase Shelves [Dynamic Programming]</title><link>/posts/1105-filling-bookcase-shelves-dynamic-programming/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Jun 2019 14:26:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>1105. Filling Bookcase Shelves [Dynamic Programming]</title><link>/posts/1105-filling-bookcase-shelves-dynamic-programming/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/1105-filling-bookcase-shelves-dynamic-programming/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe the solution for &lt;a href="https://leetcode.com/contest/weekly-contest-143/problems/filling-bookcase-shelves/"&gt;1105. Filling Bookcase Shelves&lt;/a&gt; based on the solution by a respectful coder &lt;a href="https://leetcode.com/hexadecimal/"&gt;Hexadecimal&lt;/a&gt;. This problem could be solved by dynamic programming.&lt;/p&gt;
@@ -49,9 +49,24 @@ Notice that book number 2 does not have to be on the first shelf.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;try to place this book on the same row&lt;ul&gt;
 &lt;li&gt;if it is not feasible, we need to place on the next level&lt;/li&gt;
+&lt;li&gt;if it is feasible, &lt;ul&gt;
+&lt;li&gt;place the book on the same level, &lt;/li&gt;
+&lt;li&gt;update the maximum height at the same level, and&lt;/li&gt;
+&lt;li&gt;keep the case for achieving the minimum height&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This way only consider the best case scenario in the previous case, and take that case as the starting point.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Original-Solution"&gt;Original Solution&lt;a class="anchor-link" href="/posts/1105-filling-bookcase-shelves-dynamic-programming/#Original-Solution"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Line by line breakdown are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Initial setting&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;n&lt;/code&gt;: a number of books&lt;/li&gt;
@@ -67,13 +82,6 @@ Notice that book number 2 does not have to be on the first shelf.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Original-Solution"&gt;Original Solution&lt;a class="anchor-link" href="/posts/1105-filling-bookcase-shelves-dynamic-programming/#Original-Solution"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
