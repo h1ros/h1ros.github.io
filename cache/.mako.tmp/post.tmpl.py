@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1561904422.476185
+_modified_time = 1561904479.3090591
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/post.tmpl'
 _template_uri = 'post.tmpl'
@@ -39,21 +39,21 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        post = context.get('post', UNDEFINED)
-        pheader = _mako_get_namespace(context, 'pheader')
-        def sourcelink():
-            return render_sourcelink(context._locals(__M_locals))
         math = _mako_get_namespace(context, 'math')
-        messages = context.get('messages', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
+        messages = context.get('messages', UNDEFINED)
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        def sourcelink():
+            return render_sourcelink(context._locals(__M_locals))
+        post = context.get('post', UNDEFINED)
+        parent = context.get('parent', UNDEFINED)
+        comments = _mako_get_namespace(context, 'comments')
+        helper = _mako_get_namespace(context, 'helper')
+        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
+        pheader = _mako_get_namespace(context, 'pheader')
         def content():
             return render_content(context._locals(__M_locals))
-        comments = _mako_get_namespace(context, 'comments')
-        parent = context.get('parent', UNDEFINED)
-        helper = _mako_get_namespace(context, 'helper')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -83,12 +83,12 @@ def render_body(context,**pageargs):
 def render_extra_head(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        math = _mako_get_namespace(context, 'math')
-        post = context.get('post', UNDEFINED)
-        def extra_head():
-            return render_extra_head(context)
         parent = context.get('parent', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
+        def extra_head():
+            return render_extra_head(context)
+        math = _mako_get_namespace(context, 'math')
+        post = context.get('post', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(parent.extra_head()))
@@ -131,15 +131,15 @@ def render_extra_head(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        post = context.get('post', UNDEFINED)
-        pheader = _mako_get_namespace(context, 'pheader')
         math = _mako_get_namespace(context, 'math')
         messages = context.get('messages', UNDEFINED)
         site_has_comments = context.get('site_has_comments', UNDEFINED)
-        def content():
-            return render_content(context)
+        post = context.get('post', UNDEFINED)
         comments = _mako_get_namespace(context, 'comments')
         helper = _mako_get_namespace(context, 'helper')
+        pheader = _mako_get_namespace(context, 'pheader')
+        def content():
+            return render_content(context)
         __M_writer = context.writer()
         __M_writer('\n<article class="post-')
         __M_writer(str(post.meta('type')))
@@ -171,11 +171,11 @@ def render_content(context,**pageargs):
 def render_sourcelink(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        messages = context.get('messages', UNDEFINED)
         show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         def sourcelink():
             return render_sourcelink(context)
         post = context.get('post', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if show_sourcelink:
