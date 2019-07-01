@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>/2019/</loc>
-  <lastmod>2019-06-02T11:34:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/02/</loc>
@@ -314,12 +314,20 @@
   <lastmod>2019-06-29T15:01:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/</loc>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/07/01/</loc>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-06-30T14:50:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-06-30T14:20:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -336,6 +344,10 @@
  <url>
   <loc>/categories/array/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/audio/</loc>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/auto-encoder/</loc>
@@ -391,7 +403,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-06-30T14:20:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/convert/</loc>
@@ -543,19 +555,19 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-06-22T10:27:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-06-22T10:26:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-06-29T15:01:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -670,6 +682,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/signal-processing/</loc>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/stemming/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -743,7 +759,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-06-30T05:37:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -911,31 +927,31 @@
  </url>
  <url>
   <loc>/posts/index-1.html</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-05-22T05:22:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-05-23T07:08:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-06-22T10:26:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-06-22T10:26:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-06-23T14:40:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-06-30T05:37:00Z</lastmod>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -956,6 +972,10 @@
  <url>
   <loc>/posts/linear-regression/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/loading-aaudio-data/</loc>
+  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/loading-scikit-learns-boston-housing-dataset/</loc>
