@@ -323,7 +323,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -759,7 +759,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:05:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -976,6 +976,10 @@
  <url>
   <loc>/posts/loading-aaudio-data/</loc>
   <lastmod>2019-07-01T15:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/loading-audio-data/</loc>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/loading-scikit-learns-boston-housing-dataset/</loc>

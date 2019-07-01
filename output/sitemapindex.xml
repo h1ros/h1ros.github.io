@@ -23,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/audio.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/auto-encoder.xml</loc>
@@ -223,7 +223,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -339,7 +339,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/stemming.xml</loc>
@@ -371,7 +371,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/time-series.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tokenize.xml</loc>
@@ -411,10 +411,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
