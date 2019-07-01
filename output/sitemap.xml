@@ -403,7 +403,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/convert/</loc>
@@ -555,19 +555,19 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -927,31 +927,31 @@
  </url>
  <url>
   <loc>/posts/index-1.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -972,10 +972,6 @@
  <url>
   <loc>/posts/linear-regression/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/loading-aaudio-data/</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/loading-audio-data/</loc>
