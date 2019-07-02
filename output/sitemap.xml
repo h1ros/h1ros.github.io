@@ -315,19 +315,27 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
   <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/02/</loc>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-07-02T14:23:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-07-02T14:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/1d/</loc>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/200wad/</loc>
@@ -506,6 +514,10 @@
   <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/gan/</loc>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/gaussian/</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </url>
@@ -567,7 +579,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -682,6 +694,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/scratch/</loc>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/signal-processing/</loc>
   <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
@@ -759,7 +775,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-01T15:05:00Z</lastmod>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -922,6 +938,10 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/</loc>
+  <lastmod>2019-07-02T14:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -951,7 +971,7 @@
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>

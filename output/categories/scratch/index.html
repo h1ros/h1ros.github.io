@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts about scratch | Step-by-step Data Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href=".">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><link rel="alternate" type="application/rss+xml" title="RSS for tag scratch" hreflang="en" href="../scratch.xml">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../coding">Coding Problems</a>
+                </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    <header><h1>Posts about scratch</h1>
+        <div class="metadata">
+            
+                <p class="feedlink">
+                        
+            <a href="../scratch.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+
+                </p>
+
+            
+
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/" class="u-url">How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 1)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-02T06:27:49-07:00" itemprop="datePublished" title="Jul 2, 2019, 6:27:49 AM">Jul 2, 2019, 6:27:49 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#disqus_thread" data-disqus-identifier="cache/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Goal">¶</a>
+</h2>
+<p>This post is inspired by the blog "<a href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">Machine Learning Mastery -  How to Develop a 1D Generative Adversarial Network From Scratch in Keras</a>" written by Jason Brownlee, PhD. But to learn step-by-step, I will describe the same concept with PyTorch.</p>
+<p>This post will cover the followings:</p>
+<p>Part 1:</p>
+<ul>
+<li>Select a One-Dimensional Function</li>
+<li>Define a Discriminator Model</li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">How to Develop a 1D Generative Adversarial Network From Scratch in Keras</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">Wikipedia - Generative adversarial network (GAN)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># PyTorch</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="k">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="k">import</span> <span class="n">optim</span>
+<span class="kn">from</span> <span class="nn">torchviz</span> <span class="k">import</span> <span class="n">make_dot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-target-1-D-function">Create a target 1-D function<a class="anchor-link" href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Create-a-target-1-D-function">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">'.'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Target function $f(x)$'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'randomly sampled x'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$f(x)$'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Define-a-Discriminator-Model">Define a <strong>Discriminator Model</strong><a class="anchor-link" href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Define-a-Discriminator-Model">¶</a>
+</h2>
+<p>The definition of a <strong>discriminator</strong> model is that it will classify the input data into <strong>real or fake</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build a feed-forward network</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+                      <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                      <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+                     <span class="p">)</span>
+
+<span class="c1"># Loss</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+
+<span class="c1"># Optimizer</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Visualize this neural network</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">make_dot</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ --><!-- Title: %3 Pages: 1 --><svg width="152pt" height="292pt" viewbox="0.00 0.00 151.99 292.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 288)"><title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-288 147.9858,-288 147.9858,4 -4,4"></polygon><!-- 4870964168 --><g id="node1" class="node"><title>4870964168</title>
+<polygon fill="#caff70" stroke="#000000" points="119.8165,-22.6036 14.1835,-22.6036 14.1835,.2036 119.8165,.2036 119.8165,-22.6036"></polygon><text text-anchor="middle" x="67" y="-7.6" font-family="Times,serif" font-size="12.00" fill="#000000">SigmoidBackward</text></g><!-- 4870966520 --><g id="node2" class="node"><title>4870966520</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="126.7952,-81.0036 7.2048,-81.0036 7.2048,-58.1964 126.7952,-58.1964 126.7952,-81.0036"></polygon><text text-anchor="middle" x="67" y="-66" font-family="Times,serif" font-size="12.00" fill="#000000">ThresholdBackward0</text></g><!-- 4870966520&#45;&gt;4870964168 --><g id="edge1" class="edge"><title>4870966520-&gt;4870964168</title>
+<path fill="none" stroke="#000000" d="M67,-58.3399C67,-51.0687 67,-41.3743 67,-32.6681"></path><polygon fill="#000000" stroke="#000000" points="70.5001,-32.4255 67,-22.4255 63.5001,-32.4256 70.5001,-32.4255"></polygon></g><!-- 4870966072 --><g id="node3" class="node"><title>4870966072</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="118.9732,-139.4036 15.0268,-139.4036 15.0268,-116.5964 118.9732,-116.5964 118.9732,-139.4036"></polygon><text text-anchor="middle" x="67" y="-124.4" font-family="Times,serif" font-size="12.00" fill="#000000">AddmmBackward</text></g><!-- 4870966072&#45;&gt;4870966520 --><g id="edge2" class="edge"><title>4870966072-&gt;4870966520</title>
+<path fill="none" stroke="#000000" d="M67,-116.7399C67,-109.4687 67,-99.7743 67,-91.0681"></path><polygon fill="#000000" stroke="#000000" points="70.5001,-90.8255 67,-80.8255 63.5001,-90.8256 70.5001,-90.8255"></polygon></g><!-- 4870966296 --><g id="node4" class="node"><title>4870966296</title>
+<polygon fill="#add8e6" stroke="#000000" points="54,-211.8022 0,-211.8022 0,-174.9978 54,-174.9978 54,-211.8022"></polygon><text text-anchor="middle" x="27" y="-182.8" font-family="Times,serif" font-size="12.00" fill="#000000"> (25)</text></g><!-- 4870966296&#45;&gt;4870966072 --><g id="edge3" class="edge"><title>4870966296-&gt;4870966072</title>
+<path fill="none" stroke="#000000" d="M38.1422,-175.1825C43.303,-166.7446 49.4498,-156.6945 54.7416,-148.0424"></path><polygon fill="#000000" stroke="#000000" points="57.8292,-149.7022 60.0611,-139.3451 51.8576,-146.0498 57.8292,-149.7022"></polygon></g><!-- 4870966240 --><g id="node5" class="node"><title>4870966240</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="143.9716,-204.8036 72.0284,-204.8036 72.0284,-181.9964 143.9716,-181.9964 143.9716,-204.8036"></polygon><text text-anchor="middle" x="108" y="-189.8" font-family="Times,serif" font-size="12.00" fill="#000000">TBackward</text></g><!-- 4870966240&#45;&gt;4870966072 --><g id="edge4" class="edge"><title>4870966240-&gt;4870966072</title>
+<path fill="none" stroke="#000000" d="M100.8583,-182.0082C94.9792,-172.6303 86.5038,-159.111 79.5036,-147.9448"></path><polygon fill="#000000" stroke="#000000" points="82.3369,-145.8749 74.0598,-139.2613 76.406,-149.5931 82.3369,-145.8749"></polygon></g><!-- 4940643408 --><g id="node6" class="node"><title>4940643408</title>
+<polygon fill="#add8e6" stroke="#000000" points="135,-284.2022 81,-284.2022 81,-247.3978 135,-247.3978 135,-284.2022"></polygon><text text-anchor="middle" x="108" y="-255.2" font-family="Times,serif" font-size="12.00" fill="#000000"> (25, 2)</text></g><!-- 4940643408&#45;&gt;4870966240 --><g id="edge5" class="edge"><title>4940643408-&gt;4870966240</title>
+<path fill="none" stroke="#000000" d="M108,-247.5304C108,-237.6862 108,-225.4752 108,-215.1439"></path><polygon fill="#000000" stroke="#000000" points="111.5001,-214.872 108,-204.872 104.5001,-214.872 111.5001,-214.872"></polygon></g></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-real-and-fake-samples">Create real and fake samples<a class="anchor-link" href="../../posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Create-real-and-fake-samples">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'real'</span><span class="p">):</span>
+    <span class="sd">"""Generate samples with real or fake label</span>
+<span class="sd">    """</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">label</span> <span class="o">==</span> <span class="s1">'real'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span> <span class="n">y</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_samples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [82]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[82]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1.2483621 ,  1.55840793],
+       [ 0.57980381,  0.33617245],
+       [-0.06718955,  0.00451444],
+       [-1.95352245,  3.81624995],
+       [-1.14922801,  1.32072501]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [83]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[83]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>
