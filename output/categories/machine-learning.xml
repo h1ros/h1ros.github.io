@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Jul 2019 14:23:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 1)</title><link>/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Machine Learning)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 05 Jul 2019 14:44:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>3 ways of creating a neural network in PyTorch</title><link>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/3-ways-of-creating-a-neural-network-in-pytorch/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce 3 ways of how to create a neural network using PyTorch:&lt;/p&gt;
+&lt;p&gt;Three ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nn.Module&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nn.Sequential&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nn.ModuleList&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/60729871-af76b980-9f7e-11e9-8b8b-39d17c2984b8.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/FrancescoSaverioZuppichini/Pytorch-how-and-when-to-use-Module-Sequential-ModuleList-and-ModuleDict"&gt;Github - Pytorch: how and when to use Module, Sequential, ModuleList and ModuleDict&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://discuss.pytorch.org/t/when-should-i-use-nn-modulelist-and-when-should-i-use-nn-sequential/5463"&gt;PyTorch Community - When should I use nn.ModuleList and when should I use nn.Sequential?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/3-ways-of-creating-a-neural-network-in-pytorch/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Deep Learning</category><category>ModuleList</category><category>PyTorch</category><category>Sequential</category><guid>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</guid><pubDate>Fri, 05 Jul 2019 13:34:35 GMT</pubDate></item><item><title>How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 1)</title><link>/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post is inspired by the blog "&lt;a href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/"&gt;Machine Learning Mastery -  How to Develop a 1D Generative Adversarial Network From Scratch in Keras&lt;/a&gt;" written by Jason Brownlee, PhD. But to learn step-by-step, I will describe the same concept with PyTorch.&lt;/p&gt;
@@ -265,7 +288,7 @@
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_samples&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'real'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;"""Generate samples with real or fake label&lt;/span&gt;
 &lt;span class="sd"&gt;    """&lt;/span&gt;
-    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     
     &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'real'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3196,20 +3219,4 @@ Finished Training
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Deep Learning</category><category>Image</category><category>MNIST</category><category>PyTorch</category><guid>/posts/train-the-image-classifier-using-pytorch/</guid><pubDate>Sun, 23 Jun 2019 00:50:57 GMT</pubDate></item><item><title>Loading scikit-learn's MNIST Hand-Written Dataset</title><link>/posts/loading-scikit-learns-mnist-dataset/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/loading-scikit-learns-mnist-dataset/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to load MNIST (hand-written digit image) dataset using scikit-learn&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/59962629-0d3ce780-9523-11e9-8b21-5ffc9c588fd7.png" alt="image"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Refernce&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://scikit-learn.org/stable/tutorial/basic/tutorial.html#introduction"&gt;Scikit-learn Tutorial - introduction&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="/posts/loading-scikit-learns-mnist-dataset/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dataset</category><category>Image</category><category>Scikit-learn</category><guid>/posts/loading-scikit-learns-mnist-dataset/</guid><pubDate>Sat, 22 Jun 2019 09:52:16 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Deep Learning</category><category>Image</category><category>MNIST</category><category>PyTorch</category><guid>/posts/train-the-image-classifier-using-pytorch/</guid><pubDate>Sun, 23 Jun 2019 00:50:57 GMT</pubDate></item></channel></rss>

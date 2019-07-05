@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about ModuleList)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/modulelist.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 05 Jul 2019 14:44:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>3 ways of creating a neural network in PyTorch</title><link>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/3-ways-of-creating-a-neural-network-in-pytorch/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce 3 ways of how to create a neural network using PyTorch:&lt;/p&gt;
+&lt;p&gt;Three ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nn.Module&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nn.Sequential&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nn.ModuleList&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/60729871-af76b980-9f7e-11e9-8b8b-39d17c2984b8.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/FrancescoSaverioZuppichini/Pytorch-how-and-when-to-use-Module-Sequential-ModuleList-and-ModuleDict"&gt;Github - Pytorch: how and when to use Module, Sequential, ModuleList and ModuleDict&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://discuss.pytorch.org/t/when-should-i-use-nn-modulelist-and-when-should-i-use-nn-sequential/5463"&gt;PyTorch Community - When should I use nn.ModuleList and when should I use nn.Sequential?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/3-ways-of-creating-a-neural-network-in-pytorch/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Deep Learning</category><category>ModuleList</category><category>PyTorch</category><category>Sequential</category><guid>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</guid><pubDate>Fri, 05 Jul 2019 13:34:35 GMT</pubDate></item></channel></rss>

@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-02T14:22:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -326,12 +326,20 @@
   <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/03/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/07/05/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-02T14:23:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-02T14:23:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -563,7 +571,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-06-22T10:30:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
@@ -579,7 +587,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-07-02T14:22:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-5.html</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -604,6 +616,10 @@
  <url>
   <loc>/categories/model-evaluation/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/modulelist/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/multi-layer-perceptron/</loc>
@@ -698,6 +714,10 @@
   <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/sequential/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/signal-processing/</loc>
   <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
@@ -775,11 +795,15 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-02T14:22:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
   <lastmod>2019-06-30T05:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/Data-Exploration-Tool-Lantern-Part-1/</loc>
@@ -942,6 +966,10 @@
   <lastmod>2019-07-02T14:23:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -971,7 +999,11 @@
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-07-02T14:22:00Z</lastmod>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/index-8.html</loc>
+  <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>

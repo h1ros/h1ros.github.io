@@ -20,6 +20,7 @@
 
   gtag('config', 'UA-134273341-1');
 </script><link rel="prev" href="../loading-audio-data/" title="Loading Audio Data" type="text/html">
+<link rel="next" href="../how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/" title="How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 2)" type="text/html">
 <meta property="og:site_name" content="Step-by-step Data Science">
 <meta property="og:title" content="How to Develop a 1D Generative Adversarial Network From Scratch in PyT">
 <meta property="og:url" content="/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1/">
@@ -333,7 +334,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'real'</span><span class="p">):</span>
     <span class="sd">"""Generate samples with real or fake label</span>
 <span class="sd">    """</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">label</span> <span class="o">==</span> <span class="s1">'real'</span><span class="p">)</span>
@@ -445,6 +446,9 @@
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../loading-audio-data/" rel="prev" title="Loading Audio Data">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/" rel="next" title="How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 2)">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
