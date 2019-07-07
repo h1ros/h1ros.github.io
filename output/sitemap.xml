@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -334,12 +334,16 @@
   <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/06/</loc>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -459,7 +463,11 @@
  </url>
  <url>
   <loc>/categories/deep-learning/</loc>
-  <lastmod>2019-06-11T15:40:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/deep-learning/index-1.html</loc>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/descriptive-analysis/</loc>
@@ -570,6 +578,10 @@
   <lastmod>2019-06-06T12:10:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/loss-function/</loc>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/machine-learning/</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
@@ -591,7 +603,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -795,7 +807,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -1003,7 +1015,7 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
@@ -1036,6 +1048,10 @@
  <url>
   <loc>/posts/loading-scikit-learns-mnist-dataset/</loc>
   <lastmod>2019-06-22T10:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/loss-functions-in-deep-learning-with-pytorch/</loc>
+  <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/make-simulated-data-for-anomaly-detection/</loc>

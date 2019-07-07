@@ -48,6 +48,7 @@ cache/posts/loading-audio-data.html
 cache/posts/getting-real-time-stock-market-data.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/loss-functions-in-deep-learning-with-pytorch.html
 cache/posts/3-ways-of-creating-a-neural-network-in-pytorch.html
 cache/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-1.html
 cache/posts/anomaly-detection-by-auto-encoder-deep-learning-in-pyod.html
