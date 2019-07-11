@@ -343,11 +343,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-11T12:40:00Z</lastmod>
+  <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-07T16:20:00Z</lastmod>
+  <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -550,6 +550,10 @@
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/interpretability/</loc>
+  <lastmod>2019-07-11T12:46:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/jupyter-notebook/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -564,6 +568,10 @@
  <url>
   <loc>/categories/lifelines/</loc>
   <lastmod>2019-05-26T06:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/lime/</loc>
+  <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/linear-algebra/</loc>
@@ -607,7 +615,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-07T16:20:00Z</lastmod>
+  <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
