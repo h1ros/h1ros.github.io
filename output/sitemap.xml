@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-07T16:20:00Z</lastmod>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -338,8 +338,12 @@
   <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/09/</loc>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-08T14:30:00Z</lastmod>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -807,7 +811,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-07T16:20:00Z</lastmod>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -1015,7 +1019,11 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-07T16:20:00Z</lastmod>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/interpretability-of-random-forest-prediction-for-mnist-classification-using-lime/</loc>
+  <lastmod>2019-07-11T12:40:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
