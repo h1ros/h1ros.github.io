@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/binary-tree.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/boosting.xml</loc>
@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/coding.xml</loc>
-  <lastmod>2019-06-30T14:50:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/convert.xml</loc>
@@ -132,6 +132,10 @@
  <sitemap>
   <loc>/categories/determinant.xml</loc>
   <lastmod>2019-05-23T07:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/dfs.xml</loc>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dictvectorizer.xml</loc>
@@ -475,10 +479,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </sitemap>
 </sitemapindex>

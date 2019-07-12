@@ -347,11 +347,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -435,7 +435,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/convert/</loc>
@@ -488,6 +488,10 @@
  <url>
   <loc>/categories/determinant/</loc>
   <lastmod>2019-05-22T05:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/dfs/</loc>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/dictvectorizer/</loc>
@@ -855,7 +859,11 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/104-maximum-depth-of-binary-tree/</loc>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -1063,7 +1071,7 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-12T23:13:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>

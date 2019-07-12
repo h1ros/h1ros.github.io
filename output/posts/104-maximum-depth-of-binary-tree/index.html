@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="introduce two solutions to solve maximum depth of binary search problem">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posts about Binary Tree | Step-by-step Data Science</title>
+<title>104. Maximum Depth of Binary Tree | Step-by-step Data Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -18,7 +19,16 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="alternate" type="application/rss+xml" title="RSS for tag Binary Tree" hreflang="en" href="../binary-tree.xml">
+</script><link rel="prev" href="../interpretability-of-prediction-for-boston-housing-using-shap/" title="Interpretability of prediction for Boston Housing using SHAP" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science">
+<meta property="og:title" content="104. Maximum Depth of Binary Tree">
+<meta property="og:url" content="/posts/104-maximum-depth-of-binary-tree/">
+<meta property="og:description" content="introduce two solutions to solve maximum depth of binary search problem">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-12T14:50:17-07:00">
+<meta property="article:tag" content="Binary Tree">
+<meta property="article:tag" content="DFS">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -43,19 +53,19 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../coding">Coding Problems</a>
+<a href="../../categories/coding">Coding Problems</a>
                 </li>
 <li>
-<a href="../machine-learning">Machine Learning</a>
+<a href="../../categories/machine-learning">Machine Learning</a>
             </li>
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="../../posts/">All Post</a>
+<a href="../">All Post</a>
                     </li>
 <li>
-<a href="../">Categories and Tags</a>
+<a href="../../categories/">Categories and Tags</a>
                     </li>
 <li>
 <a href="../../archive.html">History</a>
@@ -79,44 +89,35 @@
         <div class="row">
             
             
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">104. Maximum Depth of Binary Tree</a></h1>
 
-    <header><h1>Posts about Binary Tree</h1>
-        <div class="metadata">
-            
-                <p class="feedlink">
-                        
-            <a href="../binary-tree.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
-
-                </p>
-
-            
-
-        </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/104-maximum-depth-of-binary-tree/" class="u-url">104. Maximum Depth of Binary Tree</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
+                    h1ros
             </span></p>
             <p class="dateline">
-            <a href="../../posts/104-maximum-depth-of-binary-tree/" rel="bookmark">
+            <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2019-07-12T14:50:17-07:00" itemprop="datePublished" title="Jul 12, 2019, 2:50:17 PM">Jul 12, 2019, 2:50:17 PM</time></a>
             </p>
                 <p class="commentline">
         
-    <a href="../../posts/104-maximum-depth-of-binary-tree/#disqus_thread" data-disqus-identifier="cache/posts/104-maximum-depth-of-binary-tree.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/104-maximum-depth-of-binary-tree.html">Comments</a>
 
+
+            
 
         </p>
 </div>
-    </header><div class="p-summary entry-summary">
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/104-maximum-depth-of-binary-tree/#Goal">¶</a>
+<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
 </h2>
 <p>This post aims to describe two solutions using recurrent function and queue for <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">104. Maximum Depth of Binary Tree</a>.</p>
 <p><img src="https://user-images.githubusercontent.com/8764683/61162891-ab7e0500-a545-11e9-8971-a226a4408aaf.png" alt="image"></p>
@@ -129,7 +130,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Define-a-binary-tree-object">Define a binary tree object<a class="anchor-link" href="../../posts/104-maximum-depth-of-binary-tree/#Define-a-binary-tree-object">¶</a>
+<h2 id="Define-a-binary-tree-object">Define a binary tree object<a class="anchor-link" href="#Define-a-binary-tree-object">¶</a>
 </h2>
 </div>
 </div>
@@ -157,7 +158,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Utility-Functions-for-a-tree">Utility Functions for a tree<a class="anchor-link" href="../../posts/104-maximum-depth-of-binary-tree/#Utility-Functions-for-a-tree">¶</a>
+<h3 id="Utility-Functions-for-a-tree">Utility Functions for a tree<a class="anchor-link" href="#Utility-Functions-for-a-tree">¶</a>
 </h3>
 </div>
 </div>
@@ -311,7 +312,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-using-a-recurrent-function">Solution using a recurrent function<a class="anchor-link" href="../../posts/104-maximum-depth-of-binary-tree/#Solution-using-a-recurrent-function">¶</a>
+<h2 id="Solution-using-a-recurrent-function">Solution using a recurrent function<a class="anchor-link" href="#Solution-using-a-recurrent-function">¶</a>
 </h2>
 <p>Recurrently the depth is calculated from leaf to the top node. The maximum depth is returned to the next upper level.</p>
 <p><img src="https://user-images.githubusercontent.com/8764683/61162388-504b1300-a543-11e9-860f-7fbfaddc2398.png" style="height: 300px"></p>
@@ -447,7 +448,7 @@ Left depth: 3, Right depth: 3
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-using-queue">Solution using queue<a class="anchor-link" href="../../posts/104-maximum-depth-of-binary-tree/#Solution-using-queue">¶</a>
+<h2 id="Solution-using-queue">Solution using queue<a class="anchor-link" href="#Solution-using-queue">¶</a>
 </h2>
 <p>This solution lists up all nodes belonging to the node at the same depth, and throughly listing up their child node repeatedly. When all of the listed nodes is checked, the count of depth is increased.</p>
 <p><img src="https://user-images.githubusercontent.com/8764683/61162841-986b3500-a545-11e9-8768-07dc1a6c6152.png" style="height: 300px"></p>
@@ -554,208 +555,37 @@ Found [4] nodes at this depth
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/" class="u-url">1026. Maximum Difference Between Node and Ancestor</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-04-17T22:48:04-07:00" itemprop="datePublished" title="Apr 17, 2019, 10:48:04 PM">Apr 17, 2019, 10:48:04 PM</time></a>
-            </p>
-                <p class="commentline">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/binary-tree/" rel="tag">Binary Tree</a></li>
+            <li><a class="tag p-category" href="../../categories/dfs/" rel="tag">DFS</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../interpretability-of-prediction-for-boston-housing-using-shap/" rel="prev" title="Interpretability of prediction for Boston Housing using SHAP">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-    <a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#disqus_thread" data-disqus-identifier="cache/posts/coding/1026-maximum-difference-between-node-and-ancestor.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting">¶</a>
-</h2>
-<p>Given the <code>root</code> of a binary tree, find the maximum value <code>V</code> for which there exists different nodes <code>A</code> and <code>B</code> where <code>V = |A.val - B.val|</code> and <code>A</code> is an ancestor of <code>B</code>.</p>
-<p>(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of nodes in the tree is between 2 and 5000.</li>
-<li>Each node will have value between 0 and 100000.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1">Example 1<a class="anchor-link" href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/#Example-1">¶</a>
-</h3>
-<p>Input: [8,3,10,1,6,null,14,null,null,4,7,13]</p>
-<p><img src="https://user-images.githubusercontent.com/8764683/56340742-b3592380-6167-11e9-8704-0e9767e3707a.png" alt="Example 1" width="300"></p>
-<p>Output: 7</p>
-<p>Explanation:</p>
-<p>We have various ancestor-node differences, some of which are given below :
-|8 - 3| = 5
-|3 - 7| = 4
-|8 - 1| = 7
-|10 - 13| = 3
-Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/coding/1026-maximum-difference-between-node-and-ancestor/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/617-merge-two-binary-trees/" class="u-url">617. Merge Two Binary Trees</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/coding/617-merge-two-binary-trees/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-02-26T09:11:59-08:00" itemprop="datePublished" title="Feb 26, 2019, 9:11:59 AM">Feb 26, 2019, 9:11:59 AM</time></a>
-            </p>
-                <p class="commentline">
         
-    <a href="../../posts/coding/617-merge-two-binary-trees/#disqus_thread" data-disqus-identifier="cache/posts/coding/617. Merge Two Binary Trees.html">Comments</a>
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="/posts/104-maximum-depth-of-binary-tree/",
+        disqus_title="104. Maximum Depth of Binary Tree",
+        disqus_identifier="cache/posts/104-maximum-depth-of-binary-tree.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/617-merge-two-binary-trees/#Problem-Setting">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.</p>
-<p>You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1:">Example 1:<a class="anchor-link" href="../../posts/coding/617-merge-two-binary-trees/#Example-1:">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>Input: 
-    Tree 1                     Tree 2                  
-          1                         2                             
-         / \                       / \                            
-        3   2                     1   3                        
-       /                           \   \                      
-      5                             4   7                  
-Output: 
-Merged tree:
-         3
-        / \
-       4   5
-      / \   \ 
-     5   4   7</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/coding/617-merge-two-binary-trees/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/coding/998-smallest-string-Starting-from-leaf/" class="u-url">998 Smallest String Starting From Leaf</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/coding/998-smallest-string-Starting-from-leaf/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-02-03T22:43:19-08:00" itemprop="datePublished" title="Feb 3, 2019, 10:43:19 PM">Feb 3, 2019, 10:43:19 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/coding/998-smallest-string-Starting-from-leaf/#disqus_thread" data-disqus-identifier="cache/posts/coding/998 Smallest String Starting From Leaf.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="../../posts/coding/998-smallest-string-Starting-from-leaf/#Problem-Setting">¶</a>
-</h2>
-<p>The 2nd problem in Weekly Contest 122 is <code>Smallest String Starting From Leaf</code></p>
-<p>Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z': a value of 0 represents 'a', a value of 1 represents 'b', and so on.</p>
-<p>Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.</p>
-<p>(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically smaller than "aba".  A leaf of a node is a node that has no children.)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/coding/998-smallest-string-Starting-from-leaf/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article>
-</div>
-
-
-
-        
-       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -767,7 +597,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script>
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
         <!--End of body content-->
 
