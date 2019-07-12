@@ -62,6 +62,10 @@
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/boston-housing.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/c%2B%2B.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -198,8 +202,12 @@
   <lastmod>2019-07-11T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/installation.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -242,8 +250,12 @@
   <lastmod>2019-07-08T14:30:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/mac.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -294,6 +306,10 @@
   <lastmod>2019-06-17T15:34:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/osx.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/pandas-styling.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -308,6 +324,10 @@
  <sitemap>
   <loc>/categories/precision.xml</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/preparation.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/preprocessing.xml</loc>
@@ -368,6 +388,10 @@
  <sitemap>
   <loc>/categories/sequential.xml</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/shap.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -434,6 +458,14 @@
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/xgboost.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/xgbosst.xml</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/xkcd.xml</loc>
   <lastmod>2019-06-08T08:19:00Z</lastmod>
  </sitemap>
@@ -443,10 +475,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>

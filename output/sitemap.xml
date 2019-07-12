@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-11T12:40:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -342,12 +342,16 @@
   <lastmod>2019-07-11T12:40:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/12/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -404,6 +408,10 @@
  <url>
   <loc>/categories/boosting/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/boston-housing/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/c%2B%2B/</loc>
@@ -550,6 +558,10 @@
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/installation/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/interpretability/</loc>
   <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
@@ -594,6 +606,10 @@
   <lastmod>2019-07-07T16:20:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/mac/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/machine-learning/</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
@@ -615,7 +631,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -666,6 +682,10 @@
   <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/osx/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/pandas-styling/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -680,6 +700,10 @@
  <url>
   <loc>/categories/precision/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/preparation/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/preprocessing/</loc>
@@ -740,6 +764,10 @@
  <url>
   <loc>/categories/sequential/</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/shap/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/signal-processing/</loc>
@@ -806,6 +834,14 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/xgboost/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/xgbosst/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/xkcd/</loc>
   <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
@@ -815,11 +851,11 @@
  </url>
  <url>
   <loc>/index.src.html</loc>
-  <lastmod>2019-06-23T14:54:00Z</lastmod>
+  <lastmod>2019-07-12T13:52:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-11T12:40:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
@@ -1027,7 +1063,15 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-11T12:40:00Z</lastmod>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/interpretability-of-prediction-for-boston-housing-using-shap/</loc>
+  <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/interpretability-of-random-forest-prediction-for-mnist-classification-using-lime/</loc>
