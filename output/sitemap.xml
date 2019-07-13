@@ -347,7 +347,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -859,7 +859,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-12T23:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/104-maximum-depth-of-binary-tree/</loc>
@@ -956,6 +956,14 @@
  <url>
   <loc>/posts/coding/1039-minimum-score-triangulation-of-polygon/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/coding/104-maximum-depth-of-binary-tree/</loc>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/</loc>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/coding/617-merge-two-binary-trees/</loc>

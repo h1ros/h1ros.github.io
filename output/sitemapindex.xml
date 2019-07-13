@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/binary-tree.xml</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/boosting.xml</loc>
@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/coding.xml</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/convert.xml</loc>
@@ -123,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-07-08T14:30:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -135,7 +135,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dfs.xml</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dictvectorizer.xml</loc>
@@ -151,7 +151,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dynamic-programming.xml</loc>
-  <lastmod>2019-06-30T14:50:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/encoding.xml</loc>
@@ -203,7 +203,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/installation.xml</loc>
@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -231,7 +231,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/lime.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/linear-algebra.xml</loc>
@@ -251,7 +251,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/loss-function.xml</loc>
-  <lastmod>2019-07-08T14:30:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/mac.xml</loc>
@@ -259,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/mnist.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/model-evaluation.xml</loc>
@@ -363,11 +363,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pytorch.xml</loc>
-  <lastmod>2019-07-08T14:30:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/random-forest.xml</loc>
-  <lastmod>2019-07-11T12:46:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/regression.xml</loc>
@@ -479,10 +479,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-13T13:13:00Z</lastmod>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </sitemap>
 </sitemapindex>
