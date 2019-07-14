@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -346,16 +346,16 @@
   <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
-  <loc>/2019/07/13/</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <loc>/2019/07/14/</loc>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-14T13:02:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -403,7 +403,7 @@
  </url>
  <url>
   <loc>/categories/bert/</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/between/</loc>
@@ -519,7 +519,7 @@
  </url>
  <url>
   <loc>/categories/embedding/</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/encoding/</loc>
@@ -647,7 +647,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-14T13:02:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -914,6 +914,10 @@
   <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/bert-word-embeddings/</loc>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/calculate-the-average-variance-and-standard-deviation/</loc>
   <lastmod>2019-06-18T14:51:00Z</lastmod>
  </url>
@@ -1083,7 +1087,7 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-14T13:02:00Z</lastmod>
+  <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>

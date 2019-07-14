@@ -88,7 +88,73 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="anomaly-detection-by-auto-encoder-deep-learning-in-pyod/" class="u-url">Anomaly Detection by Auto Encoder (Deep Learning) in PyOD</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/1105-filling-bookcase-shelves-dynamic-programming/" class="u-url">1105. Filling Bookcase Shelves [Dynamic Programming]</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/1105-filling-bookcase-shelves-dynamic-programming/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-06-29T21:10:48-07:00" itemprop="datePublished" title="Jun 29, 2019, 9:10:48 PM">Jun 29, 2019, 9:10:48 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/1105-filling-bookcase-shelves-dynamic-programming/#disqus_thread" data-disqus-identifier="cache/posts/coding/1105-filling-bookcase-shelves-dynamic-programming.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="coding/1105-filling-bookcase-shelves-dynamic-programming/#Goal">¶</a>
+</h2>
+<p>This post aims to describe the solution for <a href="https://leetcode.com/contest/weekly-contest-143/problems/filling-bookcase-shelves/">1105. Filling Bookcase Shelves</a> based on the solution by a respectful coder <a href="https://leetcode.com/hexadecimal/">Hexadecimal</a>. This problem could be solved by dynamic programming.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem">Problem<a class="anchor-link" href="coding/1105-filling-bookcase-shelves-dynamic-programming/#Problem">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have a sequence of books: the i-th book has thickness <code>books[i][0]</code> and height <code>books[i][1]</code>.</p>
+<p>We want to place these books in order onto bookcase shelves that have total width shelf_width.</p>
+<p>We choose some of the books to place on this shelf (such that the sum of their thickness is <code>&lt;= shelf_width</code>), then build another level of shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down.  We repeat this process until there are no more books to place.</p>
+<p>Note again that at each step of the above process, the order of the books we place is the same order as the given sequence of books.  For example, if we have an ordered list of 5 books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.</p>
+<p>Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/60392273-4e905100-9b3a-11e9-932d-ea7a64bf0dbc.png" style="height: 300px"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="coding/1105-filling-bookcase-shelves-dynamic-programming/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="anomaly-detection-by-auto-encoder-deep-learning-in-pyod/" class="u-url">Anomaly Detection by Auto Encoder (Deep Learning) in PyOD</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
