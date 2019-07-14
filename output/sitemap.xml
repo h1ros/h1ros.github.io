@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -346,12 +346,16 @@
   <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/13/</loc>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-12T23:13:00Z</lastmod>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -396,6 +400,10 @@
  <url>
   <loc>/categories/beautifulsoup/</loc>
   <lastmod>2019-05-25T06:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/bert/</loc>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/between/</loc>
@@ -508,6 +516,10 @@
  <url>
   <loc>/categories/dynamic-programming/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/embedding/</loc>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/encoding/</loc>
@@ -635,7 +647,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -862,14 +874,6 @@
   <lastmod>2019-07-13T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>/posts/104-maximum-depth-of-binary-tree/</loc>
-  <lastmod>2019-07-12T23:13:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/1105-filling-bookcase-shelves-dynamic-programming/</loc>
-  <lastmod>2019-06-30T05:37:00Z</lastmod>
- </url>
- <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
  </url>
@@ -908,6 +912,10 @@
  <url>
   <loc>/posts/bayesian-regression-using-pymc3/</loc>
   <lastmod>2019-06-09T14:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/bert-word-embeddings/</loc>
+  <lastmod>2019-07-13T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/calculate-the-average-variance-and-standard-deviation/</loc>
@@ -1079,7 +1087,7 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-12T23:13:00Z</lastmod>
+  <lastmod>2019-07-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
