@@ -267,7 +267,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -431,7 +431,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tf-idf.xml</loc>
@@ -487,10 +487,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-14T13:00:00Z</lastmod>
+  <lastmod>2019-07-14T13:02:00Z</lastmod>
  </sitemap>
 </sitemapindex>

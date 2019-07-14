@@ -38,7 +38,6 @@ cache/posts/style-transfer-using-pytorch-part-2.html
 cache/posts/style-transfer-using-pytorch-part-1.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
-cache/posts/bert-word-embeddings.html
 cache/posts/tokenize-text.html
 cache/posts/remove-punctuation.html
 cache/posts/bag-of-words.html
