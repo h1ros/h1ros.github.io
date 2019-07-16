@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="introduce how to normalize observations">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posts about preprocessing | Step-by-step Data Science</title>
+<title>Normalizing Observations | Step-by-step Data Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -18,7 +19,18 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="alternate" type="application/rss+xml" title="RSS for tag preprocessing" hreflang="en" href="../preprocessing.xml">
+</script><link rel="prev" href="../bert-word-embeddings/" title="BERT Word Embeddings" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science">
+<meta property="og:title" content="Normalizing Observations">
+<meta property="og:url" content="/posts/normalizing-observations/">
+<meta property="og:description" content="introduce how to normalize observations">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-16T06:36:42-07:00">
+<meta property="article:tag" content="Min-Max Scaling">
+<meta property="article:tag" content="Normalization">
+<meta property="article:tag" content="preprocessing">
+<meta property="article:tag" content="Standard Scaler">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -43,19 +55,19 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../coding">Coding Problems</a>
+<a href="../../categories/coding">Coding Problems</a>
                 </li>
 <li>
-<a href="../machine-learning">Machine Learning</a>
+<a href="../../categories/machine-learning">Machine Learning</a>
             </li>
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="../../posts/">All Post</a>
+<a href="../">All Post</a>
                     </li>
 <li>
-<a href="../">Categories and Tags</a>
+<a href="../../categories/">Categories and Tags</a>
                     </li>
 <li>
 <a href="../../archive.html">History</a>
@@ -79,44 +91,35 @@
         <div class="row">
             
             
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Normalizing Observations</a></h1>
 
-    <header><h1>Posts about preprocessing</h1>
-        <div class="metadata">
-            
-                <p class="feedlink">
-                        
-            <a href="../preprocessing.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
-
-                </p>
-
-            
-
-        </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/normalizing-observations/" class="u-url">Normalizing Observations</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
+                    h1ros
             </span></p>
             <p class="dateline">
-            <a href="../../posts/normalizing-observations/" rel="bookmark">
+            <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2019-07-16T06:36:42-07:00" itemprop="datePublished" title="Jul 16, 2019, 6:36:42 AM">Jul 16, 2019, 6:36:42 AM</time></a>
             </p>
                 <p class="commentline">
         
-    <a href="../../posts/normalizing-observations/#disqus_thread" data-disqus-identifier="cache/posts/normalizing-observations.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/normalizing-observations.html">Comments</a>
 
+
+            
 
         </p>
 </div>
-    </header><div class="p-summary entry-summary">
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/normalizing-observations/#Goal">¶</a>
+<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
 </h2>
 <p>This post aims to introduce how to normalize the observations including the followings:</p>
 <ul>
@@ -133,7 +136,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/normalizing-observations/#Libraries">¶</a>
+<h2 id="Libraries">Libraries<a class="anchor-link" href="#Libraries">¶</a>
 </h2>
 </div>
 </div>
@@ -163,7 +166,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-a-data">Create a data<a class="anchor-link" href="../../posts/normalizing-observations/#Create-a-data">¶</a>
+<h2 id="Create-a-data">Create a data<a class="anchor-link" href="#Create-a-data">¶</a>
 </h2>
 </div>
 </div>
@@ -294,7 +297,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Normalizing">Normalizing<a class="anchor-link" href="../../posts/normalizing-observations/#Normalizing">¶</a>
+<h2 id="Normalizing">Normalizing<a class="anchor-link" href="#Normalizing">¶</a>
 </h2>
 </div>
 </div>
@@ -304,7 +307,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Min-Max-Scaling">Min-Max Scaling<a class="anchor-link" href="../../posts/normalizing-observations/#Min-Max-Scaling">¶</a>
+<h3 id="Min-Max-Scaling">Min-Max Scaling<a class="anchor-link" href="#Min-Max-Scaling">¶</a>
 </h3>$$x_{min-max\,normalized} =\frac{x - min(x)}{max(x) - min(x)} $$
 </div>
 </div>
@@ -438,7 +441,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Standard-Scaler">Standard Scaler<a class="anchor-link" href="../../posts/normalizing-observations/#Standard-Scaler">¶</a>
+<h3 id="Standard-Scaler">Standard Scaler<a class="anchor-link" href="#Standard-Scaler">¶</a>
 </h3>
 <p>This scaling assumes that the data is sampled from <strong>Normal distribution.</strong>
 $$x_{standard\,normalized} =  \frac{x - mean(x)}{std(x)}$$</p>
@@ -586,458 +589,39 @@ $$x_{standard\,normalized} =  \frac{x - mean(x)}{std(x)}$$</p>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/one-hot-encode-nominal-categorical-features/" class="u-url">One-Hot Encode Nominal Categorical Features</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/one-hot-encode-nominal-categorical-features/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-06-20T12:38:23-07:00" itemprop="datePublished" title="Jun 20, 2019, 12:38:23 PM">Jun 20, 2019, 12:38:23 PM</time></a>
-            </p>
-                <p class="commentline">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/min-max-scaling/" rel="tag">Min-Max Scaling</a></li>
+            <li><a class="tag p-category" href="../../categories/normalization/" rel="tag">Normalization</a></li>
+            <li><a class="tag p-category" href="../../categories/preprocessing/" rel="tag">preprocessing</a></li>
+            <li><a class="tag p-category" href="../../categories/standard-scaler/" rel="tag">Standard Scaler</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bert-word-embeddings/" rel="prev" title="BERT Word Embeddings">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-    <a href="../../posts/one-hot-encode-nominal-categorical-features/#disqus_thread" data-disqus-identifier="cache/posts/one-hot-encode-nominal-categorical-features.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/one-hot-encode-nominal-categorical-features/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to create one-hot-encoded features for categorical variables. In this post, two ways of creating one hot encoded features: <code>OneHotEncoder</code> in <code>scikit-learn</code> and <code>get_dummies</code> in <code>pandas</code>.</p>
-<p>Peronally, I like <code>get_dummies</code> in <code>pandas</code> since <code>pandas</code> takes care of columns names, type of data and therefore, it looks cleaner and simpler with less code.</p>
-<p><img src="https://user-images.githubusercontent.com/8764683/59855990-fc6c6480-93b0-11e9-9bba-a97600f6cc5b.png" alt="image"></p>
-<p><strong>Reference</strong></p>
-<ul>
-<li>
-<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">scikit learn documentation - sklearn.preprocessing.OneHotEncoder</a></p>
-</li>
-<li>
-<p><a href="http://www.insightsbot.com/blog/McTKK/python-one-hot-encoding-with-scikit-learn">Insightsbot - Python One Hot Encoding with SciKit Learn</a></p>
-</li>
-<li>
-<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html">pandas documentation - pandas.get_dummies</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/one-hot-encode-nominal-categorical-features/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/convert-strings-to-dates/" class="u-url">Convert Strings To Dates</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/convert-strings-to-dates/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-31T01:12:43-07:00" itemprop="datePublished" title="May 31, 2019, 1:12:43 AM">May 31, 2019, 1:12:43 AM</time></a>
-            </p>
-                <p class="commentline">
         
-    <a href="../../posts/convert-strings-to-dates/#disqus_thread" data-disqus-identifier="cache/posts/convert-strings-to-dates.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/convert-strings-to-dates/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to convert strings to dates using <code>pandas</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/convert-strings-to-dates/#Libraries">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Date-in-string">Date in string<a class="anchor-link" href="../../posts/convert-strings-to-dates/#Date-in-string">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'date'</span><span class="p">:[</span><span class="s1">'20190101'</span><span class="p">,</span> <span class="s1">'20190102'</span><span class="p">,</span> <span class="s1">'20190105'</span><span class="p">],</span> 
-                       <span class="s1">'temperature'</span><span class="p">:</span> <span class="p">[</span><span class="mf">23.5</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">25</span><span class="p">]})</span>
-<span class="n">df_date</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>date</th>
-      <th>temperature</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>20190101</td>
-      <td>23.5</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>20190102</td>
-      <td>32.0</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>20190105</td>
-      <td>25.0</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Convert-strings-to-date-format">Convert strings to date format<a class="anchor-link" href="../../posts/convert-strings-to-dates/#Convert-strings-to-date-format">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_date</span><span class="p">[</span><span class="s1">'date'</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0   2019-01-01
-1   2019-01-02
-2   2019-01-05
-Name: date, dtype: datetime64[ns]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/parse-html/" class="u-url">Parse HTML</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/parse-html/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-23T23:18:35-07:00" itemprop="datePublished" title="May 23, 2019, 11:18:35 PM">May 23, 2019, 11:18:35 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/parse-html/#disqus_thread" data-disqus-identifier="cache/posts/parse-html.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/parse-html/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to parse the HTML data fetched by <code>BeautifulSoup</code></p>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/">Using BeautifulSoup to parse HTML and extract press briefings URLs</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Library">Library<a class="anchor-link" href="../../posts/parse-html/#Library">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simple-HTML-from-string">Simple HTML from string<a class="anchor-link" href="../../posts/parse-html/#Simple-HTML-from-string">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">html_simple</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is Title&lt;h1&gt;'</span>
-<span class="n">html_simple</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>'&lt;h1&gt;This is Title&lt;h1&gt;'</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_simple</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>'This is Title'</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/parse-html/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/dimensionality-reduction-with-pca/" class="u-url">Dimensionality Reduction With PCA</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/dimensionality-reduction-with-pca/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-20T00:56:13-07:00" itemprop="datePublished" title="May 20, 2019, 12:56:13 AM">May 20, 2019, 12:56:13 AM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/dimensionality-reduction-with-pca/#disqus_thread" data-disqus-identifier="cache/posts/dimensionality-reduction-with-pca.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/dimensionality-reduction-with-pca/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to conduct dimensionality reduction with Principal Component Analysis (PCA).</p>
-<p>Dimensionality reduction with PCA can be used as a part of preprocessing to improve the accuracy of prediction when we have a lot of features that has correlation mutually.</p>
-<p>The figure below visually explains what PCA does. The <strong>blue dots</strong> are original data points in 2D. The <strong>red dots</strong> are projected data onto 1D rotating line. The <strong>red dotted line</strong> from blue points to red points are the trace of the projection. When the moving line overlaps with the <strong>pink line</strong>, the projected dot on the line is most widely distributed. If we apply PCA to this 2D data, 1D data can be obtained on this 1D line.</p>
-<center>
-<figure><img src="https://poissonisfish.files.wordpress.com/2017/01/q7hip.gif?w=912" alt="Visual Example of Dimensionality Reduction with PCA" style="width:70%"><figcaption>Fig.1 PCA to project 2D data into 1D dimension from <a href="https://www.r-bloggers.com/principal-component-analysis-in-r">R-bloggers PCA in R</a> </figcaption></figure>
-</center>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">scikit-learn standard scaler</a></li>
-<li><a href="https://www.r-bloggers.com/principal-component-analysis-in-r">R-bloggers PCA in R</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/dimensionality-reduction-with-pca/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article>
-</div>
-
-
-
-        
-       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="/posts/normalizing-observations/",
+        disqus_title="Normalizing Observations",
+        disqus_identifier="cache/posts/normalizing-observations.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -1049,7 +633,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script>
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
         <!--End of body content-->
 

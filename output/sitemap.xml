@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-14T13:04:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -350,12 +350,16 @@
   <lastmod>2019-07-14T13:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/16/</loc>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-14T13:05:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-14T13:04:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -647,7 +651,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-14T13:04:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -660,6 +664,10 @@
  <url>
   <loc>/categories/matrix/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/min-max-scaling/</loc>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/mlp/</loc>
@@ -692,6 +700,10 @@
  <url>
   <loc>/categories/nltk/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/normalization/</loc>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/operations/</loc>
@@ -790,6 +802,10 @@
   <lastmod>2019-07-01T15:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/standard-scaler/</loc>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/stemming/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -871,7 +887,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1087,7 +1103,7 @@
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-14T13:04:00Z</lastmod>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1152,6 +1168,10 @@
  <url>
   <loc>/posts/neural-network-for-classification/</loc>
   <lastmod>2019-06-10T14:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/normalizing-observations/</loc>
+  <lastmod>2019-07-16T14:38:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/one-hot-encode-nominal-categorical-features/</loc>
