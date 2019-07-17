@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="break down dtreevis module step by step (Part 1)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Split-Up: dtreeviz Part 1 | Step-by-step Data Science</title>
+<title>Split-Up: dtreeviz (Part 1) | Step-by-step Data Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -21,11 +22,15 @@
 </script><link rel="prev" href="../coding/1025-divisor-game/" title="1025. Divisor Game (C++)" type="text/html">
 <link rel="next" href="../coding/leetcode-top-100-problem-selection/" title="LeetCode Top 100 Problem Selection" type="text/html">
 <meta property="og:site_name" content="Step-by-step Data Science">
-<meta property="og:title" content="Split-Up: dtreeviz Part 1">
+<meta property="og:title" content="Split-Up: dtreeviz (Part 1)">
 <meta property="og:url" content="/posts/split-up-dtreeviz-part-1/">
-<meta property="og:description" content="Goal¶In this post, we will go through each function in dtreeviz module  to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a ">
+<meta property="og:description" content="break down dtreevis module step by step (Part 1)">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-04-15T22:27:13-07:00">
+<meta property="article:tag" content="Decision Tree">
+<meta property="article:tag" content="dtreevis">
+<meta property="article:tag" content="Ensemble">
+<meta property="article:tag" content="Visualization">
 <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
@@ -87,7 +92,7 @@
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Split-Up: dtreeviz Part 1</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Split-Up: dtreeviz (Part 1)</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -117,7 +122,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
 </h2>
-<p>In this post, we will go through each function in <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module  to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
+<p>This post aims to go through each function in <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
 <p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
 <blockquote>
 <p>You would just have to get ShadowDecisionTree wrappers for those trees.</p>
@@ -258,7 +263,13 @@
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/decision-tree/" rel="tag">Decision Tree</a></li>
+            <li><a class="tag p-category" href="../../categories/dtreevis/" rel="tag">dtreevis</a></li>
+            <li><a class="tag p-category" href="../../categories/ensemble/" rel="tag">Ensemble</a></li>
+            <li><a class="tag p-category" href="../../categories/visualization/" rel="tag">Visualization</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../coding/1025-divisor-game/" rel="prev" title="1025. Divisor Game (C++)">Previous post</a>
             </li>
@@ -272,7 +283,7 @@
         <script>
         var disqus_shortname ="https-h1ros-github-io",
             disqus_url="/posts/split-up-dtreeviz-part-1/",
-        disqus_title="Split-Up: dtreeviz Part 1",
+        disqus_title="Split-Up: dtreeviz (Part 1)",
         disqus_identifier="cache/posts/split-up-dtreeviz-part-1.html",
         disqus_config = function () {
             this.language = "en";
