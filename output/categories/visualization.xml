@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Visualization)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/visualization.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jul 2019 15:04:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreevis (Part 2)</title><link>/posts/split-up-dtreevis-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Visualization)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/visualization.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jul 2019 15:15:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreevis (Part 2)</title><link>/posts/split-up-dtreevis-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
@@ -18,14 +18,14 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="ShadowDecTree-and-ShadowDecTreeNode-class"&gt;&lt;code&gt;ShadowDecTree&lt;/code&gt; and &lt;code&gt;ShadowDecTreeNode&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#ShadowDecTree-and-ShadowDecTreeNode-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="ShadowDecTree-class"&gt;&lt;code&gt;ShadowDecTree&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#ShadowDecTree-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Source"&gt;Source&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Source"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Source-github"&gt;Source &lt;a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py"&gt;github&lt;/a&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Source-github"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -369,7 +369,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [67]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [81]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
@@ -378,6 +378,7 @@
 
 &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
 &lt;span class="n"&gt;Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;dot_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;export_graphviz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;out_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
@@ -399,7 +400,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[67]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[81]:&lt;/div&gt;
 
 
 
@@ -417,7 +418,7 @@
 &lt;g id="node1" class="node"&gt;
 &lt;title&gt;0&lt;/title&gt;
 &lt;path fill="transparent" stroke="#000000" d="M141.3078,-203.2C141.3078,-203.2 69.23,-203.2 69.23,-203.2 63.23,-203.2 57.23,-197.2 57.23,-191.2 57.23,-191.2 57.23,-123.2 57.23,-123.2 57.23,-117.2 63.23,-111.2 69.23,-111.2 69.23,-111.2 141.3078,-111.2 141.3078,-111.2 147.3078,-111.2 153.3078,-117.2 153.3078,-123.2 153.3078,-123.2 153.3078,-191.2 153.3078,-191.2 153.3078,-197.2 147.3078,-203.2 141.3078,-203.2"&gt;&lt;/path&gt;
-&lt;text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000"&gt;1 ≤ 0.5&lt;/text&gt;
+&lt;text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000"&gt;0 ≤ 0.5&lt;/text&gt;
 &lt;text text-anchor="start" x="76.6739" y="-169.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000"&gt;gini = 0.5&lt;/text&gt;
 &lt;text text-anchor="start" x="67.3422" y="-153" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000"&gt;samples = 2&lt;/text&gt;
 &lt;text text-anchor="start" x="65" y="-136.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000"&gt;value = [1, 1]&lt;/text&gt;
@@ -496,7 +497,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [68]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [82]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# instantiate ShadowDecTree&lt;/span&gt;
@@ -510,7 +511,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [69]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [83]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# A root node&lt;/span&gt;
@@ -527,13 +528,13 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[69]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[83]:&lt;/div&gt;
 
 
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;&amp;lt;__main__.ShadowDecTreeNode at 0x1216dd748&amp;gt;&lt;/pre&gt;
+&lt;pre&gt;&amp;lt;__main__.ShadowDecTreeNode at 0x1216ce6d8&amp;gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -544,7 +545,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [70]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [84]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# A list of end nodes &lt;/span&gt;
@@ -561,14 +562,14 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[70]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[84]:&lt;/div&gt;
 
 
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;[&amp;lt;__main__.ShadowDecTreeNode at 0x1216dd128&amp;gt;,
- &amp;lt;__main__.ShadowDecTreeNode at 0x1216ddb00&amp;gt;]&lt;/pre&gt;
+&lt;pre&gt;[&amp;lt;__main__.ShadowDecTreeNode at 0x1216ce8d0&amp;gt;,
+ &amp;lt;__main__.ShadowDecTreeNode at 0x1216ce748&amp;gt;]&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -579,7 +580,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [71]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [85]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# A list of internal nodes&lt;/span&gt;
@@ -596,13 +597,13 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[71]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[85]:&lt;/div&gt;
 
 
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;[&amp;lt;__main__.ShadowDecTreeNode at 0x1216dd748&amp;gt;]&lt;/pre&gt;
+&lt;pre&gt;[&amp;lt;__main__.ShadowDecTreeNode at 0x1216ce6d8&amp;gt;]&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -613,7 +614,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [72]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [86]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# A mapping from node id to sample id&lt;/span&gt;
@@ -630,7 +631,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[72]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[86]:&lt;/div&gt;
 
 
 
@@ -654,7 +655,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [73]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [87]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# L91 nclasses&lt;/span&gt;
@@ -671,7 +672,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[73]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[87]:&lt;/div&gt;
 
 
 
@@ -688,7 +689,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [74]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [88]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# L94 nnodes&lt;/span&gt;
@@ -705,7 +706,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[74]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[88]:&lt;/div&gt;
 
 
 
@@ -722,7 +723,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [75]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [89]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# L98 leaf_sample_counts&lt;/span&gt;
@@ -739,7 +740,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[75]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[89]:&lt;/div&gt;
 
 
 
@@ -756,7 +757,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [76]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [90]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# L101 isclassifier&lt;/span&gt;
@@ -773,7 +774,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[76]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[90]:&lt;/div&gt;
 
 
 
@@ -790,12 +791,12 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [77]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [92]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# L104 get_split_node_heights&lt;/span&gt;
-&lt;span class="n"&gt;nbins&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
-&lt;span class="n"&gt;shadow_tree&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_split_node_heights&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;nbins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nbins&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;shadow_tree&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_split_node_heights&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;nbins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;nbins&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -808,15 +809,27 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[77]:&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+&lt;span class="ansi-red-fg"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ansi-red-fg"&gt;TypeError&lt;/span&gt;                                 Traceback (most recent call last)
+&lt;span class="ansi-green-fg"&gt;&amp;lt;ipython-input-92-37a71a5bf894&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;&amp;lt;module&amp;gt;&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;      1&lt;/span&gt; &lt;span class="ansi-red-fg"&gt;# L104 get_split_node_heights&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;      2&lt;/span&gt; nbins &lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt; &lt;span class="ansi-cyan-fg"&gt;2&lt;/span&gt;
+&lt;span class="ansi-green-fg"&gt;----&amp;gt; 3&lt;/span&gt;&lt;span class="ansi-red-fg"&gt; &lt;/span&gt;shadow_tree&lt;span class="ansi-blue-fg"&gt;.&lt;/span&gt;get_split_node_heights&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;X_train&lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt;X&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; y_train&lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt;Y&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; nbins&lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt;nbins&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;
 
+&lt;span class="ansi-green-fg"&gt;&amp;lt;ipython-input-64-a45dcea3c57b&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;get_split_node_heights&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;(self, X_train, y_train, nbins)&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;    114&lt;/span&gt;             &lt;span class="ansi-red-fg"&gt;#                  overall_feature_range[1] + binwidth, binwidth)&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;    115&lt;/span&gt;             &lt;span class="ansi-red-fg"&gt;# print(f"\tlen(bins)={len(bins):2d} bins={bins}")&lt;/span&gt;
+&lt;span class="ansi-green-fg"&gt;--&amp;gt; 116&lt;/span&gt;&lt;span class="ansi-red-fg"&gt;             &lt;/span&gt;X&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; y &lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt; X_feature&lt;span class="ansi-blue-fg"&gt;[&lt;/span&gt;node&lt;span class="ansi-blue-fg"&gt;.&lt;/span&gt;samples&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;]&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; y_train&lt;span class="ansi-blue-fg"&gt;[&lt;/span&gt;node&lt;span class="ansi-blue-fg"&gt;.&lt;/span&gt;samples&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;]&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;    117&lt;/span&gt;             X_hist &lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt; &lt;span class="ansi-blue-fg"&gt;[&lt;/span&gt;X&lt;span class="ansi-blue-fg"&gt;[&lt;/span&gt;y &lt;span class="ansi-blue-fg"&gt;==&lt;/span&gt; cl&lt;span class="ansi-blue-fg"&gt;]&lt;/span&gt; &lt;span class="ansi-green-fg"&gt;for&lt;/span&gt; cl &lt;span class="ansi-green-fg"&gt;in&lt;/span&gt; class_values&lt;span class="ansi-blue-fg"&gt;]&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;    118&lt;/span&gt;             height_of_bins &lt;span class="ansi-blue-fg"&gt;=&lt;/span&gt; np&lt;span class="ansi-blue-fg"&gt;.&lt;/span&gt;zeros&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;nbins&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;
 
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;{0: 1.0}&lt;/pre&gt;
+&lt;span class="ansi-red-fg"&gt;TypeError&lt;/span&gt;: list indices must be integers or slices, not list&lt;/pre&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -935,6 +948,32 @@
 
 &lt;/div&gt;
 
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Opportunity-to-contribute"&gt;Opportunity to contribute&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Opportunity-to-contribute"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Through line-by-line execution, I found the following opportunities I could potentially contribute to.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add documentation for each methods&lt;/li&gt;
+&lt;li&gt;Validation for &lt;code&gt;X_train&lt;/code&gt; and &lt;code&gt;y_train&lt;/code&gt; since when I pass the list as &lt;code&gt;X_train&lt;/code&gt; and &lt;code&gt;y_train&lt;/code&gt;, I got the error for &lt;code&gt;get_split_node_heights&lt;/code&gt; and &lt;code&gt;tesselation&lt;/code&gt; like below:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/61387270-c9a28700-a8f0-11e9-9244-6233bfb00450.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 

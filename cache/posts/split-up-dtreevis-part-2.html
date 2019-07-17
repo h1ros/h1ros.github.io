@@ -18,14 +18,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ShadowDecTree-and-ShadowDecTreeNode-class"><code>ShadowDecTree</code> and <code>ShadowDecTreeNode</code> class<a class="anchor-link" href="#ShadowDecTree-and-ShadowDecTreeNode-class">&#182;</a></h1>
+<h1 id="ShadowDecTree-class"><code>ShadowDecTree</code> class<a class="anchor-link" href="#ShadowDecTree-class">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Source">Source<a class="anchor-link" href="#Source">&#182;</a></h2>
+<h2 id="Source-github">Source <a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py">github</a><a class="anchor-link" href="#Source-github">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -369,7 +369,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -378,6 +378,7 @@
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
 <span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
@@ -399,7 +400,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[67]:</div>
+    <div class="prompt output_prompt">Out[81]:</div>
 
 
 
@@ -419,7 +420,7 @@
 <g id="node1" class="node">
 <title>0</title>
 <path fill="transparent" stroke="#000000" d="M141.3078,-203.2C141.3078,-203.2 69.23,-203.2 69.23,-203.2 63.23,-203.2 57.23,-197.2 57.23,-191.2 57.23,-191.2 57.23,-123.2 57.23,-123.2 57.23,-117.2 63.23,-111.2 69.23,-111.2 69.23,-111.2 141.3078,-111.2 141.3078,-111.2 147.3078,-111.2 153.3078,-117.2 153.3078,-123.2 153.3078,-123.2 153.3078,-191.2 153.3078,-191.2 153.3078,-197.2 147.3078,-203.2 141.3078,-203.2"/>
-<text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">1 ≤ 0.5</text>
+<text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">0 ≤ 0.5</text>
 <text text-anchor="start" x="76.6739" y="-169.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.5</text>
 <text text-anchor="start" x="67.3422" y="-153" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 2</text>
 <text text-anchor="start" x="65" y="-136.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 1]</text>
@@ -498,7 +499,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTree</span>
@@ -512,7 +513,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A root node</span>
@@ -529,13 +530,13 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[83]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.ShadowDecTreeNode at 0x1216dd748&gt;</pre>
+<pre>&lt;__main__.ShadowDecTreeNode at 0x1216ce6d8&gt;</pre>
 </div>
 
 </div>
@@ -546,7 +547,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A list of end nodes </span>
@@ -563,14 +564,14 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[70]:</div>
+    <div class="prompt output_prompt">Out[84]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;__main__.ShadowDecTreeNode at 0x1216dd128&gt;,
- &lt;__main__.ShadowDecTreeNode at 0x1216ddb00&gt;]</pre>
+<pre>[&lt;__main__.ShadowDecTreeNode at 0x1216ce8d0&gt;,
+ &lt;__main__.ShadowDecTreeNode at 0x1216ce748&gt;]</pre>
 </div>
 
 </div>
@@ -581,7 +582,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A list of internal nodes</span>
@@ -598,13 +599,13 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[71]:</div>
+    <div class="prompt output_prompt">Out[85]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;__main__.ShadowDecTreeNode at 0x1216dd748&gt;]</pre>
+<pre>[&lt;__main__.ShadowDecTreeNode at 0x1216ce6d8&gt;]</pre>
 </div>
 
 </div>
@@ -615,7 +616,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A mapping from node id to sample id</span>
@@ -632,7 +633,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[72]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -656,7 +657,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L91 nclasses</span>
@@ -673,7 +674,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[73]:</div>
+    <div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -690,7 +691,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L94 nnodes</span>
@@ -707,7 +708,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[74]:</div>
+    <div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -724,7 +725,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L98 leaf_sample_counts</span>
@@ -741,7 +742,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -758,7 +759,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L101 isclassifier</span>
@@ -775,7 +776,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[76]:</div>
+    <div class="prompt output_prompt">Out[90]:</div>
 
 
 
@@ -792,12 +793,12 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L104 get_split_node_heights</span>
-<span class="n">nbins</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">shadow_tree</span><span class="o">.</span><span class="n">get_split_node_heights</span><span class="p">(</span><span class="n">X_train</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y_train</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">nbins</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">shadow_tree</span><span class="o">.</span><span class="n">get_split_node_heights</span><span class="p">(</span><span class="n">X_train</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y_train</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="n">nbins</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -810,15 +811,27 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-92-37a71a5bf894&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># L104 get_split_node_heights</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> nbins <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>shadow_tree<span class="ansi-blue-fg">.</span>get_split_node_heights<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">=</span>X<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">=</span>Y<span class="ansi-blue-fg">,</span> nbins<span class="ansi-blue-fg">=</span>nbins<span class="ansi-blue-fg">)</span>
 
+<span class="ansi-green-fg">&lt;ipython-input-64-a45dcea3c57b&gt;</span> in <span class="ansi-cyan-fg">get_split_node_heights</span><span class="ansi-blue-fg">(self, X_train, y_train, nbins)</span>
+<span class="ansi-green-intense-fg ansi-bold">    114</span>             <span class="ansi-red-fg">#                  overall_feature_range[1] + binwidth, binwidth)</span>
+<span class="ansi-green-intense-fg ansi-bold">    115</span>             <span class="ansi-red-fg"># print(f&#34;\tlen(bins)={len(bins):2d} bins={bins}&#34;)</span>
+<span class="ansi-green-fg">--&gt; 116</span><span class="ansi-red-fg">             </span>X<span class="ansi-blue-fg">,</span> y <span class="ansi-blue-fg">=</span> X_feature<span class="ansi-blue-fg">[</span>node<span class="ansi-blue-fg">.</span>samples<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">[</span>node<span class="ansi-blue-fg">.</span>samples<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">    117</span>             X_hist <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>X<span class="ansi-blue-fg">[</span>y <span class="ansi-blue-fg">==</span> cl<span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">for</span> cl <span class="ansi-green-fg">in</span> class_values<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">    118</span>             height_of_bins <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>nbins<span class="ansi-blue-fg">)</span>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>{0: 1.0}</pre>
+<span class="ansi-red-fg">TypeError</span>: list indices must be integers or slices, not list</pre>
 </div>
-
 </div>
 
 </div>
@@ -937,6 +950,32 @@
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Opportunity-to-contribute">Opportunity to contribute<a class="anchor-link" href="#Opportunity-to-contribute">&#182;</a></h2><p>Through line-by-line execution, I found the following opportunities I could potentially contribute to.</p>
+<ul>
+<li>Add documentation for each methods</li>
+<li>Validation for <code>X_train</code> and <code>y_train</code> since when I pass the list as <code>X_train</code> and <code>y_train</code>, I got the error for <code>get_split_node_heights</code> and <code>tesselation</code> like below:</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/8764683/61387270-c9a28700-a8f0-11e9-9244-6233bfb00450.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
