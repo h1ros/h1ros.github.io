@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href=".">
 <link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
-<link rel="next" href="index-8.html" type="text/html">
+<link rel="next" href="index-9.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -87,7 +87,648 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="split-up-dtreevis-part-2/" class="u-url">Split Up: dtreevis (Part 2)</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="split-up-dtreevis-part-3/" class="u-url">Split Up: dtreevis (Part 3)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="split-up-dtreevis-part-3/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-18T08:17:01-07:00" itemprop="datePublished" title="Jul 18, 2019, 8:17:01 AM">Jul 18, 2019, 8:17:01 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="split-up-dtreevis-part-3/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreevis-part-3.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="split-up-dtreevis-part-3/#Goal">¶</a>
+</h2>
+<p>This post aims to break down the module <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
+<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
+<p>This post is the 3rd part: breaking down <code>ShadowDecTree</code>.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://github.com/parrt/dtreeviz">Github dtreeviz</a></li>
+<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/">Step by Step Data Science - Split-Up: dtreeviz (Part 1)</a></li>
+<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/">Step by Step Data Science - Split-Up: dtreeviz (Part 2)</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/tree.html">Scikit-Learn - Tree</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ShadowDecTreeNode-class">
+<code>ShadowDecTreeNode</code> class<a class="anchor-link" href="split-up-dtreevis-part-3/#ShadowDecTreeNode-class">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Source-github">Source <a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py">github</a><a class="anchor-link" href="split-up-dtreevis-part-3/#Source-github">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">compute_class_weight</span>
+
+<span class="kn">from</span> <span class="nn">dtreeviz.shadow</span> <span class="k">import</span> <span class="n">ShadowDecTree</span> 
+<span class="c1"># skip ShadowDecTree Class</span>
+<span class="c1">#</span>
+
+<span class="k">class</span> <span class="nc">ShadowDecTreeNode</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    A node in a shadow tree.  Each node has left and right</span>
+<span class="sd">    pointers to child nodes, if any.  As part of tree construction process, the</span>
+<span class="sd">    samples examined at each decision node or at each leaf node are</span>
+<span class="sd">    saved into field node_samples.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">shadow_tree</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">feature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">feature_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return a list of sample indexes associated with this node. If this is a</span>
+<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
+<span class="sd">        or class.  If this is an internal node, it is the number of samples used</span>
+<span class="sd">        to compute the split point.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">node_to_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">nsamples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return the number of samples associated with this node. If this is a</span>
+<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
+<span class="sd">        or class. If this is an internal node, it is the number of samples used</span>
+<span class="sd">        to compute the split point.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_node_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="c1"># same as len(self.node_samples)</span>
+
+    <span class="k">def</span> <span class="nf">split_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return the list of indexes to the left and the right of the split value.</span>
+<span class="sd">        """</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">())</span>
+        <span class="n">node_X_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">X_train</span><span class="p">[</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
+        <span class="n">split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&lt;</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&gt;=</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">isleaf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">isclassifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">&gt;</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Number</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If this is a leaf node, return the predicted continuous value, if this is a</span>
+<span class="sd">        regressor, or the class number, if this is a classifier.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isleaf</span><span class="p">():</span> <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">predicted_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">predicted_class</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">prediction_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If the tree model is a classifier and we know the class names,</span>
+<span class="sd">        return the class name associated with the prediction for this leaf node.</span>
+<span class="sd">        Return prediction class or value otherwise.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">class_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If this tree model is a classifier, return a list with the count</span>
+<span class="sd">        associated with each class.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"&lt;pred=</span><span class="si">{value}</span><span class="s2">,n=</span><span class="si">{n}</span><span class="s2">&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"(</span><span class="si">{f}</span><span class="s2">@</span><span class="si">{s}</span><span class="s2"> </span><span class="si">{left}</span><span class="s2"> </span><span class="si">{right}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="p">(),</span>
+                                                     <span class="n">s</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span>
+                                                     <span class="n">left</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">,</span>
+                                                     <span class="n">right</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Instantiate-class-objects">Instantiate class objects<a class="anchor-link" href="split-up-dtreevis-part-3/#Instantiate-class-objects">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Create-a-tree-model-by-scikit-learn">Create a tree model by scikit learn<a class="anchor-link" href="split-up-dtreevis-part-3/#Create-a-tree-model-by-scikit-learn">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">graphviz</span> 
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">tree</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Y = [0, 1]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                     <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  
+                     <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'0'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">],</span>  
+                     <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
+                     <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>  
+<span class="n">graph</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ --><!-- Title: Tree Pages: 1 --><svg width="220pt" height="211pt" viewbox="0.00 0.00 219.54 211.20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 207.2)"><title>Tree</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-207.2 215.5378,-207.2 215.5378,4 -4,4"></polygon><!-- 0 --><g id="node1" class="node"><title>0</title>
+<path fill="transparent" stroke="#000000" d="M141.3078,-203.2C141.3078,-203.2 69.23,-203.2 69.23,-203.2 63.23,-203.2 57.23,-197.2 57.23,-191.2 57.23,-191.2 57.23,-123.2 57.23,-123.2 57.23,-117.2 63.23,-111.2 69.23,-111.2 69.23,-111.2 141.3078,-111.2 141.3078,-111.2 147.3078,-111.2 153.3078,-117.2 153.3078,-123.2 153.3078,-123.2 153.3078,-191.2 153.3078,-191.2 153.3078,-197.2 147.3078,-203.2 141.3078,-203.2"></path><text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">1 ≤ 0.5</text><text text-anchor="start" x="76.6739" y="-169.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.5</text><text text-anchor="start" x="67.3422" y="-153" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 2</text><text text-anchor="start" x="65" y="-136.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 1]</text><text text-anchor="start" x="77.4551" y="-119.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 1 --><g id="node2" class="node"><title>1</title>
+<path fill="#e58139" stroke="#000000" d="M84.3078,-75.3003C84.3078,-75.3003 12.23,-75.3003 12.23,-75.3003 6.23,-75.3003 .23,-69.3003 .23,-63.3003 .23,-63.3003 .23,-11.8997 .23,-11.8997 .23,-5.8997 6.23,.1003 12.23,.1003 12.23,.1003 84.3078,.1003 84.3078,.1003 90.3078,.1003 96.3078,-5.8997 96.3078,-11.8997 96.3078,-11.8997 96.3078,-63.3003 96.3078,-63.3003 96.3078,-69.3003 90.3078,-75.3003 84.3078,-75.3003"></path><text text-anchor="start" x="19.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="10.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="8" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 0]</text><text text-anchor="start" x="20.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 0&#45;&gt;1 --><g id="edge1" class="edge"><title>0-&gt;1</title>
+<path fill="none" stroke="#000000" d="M83.2312,-110.9595C79.0901,-102.2704 74.7568,-93.1781 70.6066,-84.47"></path><polygon fill="#000000" stroke="#000000" points="73.6547,-82.7302 66.1928,-75.2088 67.3356,-85.7419 73.6547,-82.7302"></polygon><text text-anchor="middle" x="57.8402" y="-94.5722" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">True</text></g><!-- 2 --><g id="node3" class="node"><title>2</title>
+<path fill="#399de5" stroke="#000000" d="M199.3078,-75.3003C199.3078,-75.3003 127.23,-75.3003 127.23,-75.3003 121.23,-75.3003 115.23,-69.3003 115.23,-63.3003 115.23,-63.3003 115.23,-11.8997 115.23,-11.8997 115.23,-5.8997 121.23,.1003 127.23,.1003 127.23,.1003 199.3078,.1003 199.3078,.1003 205.3078,.1003 211.3078,-5.8997 211.3078,-11.8997 211.3078,-11.8997 211.3078,-63.3003 211.3078,-63.3003 211.3078,-69.3003 205.3078,-75.3003 199.3078,-75.3003"></path><text text-anchor="start" x="134.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="125.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="123" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [0, 1]</text><text text-anchor="start" x="135.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 1</text></g><!-- 0&#45;&gt;2 --><g id="edge2" class="edge"><title>0-&gt;2</title>
+<path fill="none" stroke="#000000" d="M127.6932,-110.9595C131.907,-102.2704 136.3163,-93.1781 140.5393,-84.47"></path><polygon fill="#000000" stroke="#000000" points="143.8162,-85.7339 145.0305,-75.2088 137.5178,-82.6794 143.8162,-85.7339"></polygon><text text-anchor="middle" x="153.2229" y="-94.6284" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">False</text></g></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-a-ShadowDecTreeNode">Create a <code>ShadowDecTreeNode</code><a class="anchor-link" href="split-up-dtreevis-part-3/#Create-a-ShadowDecTreeNode">¶</a>
+</h3>
+<p><strong>ShadowDecTreeNode</strong> <code>__init__</code></p>
+<ul>
+<li>L222-226: store input arguments as class members</li>
+<li>L228-308: define the same functions in tree objects like <code>split</code>, <code>feature</code> etc. or utility functions</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTree</span>
+<span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">ShadowDecTree</span><span class="p">(</span><span class="n">tree_model</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y_train</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTreeNode</span>
+<span class="n">shadow_tree_node0</span> <span class="o">=</span> <span class="n">ShadowDecTreeNode</span><span class="p">(</span><span class="n">shadow_tree</span><span class="o">=</span><span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">shadow_tree_node0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;__main__.ShadowDecTreeNode at 0x120eda908&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods-under-``ShadowTreeDecNode">Methods under ``ShadowTreeDecNode<a class="anchor-link" href="split-up-dtreevis-part-3/#Methods-under-%60%60ShadowTreeDecNode">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L228 split</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L231 feature</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">feature</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L239 samples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">samples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L248 nsamples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">nsamples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L257 split_samples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split_samples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([0]), array([1]))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L268 isleaf</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isleaf</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L271 isclassifier</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ True])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L287 prediction_name</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">prediction_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L298 class_counts</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">class_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 1])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="split-up-dtreevis-part-2/" class="u-url">Split Up: dtreevis (Part 2)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -147,7 +788,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [64]:</div>
+<div class="prompt input_prompt">In [109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -156,6 +797,7 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
 <span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">compute_class_weight</span>
+<span class="kn">from</span> <span class="nn">dtreeviz.shadow</span> <span class="k">import</span> <span class="n">ShadowDecTreeNode</span> 
 
 
 <span class="k">class</span> <span class="nc">ShadowDecTree</span><span class="p">:</span>
@@ -357,111 +999,6 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">ShadowDecTreeNode</span><span class="p">:</span>
-    <span class="sd">"""</span>
-<span class="sd">    A node in a shadow tree.  Each node has left and right</span>
-<span class="sd">    pointers to child nodes, if any.  As part of tree construction process, the</span>
-<span class="sd">    samples examined at each decision node or at each leaf node are</span>
-<span class="sd">    saved into field node_samples.</span>
-<span class="sd">    """</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">shadow_tree</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
-
-    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">feature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">feature_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return a list of sample indexes associated with this node. If this is a</span>
-<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
-<span class="sd">        or class.  If this is an internal node, it is the number of samples used</span>
-<span class="sd">        to compute the split point.</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">node_to_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">nsamples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return the number of samples associated with this node. If this is a</span>
-<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
-<span class="sd">        or class. If this is an internal node, it is the number of samples used</span>
-<span class="sd">        to compute the split point.</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_node_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="c1"># same as len(self.node_samples)</span>
-
-    <span class="k">def</span> <span class="nf">split_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return the list of indexes to the left and the right of the split value.</span>
-<span class="sd">        """</span>
-        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">())</span>
-        <span class="n">node_X_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">X_train</span><span class="p">[</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
-        <span class="n">split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-        <span class="n">left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&lt;</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&gt;=</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
-
-    <span class="k">def</span> <span class="nf">isleaf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">isclassifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">&gt;</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Number</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If this is a leaf node, return the predicted continuous value, if this is a</span>
-<span class="sd">        regressor, or the class number, if this is a classifier.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isleaf</span><span class="p">():</span> <span class="k">return</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">predicted_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">predicted_class</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">prediction_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If the tree model is a classifier and we know the class names,</span>
-<span class="sd">        return the class name associated with the prediction for this leaf node.</span>
-<span class="sd">        Return prediction class or value otherwise.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">class_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If this tree model is a classifier, return a list with the count</span>
-<span class="sd">        associated with each class.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">"&lt;pred=</span><span class="si">{value}</span><span class="s2">,n=</span><span class="si">{n}</span><span class="s2">&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">"(</span><span class="si">{f}</span><span class="s2">@</span><span class="si">{s}</span><span class="s2"> </span><span class="si">{left}</span><span class="s2"> </span><span class="si">{right}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="p">(),</span>
-                                                     <span class="n">s</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span>
-                                                     <span class="n">left</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">,</span>
-                                                     <span class="n">right</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2687,436 +3224,12 @@ pip install xgboost
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/" class="u-url">How to Develop a 1D Generative Adversarial Network From Scratch in PyTorch (Part 2)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-03T09:01:18-07:00" itemprop="datePublished" title="Jul 3, 2019, 9:01:18 AM">Jul 3, 2019, 9:01:18 AM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#disqus_thread" data-disqus-identifier="cache/posts/how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#Goal">¶</a>
-</h2>
-<p>This post is the 2nd part of "How to develop a 1d GAN from scratch in PyTorch", inspired by the blog "<a href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">Machine Learning Mastery -  How to Develop a 1D Generative Adversarial Network From Scratch in Keras</a>" written by Jason Brownlee, PhD. But to learn step-by-step, I will describe the same concept with PyTorch.</p>
-<p>This post will cover the followings:</p>
-<p>Part 2:</p>
-<ul>
-<li>Train a Discriminator model</li>
-</ul>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">How to Develop a 1D Generative Adversarial Network From Scratch in Keras</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">Wikipedia - Generative adversarial network (GAN)</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Libraries">Libraries<a class="anchor-link" href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#Libraries">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [94]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="c1"># PyTorch</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch</span> <span class="k">import</span> <span class="n">nn</span>
-<span class="kn">from</span> <span class="nn">torch.functional</span> <span class="k">import</span> <span class="n">F</span> 
-<span class="kn">from</span> <span class="nn">torch</span> <span class="k">import</span> <span class="n">optim</span>
-<span class="kn">from</span> <span class="nn">torchviz</span> <span class="k">import</span> <span class="n">make_dot</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions">Functions<a class="anchor-link" href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#Functions">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Defined-funcions-in-Part-1">Defined funcions in Part 1<a class="anchor-link" href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#Defined-funcions-in-Part-1">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [91]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Target function</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span><span class="mi">2</span>
-
-<span class="c1"># Create a discriminator model</span>
-<span class="c1"># Build a feed-forward network</span>
-
-
-<span class="c1"># define the standalone discriminator model</span>
-<span class="k">def</span> <span class="nf">define_discriminator</span><span class="p">(</span><span class="n">n_inputs</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
-                          <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-                          <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-                         <span class="p">)</span>
-    
-    <span class="c1"># Loss</span>
-    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
-    
-    
-
-    <span class="c1"># Optimizer</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span>
-
-
-
-
-<span class="c1"># Generate samples</span>
-<span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'real'</span><span class="p">):</span>
-    <span class="sd">"""Generate samples with real or fake label</span>
-<span class="sd">    """</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">label</span> <span class="o">==</span> <span class="s1">'real'</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span> <span class="n">y</span>
-    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Train-a-discriminator">Train a discriminator<a class="anchor-link" href="how-to-develop-a-1d-generative-adversarial-network-from-scratch-in-pytorch-part-2/#Train-a-discriminator">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [92]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predicted</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[92]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>tensor([0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
-        1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0,
-        1, 1])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [97]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[97]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>tensor([[0.3894, 0.5372],
-        [0.3957, 0.5342],
-        [0.3676, 0.5435],
-        [0.3657, 0.5557],
-        [0.4467, 0.5787],
-        [0.4409, 0.5637],
-        [0.3665, 0.5453],
-        [0.4364, 0.6085],
-        [0.3539, 0.5852],
-        [0.3881, 0.5252],
-        [0.4279, 0.5502],
-        [0.3708, 0.5621],
-        [0.4193, 0.5413],
-        [0.3652, 0.5547],
-        [0.3911, 0.5338],
-        [0.4207, 0.5430],
-        [0.4118, 0.5368],
-        [0.4456, 0.5914],
-        [0.4063, 0.5358],
-        [0.3798, 0.5349],
-        [0.4364, 0.5584],
-        [0.4035, 0.5353],
-        [0.3653, 0.5547],
-        [0.3659, 0.5461],
-        [0.3673, 0.5582],
-        [0.4308, 0.5530],
-        [0.4217, 0.5444],
-        [0.4018, 0.5350],
-        [0.4178, 0.6270],
-        [0.3862, 0.5342],
-        [0.4315, 0.5537],
-        [0.3670, 0.5444],
-        [0.3283, 0.3935],
-        [0.3949, 0.5342],
-        [0.3681, 0.5429],
-        [0.3679, 0.5590],
-        [0.4154, 0.6273],
-        [0.4467, 0.5785],
-        [0.3706, 0.5619],
-        [0.3683, 0.5595],
-        [0.4466, 0.5848],
-        [0.3655, 0.5468],
-        [0.3916, 0.5339],
-        [0.3809, 0.5348],
-        [0.3835, 0.5556],
-        [0.3752, 0.5633],
-        [0.4465, 0.5860],
-        [0.3710, 0.5622],
-        [0.4467, 0.5778],
-        [0.4253, 0.5479]], grad_fn=&lt;SigmoidBackward&gt;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [101]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
-<span class="n">n_batch</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="n">half_batch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_batch</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'real'</span><span class="p">,</span> <span class="s1">'fake'</span><span class="p">]</span>
-<span class="n">d_X</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">d_y</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">d_accuracy</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">define_discriminator</span><span class="p">()</span>
-<span class="c1"># run epochs manually</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-    
-    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'processing label: </span><span class="si">{label}</span><span class="s1">'</span><span class="p">)</span>
-        <span class="c1"># generate real examples</span>
-        <span class="n">d_X</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">d_y</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">generate_samples</span><span class="p">(</span><span class="n">half_batch</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-<span class="c1">#         update model</span>
-<span class="c1">#         model.train_on_batch(d_data[label])</span>
-        <span class="c1"># zero the parameter gradients</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-        <span class="c1"># forward + backward + optimize</span>
-        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">d_X</span><span class="p">[</span><span class="n">label</span><span class="p">]))</span>
-        <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1">#         pred = torch.sigmoid(outputs)</span>
-        <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">d_y</span><span class="p">[</span><span class="n">label</span><span class="p">]))</span>
-
-<span class="c1">#         loss = criterion(predicted.view(-1, 1).double(), torch.Tensor(d_y[label]).view(-1, 1).double())</span>
-        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-        <span class="c1"># print statistics</span>
-        <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        
-<span class="c1">#         # generate fake examples</span>
-<span class="c1">#         X_fake, y_fake = generate_samples(half_batch, label='fake')</span>
-<span class="c1">#         # update model</span>
-<span class="c1">#         model.train_on_batch(X_fake, y_fake)</span>
-<span class="c1">#         # evaluate the model</span>
-<span class="c1">#         _, acc_real = model.evaluate(X_real, y_real, verbose=0)</span>
-<span class="c1">#         _, acc_fake = model.evaluate(X_fake, y_fake, verbose=0)</span>
-<span class="c1">#     print(i, acc_real, acc_fake)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>processing label: real
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-101-2e0f70b78835&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span> <span class="ansi-red-fg">#         pred = torch.sigmoid(outputs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span>         _<span class="ansi-blue-fg">,</span> pred <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>max<span class="ansi-blue-fg">(</span>outputs<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 28</span><span class="ansi-red-fg">         </span>loss <span class="ansi-blue-fg">=</span> F<span class="ansi-blue-fg">.</span>binary_cross_entropy<span class="ansi-blue-fg">(</span>pred<span class="ansi-blue-fg">.</span>view<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> torch<span class="ansi-blue-fg">.</span>Tensor<span class="ansi-blue-fg">(</span>d_y<span class="ansi-blue-fg">[</span>label<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     29</span> 
-<span class="ansi-green-intense-fg ansi-bold">     30</span> <span class="ansi-red-fg">#         loss = criterion(predicted.view(-1, 1).double(), torch.Tensor(d_y[label]).view(-1, 1).double())</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/py367/lib/python3.6/site-packages/torch/nn/functional.py</span> in <span class="ansi-cyan-fg">binary_cross_entropy</span><span class="ansi-blue-fg">(input, target, weight, size_average, reduce, reduction)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2025</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2026</span>     return torch._C._nn.binary_cross_entropy(
-<span class="ansi-green-fg">-&gt; 2027</span><span class="ansi-red-fg">         input, target, weight, reduction_enum)
-</span><span class="ansi-green-intense-fg ansi-bold">   2028</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2029</span> 
-
-<span class="ansi-red-fg">RuntimeError</span>: _thnn_binary_cross_entropy_forward is not implemented for type torch.LongTensor</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-8.html" rel="next">Older posts</a>
+                <a href="index-9.html" rel="next">Older posts</a>
             </li>
         </ul></nav><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
