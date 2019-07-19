@@ -363,11 +363,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-17T15:31:00Z</lastmod>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -590,6 +590,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/heatmap/</loc>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/image/</loc>
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
@@ -667,7 +671,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -742,6 +746,14 @@
   <lastmod>2019-05-20T08:07:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/plotly-express/</loc>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/plotly/</loc>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/precision/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
  </url>
@@ -796,6 +808,10 @@
  <url>
   <loc>/categories/relu/</loc>
   <lastmod>2019-06-21T22:25:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/scatter-plot/</loc>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/scikit-learn/</loc>
@@ -903,7 +919,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1123,7 +1139,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1304,5 +1320,9 @@
  <url>
   <loc>/posts/variance-thresholding-for-feature-selection/</loc>
   <lastmod>2019-06-03T22:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/visualization-samples-by-plotly-express/</loc>
+  <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
 </urlset>
