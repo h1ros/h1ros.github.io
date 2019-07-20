@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -362,8 +362,12 @@
   <lastmod>2019-07-18T16:17:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/20/</loc>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -651,7 +655,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
@@ -671,7 +675,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-6.html</loc>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -919,7 +927,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1139,7 +1147,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1268,6 +1276,10 @@
  <url>
   <loc>/posts/split-up-dtreevis-part-3/</loc>
   <lastmod>2019-07-18T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/split-up-dtreevis-part-4/</loc>
+  <lastmod>2019-07-20T21:35:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/split-up-dtreeviz-part-1/</loc>
