@@ -123,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/decision-tree.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
@@ -151,7 +151,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/dtreevis.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dummy-data.xml</loc>
@@ -171,7 +171,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/ensemble.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/evaluation.xml</loc>
@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -499,7 +499,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/visualization.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/wordcloud.xml</loc>
@@ -523,10 +523,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>
