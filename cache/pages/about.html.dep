@@ -22,6 +22,7 @@ cache/posts/parse-html.html
 cache/posts/dimensionality-reduction-with-pca.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express.html
 cache/posts/split-up-dtreevis-part-5.html
 cache/posts/split-up-dtreevis-part-4.html
 cache/posts/visualization-samples-by-plotly-express.html

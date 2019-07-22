@@ -94,7 +94,478 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/split-up-dtreevis-part-5/" class="u-url">Split Up: dtreevis (Part 5)</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/" class="u-url">Sankey Diagram for Cateogry and Continuous by Plotly Express</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-22T08:37:07-07:00" itemprop="datePublished" title="Jul 22, 2019, 8:37:07 AM">Jul 22, 2019, 8:37:07 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#disqus_thread" data-disqus-identifier="cache/posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to draw <strong>Sanky diagram</strong> for categorical and continuous variable by <code>Plotly Express</code></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://plot.ly/python/plotly-express/">Official Documentation - Plotly Express</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-continuous-data">Create continuous data<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Create-continuous-data">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">election</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>district</th>
+      <th>Coderre</th>
+      <th>Bergeron</th>
+      <th>Joly</th>
+      <th>total</th>
+      <th>winner</th>
+      <th>result</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>101-Bois-de-Liesse</td>
+      <td>2481</td>
+      <td>1829</td>
+      <td>3024</td>
+      <td>7334</td>
+      <td>Joly</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>102-Cap-Saint-Jacques</td>
+      <td>2525</td>
+      <td>1163</td>
+      <td>2675</td>
+      <td>6363</td>
+      <td>Joly</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>11-Sault-au-Récollet</td>
+      <td>3348</td>
+      <td>2770</td>
+      <td>2532</td>
+      <td>8650</td>
+      <td>Coderre</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>111-Mile-End</td>
+      <td>1734</td>
+      <td>4782</td>
+      <td>2514</td>
+      <td>9030</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>112-DeLorimier</td>
+      <td>1770</td>
+      <td>5933</td>
+      <td>3044</td>
+      <td>10747</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualize-Sankey-Diagram-for-continuous-data">Visualize Sankey Diagram for continuous data<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Visualize-Sankey-Diagram-for-continuous-data">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">parallel_coordinates</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'total'</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Inferno</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="0586736e-732a-4284-b9ff-1b9f0969b46e" class="plotly-graph-div" style="height:600px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("0586736e-732a-4284-b9ff-1b9f0969b46e")) {
+                    Plotly.newPlot(
+                        '0586736e-732a-4284-b9ff-1b9f0969b46e',
+                        [{"dimensions": [{"label": "Coderre", "values": [2481, 2525, 3348, 1734, 1770, 1455, 3252, 5456, 4734, 5737, 2979, 1827, 2331, 2670, 3673, 3612, 4308, 4104, 3931, 5387, 2432, 2566, 3347, 2476, 1451, 1906, 1347, 3668, 2878, 2201, 2420, 2184, 1589, 2526, 1873, 1644, 1548, 1773, 2040, 1165, 1193, 1325, 4201, 3536, 631, 595, 518, 332, 3694, 2746, 1546, 3509, 6591, 6229, 996, 540, 446, 491]}, {"label": "Bergeron", "values": [1829, 1163, 2770, 4782, 5933, 3599, 2521, 1760, 1879, 958, 3430, 6408, 5748, 4962, 3155, 1554, 1320, 1459, 882, 1184, 3368, 2092, 2562, 2631, 754, 2169, 2827, 984, 2666, 5819, 1793, 691, 708, 851, 1182, 1950, 1503, 2653, 1437, 832, 653, 1205, 1642, 1330, 258, 226, 224, 131, 2589, 3250, 3679, 2178, 1085, 780, 643, 833, 465, 698]}, {"label": "Joly", "values": [3024, 2675, 2532, 2514, 3044, 2316, 2543, 3330, 2852, 1656, 2873, 2815, 2788, 3234, 2431, 2081, 3959, 2822, 1641, 1908, 3578, 2438, 3291, 2849, 1894, 2282, 2271, 1220, 2039, 2782, 1402, 1076, 1172, 1286, 1232, 1578, 1636, 3262, 2648, 1266, 1157, 1908, 3717, 2943, 998, 1068, 690, 326, 3454, 3139, 2675, 2338, 1435, 1051, 423, 592, 419, 489]}, {"label": "total", "values": [7334, 6363, 8650, 9030, 10747, 7370, 8316, 10546, 9465, 8351, 9282, 11050, 10867, 10866, 9259, 7247, 9587, 8385, 6454, 8479, 9378, 7096, 9200, 7956, 4099, 6357, 6445, 5872, 7583, 10802, 5615, 3951, 3469, 4663, 4287, 5172, 4687, 7688, 6125, 3263, 3003, 4438, 9560, 7809, 1887, 1889, 1432, 789, 9737, 9135, 7900, 8025, 9111, 8060, 2062, 1965, 1330, 1678]}], "domain": {"x": [0.0, 0.98], "y": [0.0, 1.0]}, "line": {"color": [7334, 6363, 8650, 9030, 10747, 7370, 8316, 10546, 9465, 8351, 9282, 11050, 10867, 10866, 9259, 7247, 9587, 8385, 6454, 8479, 9378, 7096, 9200, 7956, 4099, 6357, 6445, 5872, 7583, 10802, 5615, 3951, 3469, 4663, 4287, 5172, 4687, 7688, 6125, 3263, 3003, 4438, 9560, 7809, 1887, 1889, 1432, 789, 9737, 9135, 7900, 8025, 9111, 8060, 2062, 1965, 1330, 1678], "coloraxis": "coloraxis"}, "name": "", "type": "parcoords"}],
+                        {"coloraxis": {"colorbar": {"title": {"text": "total"}}, "colorscale": [[0.0, "#000004"], [0.1111111111111111, "#1b0c41"], [0.2222222222222222, "#4a0c6b"], [0.3333333333333333, "#781c6d"], [0.4444444444444444, "#a52c60"], [0.5555555555555556, "#cf4446"], [0.6666666666666666, "#ed6925"], [0.7777777777777778, "#fb9b06"], [0.8888888888888888, "#f7d13d"], [1.0, "#fcffa4"]]}, "height": 600, "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('0586736e-732a-4284-b9ff-1b9f0969b46e');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-categorical-data">Create categorical data<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Create-categorical-data">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">election</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>district</th>
+      <th>Coderre</th>
+      <th>Bergeron</th>
+      <th>Joly</th>
+      <th>total</th>
+      <th>winner</th>
+      <th>result</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>101-Bois-de-Liesse</td>
+      <td>2481</td>
+      <td>1829</td>
+      <td>3024</td>
+      <td>7334</td>
+      <td>Joly</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>102-Cap-Saint-Jacques</td>
+      <td>2525</td>
+      <td>1163</td>
+      <td>2675</td>
+      <td>6363</td>
+      <td>Joly</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>11-Sault-au-Récollet</td>
+      <td>3348</td>
+      <td>2770</td>
+      <td>2532</td>
+      <td>8650</td>
+      <td>Coderre</td>
+      <td>plurality</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>111-Mile-End</td>
+      <td>1734</td>
+      <td>4782</td>
+      <td>2514</td>
+      <td>9030</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>112-DeLorimier</td>
+      <td>1770</td>
+      <td>5933</td>
+      <td>3044</td>
+      <td>10747</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualize-Sankey-Diagram-for-continuous-data">Visualize Sankey Diagram for continuous data<a class="anchor-link" href="../../posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/#Visualize-Sankey-Diagram-for-continuous-data">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">parallel_categories</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"total"</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Inferno</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="e408d5bf-a8bf-48d7-9f37-5e6c87df13e8" class="plotly-graph-div" style="height:600px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("e408d5bf-a8bf-48d7-9f37-5e6c87df13e8")) {
+                    Plotly.newPlot(
+                        'e408d5bf-a8bf-48d7-9f37-5e6c87df13e8',
+                        [{"dimensions": [{"label": "winner", "values": ["Joly", "Joly", "Coderre", "Bergeron", "Bergeron", "Bergeron", "Coderre", "Coderre", "Coderre", "Coderre", "Bergeron", "Bergeron", "Bergeron", "Bergeron", "Coderre", "Coderre", "Coderre", "Coderre", "Coderre", "Coderre", "Joly", "Coderre", "Coderre", "Joly", "Joly", "Joly", "Bergeron", "Coderre", "Coderre", "Bergeron", "Coderre", "Coderre", "Coderre", "Coderre", "Coderre", "Bergeron", "Joly", "Joly", "Joly", "Joly", "Coderre", "Joly", "Coderre", "Coderre", "Joly", "Joly", "Joly", "Coderre", "Coderre", "Bergeron", "Bergeron", "Coderre", "Coderre", "Coderre", "Coderre", "Bergeron", "Bergeron", "Bergeron"]}, {"label": "result", "values": ["plurality", "plurality", "plurality", "majority", "majority", "plurality", "plurality", "majority", "majority", "majority", "plurality", "majority", "majority", "plurality", "plurality", "plurality", "plurality", "plurality", "majority", "majority", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "majority", "plurality", "majority", "plurality", "majority", "plurality", "majority", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "majority", "majority", "plurality", "plurality", "plurality", "plurality", "plurality", "plurality", "majority", "majority", "plurality", "plurality", "plurality", "plurality"]}], "domain": {"x": [0.0, 0.98], "y": [0.0, 1.0]}, "line": {"color": [7334, 6363, 8650, 9030, 10747, 7370, 8316, 10546, 9465, 8351, 9282, 11050, 10867, 10866, 9259, 7247, 9587, 8385, 6454, 8479, 9378, 7096, 9200, 7956, 4099, 6357, 6445, 5872, 7583, 10802, 5615, 3951, 3469, 4663, 4287, 5172, 4687, 7688, 6125, 3263, 3003, 4438, 9560, 7809, 1887, 1889, 1432, 789, 9737, 9135, 7900, 8025, 9111, 8060, 2062, 1965, 1330, 1678], "coloraxis": "coloraxis"}, "name": "", "type": "parcats"}],
+                        {"coloraxis": {"colorbar": {"title": {"text": "total"}}, "colorscale": [[0.0, "#000004"], [0.1111111111111111, "#1b0c41"], [0.2222222222222222, "#4a0c6b"], [0.3333333333333333, "#781c6d"], [0.4444444444444444, "#a52c60"], [0.5555555555555556, "#cf4446"], [0.6666666666666666, "#ed6925"], [0.7777777777777778, "#fb9b06"], [0.8888888888888888, "#f7d13d"], [1.0, "#fcffa4"]]}, "height": 600, "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('e408d5bf-a8bf-48d7-9f37-5e6c87df13e8');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/split-up-dtreevis-part-5/" class="u-url">Split Up: dtreevis (Part 5)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -152,6 +623,13 @@
 <li>L277: load color property</li>
 <li>L280-288: load decision tree classifier object as shadow_tree and other relevant attributes e.g., # of class, target values.</li>
 <li>L290-302: setting labels and spines visibility</li>
+<li>L304-319: plotting stacked bar chart with histogram when <code>gtype=='barstacked'</code>
+</li>
+<li>L320-330: plotting scatter plot with gitter </li>
+<li>L332: setting tick parameters</li>
+<li>L352-353: setting legend</li>
+<li>L355-358: setting a title</li>
+<li>L360-362: setting <code>splits</code> vertical line between categories</li>
 </ul>
 </div>
 </div>
@@ -4687,60 +5165,6 @@ function r(t,e){if(!o.canUseDOM||e&&!("addEventListener"in document))return!1;va
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p class="more"><a href="../../posts/interpretability-of-random-forest-prediction-for-mnist-classification-using-lime/">Read more… </a></p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/loss-functions-in-deep-learning-with-pytorch/" class="u-url">Loss Functions in Deep Learning with PyTorch</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/loss-functions-in-deep-learning-with-pytorch/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-06T07:44:56-07:00" itemprop="datePublished" title="Jul 6, 2019, 7:44:56 AM">Jul 6, 2019, 7:44:56 AM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/loss-functions-in-deep-learning-with-pytorch/#disqus_thread" data-disqus-identifier="cache/posts/loss-functions-in-deep-learning-with-pytorch.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/loss-functions-in-deep-learning-with-pytorch/#Goal">¶</a>
-</h2>
-<p>This post aims to compare loss functions in deep learning with <code>PyTorch</code>.</p>
-<p>The following loss functions are covered in this post:</p>
-<ul>
-<li>Mean Absolute Error (L1 Loss)</li>
-<li>Mean Square Error (L2 Loss)</li>
-<li>Binary Cross Entropy (BCE)</li>
-<li>Kullback-Leibler divergence (KL divergence)</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/8764683/61172454-875f0a00-a5bf-11e9-8a16-e95e19aad894.png" alt="image"></p>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7">Medium - A Brief Overview of Loss Functions in Pytorch</a></li>
-<li><a href="https://pytorch.org/docs/stable/_modules/torch/nn/modules/loss.html">PyTorch Documentation - nn.modules.loss</a></li>
-<li><a href="https://medium.com/@risingdeveloper/visualization-of-some-loss-functions-for-deep-learning-with-tensorflow-9f60be9d09f9">Medium - VISUALIZATION OF SOME LOSS FUNCTIONS FOR DEEP LEARNING WITH TENSORFLOW</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/loss-functions-in-deep-learning-with-pytorch/">Read more… </a></p>
 </div>
 </div>
 </div>

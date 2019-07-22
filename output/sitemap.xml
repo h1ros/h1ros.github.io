@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -370,12 +370,16 @@
   <lastmod>2019-07-21T22:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/22/</loc>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-22T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -683,7 +687,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -822,6 +826,10 @@
   <lastmod>2019-06-21T22:25:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/sankey-diagram/</loc>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/scatter-plot/</loc>
   <lastmod>2019-07-19T13:00:00Z</lastmod>
  </url>
@@ -907,7 +915,7 @@
  </url>
  <url>
   <loc>/categories/visualization/index-1.html</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/wordcloud/</loc>
@@ -935,7 +943,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1155,7 +1163,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
+  <lastmod>2019-07-22T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1264,6 +1272,10 @@
  <url>
   <loc>/posts/reshape-an-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/</loc>
+  <lastmod>2019-07-22T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/save-images/</loc>
