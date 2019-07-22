@@ -375,7 +375,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-22T23:01:00Z</lastmod>
+  <lastmod>2019-07-22T23:02:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -1276,10 +1276,6 @@
  <url>
   <loc>/posts/reshape-an-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/sankey-diagram-for-cateogry-and-continuous-by-plotly-express/</loc>
-  <lastmod>2019-07-22T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/save-images/</loc>
