@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/heatmap.xml</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -355,11 +355,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/plotly-express.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/plotly.xml</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/precision.xml</loc>
@@ -419,11 +419,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/sankey-diagram.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scatter-plot.xml</loc>
-  <lastmod>2019-07-19T13:00:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/scikit-learn.xml</loc>
@@ -503,7 +503,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/visualization.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/wordcloud.xml</loc>
@@ -527,10 +527,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-24T05:49:00Z</lastmod>
  </sitemap>
 </sitemapindex>
