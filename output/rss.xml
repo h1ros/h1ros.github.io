@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jul 2019 14:33:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Implement Perceptron</title><link>/posts/implement-perceptron/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science</title><link>https://h1ros.github.io</link><description>Explain things related to data scieence step-by-step</description><atom:link href="/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jul 2019 15:47:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Implement Perceptron</title><link>/posts/implement-perceptron/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/implement-perceptron/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to implement &lt;strong&gt;Perceptron&lt;/strong&gt;, which is the foundation of neural network and a simple gate function returning &lt;code&gt;0&lt;/code&gt; (no signal) or &lt;code&gt;1&lt;/code&gt; (signal) given a certain input.&lt;/p&gt;
@@ -555,10 +555,10 @@ OR(x0=1, x1=1) = 1.0
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-4/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-4/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 4)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
