@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-22T15:54:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -374,12 +374,16 @@
   <lastmod>2019-07-22T15:54:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/25/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-24T05:49:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-22T15:55:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -392,6 +396,10 @@
  <url>
   <loc>/categories/activation-function/</loc>
   <lastmod>2019-06-21T22:25:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/and-gate/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/anomaly-detection/</loc>
@@ -687,7 +695,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-07-22T15:54:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -726,6 +734,10 @@
   <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/nand-gate/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/neural-network/</loc>
   <lastmod>2019-06-10T14:16:00Z</lastmod>
  </url>
@@ -746,6 +758,10 @@
   <lastmod>2019-06-11T15:37:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/or-gate/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/osx/</loc>
   <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
@@ -760,6 +776,10 @@
  <url>
   <loc>/categories/pca/</loc>
   <lastmod>2019-05-20T08:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/perceptron/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/plotly-express/</loc>
@@ -943,7 +963,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-23T00:54:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1130,6 +1150,10 @@
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/implement-perceptron/</loc>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/index-1.html</loc>
   <lastmod>2019-07-01T15:06:00Z</lastmod>
  </url>
@@ -1163,7 +1187,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-22T15:54:00Z</lastmod>
+  <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
