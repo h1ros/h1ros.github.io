@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/graphviz.xml</loc>
-  <lastmod>2019-05-18T06:05:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/heatmap.xml</loc>
@@ -283,7 +283,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-26T10:38:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -367,7 +367,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/perceptron.xml</loc>
-  <lastmod>2019-07-26T10:37:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/plotly-express.xml</loc>
@@ -519,7 +519,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/visualization.xml</loc>
-  <lastmod>2019-07-26T10:38:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/wordcloud.xml</loc>
@@ -543,10 +543,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-26T11:04:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-26T11:04:00Z</lastmod>
+  <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
