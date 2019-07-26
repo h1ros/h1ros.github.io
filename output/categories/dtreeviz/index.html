@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posts about Ensemble | Step-by-step Data Science</title>
+<title>Posts about dtreeviz | Step-by-step Data Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -18,7 +18,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134273341-1');
-</script><link rel="alternate" type="application/rss+xml" title="RSS for tag Ensemble" hreflang="en" href="../ensemble.xml">
+</script><link rel="alternate" type="application/rss+xml" title="RSS for tag dtreeviz" hreflang="en" href="../dtreeviz.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -80,12 +80,12 @@
             
             
 
-    <header><h1>Posts about Ensemble</h1>
+    <header><h1>Posts about dtreeviz</h1>
         <div class="metadata">
             
                 <p class="feedlink">
                         
-            <a href="../ensemble.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../dtreeviz.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
@@ -2189,70 +2189,6 @@ When I apply <code>show={'legend'}</code>, I obtained the error below and still 
 <img src="https://user-images.githubusercontent.com/8764683/61387320-e5a62880-a8f0-11e9-874b-7228527abd0a.png" alt="image">
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/split-up-dtreeviz-part-1/" class="u-url">Split-Up: dtreeviz (Part 1)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/split-up-dtreeviz-part-1/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-04-15T22:27:13-07:00" itemprop="datePublished" title="Apr 15, 2019, 10:27:13 PM">Apr 15, 2019, 10:27:13 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/split-up-dtreeviz-part-1/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreeviz-part-1.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-1/#Goal">¶</a>
-</h2>
-<p>This post aims to go through each function in <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
-<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
-<blockquote>
-<p>You would just have to get ShadowDecisionTree wrappers for those trees.</p>
-</blockquote>
-<p>Based on this comment, I need first understand the class object <code>ShadowDecisionTree</code></p>
-<p><img src="https://user-images.githubusercontent.com/8764683/56184236-40687500-5fce-11e9-8e82-922cb1c7cd20.png" alt="image"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Understand-folder-structure">Understand folder structure<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-1/#Understand-folder-structure">¶</a>
-</h2>
-<p>In this post, we will deep dive into the core module <code>dtreeviz</code>
-<img src="https://user-images.githubusercontent.com/8764683/56184705-eb2d6300-5fcf-11e9-9111-83f79f5c34f7.png" alt="image"></p>
-<p>This module comprises of 4 python files. 
-<img src="https://user-images.githubusercontent.com/8764683/56184787-3778a300-5fd0-11e9-9835-c837080de3cd.png" alt="image"></p>
-<p><code>__init__.py</code> is empty so we can skip it.</p>
-<p>Let's see one by one.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../../posts/split-up-dtreeviz-part-1/">Read more… </a></p>
 </div>
 </div>
 </div>

@@ -383,11 +383,11 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-26T11:06:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-25T14:33:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -550,6 +550,10 @@
   <lastmod>2019-07-17T15:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/dtreeviz/</loc>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/dummy-data/</loc>
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </url>
@@ -679,7 +683,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
@@ -939,7 +943,7 @@
  </url>
  <url>
   <loc>/categories/visualization/index-1.html</loc>
-  <lastmod>2019-07-26T11:06:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/wordcloud/</loc>
@@ -967,7 +971,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-26T11:04:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1167,7 +1171,7 @@
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
@@ -1340,6 +1344,22 @@
  <url>
   <loc>/posts/split-up-dtreeviz-part-1/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/split-up-dtreeviz-part-2/</loc>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/split-up-dtreeviz-part-3/</loc>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/split-up-dtreeviz-part-4/</loc>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/split-up-dtreeviz-part-5/</loc>
+  <lastmod>2019-07-26T11:10:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/stemming-words-and-sentences/</loc>

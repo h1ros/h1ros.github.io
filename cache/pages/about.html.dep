@@ -24,11 +24,11 @@ themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
 cache/posts/draw-perceptron-graph-by-graphviz.html
 cache/posts/parallel-plot-for-cateogry-and-continuous-by-plotly-express.html
-cache/posts/split-up-dtreevis-part-5.html
+cache/posts/split-up-dtreeviz-part-5.html
 cache/posts/split-up-dtreevis-part-4.html
 cache/posts/visualization-samples-by-plotly-express.html
-cache/posts/split-up-dtreevis-part-3.html
-cache/posts/split-up-dtreevis-part-2.html
+cache/posts/split-up-dtreeviz-part-3.html
+cache/posts/split-up-dtreeviz-part-2.html
 cache/posts/feature-importance.html
 cache/posts/getting-real-time-stock-market-data.html
 cache/posts/XKCD-style-plot-using-matplotlib.html

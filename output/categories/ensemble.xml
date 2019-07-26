@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Ensemble)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/ensemble.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 26 Jul 2019 10:38:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreevis (Part 5)</title><link>/posts/split-up-dtreevis-part-5/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Ensemble)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/ensemble.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 26 Jul 2019 11:10:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreeviz (Part 5)</title><link>/posts/split-up-dtreeviz-part-5/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-5/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-5/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
 &lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
 &lt;p&gt;This post is the 5th part:&lt;/p&gt;
 &lt;ul&gt;
@@ -12,10 +12,10 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-4/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-4/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 4)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -24,7 +24,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="trees.ctreeviz_univar"&gt;&lt;code&gt;trees.ctreeviz_univar&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-5/#trees.ctreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="trees.ctreeviz_univar"&gt;&lt;code&gt;trees.ctreeviz_univar&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-5/#trees.ctreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;L267: the beginning of the definition for &lt;code&gt;ctreeviz_univar&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;L272-275: treatment for pandas input&lt;/li&gt;
 &lt;li&gt;L277: load color property&lt;/li&gt;
@@ -175,7 +175,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-toy-classification-example"&gt;Create a toy classification example&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-5/#Create-a-toy-classification-example"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Create-a-toy-classification-example"&gt;Create a toy classification example&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-5/#Create-a-toy-classification-example"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -226,7 +226,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Visualize-classification-tree-for-univariate-case"&gt;Visualize classification tree for univariate case&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-5/#Visualize-classification-tree-for-univariate-case"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Visualize-classification-tree-for-univariate-case"&gt;Visualize classification tree for univariate case&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-5/#Visualize-classification-tree-for-univariate-case"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -296,19 +296,19 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreevis</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreevis-part-5/</guid><pubDate>Sun, 21 Jul 2019 08:40:22 GMT</pubDate></item><item><title>Split Up: dtreevis (Part 4)</title><link>/posts/split-up-dtreevis-part-4/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreeviz</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreeviz-part-5/</guid><pubDate>Sun, 21 Jul 2019 08:40:22 GMT</pubDate></item><item><title>Split Up: dtreeviz (Part 4)</title><link>/posts/split-up-dtreeviz-part-4/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-4/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-4/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
 &lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
 &lt;p&gt;This post is the 4th part: breaking down &lt;code&gt;DTreeViz&lt;/code&gt; class and &lt;code&gt;rtreeviz_univar&lt;/code&gt; method.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -317,12 +317,12 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="DTreeViz-class"&gt;&lt;code&gt;DTreeViz&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-4/#DTreeViz-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="DTreeViz-class"&gt;&lt;code&gt;DTreeViz&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-4/#DTreeViz-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;L23: the beginning of &lt;code&gt;DTreeViz&lt;/code&gt; class&lt;/li&gt;
 &lt;li&gt;L24-25: &lt;code&gt;__init__&lt;/code&gt; method taking &lt;code&gt;dot&lt;/code&gt; object as an input &lt;/li&gt;
 &lt;li&gt;L26-78: deal with save, view the visualization as svg file &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="rtreeviz_univar"&gt;rtreeviz_univar&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-4/#rtreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id="rtreeviz_univar"&gt;rtreeviz_univar&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-4/#rtreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;L81: the beginning of &lt;code&gt;rtreeviz_univar&lt;/code&gt; method&lt;/li&gt;
 &lt;li&gt;L94-102: initial setting for the range of X, y data and converting them into numpy array.&lt;/li&gt;
 &lt;li&gt;L104-105: create a scikit-learn decision tree&lt;/li&gt;
@@ -436,7 +436,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-a-toy-sample"&gt;Create a toy sample&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-4/#Create-a-toy-sample"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Create-a-toy-sample"&gt;Create a toy sample&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-4/#Create-a-toy-sample"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -486,7 +486,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Visualize-a-tree-using-rtreeviz_univar"&gt;Visualize a tree using &lt;code&gt;rtreeviz_univar&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-4/#Visualize-a-tree-using-rtreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Visualize-a-tree-using-rtreeviz_univar"&gt;Visualize a tree using &lt;code&gt;rtreeviz_univar&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-4/#Visualize-a-tree-using-rtreeviz_univar"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -526,17 +526,17 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreevis</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreevis-part-4/</guid><pubDate>Sat, 20 Jul 2019 20:51:36 GMT</pubDate></item><item><title>Split Up: dtreevis (Part 3)</title><link>/posts/split-up-dtreevis-part-3/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreeviz</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreeviz-part-4/</guid><pubDate>Sat, 20 Jul 2019 20:51:36 GMT</pubDate></item><item><title>Split Up: dtreeviz (Part 3)</title><link>/posts/split-up-dtreeviz-part-3/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
 &lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
 &lt;p&gt;This post is the 3rd part: breaking down &lt;code&gt;ShadowDecTree&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -546,14 +546,14 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="ShadowDecTreeNode-class"&gt;&lt;code&gt;ShadowDecTreeNode&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#ShadowDecTreeNode-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="ShadowDecTreeNode-class"&gt;&lt;code&gt;ShadowDecTreeNode&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#ShadowDecTreeNode-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Source-github"&gt;Source &lt;a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py"&gt;github&lt;/a&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Source-github"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Source-github"&gt;Source &lt;a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py"&gt;github&lt;/a&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Source-github"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -686,14 +686,14 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Instantiate-class-objects"&gt;Instantiate class objects&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Instantiate-class-objects"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Instantiate-class-objects"&gt;Instantiate class objects&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Instantiate-class-objects"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Create-a-tree-model-by-scikit-learn"&gt;Create a tree model by scikit learn&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Create-a-tree-model-by-scikit-learn"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="Create-a-tree-model-by-scikit-learn"&gt;Create a tree model by scikit learn&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Create-a-tree-model-by-scikit-learn"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -800,7 +800,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-a-ShadowDecTreeNode"&gt;Create a &lt;code&gt;ShadowDecTreeNode&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Create-a-ShadowDecTreeNode"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ShadowDecTreeNode&lt;/strong&gt; &lt;code&gt;__init__&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="Create-a-ShadowDecTreeNode"&gt;Create a &lt;code&gt;ShadowDecTreeNode&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Create-a-ShadowDecTreeNode"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ShadowDecTreeNode&lt;/strong&gt; &lt;code&gt;__init__&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;L222-226: store input arguments as class members&lt;/li&gt;
 &lt;li&gt;L228-308: define the same functions in tree objects like &lt;code&gt;split&lt;/code&gt;, &lt;code&gt;feature&lt;/code&gt; etc. or utility functions&lt;/li&gt;
@@ -861,7 +861,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Methods-under-``ShadowTreeDecNode"&gt;Methods under ``ShadowTreeDecNode&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-3/#Methods-under-%60%60ShadowTreeDecNode"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Methods-under-``ShadowTreeDecNode"&gt;Methods under ``ShadowTreeDecNode&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-3/#Methods-under-%60%60ShadowTreeDecNode"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1170,16 +1170,16 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreevis</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreevis-part-3/</guid><pubDate>Thu, 18 Jul 2019 15:17:01 GMT</pubDate></item><item><title>Split Up: dtreevis (Part 2)</title><link>/posts/split-up-dtreevis-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreeviz</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreeviz-part-3/</guid><pubDate>Thu, 18 Jul 2019 15:17:01 GMT</pubDate></item><item><title>Split Up: dtreevis (Part 2)</title><link>/posts/split-up-dtreeviz-part-2/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
 &lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
 &lt;p&gt;This post is the 2nd part of the process of breaking down &lt;code&gt;ShadowDecTree&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1189,14 +1189,14 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="ShadowDecTree-class"&gt;&lt;code&gt;ShadowDecTree&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#ShadowDecTree-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="ShadowDecTree-class"&gt;&lt;code&gt;ShadowDecTree&lt;/code&gt; class&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#ShadowDecTree-class"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Source-github"&gt;Source &lt;a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py"&gt;github&lt;/a&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Source-github"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Source-github"&gt;Source &lt;a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py"&gt;github&lt;/a&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Source-github"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1423,14 +1423,14 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Instantiate-class-objects"&gt;Instantiate class objects&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Instantiate-class-objects"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Instantiate-class-objects"&gt;Instantiate class objects&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Instantiate-class-objects"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Create-a-tree-model-by-scikit-learn"&gt;Create a tree model by scikit learn&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Create-a-tree-model-by-scikit-learn"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="Create-a-tree-model-by-scikit-learn"&gt;Create a tree model by scikit learn&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Create-a-tree-model-by-scikit-learn"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1537,7 +1537,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-a-ShadowDecTree"&gt;Create a &lt;code&gt;ShadowDecTree&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Create-a-ShadowDecTree"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ShadowDecTree&lt;/strong&gt; &lt;code&gt;__init__&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="Create-a-ShadowDecTree"&gt;Create a &lt;code&gt;ShadowDecTree&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Create-a-ShadowDecTree"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ShadowDecTree&lt;/strong&gt; &lt;code&gt;__init__&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;L33-41: define &lt;code&gt;__initi__&lt;/code&gt; with 5 input arguments.&lt;/li&gt;
 &lt;li&gt;L38-41: store the input arguments as a class member&lt;/li&gt;
@@ -1716,7 +1716,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Other-methods-for-ShadowDecTree"&gt;Other methods for &lt;code&gt;ShadowDecTree&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Other-methods-for-ShadowDecTree"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Other-methods-for-ShadowDecTree"&gt;Other methods for &lt;code&gt;ShadowDecTree&lt;/code&gt;&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Other-methods-for-ShadowDecTree"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2010,7 +2010,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Opportunity-to-contribute"&gt;Opportunity to contribute&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-2/#Opportunity-to-contribute"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Through line-by-line execution, I found the following opportunities I could potentially contribute to.&lt;/p&gt;
+&lt;h3 id="Opportunity-to-contribute"&gt;Opportunity to contribute&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-2/#Opportunity-to-contribute"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Through line-by-line execution, I found the following opportunities I could potentially contribute to.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Add documentation for each methods&lt;/li&gt;
 &lt;li&gt;Add validation if it is &lt;code&gt;np.array&lt;/code&gt; or not for &lt;code&gt;X_train&lt;/code&gt; and &lt;code&gt;y_train&lt;/code&gt; since when I pass the list as &lt;code&gt;X_train&lt;/code&gt; and &lt;code&gt;y_train&lt;/code&gt;, I got the error for &lt;code&gt;get_split_node_heights&lt;/code&gt; and &lt;code&gt;tesselation&lt;/code&gt; like below:
@@ -2019,7 +2019,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreevis</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreevis-part-2/</guid><pubDate>Wed, 17 Jul 2019 12:51:04 GMT</pubDate></item><item><title>Split-Up: dtreeviz (Part 1)</title><link>/posts/split-up-dtreeviz-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreeviz</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreeviz-part-2/</guid><pubDate>Wed, 17 Jul 2019 12:51:04 GMT</pubDate></item><item><title>Split-Up: dtreeviz (Part 1)</title><link>/posts/split-up-dtreeviz-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-1/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to go through each function in &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
