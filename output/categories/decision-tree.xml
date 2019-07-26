@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Decision Tree)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/decision-tree.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jul 2019 15:47:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreevis (Part 5)</title><link>/posts/split-up-dtreevis-part-5/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Decision Tree)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/decision-tree.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 26 Jul 2019 10:38:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split Up: dtreevis (Part 5)</title><link>/posts/split-up-dtreevis-part-5/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreevis-part-5/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to break down the module &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
@@ -306,9 +306,9 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-3/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 3)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -535,8 +535,8 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-2/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 2)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1179,7 +1179,7 @@ When I apply &lt;code&gt;show={'legend'}&lt;/code&gt;, I obtained the error belo
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/parrt/dtreeviz"&gt;Github dtreeviz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/split-up-dtreevis-part-1/"&gt;Step by Step Data Science - Split-Up: dtreeviz (Part 1)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://scikit-learn.org/stable/modules/tree.html"&gt;Scikit-Learn - Tree&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
