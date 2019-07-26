@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-25T14:33:00Z</lastmod>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -378,8 +378,12 @@
   <lastmod>2019-07-25T14:33:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/26/</loc>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-26T10:37:00Z</lastmod>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -963,7 +967,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-25T14:33:00Z</lastmod>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1118,6 +1122,10 @@
   <lastmod>2019-05-20T08:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/draw-perceptron-graph-by-graphviz/</loc>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/drop-highly-correlated-features/</loc>
   <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
@@ -1187,7 +1195,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-25T14:33:00Z</lastmod>
+  <lastmod>2019-07-26T11:04:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
