@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-26T11:04:00Z</lastmod>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -382,12 +382,16 @@
   <lastmod>2019-07-26T11:04:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/27/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -408,6 +412,10 @@
  <url>
   <loc>/categories/anomaly-detection/</loc>
   <lastmod>2019-06-27T15:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/append/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/array/</loc>
@@ -492,6 +500,10 @@
  <url>
   <loc>/categories/cufflinks/</loc>
   <lastmod>2019-06-20T02:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/data-structure-and-algorithms/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/dataframe/</loc>
@@ -624,6 +636,10 @@
  <url>
   <loc>/categories/image/</loc>
   <lastmod>2019-06-14T14:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/insert/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/installation/</loc>
@@ -788,6 +804,10 @@
  <url>
   <loc>/categories/perceptron/</loc>
   <lastmod>2019-07-25T14:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/performance/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/plotly-express/</loc>
@@ -971,7 +991,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1199,7 +1219,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-26T11:04:00Z</lastmod>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1286,6 +1306,10 @@
   <lastmod>2019-05-24T06:29:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/performance-difference-between-append-and-insert-in-python/</loc>
+  <lastmod>2019-07-27T15:45:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/plot-in-a-xkcd-style/</loc>
   <lastmod>2019-06-08T08:08:00Z</lastmod>
  </url>
@@ -1324,22 +1348,6 @@
  <url>
   <loc>/posts/selecting-elements-in-a-1d-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/split-up-dtreevis-part-2/</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/split-up-dtreevis-part-3/</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/split-up-dtreevis-part-4/</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/split-up-dtreevis-part-5/</loc>
-  <lastmod>2019-07-21T22:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/split-up-dtreeviz-part-1/</loc>

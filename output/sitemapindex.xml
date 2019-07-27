@@ -26,6 +26,10 @@
   <lastmod>2019-06-29T15:01:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/append.xml</loc>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/array.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -104,6 +108,10 @@
  <sitemap>
   <loc>/categories/cufflinks.xml</loc>
   <lastmod>2019-06-20T02:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/data-structure-and-algorithms.xml</loc>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/dataframe.xml</loc>
@@ -232,6 +240,10 @@
  <sitemap>
   <loc>/categories/image.xml</loc>
   <lastmod>2019-07-13T13:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/insert.xml</loc>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/installation.xml</loc>
@@ -372,6 +384,10 @@
  <sitemap>
   <loc>/categories/perceptron.xml</loc>
   <lastmod>2019-07-26T11:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/performance.xml</loc>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/plotly-express.xml</loc>
@@ -547,10 +563,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
 </sitemapindex>
