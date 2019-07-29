@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-27T15:45:00Z</lastmod>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -386,12 +386,16 @@
   <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/28/</loc>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-27T15:49:00Z</lastmod>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-07-27T15:45:00Z</lastmod>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -472,6 +476,10 @@
  <url>
   <loc>/categories/categorical/</loc>
   <lastmod>2019-06-20T14:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/cell-magic/</loc>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/chris-albon/</loc>
@@ -588,6 +596,10 @@
  <url>
   <loc>/categories/evaluation/</loc>
   <lastmod>2019-06-03T07:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/execution-time/</loc>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/exploration/</loc>
@@ -938,6 +950,10 @@
   <lastmod>2019-06-20T02:07:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/timeit/</loc>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/tokenize/</loc>
   <lastmod>2019-05-30T12:50:00Z</lastmod>
  </url>
@@ -991,7 +1007,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-27T15:45:00Z</lastmod>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1219,7 +1235,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-27T15:45:00Z</lastmod>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>
@@ -1396,6 +1412,10 @@
  <url>
   <loc>/posts/term-frequency-inverse-document-frequency/</loc>
   <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/time-the-performance-by-timeit-and-cell-magic/</loc>
+  <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/tokenize-text/</loc>
