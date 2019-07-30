@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -390,8 +390,12 @@
   <lastmod>2019-07-29T07:00:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/07/30/</loc>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -731,7 +735,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-07-26T11:06:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -1007,7 +1011,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1170,6 +1174,10 @@
   <lastmod>2019-06-26T15:28:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/explain-image-classification-by-shap-deep-explainer/</loc>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/f1-score/</loc>
   <lastmod>2019-06-03T07:43:00Z</lastmod>
  </url>
@@ -1235,7 +1243,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>

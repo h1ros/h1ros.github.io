@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/boston-housing.xml</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/c%2B%2B.xml</loc>
@@ -259,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -307,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -483,7 +483,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/shap.xml</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -559,7 +559,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/xgboost.xml</loc>
-  <lastmod>2019-07-12T14:56:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/xgbosst.xml</loc>
@@ -575,10 +575,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-07-30T20:08:00Z</lastmod>
  </sitemap>
 </sitemapindex>
