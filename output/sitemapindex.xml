@@ -142,8 +142,12 @@
   <lastmod>2019-07-26T11:10:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/deep-explainer.xml</loc>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -202,6 +206,10 @@
   <lastmod>2019-07-29T07:00:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/explainer.xml</loc>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/exploration.xml</loc>
   <lastmod>2019-05-19T05:27:00Z</lastmod>
  </sitemap>
@@ -247,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/insert.xml</loc>
@@ -259,7 +267,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/iris.xml</loc>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
@@ -267,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/k-means.xml</loc>
-  <lastmod>2019-05-19T06:21:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/lasso.xml</loc>
@@ -307,7 +319,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -443,7 +455,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pytorch.xml</loc>
-  <lastmod>2019-07-13T13:43:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/random-forest.xml</loc>
@@ -483,7 +495,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/shap.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -575,10 +587,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>
