@@ -143,11 +143,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/deep-explainer.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/deep-learning.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/descriptive-analysis.xml</loc>
@@ -255,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/image.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/imdb.xml</loc>
@@ -271,7 +271,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/iris.xml</loc>
@@ -323,7 +323,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -459,7 +459,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/pytorch.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/random-forest.xml</loc>
@@ -499,7 +499,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/shap.xml</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -595,10 +595,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-08-02T05:19:00Z</lastmod>
  </sitemap>
 </sitemapindex>
