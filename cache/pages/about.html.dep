@@ -61,6 +61,7 @@ cache/posts/loading-audio-data.html
 cache/posts/getting-real-time-stock-market-data.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/sentiment-analysis-by-shap-with-logistic-regression.html
 cache/posts/explain-iris-classification-by-shap.html
 cache/posts/explain-image-classification-by-shap-deep-explainer.html
 cache/posts/interpretability-of-prediction-for-boston-housing-using-shap.html

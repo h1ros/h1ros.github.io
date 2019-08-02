@@ -258,6 +258,10 @@
   <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/imdb.xml</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/insert.xml</loc>
   <lastmod>2019-07-27T15:49:00Z</lastmod>
  </sitemap>
@@ -267,7 +271,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/iris.xml</loc>
@@ -307,7 +311,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/logistic-regression.xml</loc>
-  <lastmod>2019-06-06T12:10:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/loss-function.xml</loc>
@@ -319,7 +323,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -495,7 +499,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/shap.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -528,6 +532,10 @@
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
   <lastmod>2019-07-14T13:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/text.xml</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tf-idf.xml</loc>
@@ -587,10 +595,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </sitemap>
 </sitemapindex>

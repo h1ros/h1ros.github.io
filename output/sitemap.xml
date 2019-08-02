@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>/2019/</loc>
-  <lastmod>2019-07-01T15:04:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/02/</loc>
@@ -398,12 +398,20 @@
   <lastmod>2019-08-01T07:02:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/08/01/</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -666,6 +674,10 @@
   <lastmod>2019-06-14T14:05:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/imdb/</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/insert/</loc>
   <lastmod>2019-07-27T15:45:00Z</lastmod>
  </url>
@@ -751,7 +763,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-08-01T07:02:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -966,6 +978,10 @@
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/text/</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/tf-idf/</loc>
   <lastmod>2019-05-27T06:04:00Z</lastmod>
  </url>
@@ -1031,7 +1047,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-01T07:02:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1239,7 +1255,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-01T07:02:00Z</lastmod>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1400,6 +1416,10 @@
  <url>
   <loc>/posts/selecting-elements-in-a-1d-array/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/sentiment-analysis-by-shap-with-logistic-regression/</loc>
+  <lastmod>2019-08-02T05:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/split-up-dtreeviz-part-1/</loc>
