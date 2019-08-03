@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about VGG16)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/vgg16.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Aug 2019 06:42:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Explain the prediction for ImageNet using SHAP</title><link>/posts/explain-the-prediction-for-imagenet-using-shap/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about VGG16)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/vgg16.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Aug 2019 06:43:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Explain the prediction for ImageNet using SHAP</title><link>/posts/explain-the-prediction-for-imagenet-using-shap/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/explain-the-prediction-for-imagenet-using-shap/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to explain the prediction for ImageNet using SHAP.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/62408524-43887080-b57f-11e9-9e78-d8e42d4fad42.png" alt="image"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://slundberg.github.io/shap/notebooks/ImageNet%20VGG16%20Model%20with%20Keras.html"&gt;Github SHAP - ImageNet VGG16 Model with Keras&lt;/a&gt;&lt;/li&gt;
@@ -364,10 +365,10 @@ Downloading data from https://github.com/fchollet/deep-learning-models/releases/
 
  
  
-&lt;div id="b916bde0-479d-4e5a-99d6-b09d308d801a"&gt;&lt;/div&gt;
+&lt;div id="57534e69-fe06-4181-8d7d-a7e3a685017f"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#b916bde0-479d-4e5a-99d6-b09d308d801a');
+var element = $('#57534e69-fe06-4181-8d7d-a7e3a685017f');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "12afc12a495943b693dd182ffc400050", "version_major": 2, "version_minor": 0}
