@@ -37,6 +37,7 @@ cache/posts/Data Exploration Tool - Lantern Part 1.html
 cache/posts/introduction-to-graphviz-in-jupyter-notebook.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/explain-the-prediction-for-imagenet-using-shap.html
 cache/posts/explain-image-classification-by-shap-deep-explainer.html
 cache/posts/interpretability-of-random-forest-prediction-for-mnist-classification-using-lime.html
 cache/posts/save-images.html
@@ -61,6 +62,7 @@ cache/posts/loading-audio-data.html
 cache/posts/getting-real-time-stock-market-data.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/explain-the-prediction-for-imagenet-using-shap.html
 cache/posts/sentiment-analysis-by-shap-with-logistic-regression.html
 cache/posts/explain-iris-classification-by-shap.html
 cache/posts/explain-image-classification-by-shap-deep-explainer.html
