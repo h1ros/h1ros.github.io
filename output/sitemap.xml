@@ -399,7 +399,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-03T06:38:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -410,12 +410,16 @@
   <lastmod>2019-08-03T06:38:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/04/</loc>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-03T06:43:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-03T06:38:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -515,7 +519,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-07-12T23:13:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/convert/</loc>
@@ -567,7 +571,7 @@
  </url>
  <url>
   <loc>/categories/deep-learning/index-1.html</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/descriptive-analysis/</loc>
@@ -694,6 +698,10 @@
   <lastmod>2019-07-12T14:56:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/interaction-values/</loc>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/interpretability/</loc>
   <lastmod>2019-07-11T12:46:00Z</lastmod>
  </url>
@@ -751,27 +759,27 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-2.html</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
-  <lastmod>2019-07-17T15:04:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-5.html</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-08-03T06:38:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -816,6 +824,10 @@
  <url>
   <loc>/categories/neural-network/</loc>
   <lastmod>2019-06-10T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/nhanes-i/</loc>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/nlp/</loc>
@@ -911,7 +923,7 @@
  </url>
  <url>
   <loc>/categories/pytorch/index-1.html</loc>
-  <lastmod>2019-08-01T07:03:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/random-forest/</loc>
@@ -1031,7 +1043,7 @@
  </url>
  <url>
   <loc>/categories/visualization/index-1.html</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/wordcloud/</loc>
@@ -1055,11 +1067,11 @@
  </url>
  <url>
   <loc>/index.src.html</loc>
-  <lastmod>2019-08-05T05:28:00Z</lastmod>
+  <lastmod>2019-08-05T06:20:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-03T06:38:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1230,6 +1242,10 @@
   <lastmod>2019-08-01T07:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/explain-the-interaction-values-by-shap/</loc>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/explain-the-prediction-for-imagenet-using-shap/</loc>
   <lastmod>2019-08-03T06:38:00Z</lastmod>
  </url>
@@ -1267,43 +1283,43 @@
  </url>
  <url>
   <loc>/posts/index-1.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-03T06:38:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
-  <lastmod>2019-07-26T11:10:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-3.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-4.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
-  <lastmod>2019-07-01T15:06:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-7.html</loc>
-  <lastmod>2019-07-05T14:44:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-8.html</loc>
-  <lastmod>2019-07-18T16:17:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-08-01T07:02:00Z</lastmod>
+  <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>

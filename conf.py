@@ -135,7 +135,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/categories/coding", 'Coding Problems'),
+        ("/categories/coding", 'Algorithms and Data Structures'),
         ("/categories/machine-learning", 'Machine Learning'),
         ((("/posts/", "All Post"),
           ("/categories/", "Categories and Tags"),
