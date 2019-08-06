@@ -275,11 +275,11 @@
  </sitemap>
  <sitemap>
   <loc>/categories/interaction-values.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/interpretability.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/iris.xml</loc>
@@ -331,7 +331,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -379,7 +379,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/nhanes-i.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/nlp.xml</loc>
@@ -511,7 +511,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/shap.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/signal-processing.xml</loc>
@@ -535,7 +535,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/survival-analysis.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/tempfile.xml</loc>
@@ -595,7 +595,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/xgboost.xml</loc>
-  <lastmod>2019-07-30T20:08:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/xgbosst.xml</loc>
@@ -611,10 +611,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>

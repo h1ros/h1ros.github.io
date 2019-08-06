@@ -399,7 +399,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -414,8 +414,12 @@
   <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/06/</loc>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -1071,7 +1075,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1287,7 +1291,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1440,6 +1444,10 @@
  <url>
   <loc>/posts/save-images/</loc>
   <lastmod>2019-06-24T14:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/saving-machine-learning-models/</loc>
+  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/select-date-and-time-ranges/</loc>
