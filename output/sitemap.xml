@@ -399,7 +399,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -414,16 +414,20 @@
   <lastmod>2019-08-05T06:44:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/05/</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
+ </url>
+ <url>
   <loc>/2019/08/06/</loc>
   <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -714,6 +718,10 @@
   <lastmod>2019-08-01T07:02:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/joblib/</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/jupyter-notebook/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -759,7 +767,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/</loc>
-  <lastmod>2019-07-20T21:35:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-1.html</loc>
@@ -783,7 +791,11 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-6.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/machine-learning/index-7.html</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -812,6 +824,10 @@
  <url>
   <loc>/categories/model-evaluation/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/model-persistence/</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/modulelist/</loc>
@@ -876,6 +892,10 @@
  <url>
   <loc>/categories/performance/</loc>
   <lastmod>2019-07-27T15:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/pickle/</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/plotly-express/</loc>
@@ -1075,7 +1095,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1444,6 +1464,10 @@
  <url>
   <loc>/posts/save-images/</loc>
   <lastmod>2019-06-24T14:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/saving-machine-learning-models-by-joblib/</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/saving-machine-learning-models/</loc>

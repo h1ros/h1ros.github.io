@@ -286,6 +286,10 @@
   <lastmod>2019-08-01T07:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/joblib.xml</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/jupyter-notebook.xml</loc>
   <lastmod>2019-05-18T06:05:00Z</lastmod>
  </sitemap>
@@ -331,7 +335,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -360,6 +364,10 @@
  <sitemap>
   <loc>/categories/model-evaluation.xml</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/model-persistence.xml</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/modulelist.xml</loc>
@@ -424,6 +432,10 @@
  <sitemap>
   <loc>/categories/performance.xml</loc>
   <lastmod>2019-07-29T07:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/pickle.xml</loc>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/plotly-express.xml</loc>
@@ -611,10 +623,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-06T19:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>
