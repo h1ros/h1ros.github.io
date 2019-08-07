@@ -246,6 +246,10 @@
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/gradient-descent.xml</loc>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/graphviz.xml</loc>
   <lastmod>2019-07-26T11:06:00Z</lastmod>
  </sitemap>
@@ -335,7 +339,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -623,10 +627,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>

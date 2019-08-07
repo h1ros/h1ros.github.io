@@ -419,15 +419,15 @@
  </url>
  <url>
   <loc>/2019/08/06/</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -678,6 +678,10 @@
   <lastmod>2019-05-20T05:58:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/gradient-descent/</loc>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/graphviz/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
  </url>
@@ -795,7 +799,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-7.html</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -1095,7 +1099,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1286,6 +1290,10 @@
   <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/gradient-descent-implementation-from-scratch/</loc>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/histograms-in-pandas/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -1311,7 +1319,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
+  <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1468,10 +1476,6 @@
  <url>
   <loc>/posts/saving-machine-learning-models-by-joblib/</loc>
   <lastmod>2019-08-06T19:57:00Z</lastmod>
- </url>
- <url>
-  <loc>/posts/saving-machine-learning-models/</loc>
-  <lastmod>2019-08-06T19:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/select-date-and-time-ranges/</loc>
