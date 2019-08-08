@@ -1243,6 +1243,647 @@ When I apply <code>show={'legend'}</code>, I obtained the error below and still 
 </div>
 </div>
     </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/split-up-dtreeviz-part-3/" class="u-url">Split Up: dtreeviz (Part 3)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/split-up-dtreeviz-part-3/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-18T08:17:01-07:00" itemprop="datePublished" title="Jul 18, 2019, 8:17:01 AM">Jul 18, 2019, 8:17:01 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/split-up-dtreeviz-part-3/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreeviz-part-3.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Goal">¶</a>
+</h2>
+<p>This post aims to break down the module <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
+<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
+<p>This post is the 3rd part: breaking down <code>ShadowDecTree</code>.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://github.com/parrt/dtreeviz">Github dtreeviz</a></li>
+<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/">Step by Step Data Science - Split-Up: dtreeviz (Part 1)</a></li>
+<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/">Step by Step Data Science - Split-Up: dtreeviz (Part 2)</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/tree.html">Scikit-Learn - Tree</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ShadowDecTreeNode-class">
+<code>ShadowDecTreeNode</code> class<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#ShadowDecTreeNode-class">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Source-github">Source <a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py">github</a><a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Source-github">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">compute_class_weight</span>
+
+<span class="kn">from</span> <span class="nn">dtreeviz.shadow</span> <span class="k">import</span> <span class="n">ShadowDecTree</span> 
+<span class="c1"># skip ShadowDecTree Class</span>
+<span class="c1">#</span>
+
+<span class="k">class</span> <span class="nc">ShadowDecTreeNode</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    A node in a shadow tree.  Each node has left and right</span>
+<span class="sd">    pointers to child nodes, if any.  As part of tree construction process, the</span>
+<span class="sd">    samples examined at each decision node or at each leaf node are</span>
+<span class="sd">    saved into field node_samples.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">shadow_tree</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">feature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">feature_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return a list of sample indexes associated with this node. If this is a</span>
+<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
+<span class="sd">        or class.  If this is an internal node, it is the number of samples used</span>
+<span class="sd">        to compute the split point.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">node_to_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">nsamples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return the number of samples associated with this node. If this is a</span>
+<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
+<span class="sd">        or class. If this is an internal node, it is the number of samples used</span>
+<span class="sd">        to compute the split point.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_node_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="c1"># same as len(self.node_samples)</span>
+
+    <span class="k">def</span> <span class="nf">split_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Return the list of indexes to the left and the right of the split value.</span>
+<span class="sd">        """</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">())</span>
+        <span class="n">node_X_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">X_train</span><span class="p">[</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
+        <span class="n">split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&lt;</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&gt;=</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">isleaf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">isclassifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">&gt;</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Number</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If this is a leaf node, return the predicted continuous value, if this is a</span>
+<span class="sd">        regressor, or the class number, if this is a classifier.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isleaf</span><span class="p">():</span> <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">predicted_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">predicted_class</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">prediction_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If the tree model is a classifier and we know the class names,</span>
+<span class="sd">        return the class name associated with the prediction for this leaf node.</span>
+<span class="sd">        Return prediction class or value otherwise.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">class_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        If this tree model is a classifier, return a list with the count</span>
+<span class="sd">        associated with each class.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"&lt;pred=</span><span class="si">{value}</span><span class="s2">,n=</span><span class="si">{n}</span><span class="s2">&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"(</span><span class="si">{f}</span><span class="s2">@</span><span class="si">{s}</span><span class="s2"> </span><span class="si">{left}</span><span class="s2"> </span><span class="si">{right}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="p">(),</span>
+                                                     <span class="n">s</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span>
+                                                     <span class="n">left</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">,</span>
+                                                     <span class="n">right</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Instantiate-class-objects">Instantiate class objects<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Instantiate-class-objects">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Create-a-tree-model-by-scikit-learn">Create a tree model by scikit learn<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Create-a-tree-model-by-scikit-learn">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">graphviz</span> 
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">tree</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Y = [0, 1]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                     <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  
+                     <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'0'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">],</span>  
+                     <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
+                     <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>  
+<span class="n">graph</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ --><!-- Title: Tree Pages: 1 --><svg width="220pt" height="211pt" viewbox="0.00 0.00 219.54 211.20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 207.2)"><title>Tree</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-207.2 215.5378,-207.2 215.5378,4 -4,4"></polygon><!-- 0 --><g id="node1" class="node"><title>0</title>
+<path fill="transparent" stroke="#000000" d="M141.3078,-203.2C141.3078,-203.2 69.23,-203.2 69.23,-203.2 63.23,-203.2 57.23,-197.2 57.23,-191.2 57.23,-191.2 57.23,-123.2 57.23,-123.2 57.23,-117.2 63.23,-111.2 69.23,-111.2 69.23,-111.2 141.3078,-111.2 141.3078,-111.2 147.3078,-111.2 153.3078,-117.2 153.3078,-123.2 153.3078,-123.2 153.3078,-191.2 153.3078,-191.2 153.3078,-197.2 147.3078,-203.2 141.3078,-203.2"></path><text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">1 ≤ 0.5</text><text text-anchor="start" x="76.6739" y="-169.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.5</text><text text-anchor="start" x="67.3422" y="-153" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 2</text><text text-anchor="start" x="65" y="-136.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 1]</text><text text-anchor="start" x="77.4551" y="-119.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 1 --><g id="node2" class="node"><title>1</title>
+<path fill="#e58139" stroke="#000000" d="M84.3078,-75.3003C84.3078,-75.3003 12.23,-75.3003 12.23,-75.3003 6.23,-75.3003 .23,-69.3003 .23,-63.3003 .23,-63.3003 .23,-11.8997 .23,-11.8997 .23,-5.8997 6.23,.1003 12.23,.1003 12.23,.1003 84.3078,.1003 84.3078,.1003 90.3078,.1003 96.3078,-5.8997 96.3078,-11.8997 96.3078,-11.8997 96.3078,-63.3003 96.3078,-63.3003 96.3078,-69.3003 90.3078,-75.3003 84.3078,-75.3003"></path><text text-anchor="start" x="19.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="10.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="8" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 0]</text><text text-anchor="start" x="20.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 0&#45;&gt;1 --><g id="edge1" class="edge"><title>0-&gt;1</title>
+<path fill="none" stroke="#000000" d="M83.2312,-110.9595C79.0901,-102.2704 74.7568,-93.1781 70.6066,-84.47"></path><polygon fill="#000000" stroke="#000000" points="73.6547,-82.7302 66.1928,-75.2088 67.3356,-85.7419 73.6547,-82.7302"></polygon><text text-anchor="middle" x="57.8402" y="-94.5722" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">True</text></g><!-- 2 --><g id="node3" class="node"><title>2</title>
+<path fill="#399de5" stroke="#000000" d="M199.3078,-75.3003C199.3078,-75.3003 127.23,-75.3003 127.23,-75.3003 121.23,-75.3003 115.23,-69.3003 115.23,-63.3003 115.23,-63.3003 115.23,-11.8997 115.23,-11.8997 115.23,-5.8997 121.23,.1003 127.23,.1003 127.23,.1003 199.3078,.1003 199.3078,.1003 205.3078,.1003 211.3078,-5.8997 211.3078,-11.8997 211.3078,-11.8997 211.3078,-63.3003 211.3078,-63.3003 211.3078,-69.3003 205.3078,-75.3003 199.3078,-75.3003"></path><text text-anchor="start" x="134.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="125.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="123" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [0, 1]</text><text text-anchor="start" x="135.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 1</text></g><!-- 0&#45;&gt;2 --><g id="edge2" class="edge"><title>0-&gt;2</title>
+<path fill="none" stroke="#000000" d="M127.6932,-110.9595C131.907,-102.2704 136.3163,-93.1781 140.5393,-84.47"></path><polygon fill="#000000" stroke="#000000" points="143.8162,-85.7339 145.0305,-75.2088 137.5178,-82.6794 143.8162,-85.7339"></polygon><text text-anchor="middle" x="153.2229" y="-94.6284" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">False</text></g></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-a-ShadowDecTreeNode">Create a <code>ShadowDecTreeNode</code><a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Create-a-ShadowDecTreeNode">¶</a>
+</h3>
+<p><strong>ShadowDecTreeNode</strong> <code>__init__</code></p>
+<ul>
+<li>L222-226: store input arguments as class members</li>
+<li>L228-308: define the same functions in tree objects like <code>split</code>, <code>feature</code> etc. or utility functions</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTree</span>
+<span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">ShadowDecTree</span><span class="p">(</span><span class="n">tree_model</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y_train</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTreeNode</span>
+<span class="n">shadow_tree_node0</span> <span class="o">=</span> <span class="n">ShadowDecTreeNode</span><span class="p">(</span><span class="n">shadow_tree</span><span class="o">=</span><span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">shadow_tree_node0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;__main__.ShadowDecTreeNode at 0x120eda908&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods-under-``ShadowTreeDecNode">Methods under ``ShadowTreeDecNode<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Methods-under-%60%60ShadowTreeDecNode">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L228 split</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L231 feature</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">feature</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L239 samples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">samples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L248 nsamples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">nsamples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L257 split_samples</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split_samples</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([0]), array([1]))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L268 isleaf</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isleaf</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L271 isclassifier</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ True])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L287 prediction_name</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">prediction_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L298 class_counts</span>
+<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">class_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 1])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/visualization-samples-by-plotly-express/" class="u-url">Visualization Samples by Plotly Express</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -1250,7 +1891,7 @@ When I apply <code>show={'legend'}</code>, I obtained the error below and still 
             </span></p>
             <p class="dateline">
             <a href="../../posts/visualization-samples-by-plotly-express/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-18T17:21:37-07:00" itemprop="datePublished" title="Jul 18, 2019, 5:21:37 PM">Jul 18, 2019, 5:21:37 PM</time></a>
+            <time class="published dt-published" datetime="2019-07-17T17:21:37-07:00" itemprop="datePublished" title="Jul 17, 2019, 5:21:37 PM">Jul 17, 2019, 5:21:37 PM</time></a>
             </p>
                 <p class="commentline">
         
@@ -2103,647 +2744,6 @@ When I apply <code>show={'legend'}</code>, I obtained the error below and still 
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArwAAAHCCAYAAAANehpvAAAgAElEQVR4Xuydd3xU1daG35n0ShJEREGagICAiiioXBHFhgVESoBwaSIllCAoIAFCABGQqsGLnRY6iBWlSLE3qoqCIBZAanrPfL99YvIRyISZs/ecOTN55/vju8mctfbez9qJTxZ7zrHYbDYb+CIBEiABEiABEiABEiABLyVgofB6aWW5LBIgARIgARIgARIgAY0AhZcbgQRIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAESMCrCVB4vbq8XBwJkAAJkAAJkAAJkACFl3uABEiABEiABEiABEjAqwlQeL26vFwcCZAACZAACZAACZAAhZd7gARIgARIgARIgARIwKsJUHi9urxcHAmQAAmQAAmQAAmQAIWXe4AESIAESIAESIAE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">
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/split-up-dtreeviz-part-3/" class="u-url">Split Up: dtreeviz (Part 3)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/split-up-dtreeviz-part-3/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-18T08:17:01-07:00" itemprop="datePublished" title="Jul 18, 2019, 8:17:01 AM">Jul 18, 2019, 8:17:01 AM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../../posts/split-up-dtreeviz-part-3/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreeviz-part-3.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Goal">¶</a>
-</h2>
-<p>This post aims to break down the module <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module step by step to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
-<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
-<p>This post is the 3rd part: breaking down <code>ShadowDecTree</code>.</p>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a href="https://github.com/parrt/dtreeviz">Github dtreeviz</a></li>
-<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-1/">Step by Step Data Science - Split-Up: dtreeviz (Part 1)</a></li>
-<li><a href="https://h1ros.github.io/posts/split-up-dtreeviz-part-2/">Step by Step Data Science - Split-Up: dtreeviz (Part 2)</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/tree.html">Scikit-Learn - Tree</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ShadowDecTreeNode-class">
-<code>ShadowDecTreeNode</code> class<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#ShadowDecTreeNode-class">¶</a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Source-github">Source <a href="https://github.com/parrt/dtreeviz/blob/master/dtreeviz/shadow.py">github</a><a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Source-github">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Sequence</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
-<span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">compute_class_weight</span>
-
-<span class="kn">from</span> <span class="nn">dtreeviz.shadow</span> <span class="k">import</span> <span class="n">ShadowDecTree</span> 
-<span class="c1"># skip ShadowDecTree Class</span>
-<span class="c1">#</span>
-
-<span class="k">class</span> <span class="nc">ShadowDecTreeNode</span><span class="p">:</span>
-    <span class="sd">"""</span>
-<span class="sd">    A node in a shadow tree.  Each node has left and right</span>
-<span class="sd">    pointers to child nodes, if any.  As part of tree construction process, the</span>
-<span class="sd">    samples examined at each decision node or at each leaf node are</span>
-<span class="sd">    saved into field node_samples.</span>
-<span class="sd">    """</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">shadow_tree</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
-
-    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">feature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">feature_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return a list of sample indexes associated with this node. If this is a</span>
-<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
-<span class="sd">        or class.  If this is an internal node, it is the number of samples used</span>
-<span class="sd">        to compute the split point.</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">node_to_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">nsamples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return the number of samples associated with this node. If this is a</span>
-<span class="sd">        leaf node, it indicates the samples used to compute the predicted value</span>
-<span class="sd">        or class. If this is an internal node, it is the number of samples used</span>
-<span class="sd">        to compute the split point.</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_node_samples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="c1"># same as len(self.node_samples)</span>
-
-    <span class="k">def</span> <span class="nf">split_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">"""</span>
-<span class="sd">        Return the list of indexes to the left and the right of the split value.</span>
-<span class="sd">        """</span>
-        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">())</span>
-        <span class="n">node_X_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">X_train</span><span class="p">[</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">()]</span>
-        <span class="n">split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-        <span class="n">left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&lt;</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">node_X_data</span> <span class="o">&gt;=</span> <span class="n">split</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
-
-    <span class="k">def</span> <span class="nf">isleaf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">isclassifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">&gt;</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Number</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If this is a leaf node, return the predicted continuous value, if this is a</span>
-<span class="sd">        regressor, or the class number, if this is a classifier.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isleaf</span><span class="p">():</span> <span class="k">return</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">predicted_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">predicted_class</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">prediction_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If the tree model is a classifier and we know the class names,</span>
-<span class="sd">        return the class name associated with the prediction for this leaf node.</span>
-<span class="sd">        Return prediction class or value otherwise.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">class_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        If this tree model is a classifier, return a list with the count</span>
-<span class="sd">        associated with each class.</span>
-<span class="sd">        """</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">tree_model</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">shadow_tree</span><span class="o">.</span><span class="n">class_weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">"&lt;pred=</span><span class="si">{value}</span><span class="s2">,n=</span><span class="si">{n}</span><span class="s2">&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">"(</span><span class="si">{f}</span><span class="s2">@</span><span class="si">{s}</span><span class="s2"> </span><span class="si">{left}</span><span class="s2"> </span><span class="si">{right}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="p">(),</span>
-                                                     <span class="n">s</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span>
-                                                     <span class="n">left</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">,</span>
-                                                     <span class="n">right</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Instantiate-class-objects">Instantiate class objects<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Instantiate-class-objects">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Create-a-tree-model-by-scikit-learn">Create a tree model by scikit learn<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Create-a-tree-model-by-scikit-learn">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">graphviz</span> 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">tree</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="c1"># Y = [0, 1]</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-<span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-                     <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  
-                     <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'0'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">],</span>  
-                     <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
-                     <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>  
-<span class="n">graph</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generated by graphviz version 2.40.1 (20161225.0304)
- --><!-- Title: Tree Pages: 1 --><svg width="220pt" height="211pt" viewbox="0.00 0.00 219.54 211.20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 207.2)"><title>Tree</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-207.2 215.5378,-207.2 215.5378,4 -4,4"></polygon><!-- 0 --><g id="node1" class="node"><title>0</title>
-<path fill="transparent" stroke="#000000" d="M141.3078,-203.2C141.3078,-203.2 69.23,-203.2 69.23,-203.2 63.23,-203.2 57.23,-197.2 57.23,-191.2 57.23,-191.2 57.23,-123.2 57.23,-123.2 57.23,-117.2 63.23,-111.2 69.23,-111.2 69.23,-111.2 141.3078,-111.2 141.3078,-111.2 147.3078,-111.2 153.3078,-117.2 153.3078,-123.2 153.3078,-123.2 153.3078,-191.2 153.3078,-191.2 153.3078,-197.2 147.3078,-203.2 141.3078,-203.2"></path><text text-anchor="start" x="82.7002" y="-186.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">1 ≤ 0.5</text><text text-anchor="start" x="76.6739" y="-169.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.5</text><text text-anchor="start" x="67.3422" y="-153" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 2</text><text text-anchor="start" x="65" y="-136.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 1]</text><text text-anchor="start" x="77.4551" y="-119.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 1 --><g id="node2" class="node"><title>1</title>
-<path fill="#e58139" stroke="#000000" d="M84.3078,-75.3003C84.3078,-75.3003 12.23,-75.3003 12.23,-75.3003 6.23,-75.3003 .23,-69.3003 .23,-63.3003 .23,-63.3003 .23,-11.8997 .23,-11.8997 .23,-5.8997 6.23,.1003 12.23,.1003 12.23,.1003 84.3078,.1003 84.3078,.1003 90.3078,.1003 96.3078,-5.8997 96.3078,-11.8997 96.3078,-11.8997 96.3078,-63.3003 96.3078,-63.3003 96.3078,-69.3003 90.3078,-75.3003 84.3078,-75.3003"></path><text text-anchor="start" x="19.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="10.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="8" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [1, 0]</text><text text-anchor="start" x="20.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 0</text></g><!-- 0&#45;&gt;1 --><g id="edge1" class="edge"><title>0-&gt;1</title>
-<path fill="none" stroke="#000000" d="M83.2312,-110.9595C79.0901,-102.2704 74.7568,-93.1781 70.6066,-84.47"></path><polygon fill="#000000" stroke="#000000" points="73.6547,-82.7302 66.1928,-75.2088 67.3356,-85.7419 73.6547,-82.7302"></polygon><text text-anchor="middle" x="57.8402" y="-94.5722" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">True</text></g><!-- 2 --><g id="node3" class="node"><title>2</title>
-<path fill="#399de5" stroke="#000000" d="M199.3078,-75.3003C199.3078,-75.3003 127.23,-75.3003 127.23,-75.3003 121.23,-75.3003 115.23,-69.3003 115.23,-63.3003 115.23,-63.3003 115.23,-11.8997 115.23,-11.8997 115.23,-5.8997 121.23,.1003 127.23,.1003 127.23,.1003 199.3078,.1003 199.3078,.1003 205.3078,.1003 211.3078,-5.8997 211.3078,-11.8997 211.3078,-11.8997 211.3078,-63.3003 211.3078,-63.3003 211.3078,-69.3003 205.3078,-75.3003 199.3078,-75.3003"></path><text text-anchor="start" x="134.6739" y="-58.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">gini = 0.0</text><text text-anchor="start" x="125.3422" y="-41.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 1</text><text text-anchor="start" x="123" y="-25" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [0, 1]</text><text text-anchor="start" x="135.4551" y="-8.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = 1</text></g><!-- 0&#45;&gt;2 --><g id="edge2" class="edge"><title>0-&gt;2</title>
-<path fill="none" stroke="#000000" d="M127.6932,-110.9595C131.907,-102.2704 136.3163,-93.1781 140.5393,-84.47"></path><polygon fill="#000000" stroke="#000000" points="143.8162,-85.7339 145.0305,-75.2088 137.5178,-82.6794 143.8162,-85.7339"></polygon><text text-anchor="middle" x="153.2229" y="-94.6284" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">False</text></g></g></svg>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Create-a-ShadowDecTreeNode">Create a <code>ShadowDecTreeNode</code><a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Create-a-ShadowDecTreeNode">¶</a>
-</h3>
-<p><strong>ShadowDecTreeNode</strong> <code>__init__</code></p>
-<ul>
-<li>L222-226: store input arguments as class members</li>
-<li>L228-308: define the same functions in tree objects like <code>split</code>, <code>feature</code> etc. or utility functions</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTree</span>
-<span class="n">shadow_tree</span> <span class="o">=</span> <span class="n">ShadowDecTree</span><span class="p">(</span><span class="n">tree_model</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y_train</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate ShadowDecTreeNode</span>
-<span class="n">shadow_tree_node0</span> <span class="o">=</span> <span class="n">ShadowDecTreeNode</span><span class="p">(</span><span class="n">shadow_tree</span><span class="o">=</span><span class="n">shadow_tree</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">shadow_tree_node0</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.ShadowDecTreeNode at 0x120eda908&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Methods-under-``ShadowTreeDecNode">Methods under ``ShadowTreeDecNode<a class="anchor-link" href="../../posts/split-up-dtreeviz-part-3/#Methods-under-%60%60ShadowTreeDecNode">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L228 split</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.5</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L231 feature</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">feature</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L239 samples</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">samples</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[0, 1]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L248 nsamples</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">nsamples</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L257 split_samples</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">split_samples</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(array([0]), array([1]))</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L268 isleaf</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isleaf</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L271 isclassifier</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">isclassifier</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ True])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L287 prediction_name</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">prediction_name</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># L298 class_counts</span>
-<span class="n">shadow_tree_node0</span><span class="o">.</span><span class="n">class_counts</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([1, 1])</pre>
 </div>
 
 </div>
