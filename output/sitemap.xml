@@ -427,7 +427,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-08T15:01:00Z</lastmod>
+  <lastmod>2019-08-08T15:03:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -1115,7 +1115,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-08T14:58:00Z</lastmod>
+  <lastmod>2019-08-08T15:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1464,6 +1464,10 @@
  <url>
   <loc>/posts/precision/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/prophet-101-a-time-series-forecasting-module/</loc>
+  <lastmod>2019-08-08T15:03:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/prophet-101-a-time-series-forescasting-module/</loc>
