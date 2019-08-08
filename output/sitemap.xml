@@ -399,7 +399,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-06T19:57:00Z</lastmod>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -422,12 +422,16 @@
   <lastmod>2019-08-07T05:56:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/08/</loc>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-07T05:56:00Z</lastmod>
+  <lastmod>2019-08-08T15:01:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-07T05:56:00Z</lastmod>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -670,6 +674,10 @@
   <lastmod>2019-06-20T01:43:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/forecast/</loc>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/gan/</loc>
   <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
@@ -799,7 +807,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-7.html</loc>
-  <lastmod>2019-08-07T05:56:00Z</lastmod>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -926,6 +934,10 @@
   <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/prophet/</loc>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/punctuation/</loc>
   <lastmod>2019-05-28T07:22:00Z</lastmod>
  </url>
@@ -1008,6 +1020,10 @@
  <url>
   <loc>/categories/stock-price/</loc>
   <lastmod>2019-06-20T02:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/stock/</loc>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/style-transfer/</loc>
@@ -1099,7 +1115,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-07T05:56:00Z</lastmod>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1319,7 +1335,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-07T05:56:00Z</lastmod>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1448,6 +1464,10 @@
  <url>
   <loc>/posts/precision/</loc>
   <lastmod>2019-06-05T03:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/prophet-101-a-time-series-forescasting-module/</loc>
+  <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/pytorch-basic-operations/</loc>
