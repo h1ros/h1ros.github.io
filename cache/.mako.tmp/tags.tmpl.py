@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1565277254.110986
+_modified_time = 1565277334.3429272
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/tags.tmpl'
 _template_uri = 'tags.tmpl'
@@ -32,16 +32,16 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         len = _import_ns.get('len', context.get('len', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
         cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
-        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
@@ -70,9 +70,9 @@ def render_extra_head(context,**pageargs):
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
         kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         def extra_head():
             return render_extra_head(context)
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(feeds_translations.head(kind=kind, feeds=False)))
@@ -87,16 +87,16 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         len = _import_ns.get('len', context.get('len', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
         cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
         def content():
             return render_content(context)
-        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
         range = _import_ns.get('range', context.get('range', UNDEFINED))
         __M_writer = context.writer()
