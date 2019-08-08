@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>/2019/07/</loc>
-  <lastmod>2019-08-08T15:13:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/01/</loc>
@@ -340,6 +340,10 @@
  <url>
   <loc>/2019/07/09/</loc>
   <lastmod>2019-07-11T12:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/07/11/</loc>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/07/12/</loc>
@@ -431,7 +435,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-08T15:13:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -1371,7 +1375,7 @@
  </url>
  <url>
   <loc>/posts/index-9.html</loc>
-  <lastmod>2019-08-08T15:13:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/install-xgboost-using-pip-for-mac-osx/</loc>

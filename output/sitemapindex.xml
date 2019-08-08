@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/installation.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/interaction-values.xml</loc>
@@ -339,7 +339,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/mac.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
@@ -419,7 +419,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/osx.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/pandas-styling.xml</loc>
@@ -459,7 +459,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/preparation.xml</loc>
-  <lastmod>2019-07-29T07:00:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/preprocessing.xml</loc>
@@ -627,7 +627,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/xgbosst.xml</loc>
-  <lastmod>2019-07-12T15:02:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/xkcd.xml</loc>
@@ -639,10 +639,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-08T15:13:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-08T15:13:00Z</lastmod>
+  <lastmod>2019-08-08T15:14:00Z</lastmod>
  </sitemap>
 </sitemapindex>
