@@ -215,7 +215,11 @@
  </url>
  <url>
   <loc>/2019/06/</loc>
-  <lastmod>2019-08-08T15:15:00Z</lastmod>
+  <lastmod>2019-08-08T15:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/06/01/</loc>
+  <lastmod>2019-08-08T15:16:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/06/02/</loc>
@@ -443,7 +447,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-08T15:15:00Z</lastmod>
+  <lastmod>2019-08-08T15:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -807,7 +811,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-3.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-08T15:16:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/machine-learning/index-4.html</loc>
@@ -1367,7 +1371,7 @@
  </url>
  <url>
   <loc>/posts/index-5.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-08T15:16:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-6.html</loc>
