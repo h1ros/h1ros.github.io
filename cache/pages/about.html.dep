@@ -58,6 +58,7 @@ cache/posts/parse-html.html
 cache/posts/create-a-word-cloud.html
 themes/bootstrap3/templates/generic_post_list.tmpl
 ####MAGIC####TIMELINE
+cache/posts/time-series-forecasting-for-daily-births-dataset-by-prophet.html
 cache/posts/prophet-101-a-time-series-forecasting-module.html
 cache/posts/loading-audio-data.html
 cache/posts/getting-real-time-stock-market-data.html

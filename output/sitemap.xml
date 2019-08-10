@@ -419,7 +419,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-08T15:09:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -446,12 +446,16 @@
   <lastmod>2019-08-08T15:09:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/09/</loc>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-08T15:16:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-08T14:58:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -698,6 +702,10 @@
   <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/forecasting/</loc>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/gan/</loc>
   <lastmod>2019-07-02T14:22:00Z</lastmod>
  </url>
@@ -827,7 +835,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-7.html</loc>
-  <lastmod>2019-08-08T14:58:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -1135,7 +1143,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-08T15:03:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1355,7 +1363,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-08T15:12:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1576,6 +1584,10 @@
  <url>
   <loc>/posts/term-frequency-inverse-document-frequency/</loc>
   <lastmod>2019-05-27T06:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/time-series-forecasting-for-daily-births-dataset-by-prophet/</loc>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/time-the-performance-by-timeit-and-cell-magic/</loc>

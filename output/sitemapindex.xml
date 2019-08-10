@@ -242,6 +242,10 @@
   <lastmod>2019-08-08T15:09:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/forecasting.xml</loc>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/gan.xml</loc>
   <lastmod>2019-07-05T14:44:00Z</lastmod>
  </sitemap>
@@ -343,7 +347,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/machine-learning.xml</loc>
-  <lastmod>2019-08-08T15:16:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/math.xml</loc>
@@ -471,7 +475,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/prophet.xml</loc>
-  <lastmod>2019-08-08T15:09:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/punctuation.xml</loc>
@@ -583,7 +587,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/time-series.xml</loc>
-  <lastmod>2019-08-08T15:09:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/timeit.xml</loc>
@@ -639,10 +643,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-08T15:16:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-08T15:16:00Z</lastmod>
+  <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>
