@@ -99,7 +99,7 @@
  </sitemap>
  <sitemap>
   <loc>/categories/coding.xml</loc>
-  <lastmod>2019-08-08T15:15:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/convert.xml</loc>
@@ -108,6 +108,10 @@
  <sitemap>
   <loc>/categories/correlation.xml</loc>
   <lastmod>2019-06-26T15:28:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/cprofile.xml</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/cufflinks.xml</loc>
@@ -474,6 +478,10 @@
   <lastmod>2019-06-09T14:34:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/profling.xml</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/prophet.xml</loc>
   <lastmod>2019-08-10T07:12:00Z</lastmod>
  </sitemap>
@@ -643,10 +651,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>

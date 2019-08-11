@@ -419,7 +419,7 @@
  </url>
  <url>
   <loc>/2019/08/</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/08/01/</loc>
@@ -450,12 +450,16 @@
   <lastmod>2019-08-10T07:12:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/08/11/</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -555,7 +559,7 @@
  </url>
  <url>
   <loc>/categories/coding/index-1.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/convert/</loc>
@@ -564,6 +568,10 @@
  <url>
   <loc>/categories/correlation/</loc>
   <lastmod>2019-06-26T15:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/cprofile/</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/cufflinks/</loc>
@@ -962,6 +970,10 @@
   <lastmod>2019-06-09T14:03:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/profling/</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/prophet/</loc>
   <lastmod>2019-08-08T14:58:00Z</lastmod>
  </url>
@@ -1143,7 +1155,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1274,6 +1286,10 @@
   <lastmod>2019-06-07T13:23:00Z</lastmod>
  </url>
  <url>
+  <loc>/posts/cprofile-examples-in-python/</loc>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>/posts/create-a-sparse-matrix/</loc>
   <lastmod>2019-05-16T06:33:00Z</lastmod>
  </url>
@@ -1363,7 +1379,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
