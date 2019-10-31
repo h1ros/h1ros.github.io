@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>/2019/</loc>
-  <lastmod>2019-08-02T05:18:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/2019/02/</loc>
@@ -454,12 +454,20 @@
   <lastmod>2019-08-11T18:42:00Z</lastmod>
  </url>
  <url>
+  <loc>/2019/10/</loc>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/2019/10/29/</loc>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2019-08-11T18:42:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2019-08-11T18:42:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -504,6 +512,10 @@
  <url>
   <loc>/categories/basic/</loc>
   <lastmod>2019-05-17T23:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/bayesian-optimization/</loc>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/bayesian/</loc>
@@ -843,7 +855,7 @@
  </url>
  <url>
   <loc>/categories/machine-learning/index-7.html</loc>
-  <lastmod>2019-08-10T07:12:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/math/</loc>
@@ -1127,7 +1139,7 @@
  </url>
  <url>
   <loc>/categories/visualization/index-1.html</loc>
-  <lastmod>2019-08-05T06:44:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/wordcloud/</loc>
@@ -1155,7 +1167,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2019-08-11T18:42:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1379,7 +1391,7 @@
  </url>
  <url>
   <loc>/posts/index-10.html</loc>
-  <lastmod>2019-08-11T18:42:00Z</lastmod>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1424,6 +1436,10 @@
  <url>
   <loc>/posts/interpretability-of-random-forest-prediction-for-mnist-classification-using-lime/</loc>
   <lastmod>2019-07-11T12:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/introduction-to-bayesian-optimization/</loc>
+  <lastmod>2019-10-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/introduction-to-graphviz-in-jupyter-notebook/</loc>
