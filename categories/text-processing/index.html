@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts about Text Processing | Step-by-step Data Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href=".">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><link rel="alternate" type="application/rss+xml" title="RSS for tag Text Processing" hreflang="en" href="../text-processing.xml">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../coding">Algorithms and Data Structures</a>
+                </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    <header><h1>Posts about Text Processing</h1>
+        <div class="metadata">
+            
+                <p class="feedlink">
+                        
+            <a href="../text-processing.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+
+                </p>
+
+            
+
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/bert-word-embeddings/" class="u-url">BERT Word Embeddings</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/bert-word-embeddings/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-14T03:17:57-07:00" itemprop="datePublished" title="Jul 14, 2019, 3:17:57 AM">Jul 14, 2019, 3:17:57 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/bert-word-embeddings/#disqus_thread" data-disqus-identifier="cache/posts/bert-word-embeddings.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/bert-word-embeddings/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to use <code>BERT</code> word embeddings.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/">Chris McCormick - BERT Word Embeddings Tutorial</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/bert-word-embeddings/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">pytorch_pretrained_bert</span> <span class="k">import</span> <span class="n">BertTokenizer</span><span class="p">,</span> <span class="n">BertModel</span><span class="p">,</span> <span class="n">BertForMaskedLM</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Load-a-pre-trained-takenizer-model">Load a pre-trained takenizer model<a class="anchor-link" href="../../posts/bert-word-embeddings/#Load-a-pre-trained-takenizer-model">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">'bert-base-uncased'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>100%|██████████| 231508/231508 [00:00&lt;00:00, 426744.34B/s]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-sample-text">Create a sample text<a class="anchor-link" href="../../posts/bert-word-embeddings/#Create-a-sample-text">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># text = "This is a sample text"</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"This is the sample sentence for BERT word embeddings"</span>
+<span class="n">marked_text</span> <span class="o">=</span> <span class="s2">"[CLS] "</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">" [SEP]"</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">marked_text</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[CLS] This is the sample sentence for BERT word embeddings [SEP]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tokenization">Tokenization<a class="anchor-link" href="../../posts/bert-word-embeddings/#Tokenization">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">marked_text</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['[CLS]', 'this', 'is', 'the', 'sample', 'sentence', 'for', 'bert', 'word', 'em', '##bed', '##ding', '##s', '[SEP]']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Convert-tokens-to-ID">Convert tokens to ID<a class="anchor-link" href="../../posts/bert-word-embeddings/#Convert-tokens-to-ID">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">,</span> <span class="n">indexed_tokens</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>('[CLS]', 101)
+('this', 2023)
+('is', 2003)
+('the', 1996)
+('sample', 7099)
+('sentence', 6251)
+('for', 2005)
+('bert', 14324)
+('word', 2773)
+('em', 7861)
+('##bed', 8270)
+('##ding', 4667)
+('##s', 2015)
+('[SEP]', 102)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/tokenize-text/" class="u-url">Tokenize Text</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/tokenize-text/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-30T05:40:08-07:00" itemprop="datePublished" title="May 30, 2019, 5:40:08 AM">May 30, 2019, 5:40:08 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/tokenize-text/#disqus_thread" data-disqus-identifier="cache/posts/tokenize-text.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/tokenize-text/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to tokenize text using <code>nltk</code>.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/tokenize-text-using-nltk-python/">GeeksforGeeks - Tokenize text using NLTK in python</a></li>
+<li><a href="https://text-processing.com/demo/tokenize/">Text-processing.com - Tokenize Demo</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/tokenize-text/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">sent_tokenize</span><span class="p">,</span> <span class="n">word_tokenize</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-sentences">Create a sentences<a class="anchor-link" href="../../posts/tokenize-text/#Create-a-sentences">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">paragraph</span> <span class="o">=</span> <span class="s2">"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects"</span>
+<span class="n">paragraph</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tokenize-a-paragraph-into-sentences">Tokenize a paragraph into sentences<a class="anchor-link" href="../../posts/tokenize-text/#Tokenize-a-paragraph-into-sentences">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['Python is an interpreted, high-level, general-purpose programming language.',
+ "Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.",
+ 'Its language constructs and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tokenize-a-paragraph-into-words">Tokenize a paragraph into words<a class="anchor-link" href="../../posts/tokenize-text/#Tokenize-a-paragraph-into-words">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['Python',
+ 'is',
+ 'an',
+ 'interpreted',
+ ',',
+ 'high-level',
+ ',',
+ 'general-purpose',
+ 'programming',
+ 'language',
+ '.',
+ 'Created',
+ 'by',
+ 'Guido',
+ 'van',
+ 'Rossum',
+ 'and',
+ 'first',
+ 'released',
+ 'in',
+ '1991',
+ ',',
+ 'Python',
+ "'s",
+ 'design',
+ 'philosophy',
+ 'emphasizes',
+ 'code',
+ 'readability',
+ 'with',
+ 'its',
+ 'notable',
+ 'use',
+ 'of',
+ 'significant',
+ 'whitespace',
+ '.',
+ 'Its',
+ 'language',
+ 'constructs',
+ 'and',
+ 'object-oriented',
+ 'approach',
+ 'aims',
+ 'to',
+ 'help',
+ 'programmers',
+ 'write',
+ 'clear',
+ ',',
+ 'logical',
+ 'code',
+ 'for',
+ 'small',
+ 'and',
+ 'large-scale',
+ 'projects']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/remove-punctuation/" class="u-url">Remove Punctuation</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/remove-punctuation/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-29T00:15:44-07:00" itemprop="datePublished" title="May 29, 2019, 12:15:44 AM">May 29, 2019, 12:15:44 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/remove-punctuation/#disqus_thread" data-disqus-identifier="cache/posts/remove-punctuation.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/remove-punctuation/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to remove punctuation using <code>string</code>.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://machinelearningmastery.com/clean-text-machine-learning-python/">Machine Learning Mastery - How to Clean Text for Machine Learning with Python</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/remove-punctuation/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-document">Create a document<a class="anchor-link" href="../../posts/remove-punctuation/#Create-a-document">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"this isn't a sample."</span><span class="p">,</span> 
+            <span class="s1">'this is another example.'</span> <span class="p">,</span>
+            <span class="s1">'this" also appears in the second example.'</span>
+            <span class="s1">'Is this an example?'</span><span class="p">]</span>
+
+<span class="n">documents</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>["this isn't a sample.",
+ 'this is another example.',
+ 'this" also appears in the second example.Is this an example?']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Remove-Punctuation">Remove Punctuation<a class="anchor-link" href="../../posts/remove-punctuation/#Remove-Punctuation">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="n">doc_removed_punctuation</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
+<span class="n">doc_removed_punctuation</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['this isnt a sample',
+ 'this is another example',
+ 'this also appears in the second exampleIs this an example']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/bag-of-words/" class="u-url">Bag Of Words</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/bag-of-words/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-27T23:40:24-07:00" itemprop="datePublished" title="May 27, 2019, 11:40:24 PM">May 27, 2019, 11:40:24 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/bag-of-words/#disqus_thread" data-disqus-identifier="cache/posts/bag-of-words.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/bag-of-words/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce <strong>Bag of words</strong> which can be used as features for each document or images.</p>
+<p>Simply, <strong>bag of words</strong> are frequency of word with associated index for each word.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libaries">Libaries<a class="anchor-link" href="../../posts/bag-of-words/#Libaries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfTransformer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-document">Create a document<a class="anchor-link" href="../../posts/bag-of-words/#Create-a-document">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'this is a sample.'</span><span class="p">,</span> 
+            <span class="s1">'this is another example. "this" also appears in the second example.'</span><span class="p">]</span>
+
+<span class="n">documents</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['this is a sample.',
+ 'this is another example. "this" also appears in the second example.']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-count-vector">Create a count vector<a class="anchor-link" href="../../posts/bag-of-words/#Create-a-count-vector">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count_vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+
+<span class="n">df_word_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">word_counts</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">count_vect</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">df_word_counts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-frequency-vector">Create a frequency vector<a class="anchor-link" href="../../posts/bag-of-words/#Create-a-frequency-vector">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf_transformer</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">(</span><span class="n">use_idf</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_word_counts</span><span class="p">)</span>
+<span class="n">word_freq</span> <span class="o">=</span> <span class="n">tf_transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_word_counts</span><span class="p">)</span>
+<span class="n">df_word_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">word_freq</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">count_vect</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">df_word_freq</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.577350</td>
+      <td>0.57735</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.577350</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.258199</td>
+      <td>0.258199</td>
+      <td>0.258199</td>
+      <td>0.516398</td>
+      <td>0.258199</td>
+      <td>0.258199</td>
+      <td>0.00000</td>
+      <td>0.258199</td>
+      <td>0.258199</td>
+      <td>0.516398</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/term-frequency-inverse-document-frequency/" class="u-url">Term Frequency Inverse Document Frequency</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/term-frequency-inverse-document-frequency/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-26T22:15:17-07:00" itemprop="datePublished" title="May 26, 2019, 10:15:17 PM">May 26, 2019, 10:15:17 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/term-frequency-inverse-document-frequency/#disqus_thread" data-disqus-identifier="cache/posts/term-frequency-inverse-document-frequency.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/term-frequency-inverse-document-frequency/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce <strong>term frequency-inverse document frequency</strong> as known as <strong>TF-IDF</strong>, which indicates the importance of the words in a document considering the frequency of them across multiple documents and used for feature creation.</p>
+<p><strong>Term Frequency (TF)</strong></p>
+<p>Term Frequency can be computed as the number of occurrence of the word $n_{word}$ divided by the total number of words in a document $N_{word}$.</p>
+\begin{equation*}
+TF = \frac{n_{word}}{N_{word}}
+\end{equation*}<p><strong>Document Frequency (DF)</strong></p>
+<p>Document Frequency can be computed as the number of documents containing the word $n_{doc}$ divided by the number of documents $N_{doc}$.</p>
+\begin{equation*}
+DF = \frac{n_{doc}}{N_{doc}}
+\end{equation*}<p><strong>Inverse Document Frequency (IDF)</strong></p>
+<p>The inverse document frequency is the inverse of DF.</p>
+\begin{equation*}
+IDF = \frac{N_{doc}}{n_{doc}}
+\end{equation*}<p>Practically, to avoid the explosion of IDF and dividing by zero, IDF can be computed by log format with adding 1 to denominator as below.</p>
+\begin{equation*}
+IDF = log(\frac{N_{doc}}{n_{doc}+1})
+\end{equation*}<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Wikipedia - tf-idf</a></li>
+<li><a href="https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089">Towards Data Science - TF-IDF from scratch in python on real world dataset.</a></li>
+<li><a href="https://stevenloria.com/tf-idf/">Stevenloria.com - Tutorial: Finding Important Words in Text Using TF-IDF</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="../../posts/term-frequency-inverse-document-frequency/#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfVectorizer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-document">Create a document<a class="anchor-link" href="../../posts/term-frequency-inverse-document-frequency/#Create-a-document">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'this is a sample.'</span><span class="p">,</span> 
+            <span class="s1">'this is another example. "this" also appears in the second example.'</span><span class="p">]</span>
+
+<span class="n">documents</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['this is a sample.',
+ 'this is another example. "this" also appears in the second example.']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Apply-TF-IDF-vectorizer">Apply TF-IDF vectorizer<a class="anchor-link" href="../../posts/term-frequency-inverse-document-frequency/#Apply-TF-IDF-vectorizer">¶</a>
+</h2>
+<p>Now applying TF-IDF to each sentence, we will obtain the feature vector for each document accordingly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+<span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">df_tfidf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.501549</td>
+      <td>0.704909</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.501549</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.56498</td>
+      <td>0.28249</td>
+      <td>0.200994</td>
+      <td>0.000000</td>
+      <td>0.28249</td>
+      <td>0.28249</td>
+      <td>0.401988</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The highest TF-IDF for each document</span>
+<span class="n">df_tfidf</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0     sample
+1    example
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TF-IDF is zero if the word does not appear in a document</span>
+<span class="n">df_tfidf</span><span class="o">==</span><span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>also</th>
+      <th>another</th>
+      <th>appears</th>
+      <th>example</th>
+      <th>in</th>
+      <th>is</th>
+      <th>sample</th>
+      <th>second</th>
+      <th>the</th>
+      <th>this</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/parse-html/" class="u-url">Parse HTML</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/parse-html/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-23T23:18:35-07:00" itemprop="datePublished" title="May 23, 2019, 11:18:35 PM">May 23, 2019, 11:18:35 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/parse-html/#disqus_thread" data-disqus-identifier="cache/posts/parse-html.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/parse-html/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to parse the HTML data fetched by <code>BeautifulSoup</code></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/">Using BeautifulSoup to parse HTML and extract press briefings URLs</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Library">Library<a class="anchor-link" href="../../posts/parse-html/#Library">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-HTML-from-string">Simple HTML from string<a class="anchor-link" href="../../posts/parse-html/#Simple-HTML-from-string">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">html_simple</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is Title&lt;h1&gt;'</span>
+<span class="n">html_simple</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'&lt;h1&gt;This is Title&lt;h1&gt;'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_simple</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'This is Title'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/parse-html/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/create-a-word-cloud/" class="u-url">Create a word cloud</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/create-a-word-cloud/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-07T00:08:10-07:00" itemprop="datePublished" title="May 7, 2019, 12:08:10 AM">May 7, 2019, 12:08:10 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/create-a-word-cloud/#disqus_thread" data-disqus-identifier="cache/posts/create-a-word-cloud.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/create-a-word-cloud/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to create a word cloud using <code>wordcloud</code></p>
+<p>As the source of words, I use one of my posts in <a href="https://200wordsaday.com">200Wordsaday</a> a.k.a. <strong>200WaD</strong> where is the community for those who want to build a writing habit.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/57284858-df7d0b80-7066-11e9-9aea-1628216aab0c.png" alt="image"></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.datacamp.com/community/tutorials/wordcloud-python">Datacamp - Generating WordClouds in Python</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/create-a-word-cloud/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>

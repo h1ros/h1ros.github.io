@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about dtreevis)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/dtreevis.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 15:43:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Split-Up: dtreeviz (Part 1)</title><link>/posts/split-up-dtreeviz-part-1/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-1/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to go through each function in &lt;a href="https://github.com/parrt/dtreeviz"&gt;&lt;code&gt;dtreeviz&lt;/code&gt;&lt;/a&gt; module to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.&lt;/p&gt;
+&lt;p&gt;I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found &lt;a href="https://github.com/parrt/dtreeviz/issues/15"&gt;the exact same issue (issues 15)&lt;/a&gt; in github so I hope I could contribute to this issue.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;You would just have to get ShadowDecisionTree wrappers for those trees.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Based on this comment, I need first understand the class object &lt;code&gt;ShadowDecisionTree&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56184236-40687500-5fce-11e9-8e82-922cb1c7cd20.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Understand-folder-structure"&gt;Understand folder structure&lt;a class="anchor-link" href="/posts/split-up-dtreeviz-part-1/#Understand-folder-structure"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we will deep dive into the core module &lt;code&gt;dtreeviz&lt;/code&gt;
+&lt;img src="https://user-images.githubusercontent.com/8764683/56184705-eb2d6300-5fcf-11e9-9111-83f79f5c34f7.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;This module comprises of 4 python files. 
+&lt;img src="https://user-images.githubusercontent.com/8764683/56184787-3778a300-5fd0-11e9-9835-c837080de3cd.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__init__.py&lt;/code&gt; is empty so we can skip it.&lt;/p&gt;
+&lt;p&gt;Let's see one by one.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/split-up-dtreeviz-part-1/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Decision Tree</category><category>dtreevis</category><category>Ensemble</category><category>Visualization</category><guid>/posts/split-up-dtreeviz-part-1/</guid><pubDate>Tue, 16 Apr 2019 05:27:13 GMT</pubDate></item></channel></rss>

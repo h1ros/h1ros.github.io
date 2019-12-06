@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="describe the solution step by step for Filling Bookcase Shelves">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1105. Filling Bookcase Shelves [Dynamic Programming] | Step-by-step Data Science</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href=".">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><link rel="prev" href="../../anomaly-detection-by-auto-encoder-deep-learning-in-pyod/" title="Anomaly Detection by Auto Encoder (Deep Learning) in PyOD" type="text/html">
+<link rel="next" href="../../loading-audio-data/" title="Loading Audio Data" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science">
+<meta property="og:title" content="1105. Filling Bookcase Shelves [Dynamic Programming]">
+<meta property="og:url" content="/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/">
+<meta property="og:description" content="describe the solution step by step for Filling Bookcase Shelves">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-06-30T21:10:48-07:00">
+<meta property="article:tag" content="Dynamic Programming">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../categories/coding">Algorithms and Data Structures</a>
+                </li>
+<li>
+<a href="../../../categories/machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../">All Post</a>
+                    </li>
+<li>
+<a href="../../../categories/">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../../../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">1105. Filling Bookcase Shelves [Dynamic Programming]</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-06-30T21:10:48-07:00" itemprop="datePublished" title="Jun 30, 2019, 9:10:48 PM">Jun 30, 2019, 9:10:48 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/coding/1105-filling-bookcase-shelves-dynamic-programming.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
+</h2>
+<p>This post aims to describe the solution for <a href="https://leetcode.com/contest/weekly-contest-143/problems/filling-bookcase-shelves/">1105. Filling Bookcase Shelves</a> based on the solution by a respectful coder <a href="https://leetcode.com/hexadecimal/">Hexadecimal</a>. This problem could be solved by dynamic programming.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem">Problem<a class="anchor-link" href="#Problem">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have a sequence of books: the i-th book has thickness <code>books[i][0]</code> and height <code>books[i][1]</code>.</p>
+<p>We want to place these books in order onto bookcase shelves that have total width shelf_width.</p>
+<p>We choose some of the books to place on this shelf (such that the sum of their thickness is <code>&lt;= shelf_width</code>), then build another level of shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down.  We repeat this process until there are no more books to place.</p>
+<p>Note again that at each step of the above process, the order of the books we place is the same order as the given sequence of books.  For example, if we have an ordered list of 5 books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.</p>
+<p>Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/60392273-4e905100-9b3a-11e9-932d-ea7a64bf0dbc.png" style="height: 300px"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1:">Example 1:<a class="anchor-link" href="#Example-1:">¶</a>
+</h3>
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> 
+<span class="n">shelf_width</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+<p><strong>Output:</strong> 6</p>
+<p><strong>Explanation:</strong>
+The sum of the heights of the 3 shelves are 1 + 3 + 2 = 6.
+Notice that book number 2 does not have to be on the first shelf.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-by-Hexadecimal">Solution by <a href="https://leetcode.com/hexadecimal/">Hexadecimal</a><a class="anchor-link" href="#Solution-by-Hexadecimal">¶</a>
+</h2>
+<p>This problem is solved by dynamic programming. Considering the scenarios from 1 book to <code>n</code> books by adding one book at a time, we can leverage the result from the previous result. For example, when we know the minimum height of the shelf is <code>8</code> and are going to place another book, we only need to try two things:</p>
+<ul>
+<li>try to place this book on the same row<ul>
+<li>if it is not feasible, we need to place on the next level</li>
+<li>if it is feasible, <ul>
+<li>place the book on the same level, </li>
+<li>update the maximum height at the same level, and</li>
+<li>keep the case for achieving the minimum height</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This way only consider the best case scenario in the previous case, and take that case as the starting point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Original-Solution">Original Solution<a class="anchor-link" href="#Original-Solution">¶</a>
+</h3>
+<p>Line by line breakdown are as follows:</p>
+<ul>
+<li>Initial setting<ul>
+<li>
+<code>n</code>: a number of books</li>
+<li>
+<code>dp</code>: keep and track the minimum height of book shelf when we place a book one by one. This is initialized by <code>infinity</code>. The last element <code>dp[-1]</code> will be the answer that we look for.</li>
+</ul>
+</li>
+<li>Consider the scenarios by adding one book at a time.<ul>
+<li>
+<code>i</code>: the hypothetical number of the books. Given this number of the book, we will calculate the minimum height of the books. Adding the book to consider one by one, we can leverage the result for <code>i-1</code> books case for the one for <code>i</code> books case.  </li>
+<li>
+<code>width</code>: the total width for the placed book on the same level. When <code>width</code> is beyond <code>w</code>, the width of the shelf, <code>width</code> will be reset to <code>0</code>. </li>
+<li>
+<code>h</code>: the maximum height for each level.  </li>
+<li>
+<code>j</code>: the book to place given the <code>i+1</code> books. <code>j</code> is selected from the end to the start in a reverse order. </li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minHeightShelves</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">w</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">width</span> <span class="o">+=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">width</span> <span class="o">&gt;</span> <span class="n">w</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+                <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Modified-Solution-with-print">Modified Solution with print<a class="anchor-link" href="#Modified-Solution-with-print">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minHeightShelves</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">w</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Books: </span><span class="si">{b}</span><span class="se">\n</span><span class="s1">Shelf width: </span><span class="si">{w}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'initial dp: </span><span class="si">{dp}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'[{i+1} books] to consider: </span><span class="si">{b[:i+1]}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'place [</span><span class="si">{j}</span><span class="s1">]-th book: </span><span class="si">{b[j]}</span><span class="s1">'</span><span class="p">)</span>
+                <span class="n">width</span> <span class="o">+=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">width</span> <span class="o">&gt;</span> <span class="n">w</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">'The total width is beyond the shelf'</span><span class="p">)</span>
+                    <span class="k">break</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'The maximum height is updated from [</span><span class="si">{h}</span><span class="s1">] to [{max(h, b[j][1])}]'</span><span class="p">)</span>
+                <span class="n">h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+                
+                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'The minimum total height for [{i+1} books] is update from [</span><span class="si">{dp[i + 1]}</span><span class="s1">] to [{min(dp[i + 1], dp[j] + h)}]'</span><span class="p">)</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+                <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Test-case-1">Test case 1<a class="anchor-link" href="#Test-case-1">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]];</span> <span class="n">shelf_width</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">minHeightShelves</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">shelf_width</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Books: [[1, 1], [2, 3], [2, 3], [1, 1], [1, 1], [1, 1], [1, 2]]
+Shelf width: 4
+initial dp: [0, inf, inf, inf, inf, inf, inf, inf]
+
+--------------------------------------------------------------------------------
+[1 books] to consider: [[1, 1]]
+place [0]-th book: [1, 1]
+The maximum height is updated from [0] to [1]
+The minimum total height for [1 books] is update from [inf] to [1]
+
+--------------------------------------------------------------------------------
+[2 books] to consider: [[1, 1], [2, 3]]
+place [1]-th book: [2, 3]
+The maximum height is updated from [0] to [3]
+The minimum total height for [2 books] is update from [inf] to [4]
+place [0]-th book: [1, 1]
+The maximum height is updated from [3] to [3]
+The minimum total height for [2 books] is update from [4] to [3]
+
+--------------------------------------------------------------------------------
+[3 books] to consider: [[1, 1], [2, 3], [2, 3]]
+place [2]-th book: [2, 3]
+The maximum height is updated from [0] to [3]
+The minimum total height for [3 books] is update from [inf] to [6]
+place [1]-th book: [2, 3]
+The maximum height is updated from [3] to [3]
+The minimum total height for [3 books] is update from [6] to [4]
+place [0]-th book: [1, 1]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[4 books] to consider: [[1, 1], [2, 3], [2, 3], [1, 1]]
+place [3]-th book: [1, 1]
+The maximum height is updated from [0] to [1]
+The minimum total height for [4 books] is update from [inf] to [5]
+place [2]-th book: [2, 3]
+The maximum height is updated from [1] to [3]
+The minimum total height for [4 books] is update from [5] to [5]
+place [1]-th book: [2, 3]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[5 books] to consider: [[1, 1], [2, 3], [2, 3], [1, 1], [1, 1]]
+place [4]-th book: [1, 1]
+The maximum height is updated from [0] to [1]
+The minimum total height for [5 books] is update from [inf] to [6]
+place [3]-th book: [1, 1]
+The maximum height is updated from [1] to [1]
+The minimum total height for [5 books] is update from [6] to [5]
+place [2]-th book: [2, 3]
+The maximum height is updated from [1] to [3]
+The minimum total height for [5 books] is update from [5] to [5]
+place [1]-th book: [2, 3]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[6 books] to consider: [[1, 1], [2, 3], [2, 3], [1, 1], [1, 1], [1, 1]]
+place [5]-th book: [1, 1]
+The maximum height is updated from [0] to [1]
+The minimum total height for [6 books] is update from [inf] to [6]
+place [4]-th book: [1, 1]
+The maximum height is updated from [1] to [1]
+The minimum total height for [6 books] is update from [6] to [6]
+place [3]-th book: [1, 1]
+The maximum height is updated from [1] to [1]
+The minimum total height for [6 books] is update from [6] to [5]
+place [2]-th book: [2, 3]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[7 books] to consider: [[1, 1], [2, 3], [2, 3], [1, 1], [1, 1], [1, 1], [1, 2]]
+place [6]-th book: [1, 2]
+The maximum height is updated from [0] to [2]
+The minimum total height for [7 books] is update from [inf] to [7]
+place [5]-th book: [1, 1]
+The maximum height is updated from [2] to [2]
+The minimum total height for [7 books] is update from [7] to [7]
+place [4]-th book: [1, 1]
+The maximum height is updated from [2] to [2]
+The minimum total height for [7 books] is update from [7] to [7]
+place [3]-th book: [1, 1]
+The maximum height is updated from [2] to [2]
+The minimum total height for [7 books] is update from [7] to [6]
+place [2]-th book: [2, 3]
+The total width is beyond the shelf
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Test-case-2">Test case 2<a class="anchor-link" href="#Test-case-2">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]];</span> <span class="n">shelf_width</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">minHeightShelves</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">shelf_width</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Books: [[7, 3], [8, 7], [2, 7], [2, 5]]
+Shelf width: 10
+initial dp: [0, inf, inf, inf, inf]
+
+--------------------------------------------------------------------------------
+[1 books] to consider: [[7, 3]]
+place [0]-th book: [7, 3]
+The maximum height is updated from [0] to [3]
+The minimum total height for [1 books] is update from [inf] to [3]
+
+--------------------------------------------------------------------------------
+[2 books] to consider: [[7, 3], [8, 7]]
+place [1]-th book: [8, 7]
+The maximum height is updated from [0] to [7]
+The minimum total height for [2 books] is update from [inf] to [10]
+place [0]-th book: [7, 3]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[3 books] to consider: [[7, 3], [8, 7], [2, 7]]
+place [2]-th book: [2, 7]
+The maximum height is updated from [0] to [7]
+The minimum total height for [3 books] is update from [inf] to [17]
+place [1]-th book: [8, 7]
+The maximum height is updated from [7] to [7]
+The minimum total height for [3 books] is update from [17] to [10]
+place [0]-th book: [7, 3]
+The total width is beyond the shelf
+
+--------------------------------------------------------------------------------
+[4 books] to consider: [[7, 3], [8, 7], [2, 7], [2, 5]]
+place [3]-th book: [2, 5]
+The maximum height is updated from [0] to [5]
+The minimum total height for [4 books] is update from [inf] to [15]
+place [2]-th book: [2, 7]
+The maximum height is updated from [5] to [7]
+The minimum total height for [4 books] is update from [15] to [15]
+place [1]-th book: [8, 7]
+The total width is beyond the shelf
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>15</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../categories/dynamic-programming/" rel="tag">Dynamic Programming</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../anomaly-detection-by-auto-encoder-deep-learning-in-pyod/" rel="prev" title="Anomaly Detection by Auto Encoder (Deep Learning) in PyOD">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../loading-audio-data/" rel="next" title="Loading Audio Data">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/",
+        disqus_title="1105. Filling Bookcase Shelves [Dynamic Programming]",
+        disqus_identifier="cache/posts/coding/1105-filling-bookcase-shelves-dynamic-programming.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>

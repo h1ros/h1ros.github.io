@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts about NHANES I | Step-by-step Data Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href=".">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><link rel="alternate" type="application/rss+xml" title="RSS for tag NHANES I" hreflang="en" href="../nhanes-i.xml">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../coding">Algorithms and Data Structures</a>
+                </li>
+<li>
+<a href="../machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../posts/">All Post</a>
+                    </li>
+<li>
+<a href="../">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    <header><h1>Posts about NHANES I</h1>
+        <div class="metadata">
+            
+                <p class="feedlink">
+                        
+            <a href="../nhanes-i.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+
+                </p>
+
+            
+
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/explain-the-interaction-values-by-shap/" class="u-url">Explain the interaction values by SHAP</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/explain-the-interaction-values-by-shap/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-08-04T23:06:30-07:00" itemprop="datePublished" title="Aug 4, 2019, 11:06:30 PM">Aug 4, 2019, 11:06:30 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../../posts/explain-the-interaction-values-by-shap/#disqus_thread" data-disqus-identifier="cache/posts/explain-the-interaction-values-by-shap.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="../../posts/explain-the-interaction-values-by-shap/#Goal">¶</a>
+</h2>
+<p>This post aims to introduce how to explain the interaction values for the model's prediction by <code>SHAP</code>. In this post, we will use data <strong>NHANES I (1971-1974)</strong> from National Health and Nutrition Examaination Survey.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/62444103-75c9d780-b711-11e9-8ee4-43eb106bca91.png" alt="image"></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://wwwn.cdc.gov/nchs/nhanes/nhanes1/">NHANES I</a></li>
+<li><a href="https://slundberg.github.io/shap/notebooks/NHANES%20I%20Survival%20Model.html">Github sahp - NHANES I Survival Model¶</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../../posts/explain-the-interaction-values-by-shap/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>

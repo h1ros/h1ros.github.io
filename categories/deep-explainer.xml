@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Deep Explainer)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/deep-explainer.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 15:44:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Explain Image Classification by SHAP Deep Explainer</title><link>/posts/explain-image-classification-by-shap-deep-explainer/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/explain-image-classification-by-shap-deep-explainer/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to explain Image Classification (trained by PyTorch) via &lt;strong&gt;SHAP Deep Explainer&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Shap&lt;/code&gt; is the module to make the black box model interpretable. For example, image classification tasks can be explained by the scores on each pixel on a predicted image, which indicates how much it contributes to the probability positively or negatively.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/62346265-5d0bb880-b4aa-11e9-96f4-b8eff270d091.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/slundberg/shap/blob/master/notebooks/deep_explainer/PyTorch%20Deep%20Explainer%20MNIST%20example.ipynb"&gt;Github for shap - PyTorch Deep Explainer MNIST example.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://h1ros.github.io/posts/interpretability-of-prediction-for-boston-housing-using-shap/"&gt;Step-by-step Data Science - Interpretability of prediction for Boston Housing using SHAP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/explain-image-classification-by-shap-deep-explainer/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Deep Explainer</category><category>Deep Learning</category><category>Image</category><category>Interpretability</category><category>PyTorch</category><category>SHAP</category><guid>/posts/explain-image-classification-by-shap-deep-explainer/</guid><pubDate>Tue, 30 Jul 2019 19:17:36 GMT</pubDate></item></channel></rss>

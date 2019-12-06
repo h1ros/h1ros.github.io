@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Explain things related to data scieence step-by-step">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Step-by-step Data Science (old posts, page 2) | Step-by-step Data Science</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="#">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<link rel="prev" href="index-3.html" type="text/html">
+<link rel="next" href="index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../categories/coding">Algorithms and Data Structures</a>
+                </li>
+<li>
+<a href="../categories/machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href=".">All Post</a>
+                    </li>
+<li>
+<a href="../categories/">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/1035-uncrossed-lines/" class="u-url">1035. Uncrossed Lines</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/1035-uncrossed-lines/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-28T17:00:44-07:00" itemprop="datePublished" title="Apr 28, 2019, 5:00:44 PM">Apr 28, 2019, 5:00:44 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/1035-uncrossed-lines/#disqus_thread" data-disqus-identifier="cache/posts/coding/1035-uncrossed-lines.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="coding/1035-uncrossed-lines/#Problem-Setting">¶</a>
+</h2>
+<p>We write the integers of <code>A</code> and <code>B</code> (in the order they are given) on two separate horizontal lines.</p>
+<p>Now, we may draw a straight line connecting two numbers <code>A[i]</code> and <code>B[j]</code> as long as <code>A[i] == B[j]</code>, and the line we draw does not intersect any other connecting (non-horizontal) line.</p>
+<p>Return the maximum number of connecting lines we can draw in this way.</p>
+<p>Link for Problem: <a href="https://leetcode.com/contest/weekly-contest-134/problems/uncrossed-lines/">leetcode</a></p>
+<h3 id="Example-1:">Example 1:<a class="anchor-link" href="coding/1035-uncrossed-lines/#Example-1:">¶</a>
+</h3>
+<p><img src="https://user-images.githubusercontent.com/8764683/56871936-2f5d3200-69d8-11e9-9566-f9caafc555d2.png" alt="image"></p>
+<p>Input: A = [1,4,2], B = [1,2,4]</p>
+<p>Output: 2</p>
+<p>Explanation: We can draw 2 uncrossed lines as in the diagram.
+We cannot draw 3 uncrossed lines, because the line from A[1]=4 to B[2]=4 will intersect the line from A[2]=2 to B[1]=2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="coding/1035-uncrossed-lines/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="selecting-elements-in-a-1d-array/" class="u-url">Selecting Elements In A 1D Array</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="selecting-elements-in-a-1d-array/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-27T13:00:25-07:00" itemprop="datePublished" title="Apr 27, 2019, 1:00:25 PM">Apr 27, 2019, 1:00:25 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="selecting-elements-in-a-1d-array/#disqus_thread" data-disqus-identifier="cache/posts/selecting-elements-in-a-1d-array.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="selecting-elements-in-a-1d-array/#Goal">¶</a>
+</h2>
+<p>This post aims to select elements in a 1d array in python using following modules:</p>
+<ul>
+<li>Numpy</li>
+<li>Pandas</li>
+</ul>
+<p>Referring to <a href="https://chrisalbon.com/">Chris Albon</a>'s blog, I <strong>only look at his title of the post</strong> but wrote my own contents without looking at the contents to deepen my understanding about the topic.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numpy">Numpy<a class="anchor-link" href="selecting-elements-in-a-1d-array/#Numpy">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Library">Library<a class="anchor-link" href="selecting-elements-in-a-1d-array/#Library">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1-d-array">1-d array<a class="anchor-link" href="selecting-elements-in-a-1d-array/#1-d-array">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 2, 3, 4, 5, 6])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="selecting-elements-in-a-1d-array/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/" class="u-url">1031. Maximum Sum of Two Non-Overlapping Subarrays</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-22T20:42:05-07:00" itemprop="datePublished" title="Apr 22, 2019, 8:42:05 PM">Apr 22, 2019, 8:42:05 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#disqus_thread" data-disqus-identifier="cache/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Problem-Setting">¶</a>
+</h2>
+<p>Given an array <code>A</code> of non-negative integers, return the maximum sum of elements in two non-overlapping (contiguous) subarrays, which have lengths <code>L</code> and <code>M</code>.  (For clarification, the <code>L</code>-length subarray could occur before or after the <code>M</code>-length subarray.)</p>
+<p>Formally, return the largest <code>V</code> for which <code>V = (A[i] + A[i+1] + ... + A[i+L-1]) + (A[j] + A[j+1] + ... + A[j+M-1])</code> and either:</p>
+<ul>
+<li>
+<code>0 &lt;= i &lt; i + L - 1 &lt; j &lt; j + M - 1 &lt; A.length</code>, or</li>
+<li>
+<code>0 &lt;= j &lt; j + M - 1 &lt; i &lt; i + L - 1 &lt; A.length</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1:">Example 1:<a class="anchor-link" href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Example-1:">¶</a>
+</h3>
+<p>Input: A = [0,6,5,2,2,5,1,9,4], L = 1, M = 2</p>
+<p>Output: 20</p>
+<p>Explanation: One choice of subarrays is [9] with length 1, and [6,5] with length 2.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56563539-d0736500-6560-11e9-9cae-a7c2ae2cc2b9.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="coding/1031-maximum-sum-of-two-non-overlapping-subarrays/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="transpose-a-matrix-or-tensor/" class="u-url">Transpose A Matrix or Tensor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="transpose-a-matrix-or-tensor/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-20T00:14:39-07:00" itemprop="datePublished" title="Apr 20, 2019, 12:14:39 AM">Apr 20, 2019, 12:14:39 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="transpose-a-matrix-or-tensor/#disqus_thread" data-disqus-identifier="cache/posts/transpose-a-matrix-or-tensor.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="transpose-a-matrix-or-tensor/#Goal">¶</a>
+</h2>
+<p>This post aims to transpose a matrix or tensor in python using following modules:</p>
+<ul>
+<li>Numpy</li>
+<li>Pandas</li>
+<li>Tensorflow</li>
+<li>Pytorch</li>
+</ul>
+<p>Referring to <a href="https://chrisalbon.com/">Chris Albon</a>'s blog, I only look at his title and wrote my own contents to deepen my understanding about the topic.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numpy">Numpy<a class="anchor-link" href="transpose-a-matrix-or-tensor/#Numpy">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="library">library<a class="anchor-link" href="transpose-a-matrix-or-tensor/#library">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-an-array">Create an array<a class="anchor-link" href="transpose-a-matrix-or-tensor/#Create-an-array">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> 
+             <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> 
+             <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">A</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Transpose">Transpose<a class="anchor-link" href="transpose-a-matrix-or-tensor/#Transpose">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 4, 7],
+       [2, 5, 8],
+       [3, 6, 9]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 4, 7],
+       [2, 5, 8],
+       [3, 6, 9]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="transpose-a-matrix-or-tensor/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/1026-maximum-difference-between-node-and-ancestor/" class="u-url">1026. Maximum Difference Between Node and Ancestor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/1026-maximum-difference-between-node-and-ancestor/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-17T22:48:04-07:00" itemprop="datePublished" title="Apr 17, 2019, 10:48:04 PM">Apr 17, 2019, 10:48:04 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/1026-maximum-difference-between-node-and-ancestor/#disqus_thread" data-disqus-identifier="cache/posts/coding/1026-maximum-difference-between-node-and-ancestor.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting">¶</a>
+</h2>
+<p>Given the <code>root</code> of a binary tree, find the maximum value <code>V</code> for which there exists different nodes <code>A</code> and <code>B</code> where <code>V = |A.val - B.val|</code> and <code>A</code> is an ancestor of <code>B</code>.</p>
+<p>(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of nodes in the tree is between 2 and 5000.</li>
+<li>Each node will have value between 0 and 100000.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1">Example 1<a class="anchor-link" href="coding/1026-maximum-difference-between-node-and-ancestor/#Example-1">¶</a>
+</h3>
+<p>Input: [8,3,10,1,6,null,14,null,null,4,7,13]</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56340742-b3592380-6167-11e9-8704-0e9767e3707a.png" alt="Example 1" width="300"></p>
+<p>Output: 7</p>
+<p>Explanation:</p>
+<p>We have various ancestor-node differences, some of which are given below :
+|8 - 3| = 5
+|3 - 7| = 4
+|8 - 1| = 7
+|10 - 13| = 3
+Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="coding/1026-maximum-difference-between-node-and-ancestor/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/leetcode-top-100-problem-selection/" class="u-url">LeetCode Top 100 Problem Selection</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/leetcode-top-100-problem-selection/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-16T23:14:23-07:00" itemprop="datePublished" title="Apr 16, 2019, 11:14:23 PM">Apr 16, 2019, 11:14:23 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/leetcode-top-100-problem-selection/#disqus_thread" data-disqus-identifier="cache/posts/coding/leetcode-top-100-problem-selection.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This link was posted on Dec 30, 2018 in blind <a href="https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU">Curated List of Top 100 LeetCode Questions</a>. I found it so useful and would like to cover these problem in the following post as well.</p>
+<p>Array</p>
+<ul>
+<li>
+<input type="checkbox"> Two Sum - <a href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a>
+</li>
+<li>
+<input type="checkbox"> Best Time to Buy and Sell Stock - <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a>
+</li>
+<li>
+<input type="checkbox"> Contains Duplicate - <a href="https://leetcode.com/problems/contains-duplicate/">https://leetcode.com/problems/contains-duplicate/</a>
+</li>
+<li>
+<input type="checkbox"> Product of Array Except Self - <a href="https://leetcode.com/problems/product-of-array-except-self/">https://leetcode.com/problems/product-of-array-except-self/</a>
+</li>
+<li>
+<input type="checkbox"> Maximum Subarray - <a href="https://leetcode.com/problems/maximum-subarray/">https://leetcode.com/problems/maximum-subarray/</a>
+</li>
+<li>
+<input type="checkbox"> Maximum Product Subarray - <a href="https://leetcode.com/problems/maximum-product-subarray/">https://leetcode.com/problems/maximum-product-subarray/</a>
+</li>
+<li>
+<input type="checkbox"> Find Minimum in Rotated Sorted Array - <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/</a>
+</li>
+<li>
+<input type="checkbox"> Search in Rotated Sorted Array - <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">https://leetcode.com/problems/search-in-rotated-sorted-array/</a>
+</li>
+<li>
+<input type="checkbox"> 3Sum - <a href="https://leetcode.com/problems/3sum/">https://leetcode.com/problems/3sum/</a>
+</li>
+<li>
+<input type="checkbox"> Container With Most Water - <a href="https://leetcode.com/problems/container-with-most-water/">https://leetcode.com/problems/container-with-most-water/</a>
+</li>
+</ul>
+<p class="more"><a href="coding/leetcode-top-100-problem-selection/">Read more… </a></p>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="split-up-dtreeviz-part-1/" class="u-url">Split-Up: dtreeviz (Part 1)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="split-up-dtreeviz-part-1/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-15T22:27:13-07:00" itemprop="datePublished" title="Apr 15, 2019, 10:27:13 PM">Apr 15, 2019, 10:27:13 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="split-up-dtreeviz-part-1/#disqus_thread" data-disqus-identifier="cache/posts/split-up-dtreeviz-part-1.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="split-up-dtreeviz-part-1/#Goal">¶</a>
+</h2>
+<p>This post aims to go through each function in <a href="https://github.com/parrt/dtreeviz"><code>dtreeviz</code></a> module to fully understand what is implemented. After fully understanding this, I would like to contribute to this module and submit a pull request.</p>
+<p>I really like this module and would like to see this works for other tree-based modules like XGBoost or Lightgbm. I found <a href="https://github.com/parrt/dtreeviz/issues/15">the exact same issue (issues 15)</a> in github so I hope I could contribute to this issue.</p>
+<blockquote>
+<p>You would just have to get ShadowDecisionTree wrappers for those trees.</p>
+</blockquote>
+<p>Based on this comment, I need first understand the class object <code>ShadowDecisionTree</code></p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56184236-40687500-5fce-11e9-8e82-922cb1c7cd20.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Understand-folder-structure">Understand folder structure<a class="anchor-link" href="split-up-dtreeviz-part-1/#Understand-folder-structure">¶</a>
+</h2>
+<p>In this post, we will deep dive into the core module <code>dtreeviz</code>
+<img src="https://user-images.githubusercontent.com/8764683/56184705-eb2d6300-5fcf-11e9-9111-83f79f5c34f7.png" alt="image"></p>
+<p>This module comprises of 4 python files. 
+<img src="https://user-images.githubusercontent.com/8764683/56184787-3778a300-5fd0-11e9-9835-c837080de3cd.png" alt="image"></p>
+<p><code>__init__.py</code> is empty so we can skip it.</p>
+<p>Let's see one by one.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="split-up-dtreeviz-part-1/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="coding/1025-divisor-game/" class="u-url">1025. Divisor Game (C++)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="coding/1025-divisor-game/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-14T12:54:24-07:00" itemprop="datePublished" title="Apr 14, 2019, 12:54:24 PM">Apr 14, 2019, 12:54:24 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="coding/1025-divisor-game/#disqus_thread" data-disqus-identifier="cache/posts/coding/1025-divisor-game.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Setting">Problem Setting<a class="anchor-link" href="coding/1025-divisor-game/#Problem-Setting">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alice and Bob take turns playing a game, with Alice starting first.</p>
+<p>Initially, there is a number <code>N</code> on the chalkboard.  On each player's turn, that player makes a move consisting of:</p>
+<p>Choosing any <code>x</code> with <code>0 &lt; x &lt; N</code> and <code>N % x == 0</code>.
+Replacing the number N on the chalkboard with <code>N - x</code>.
+Also, if a player cannot make a move, they lose the game.</p>
+<p>Return <code>True</code> if and only if Alice wins the game, assuming both players play optimally.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56098642-28520200-5eb7-11e9-8741-33362a06c8b7.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="coding/1025-divisor-game/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="minimalism-visualization-by-matplotlib-bar-chart/" class="u-url">Minimalism visualization by matplotlib - Bar chart</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="minimalism-visualization-by-matplotlib-bar-chart/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-07T16:52:15-07:00" itemprop="datePublished" title="Apr 7, 2019, 4:52:15 PM">Apr 7, 2019, 4:52:15 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="minimalism-visualization-by-matplotlib-bar-chart/#disqus_thread" data-disqus-identifier="cache/posts/desgin-of-visualization-by-matplotlib.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview">Overview<a class="anchor-link" href="minimalism-visualization-by-matplotlib-bar-chart/#Overview">¶</a>
+</h2>
+<p>This post aims to simplify <strong>default bar chart</strong> by matpltlib as much as possible based on the philosophy of minimalist as below.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56109936-7bec3c00-5f07-11e9-9916-88c4628c727f.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="minimalism-visualization-by-matplotlib-bar-chart/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="how-to-visualize-a-decision-tree-beyond-scikit-learn/" class="u-url">How to visualize a decision tree beyond scikit-learn</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="how-to-visualize-a-decision-tree-beyond-scikit-learn/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-04-02T22:14:38-07:00" itemprop="datePublished" title="Apr 2, 2019, 10:14:38 PM">Apr 2, 2019, 10:14:38 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="how-to-visualize-a-decision-tree-beyond-scikit-learn/#disqus_thread" data-disqus-identifier="cache/posts/how-to-visualize-a-decision-tree-beyond-scikit-learn.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="how-to-visualize-a-decision-tree-beyond-scikit-learn/#Goal">¶</a>
+</h2>
+<p>The goal in this post is to introduce <code>dtreeviz</code> to visualize a decision tree for <strong>classification</strong> more nicely than what scikit-learn can visualize. We will walk through <a href="https://scikit-learn.org/stable/modules/tree.html">the tutorial for decision trees in Scikit-learn</a> using iris data set.</p>
+<p>Note that if we use a decision tree for regression, the visualization would be different.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://user-images.githubusercontent.com/8764683/55459465-78ba8d00-55a4-11e9-9ac1-c306e6b629b2.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/8764683/56110703-4d239500-5f0a-11e9-8be5-c932453fe1a2.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="how-to-visualize-a-decision-tree-beyond-scikit-learn/">Read more… </a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-3.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>

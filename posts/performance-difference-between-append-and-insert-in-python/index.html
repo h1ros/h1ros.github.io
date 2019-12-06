@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="compare the performance between append and insert in Python">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance difference between append and insert in Python | Step-by-step Data Science</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#4285F4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href=".">
+<link rel="icon" href="images/LogoMakr_2dGBSO.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-134273341-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134273341-1');
+</script><link rel="prev" href="../draw-perceptron-graph-by-graphviz/" title="Draw Perceptron graph by graphviz" type="text/html">
+<link rel="next" href="../time-the-performance-by-timeit-and-cell-magic/" title="Time the performance by timeit and cell magic" type="text/html">
+<meta property="og:site_name" content="Step-by-step Data Science">
+<meta property="og:title" content="Performance difference between append and insert in Python">
+<meta property="og:url" content="/posts/performance-difference-between-append-and-insert-in-python/">
+<meta property="og:description" content="compare the performance between append and insert in Python">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-27T07:55:14-07:00">
+<meta property="article:tag" content="Append">
+<meta property="article:tag" content="Insert">
+<meta property="article:tag" content="Performance">
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">
+
+                <span id="blog-title">Step-by-step Data Science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../categories/coding">Algorithms and Data Structures</a>
+                </li>
+<li>
+<a href="../../categories/machine-learning">Machine Learning</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../">All Post</a>
+                    </li>
+<li>
+<a href="../../categories/">Categories and Tags</a>
+                    </li>
+<li>
+<a href="../../archive.html">History</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Performance difference between append and insert in Python</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-27T07:55:14-07:00" itemprop="datePublished" title="Jul 27, 2019, 7:55:14 AM">Jul 27, 2019, 7:55:14 AM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/performance-difference-between-append-and-insert-in-python.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a>
+</h2>
+<p>This post aims to compare the performance between <code>append</code> and <code>insert</code> in Python. The performance comparison is simply done by the piece of code that counts a number, append it to a list, and then reverse it.</p>
+<p>We will see the significant difference between two codes: one using <code>append</code> is linear and another using <code>insert</code> is quadratic run time growth as below.</p>
+<p><img src="https://user-images.githubusercontent.com/8764683/61996639-3b927300-b04b-11e9-8e16-0174faee2e83.png" style="height: 300px"></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.amazon.com/Python-Algorithms-Mastering-Basic-Language/dp/148420056X/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&amp;psc=1&amp;refRID=4JW2REKWW17KPCWM5N7F">Python Algorithms: Mastering Basic Algorithms in the Python Language</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libraries">Libraries<a class="anchor-link" href="#Libraries">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">Timer</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Append">Append<a class="anchor-link" href="#Append">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_by_append</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">count_by_append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The execution time is 22ms</p>
+<h2 id="Insert">Insert<a class="anchor-link" href="#Insert">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_by_insert</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">nums</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">count_by_insert</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>      
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The execution time is 3.53s</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="n">time_by_append</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">time_by_insert</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Processing </span><span class="si">{count}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">count_by_append</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+    <span class="n">time_by_append</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">count_by_insert</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+    <span class="n">time_by_insert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">df_performance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'count'</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span>
+                               <span class="s1">'count_by_append'</span><span class="p">:</span> <span class="n">time_by_append</span><span class="p">,</span>
+                               <span class="s1">'count_by_insert'</span><span class="p">:</span> <span class="n">time_by_insert</span><span class="p">})</span>
+<span class="n">df_performance</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processing 1
+Processing 10
+Processing 100
+Processing 1000
+Processing 10000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>count_by_append</th>
+      <th>count_by_insert</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1</td>
+      <td>0.000013</td>
+      <td>0.000011</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>10</td>
+      <td>0.000019</td>
+      <td>0.000027</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>100</td>
+      <td>0.000107</td>
+      <td>0.000227</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>1000</td>
+      <td>0.000927</td>
+      <td>0.005318</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>10000</td>
+      <td>0.009438</td>
+      <td>0.379457</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the performance difference</span>
+<span class="n">df_performance</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'count'</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Performance Comparison beteen Append and Insert'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/append/" rel="tag">Append</a></li>
+            <li><a class="tag p-category" href="../../categories/insert/" rel="tag">Insert</a></li>
+            <li><a class="tag p-category" href="../../categories/performance/" rel="tag">Performance</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../draw-perceptron-graph-by-graphviz/" rel="prev" title="Draw Perceptron graph by graphviz">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../time-the-performance-by-timeit-and-cell-magic/" rel="next" title="Time the performance by timeit and cell magic">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="https-h1ros-github-io",
+            disqus_url="/posts/performance-difference-between-append-and-insert-in-python/",
+        disqus_title="Performance difference between append and insert in Python",
+        disqus_identifier="cache/posts/performance-difference-between-append-and-insert-in-python.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="https-h1ros-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:data.h1ros@gmail.com">h1ros</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'h1ros-github-io/ama'
+  };
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(1, "YYYY-MM-DD");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- GitHub Buttons --><script async defer src="https://buttons.github.io/buttons.js"></script><!-- Twitter Widgets --><script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</body>
+</html>

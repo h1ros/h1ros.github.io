@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Coding)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/coding.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 15:44:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>cProfile Examples in Python</title><link>/posts/cprofile-examples-in-python/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to use &lt;code&gt;cProfile&lt;/code&gt; to measure the running time for each statement and find the bottleneck of your program.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Libraries"&gt;Libraries&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#Libraries"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;cProfile&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Define-your-function"&gt;Define your function&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#Define-your-function"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="define-your-sub-functions"&gt;define your sub functions&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#define-your-sub-functions"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [37]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;linear_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quad_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="k"&gt;pass&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;exp_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;exp_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;exp_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [38]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;linear_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;quad_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;exp_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Profile-the-main-function"&gt;Profile the main function&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#Profile-the-main-function"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [40]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cProfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'main_func(n=20)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;         21897 function calls (7 primitive calls) in 0.006 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 &amp;lt;ipython-input-37-393400eb079b&amp;gt;:1(linear_func)
+  21891/1    0.006    0.000    0.006    0.006 &amp;lt;ipython-input-37-393400eb079b&amp;gt;:13(exp_func)
+        1    0.000    0.000    0.000    0.000 &amp;lt;ipython-input-37-393400eb079b&amp;gt;:6(quad_func)
+        1    0.000    0.000    0.006    0.006 &amp;lt;ipython-input-38-1333493d3326&amp;gt;:1(main_func)
+        1    0.000    0.000    0.006    0.006 &amp;lt;string&amp;gt;:1(&amp;lt;module&amp;gt;)
+        1    0.000    0.000    0.006    0.006 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="How-to-read-the-result"&gt;How to read the result&lt;a class="anchor-link" href="/posts/cprofile-examples-in-python/#How-to-read-the-result"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ncalls&lt;/strong&gt; is the number of &lt;strong&gt;calls&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tottime&lt;/strong&gt; is a &lt;strong&gt;tot&lt;/strong&gt;al of the &lt;strong&gt;time&lt;/strong&gt; spent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;percall&lt;/strong&gt; is the average time for each call, i.e., tottime divided by ncalls&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;cumtime&lt;/strong&gt; is the &lt;strong&gt;cum&lt;/strong&gt;ulative &lt;strong&gt;time&lt;/strong&gt; spent.&lt;/li&gt;
+&lt;li&gt;(2nd) &lt;strong&gt;percall&lt;/strong&gt;  is the quotient of cumtime divided by primitive calls&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;filename:lineno(function)&lt;/strong&gt; indicates the information about the function with the format "{file name}:{line number}{function name}"&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>cProfile</category><category>profling</category><guid>/posts/cprofile-examples-in-python/</guid><pubDate>Sun, 11 Aug 2019 18:18:59 GMT</pubDate></item><item><title>104. Maximum Depth of Binary Tree</title><link>/posts/coding/104-maximum-depth-of-binary-tree/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/coding/104-maximum-depth-of-binary-tree/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe two solutions using recurrent function and queue for &lt;a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/"&gt;104. Maximum Depth of Binary Tree&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/61162891-ab7e0500-a545-11e9-8971-a226a4408aaf.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/104-maximum-depth-of-binary-tree/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Binary Tree</category><category>DFS</category><guid>/posts/coding/104-maximum-depth-of-binary-tree/</guid><pubDate>Sat, 13 Jul 2019 21:50:17 GMT</pubDate></item><item><title>1105. Filling Bookcase Shelves [Dynamic Programming]</title><link>/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to describe the solution for &lt;a href="https://leetcode.com/contest/weekly-contest-143/problems/filling-bookcase-shelves/"&gt;1105. Filling Bookcase Shelves&lt;/a&gt; based on the solution by a respectful coder &lt;a href="https://leetcode.com/hexadecimal/"&gt;Hexadecimal&lt;/a&gt;. This problem could be solved by dynamic programming.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem"&gt;Problem&lt;a class="anchor-link" href="/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/#Problem"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We have a sequence of books: the i-th book has thickness &lt;code&gt;books[i][0]&lt;/code&gt; and height &lt;code&gt;books[i][1]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We want to place these books in order onto bookcase shelves that have total width shelf_width.&lt;/p&gt;
+&lt;p&gt;We choose some of the books to place on this shelf (such that the sum of their thickness is &lt;code&gt;&amp;lt;= shelf_width&lt;/code&gt;), then build another level of shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down.  We repeat this process until there are no more books to place.&lt;/p&gt;
+&lt;p&gt;Note again that at each step of the above process, the order of the books we place is the same order as the given sequence of books.  For example, if we have an ordered list of 5 books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.&lt;/p&gt;
+&lt;p&gt;Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/60392273-4e905100-9b3a-11e9-932d-ea7a64bf0dbc.png" style="height: 300px"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><guid>/posts/coding/1105-filling-bookcase-shelves-dynamic-programming/</guid><pubDate>Mon, 01 Jul 2019 04:10:48 GMT</pubDate></item><item><title>1039. Minimum Score Triangulation of Polygon</title><link>/posts/coding/1039-minimum-score-triangulation-of-polygon/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1039-minimum-score-triangulation-of-polygon/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given &lt;code&gt;N&lt;/code&gt;, consider a convex N-sided polygon with vertices labelled &lt;code&gt;A[0], A[i], ..., A[N-1]&lt;/code&gt; in clockwise order.&lt;/p&gt;
+&lt;p&gt;Suppose you triangulate the polygon into &lt;code&gt;N-2&lt;/code&gt; triangles. For each triangle, the value of that triangle is the product of the labels of the vertices, and the total score of the triangulation is the sum of these values over all &lt;code&gt;N-2&lt;/code&gt; triangles in the triangulation.&lt;/p&gt;
+&lt;p&gt;Return the smallest possible total score that you can achieve with some triangulation of the polygon.&lt;/p&gt;
+&lt;p&gt;Source: LeetCode &lt;a href="https://leetcode.com/contest/weekly-contest-135/problems/minimum-score-triangulation-of-polygon/"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/57565247-2de42000-736f-11e9-9111-6fab23625737.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The solution is based on dynamic programming like below. This gif is explained in the last part.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/57566298-b10d7200-737f-11e9-9fcf-564c0260ce29.gif" alt="2019-05-10_1039_dp_image1"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1039-minimum-score-triangulation-of-polygon/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><category>Pandas Styling</category><guid>/posts/coding/1039-minimum-score-triangulation-of-polygon/</guid><pubDate>Sat, 11 May 2019 04:20:04 GMT</pubDate></item><item><title>1036. Escape a Large Maze</title><link>/posts/coding/1036-escape-a-large-maze/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1036-escape-a-large-maze/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In a 1 million by 1 million grid, the coordinates of each grid square are &lt;code&gt;(x, y)&lt;/code&gt; with &lt;code&gt;0 &amp;lt;= x, y &amp;lt; 10^6&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We start at the &lt;code&gt;source&lt;/code&gt; square and want to reach the &lt;code&gt;target&lt;/code&gt; square.  Each move, we can walk to a 4-directionally adjacent square in the grid that isn't in the given list of &lt;code&gt;blocked&lt;/code&gt; squares.&lt;/p&gt;
+&lt;p&gt;Return &lt;code&gt;true&lt;/code&gt; if and only if it is possible to reach the target square through a sequence of moves&lt;/p&gt;
+&lt;p&gt;Link for Problem: &lt;a href="https://leetcode.com/contest/weekly-contest-134/problems/escape-a-large-maze/"&gt;leetcode&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="Example-1:"&gt;Example 1:&lt;a class="anchor-link" href="/posts/coding/1036-escape-a-large-maze/#Example-1:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: blocked = [[0,1],[1,0]], source = [0,0], target = [0,2]&lt;/p&gt;
+&lt;p&gt;Output: false&lt;/p&gt;
+&lt;p&gt;Explanation: 
+The target square is inaccessible starting from the source square, because we can't walk outside the grid.&lt;/p&gt;
+&lt;h3 id="Example-2:"&gt;Example 2:&lt;a class="anchor-link" href="/posts/coding/1036-escape-a-large-maze/#Example-2:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: blocked = [], source = [0,0], target = [999999,999999]&lt;/p&gt;
+&lt;p&gt;Output: true&lt;/p&gt;
+&lt;p&gt;Explanation:&lt;/p&gt;
+&lt;p&gt;Because there are no blocked cells, it's possible to reach the target square.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1036-escape-a-large-maze/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Dynamic Programming</category><guid>/posts/coding/1036-escape-a-large-maze/</guid><pubDate>Thu, 02 May 2019 06:01:08 GMT</pubDate></item><item><title>1031. Maximum Sum of Two Non-Overlapping Subarrays</title><link>/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given an array &lt;code&gt;A&lt;/code&gt; of non-negative integers, return the maximum sum of elements in two non-overlapping (contiguous) subarrays, which have lengths &lt;code&gt;L&lt;/code&gt; and &lt;code&gt;M&lt;/code&gt;.  (For clarification, the &lt;code&gt;L&lt;/code&gt;-length subarray could occur before or after the &lt;code&gt;M&lt;/code&gt;-length subarray.)&lt;/p&gt;
+&lt;p&gt;Formally, return the largest &lt;code&gt;V&lt;/code&gt; for which &lt;code&gt;V = (A[i] + A[i+1] + ... + A[i+L-1]) + (A[j] + A[j+1] + ... + A[j+M-1])&lt;/code&gt; and either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt; i + L - 1 &amp;lt; j &amp;lt; j + M - 1 &amp;lt; A.length&lt;/code&gt;, or&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= j &amp;lt; j + M - 1 &amp;lt; i &amp;lt; i + L - 1 &amp;lt; A.length&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Example-1:"&gt;Example 1:&lt;a class="anchor-link" href="/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/#Example-1:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: A = [0,6,5,2,2,5,1,9,4], L = 1, M = 2&lt;/p&gt;
+&lt;p&gt;Output: 20&lt;/p&gt;
+&lt;p&gt;Explanation: One choice of subarrays is [9] with length 1, and [6,5] with length 2.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56563539-d0736500-6560-11e9-9cae-a7c2ae2cc2b9.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/coding/1031-maximum-sum-of-two-non-overlapping-subarrays/</guid><pubDate>Tue, 23 Apr 2019 03:42:05 GMT</pubDate></item><item><title>1026. Maximum Difference Between Node and Ancestor</title><link>/posts/coding/1026-maximum-difference-between-node-and-ancestor/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given the &lt;code&gt;root&lt;/code&gt; of a binary tree, find the maximum value &lt;code&gt;V&lt;/code&gt; for which there exists different nodes &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; where &lt;code&gt;V = |A.val - B.val|&lt;/code&gt; and &lt;code&gt;A&lt;/code&gt; is an ancestor of &lt;code&gt;B&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The number of nodes in the tree is between 2 and 5000.&lt;/li&gt;
+&lt;li&gt;Each node will have value between 0 and 100000.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Example-1"&gt;Example 1&lt;a class="anchor-link" href="/posts/coding/1026-maximum-difference-between-node-and-ancestor/#Example-1"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Input: [8,3,10,1,6,null,14,null,null,4,7,13]&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56340742-b3592380-6167-11e9-8704-0e9767e3707a.png" alt="Example 1" width="300"&gt;&lt;/p&gt;
+&lt;p&gt;Output: 7&lt;/p&gt;
+&lt;p&gt;Explanation:&lt;/p&gt;
+&lt;p&gt;We have various ancestor-node differences, some of which are given below :
+|8 - 3| = 5
+|3 - 7| = 4
+|8 - 1| = 7
+|10 - 13| = 3
+Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1026-maximum-difference-between-node-and-ancestor/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Binary Tree</category><category>Tree</category><guid>/posts/coding/1026-maximum-difference-between-node-and-ancestor/</guid><pubDate>Thu, 18 Apr 2019 05:48:04 GMT</pubDate></item><item><title>LeetCode Top 100 Problem Selection</title><link>/posts/coding/leetcode-top-100-problem-selection/</link><dc:creator>h1ros</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This link was posted on Dec 30, 2018 in blind &lt;a href="https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU"&gt;Curated List of Top 100 LeetCode Questions&lt;/a&gt;. I found it so useful and would like to cover these problem in the following post as well.&lt;/p&gt;
+&lt;p&gt;Array&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Two Sum - &lt;a href="https://leetcode.com/problems/two-sum/"&gt;https://leetcode.com/problems/two-sum/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Best Time to Buy and Sell Stock - &lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"&gt;https://leetcode.com/problems/best-time-to-buy-and-sell-stock/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Contains Duplicate - &lt;a href="https://leetcode.com/problems/contains-duplicate/"&gt;https://leetcode.com/problems/contains-duplicate/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Product of Array Except Self - &lt;a href="https://leetcode.com/problems/product-of-array-except-self/"&gt;https://leetcode.com/problems/product-of-array-except-self/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Maximum Subarray - &lt;a href="https://leetcode.com/problems/maximum-subarray/"&gt;https://leetcode.com/problems/maximum-subarray/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Maximum Product Subarray - &lt;a href="https://leetcode.com/problems/maximum-product-subarray/"&gt;https://leetcode.com/problems/maximum-product-subarray/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Find Minimum in Rotated Sorted Array - &lt;a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"&gt;https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Search in Rotated Sorted Array - &lt;a href="https://leetcode.com/problems/search-in-rotated-sorted-array/"&gt;https://leetcode.com/problems/search-in-rotated-sorted-array/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; 3Sum - &lt;a href="https://leetcode.com/problems/3sum/"&gt;https://leetcode.com/problems/3sum/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox"&gt; Container With Most Water - &lt;a href="https://leetcode.com/problems/container-with-most-water/"&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="/posts/coding/leetcode-top-100-problem-selection/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>/posts/coding/leetcode-top-100-problem-selection/</guid><pubDate>Wed, 17 Apr 2019 06:14:23 GMT</pubDate></item><item><title>1025. Divisor Game (C++)</title><link>/posts/coding/1025-divisor-game/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1025-divisor-game/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Alice and Bob take turns playing a game, with Alice starting first.&lt;/p&gt;
+&lt;p&gt;Initially, there is a number &lt;code&gt;N&lt;/code&gt; on the chalkboard.  On each player's turn, that player makes a move consisting of:&lt;/p&gt;
+&lt;p&gt;Choosing any &lt;code&gt;x&lt;/code&gt; with &lt;code&gt;0 &amp;lt; x &amp;lt; N&lt;/code&gt; and &lt;code&gt;N % x == 0&lt;/code&gt;.
+Replacing the number N on the chalkboard with &lt;code&gt;N - x&lt;/code&gt;.
+Also, if a player cannot make a move, they lose the game.&lt;/p&gt;
+&lt;p&gt;Return &lt;code&gt;True&lt;/code&gt; if and only if Alice wins the game, assuming both players play optimally.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/8764683/56098642-28520200-5eb7-11e9-8741-33362a06c8b7.png" alt="image"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1025-divisor-game/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>C++</category><guid>/posts/coding/1025-divisor-game/</guid><pubDate>Sun, 14 Apr 2019 19:54:24 GMT</pubDate></item><item><title>1019. Next Greater Node In Linked List</title><link>/posts/coding/1019-next-greater-node-in-linked-list/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-Setting"&gt;Problem Setting&lt;a class="anchor-link" href="/posts/coding/1019-next-greater-node-in-linked-list/#Problem-Setting"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We are given a linked list with &lt;code&gt;head&lt;/code&gt; as the first node.  Let's number the nodes in the list: node_1, node_2, node_3, ... etc.&lt;/p&gt;
+&lt;p&gt;Each node may have a next larger value: for &lt;code&gt;node_i&lt;/code&gt;, &lt;code&gt;next_larger(node_i)&lt;/code&gt; is the &lt;code&gt;node_j.val&lt;/code&gt; such that &lt;code&gt;j &amp;gt; i&lt;/code&gt;, &lt;code&gt;node_j.val &amp;gt; node_i.val&lt;/code&gt;, and &lt;code&gt;j&lt;/code&gt; is the smallest possible choice.  If such a &lt;code&gt;j&lt;/code&gt; does not exist, the next larger value is 0.&lt;/p&gt;
+&lt;p&gt;Return an array of integers &lt;code&gt;answer&lt;/code&gt;, where &lt;code&gt;answer[i] = next_larger(node_{i+1})&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Note that in the example &lt;strong&gt;inputs&lt;/strong&gt; (not outputs) below, arrays such as [2,1,5] represent the serialization of a linked list with a head node value of 2, second node value of 1, and third node value of 5.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:left"&gt;Variable&lt;/th&gt;
+&lt;th style="text-align:center"&gt;Type&lt;/th&gt;
+&lt;th style="text-align:left"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;head&lt;/td&gt;
+&lt;td style="text-align:center"&gt;linked list&lt;/td&gt;
+&lt;td style="text-align:left"&gt;the first linked list object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;answer&lt;/td&gt;
+&lt;td style="text-align:center"&gt;list of int&lt;/td&gt;
+&lt;td style="text-align:left"&gt;an array of integers where &lt;code&gt;answer[i] = next_larger(node_{i+1}&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [101]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;graphviz&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Digraph&lt;/span&gt;
+&lt;span class="c1"&gt;# Create Digraph object&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Digraph&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rankdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'LR'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'8,5'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'1'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'2'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edges&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;'12'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'23'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[101]:&lt;/div&gt;
+
+
+
+&lt;div class="output_svg output_subarea output_execute_result"&gt;
+&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+
+&lt;!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ --&gt;
+&lt;!-- Title: %3 Pages: 1 --&gt;
+&lt;svg width="242pt" height="44pt" viewbox="0.00 0.00 242.00 44.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+&lt;g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)"&gt;
+&lt;title&gt;%3&lt;/title&gt;
+&lt;polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-40 238,-40 238,4 -4,4"&gt;&lt;/polygon&gt;
+&lt;!-- 1 --&gt;
+&lt;g id="node1" class="node"&gt;
+&lt;title&gt;1&lt;/title&gt;
+&lt;ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
+&lt;text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;1&lt;/text&gt;
+&lt;/g&gt;
+&lt;!-- 2 --&gt;
+&lt;g id="node2" class="node"&gt;
+&lt;title&gt;2&lt;/title&gt;
+&lt;ellipse fill="none" stroke="#000000" cx="117" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
+&lt;text text-anchor="middle" x="117" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;2&lt;/text&gt;
+&lt;/g&gt;
+&lt;!-- 1&amp;#45;&amp;gt;2 --&gt;
+&lt;g id="edge1" class="edge"&gt;
+&lt;title&gt;1-&amp;gt;2&lt;/title&gt;
+&lt;path fill="none" stroke="#000000" d="M54.003,-18C62.0277,-18 70.9665,-18 79.5309,-18"&gt;&lt;/path&gt;
+&lt;polygon fill="#000000" stroke="#000000" points="79.7051,-21.5001 89.705,-18 79.705,-14.5001 79.7051,-21.5001"&gt;&lt;/polygon&gt;
+&lt;/g&gt;
+&lt;!-- 3 --&gt;
+&lt;g id="node3" class="node"&gt;
+&lt;title&gt;3&lt;/title&gt;
+&lt;ellipse fill="none" stroke="#000000" cx="207" cy="-18" rx="27" ry="18"&gt;&lt;/ellipse&gt;
+&lt;text text-anchor="middle" x="207" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000"&gt;3&lt;/text&gt;
+&lt;/g&gt;
+&lt;!-- 2&amp;#45;&amp;gt;3 --&gt;
+&lt;g id="edge2" class="edge"&gt;
+&lt;title&gt;2-&amp;gt;3&lt;/title&gt;
+&lt;path fill="none" stroke="#000000" d="M144.003,-18C152.0277,-18 160.9665,-18 169.5309,-18"&gt;&lt;/path&gt;
+&lt;polygon fill="#000000" stroke="#000000" points="169.7051,-21.5001 179.705,-18 169.705,-14.5001 169.7051,-21.5001"&gt;&lt;/polygon&gt;
+&lt;/g&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/coding/1019-next-greater-node-in-linked-list/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Linked List</category><guid>/posts/coding/1019-next-greater-node-in-linked-list/</guid><pubDate>Tue, 02 Apr 2019 06:32:13 GMT</pubDate></item></channel></rss>

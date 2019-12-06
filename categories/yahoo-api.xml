@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about Yahoo API)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/yahoo-api.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 15:44:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting real-time stock market data and visualization</title><link>/posts/getting-real-time-stock-market-data/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/getting-real-time-stock-market-data/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to get &lt;strong&gt;real time stock market data&lt;/strong&gt; using Yahoo finance API &lt;code&gt;yahoo_fin&lt;/code&gt; and visualize it as candle chart using &lt;code&gt;cufflinks&lt;/code&gt;.
+&lt;img src="https://user-images.githubusercontent.com/8764683/59813476-951cc900-934c-11e9-995d-9403f494d253.png" alt="image"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://theautomatic.net/2018/07/31/how-to-get-live-stock-prices-with-python/"&gt;HOW TO GET LIVE STOCK PRICES WITH PYTHON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://theautomatic.net/yahoo_fin-documentation/"&gt;YAHOO_FIN DOCUMENTATION&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="/posts/getting-real-time-stock-market-data/"&gt;Read more…&lt;/a&gt; (546 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cufflinks</category><category>stock price</category><category>Time Series</category><category>Visualization</category><category>Yahoo API</category><guid>/posts/getting-real-time-stock-market-data/</guid><pubDate>Wed, 19 Jun 2019 13:34:00 GMT</pubDate></item></channel></rss>
