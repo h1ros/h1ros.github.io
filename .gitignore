@@ -1,6 +1,10 @@
 
 .doit.db.db
 
+# output
+cache/*
+output/*
+
 # OSX
 *.DS_Store
 
