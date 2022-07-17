@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about ImageNet)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/imagenet.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 15:44:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Explain the prediction for ImageNet using SHAP</title><link>/posts/explain-the-prediction-for-imagenet-using-shap/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step-by-step Data Science (Posts about ImageNet)</title><link>https://h1ros.github.io</link><description></description><atom:link href="/categories/imagenet.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:data.h1ros@gmail.com"&gt;h1ros&lt;/a&gt; </copyright><lastBuildDate>Sun, 17 Jul 2022 18:36:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Explain the prediction for ImageNet using SHAP</title><link>/posts/explain-the-prediction-for-imagenet-using-shap/</link><dc:creator>h1ros</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Goal"&gt;Goal&lt;a class="anchor-link" href="/posts/explain-the-prediction-for-imagenet-using-shap/#Goal"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This post aims to introduce how to explain the prediction for ImageNet using SHAP.&lt;/p&gt;
@@ -365,10 +365,10 @@ Downloading data from https://github.com/fchollet/deep-learning-models/releases/
 
  
  
-&lt;div id="69aaa41c-2dd0-4b36-a6cd-8c9498dc458c"&gt;&lt;/div&gt;
+&lt;div id="00ded1ee-8984-4f57-b616-95c4816b3562"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#69aaa41c-2dd0-4b36-a6cd-8c9498dc458c');
+var element = $('#00ded1ee-8984-4f57-b616-95c4816b3562');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "12afc12a495943b693dd182ffc400050", "version_major": 2, "version_minor": 0}
