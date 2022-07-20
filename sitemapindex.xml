@@ -562,6 +562,10 @@
   <lastmod>2022-07-17T18:37:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>/categories/statistics.xml</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>/categories/stemming.xml</loc>
   <lastmod>2022-07-17T18:37:00Z</lastmod>
  </sitemap>
@@ -584,6 +588,10 @@
  <sitemap>
   <loc>/categories/tempfile.xml</loc>
   <lastmod>2022-07-17T18:36:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>/categories/test.xml</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/text-processing.xml</loc>
@@ -655,10 +663,10 @@
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>

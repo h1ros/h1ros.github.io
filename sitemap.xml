@@ -467,19 +467,23 @@
  </url>
  <url>
   <loc>/2022/07/</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/2022/07/17/</loc>
   <lastmod>2022-07-17T21:25:00Z</lastmod>
  </url>
  <url>
+  <loc>/2022/07/19/</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/archive.html</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
-  <lastmod>2022-07-17T18:37:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/1d/</loc>
@@ -1078,6 +1082,10 @@
   <lastmod>2022-07-17T18:35:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/statistics/</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/stemming/</loc>
   <lastmod>2022-07-17T18:36:00Z</lastmod>
  </url>
@@ -1100,6 +1108,10 @@
  <url>
   <loc>/categories/tempfile/</loc>
   <lastmod>2022-07-17T18:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/categories/test/</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/text-processing/</loc>
@@ -1179,7 +1191,7 @@
  </url>
  <url>
   <loc>/posts/</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/3-ways-of-creating-a-neural-network-in-pytorch/</loc>
@@ -1407,7 +1419,7 @@
  </url>
  <url>
   <loc>/posts/index-11.html</loc>
-  <lastmod>2022-07-17T21:25:00Z</lastmod>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/index-2.html</loc>
@@ -1632,6 +1644,10 @@
  <url>
   <loc>/posts/survival-analysis/</loc>
   <lastmod>2022-07-17T18:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/t-test-basic/</loc>
+  <lastmod>2022-07-20T05:56:00Z</lastmod>
  </url>
  <url>
   <loc>/posts/term-frequency-inverse-document-frequency/</loc>

@@ -87,7 +87,199 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="python-basic-list-and-index/" class="u-url">Python Basic: List and Index</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="t-test-basic/" class="u-url">t-Test Basic</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                h1ros
+            </span></p>
+            <p class="dateline">
+            <a href="t-test-basic/" rel="bookmark">
+            <time class="published dt-published" datetime="2022-07-19T21:50:52-07:00" itemprop="datePublished" title="Jul 19, 2022, 9:50:52 PM">Jul 19, 2022, 9:50:52 PM</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="t-test-basic/#disqus_thread" data-disqus-identifier="cache/posts/t-test-basic.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="T-test-Basic">T-test Basic<a class="anchor-link" href="t-test-basic/#T-test-Basic">¶</a>
+</h2>
+<p>This post covers one of the simplest hypothesis test, so-called T-test. Let's say you subscribe coffee beans weekly basis and measure the weight of each coffee beans bags and obtained the following observation.</p>
+<p>Now the package says this coffee beans is 16 oz i.e., 453.592 g. Is this actually true from statistical point of view?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">icecream</span> <span class="k">import</span> <span class="n">ic</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">beans</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">448.2</span><span class="p">,</span> <span class="mf">451.2</span><span class="p">,</span> <span class="mf">448.0</span><span class="p">,</span> <span class="mf">452.5</span><span class="p">,</span> <span class="mf">447.8</span><span class="p">,</span> <span class="mf">446.7</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Manual-Calculation-for-P-value-and-t-value">Manual Calculation for P-value and t-value<a class="anchor-link" href="t-test-basic/#Manual-Calculation-for-P-value-and-t-value">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># mu_0 for Null Hypothesis</span>
+<span class="n">mu0</span> <span class="o">=</span> <span class="mf">453.592</span>
+
+<span class="c1"># Sample size</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">beans</span><span class="p">)</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># Sample Mean</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">beans</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="c1"># Degree of Freedam</span>
+<span class="n">dof</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">dof</span><span class="p">)</span>
+
+<span class="c1"># Sample Stnadard Deviation</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">beans</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="c1"># Standard Error</span>
+<span class="n">se</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
+
+<span class="c1"># t-value</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="n">mu0</span><span class="p">)</span> <span class="o">/</span> <span class="n">se</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># p-value - 2 * (1 - cdf(|ts|))</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="n">dof</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">ic</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>ic| n: 6
+ic| mu: 449.06666666666666
+ic| dof: 5
+ic| sigma: 2.255363976538303
+ic| se: 0.9207484877955424
+ic| t: -4.9148419935696905
+ic| p: 0.004417201842481733
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-scipy-module">Using scipy module<a class="anchor-link" href="t-test-basic/#Using-scipy-module">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use scipy stats </span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">beans</span><span class="p">,</span> <span class="n">mu0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Ttest_1sampResult(statistic=-4.914841993569691, pvalue=0.004417201842481753)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If p-value is typically lower than 0.05 (alpha), we can rejust null-hypothesis (its population mean is mu0) and conclude this sample mean is significantly different from mu0.</p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="python-basic-list-and-index/" class="u-url">Python Basic: List and Index</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 h1ros
@@ -2809,57 +3001,6 @@ var element = $('#00ded1ee-8984-4f57-b616-95c4816b3562');
 </div>
 </div>
 
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="sentiment-analysis-by-shap-with-logistic-regression/" class="u-url">Sentiment Analysis by SHAP with Logistic Regression</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                h1ros
-            </span></p>
-            <p class="dateline">
-            <a href="sentiment-analysis-by-shap-with-logistic-regression/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-08-01T20:53:34-07:00" itemprop="datePublished" title="Aug 1, 2019, 8:53:34 PM">Aug 1, 2019, 8:53:34 PM</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="sentiment-analysis-by-shap-with-logistic-regression/#disqus_thread" data-disqus-identifier="cache/posts/sentiment-analysis-by-shap-with-logistic-regression.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goal">Goal<a class="anchor-link" href="sentiment-analysis-by-shap-with-logistic-regression/#Goal">¶</a>
-</h2>
-<p>This post aims to introduce how to do sentiment analysis using <code>SHAP</code> with logistic regression.
-<img src="https://user-images.githubusercontent.com/8764683/62346063-9c85d500-b4a9-11e9-9b6a-9d11631f344f.png" style="height:400px;"></p>
-<p><!-- <img src="smiley.gif" alt="Smiley face" height="42" width="42"> -->
-<strong>Reference</strong></p>
-<ul>
-<li>
-<p><a href="https://slundberg.github.io/shap/notebooks/linear_explainer/Sentiment%20Analysis%20with%20Logistic%20Regression.html">Github - SHAP: Sentiment Analysis with Logistic Regression</a></p>
-</li>
-<li>
-<p><a href="https://h1ros.github.io/posts/term-frequency-inverse-document-frequency/">Step-by-step Data Science: Term Frequency Inverse Document Frequency</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="sentiment-analysis-by-shap-with-logistic-regression/">Read more… </a></p>
-</div>
-</div>
 </div>
 </div>
     </div>
